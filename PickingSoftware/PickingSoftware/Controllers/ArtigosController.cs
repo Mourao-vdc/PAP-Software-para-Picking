@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace PickingSoftware.Controllers
 {
-    public class ArtigosController
+    public class ArtigosController : ApiController
     {
         [HttpGet]
         public HttpResponseMessage GetArtigos()
