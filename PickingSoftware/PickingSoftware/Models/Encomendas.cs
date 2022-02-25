@@ -32,7 +32,7 @@ namespace PickingSoftware.Models
                     ID = (int)dr["ID"],
                     ID_Artigos = (int)dr["ID_Artigos"],
                     Cod_Barras = dr["Cod_Barras"].ToString(),
-                    Situacao = dr["Situacao"].ToString(),
+                    Situacao = bool.Parse((string)dr["Situacao"]),
                     Quant_artigos = (int)dr["Quant_artigos"]
                 });
             }
