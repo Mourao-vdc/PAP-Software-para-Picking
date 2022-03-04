@@ -7,6 +7,7 @@
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Frame BackgroundColor="LightGray">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
@@ -18,7 +19,13 @@
                     <ColumnDefinition Width="2.5*"></ColumnDefinition>
                     <ColumnDefinition Width="2.5*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0">ID</Label>
+                <Label Grid.Row="0" Grid.Column="1">ID Artigos</Label>
+                <Label Grid.Row="0" Grid.Column="2">Codigo de barras</Label>
+                <Label Grid.Row="0" Grid.Column="3">Situação</Label>
+                <Label Grid.Row="0" Grid.Column="4">Quantidade</Label>
             </Grid>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
