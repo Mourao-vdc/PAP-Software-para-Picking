@@ -19,13 +19,30 @@
                     <ColumnDefinition Width="2.5*"></ColumnDefinition>
                     <ColumnDefinition Width="2.5*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Grid.Column="0">ID</Label>
-                <Label Grid.Row="0" Grid.Column="1">ID Artigos</Label>
-                <Label Grid.Row="0" Grid.Column="2">Codigo de barras</Label>
-                <Label Grid.Row="0" Grid.Column="3">Situação</Label>
-                <Label Grid.Row="0" Grid.Column="4">Quantidade</Label>
+                    <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">ID</Label>
+                    <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">ID Artigos</Label>
+                    <Label Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center">Codigo de barras</Label>
+                    <Label Grid.Row="0" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="Center">Situação</Label>
+                    <Label Grid.Row="0" Grid.Column="4" VerticalOptions="Center" HorizontalOptions="Center">Quantidade</Label>
             </Grid>
             </Frame>
+            <ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame>
+                                <Grid>
+                                    <Label Grid.Row="0" HorizontalOptions="Center" Grid.Column="0" Text="{Binding ID}"></Label>
+                                    <Label Grid.Row="0" HorizontalOptions="Center" Grid.Column="1" Text="{Binding ID_Artigos}"></Label>
+                                    <Label Grid.Row="0" HorizontalOptions="Center" Grid.Column="2" Text="{Binding Cod_Barras}"></Label>
+                                    <Label Grid.Row="0" HorizontalOptions="Center" Grid.Column="3" Text="{Binding Situacao}"></Label>
+                                    <Label Grid.Row="0" HorizontalOptions="Center" Grid.Column="4" Text="{Binding Quant_artigos}"></Label>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

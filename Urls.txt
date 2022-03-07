@@ -1,11 +1,10 @@
 URLS PAP:
 
+Xamarin introdução;
 https://www.youtube.com/watch?v=J2pOqdETb5M
 
-https://www.youtube.com/watch?v=XFP8Np-uRWc
-
-https://www.c-sharpcorner.com/UploadFile/2b481f/how-we-can-add-the-sql-database-in-Asp-Net-web-api/
-
-https://www.c-sharpcorner.com/article/how-to-make-web-api-and-how-to-get-data-through-xamarin-forms/
-
+Datagrid:
 https://www.youtube.com/watch?v=npiI0bUC9h4
+
+BUttons:
+https://www.youtube.com/watch?v=4VrQWsNToDk
