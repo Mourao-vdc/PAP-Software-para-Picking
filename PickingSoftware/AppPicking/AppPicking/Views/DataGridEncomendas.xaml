@@ -26,7 +26,7 @@
                     <Label Grid.Row="0" Grid.Column="4" VerticalOptions="Center" HorizontalOptions="Center">Quantidade</Label>
             </Grid>
             </Frame>
-            <ListView>
+            <ListView x:Name="lvEncomendas">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
