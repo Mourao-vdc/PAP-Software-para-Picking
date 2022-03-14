@@ -16,5 +16,12 @@ namespace AppPicking.Views
         {
             InitializeComponent();
         }
+        
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            lvEncomendas.ItemsSource = new ObservableCollection<Models.Encomendas>(await Models.Encomendas.GetEncomendas());
+        }
     }
 }
