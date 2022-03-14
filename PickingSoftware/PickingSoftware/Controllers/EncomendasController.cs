@@ -8,8 +8,10 @@ using System.Web.Http;
 
 namespace PickingSoftware.Controllers
 {
+    [RoutePrefix("api/Encomendas")]
     public class EncomendasController : ApiController
     {
+        [Route("Todas")]
         [HttpGet]
         public HttpResponseMessage GetArtigos()
         {
