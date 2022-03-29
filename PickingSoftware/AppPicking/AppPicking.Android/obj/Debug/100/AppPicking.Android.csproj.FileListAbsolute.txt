@@ -701,3 +701,4 @@ C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\stamp\_GenerateJavaStubs.stamp
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\android\assets\Xamarin.Forms.DataGrid.dll

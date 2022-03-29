@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web;
 using System.Web.Http;
 
 namespace PickingSoftware.Controllers
@@ -15,7 +12,28 @@ namespace PickingSoftware.Controllers
         [HttpGet]
         public HttpResponseMessage GetArtigos()
         {
-            return Request.CreateResponse(HttpStatusCode.OK, Models.Artigos.GetArtigos());
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Artigos.GetArtigos());
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
+
+        [Route("Adicionar")]
+        [HttpPost]
+        public HttpResponseMessage GetAdicionar(Models.Artigos artigos)
+        {
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Artigos.GetArtigos());
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
         }
     }
 }

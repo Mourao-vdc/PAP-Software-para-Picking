@@ -27,8 +27,6 @@ C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
-C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\DaraGridArtigos.xaml.g.cs
-C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\DataGridEncomendas.xaml.g.cs
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
@@ -41,3 +39,6 @@ C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\refint\AppPicking.dll
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\AppPicking.pdb
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\ref\AppPicking.dll
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageDataGridEncomendas.xaml.g.cs
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageDataGridArtigos.xaml.g.cs
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageAddArtigos.xaml.g.cs

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZXw1vT/gjzTQVukgBWQgeKoNXjsFg9RB2hUe3f1vE+pxKTbnb9/6kdLFovAUP7GCfDwDFeYvYoqU/r8siZQYCg==",
+  "dgSpecHash": "gvfWoWRASCmg1NHuv8RRnSLVPHnCRNdesjDn6E+7VhRoBJ9jm0iuDiQibQCLD+vsB+ndbq+dP0wCD4Fs+2rdRw==",
   "success": true,
   "projectFilePath": "C:\\Users\\estagio\\Documents\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking.Android\\AppPicking.Android.csproj",
   "expectedPackageFiles": [
@@ -122,6 +122,7 @@
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.androidx.viewpager2\\1.0.0.10\\xamarin.androidx.viewpager2.1.0.0.10.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.essentials\\1.7.1\\xamarin.essentials.1.7.1.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.forms\\5.0.0.2337\\xamarin.forms.5.0.0.2337.nupkg.sha512",
+    "C:\\Users\\estagio\\.nuget\\packages\\xamarin.forms.datagrid\\4.8.0\\xamarin.forms.datagrid.4.8.0.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.google.android.material\\1.4.0.2\\xamarin.google.android.material.1.4.0.2.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.google.guava.listenablefuture\\1.0.0.2\\xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512"
   ],

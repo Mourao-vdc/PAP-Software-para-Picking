@@ -1136,6 +1136,18 @@
           "buildTransitive/Xamarin.Forms.props": {},
           "buildTransitive/Xamarin.Forms.targets": {}
         }
+      },
+      "Xamarin.Forms.DataGrid/4.8.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "4.8.0.1687"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll": {}
+        }
       }
     }
   },
@@ -4189,6 +4201,18 @@
         "xamarin.forms.5.0.0.2337.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
+    },
+    "Xamarin.Forms.DataGrid/4.8.0": {
+      "sha512": "aWVJQ2W5FKrmJgmt8aBhH1RumvUycM89vL0+JlTril+4QciUwerNCr9FV62jBeEXBp6/VUF4XX+9MfJtzjPWjQ==",
+      "type": "package",
+      "path": "xamarin.forms.datagrid/4.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll",
+        "xamarin.forms.datagrid.4.8.0.nupkg.sha512",
+        "xamarin.forms.datagrid.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -4198,7 +4222,8 @@
       "Swashbuckle.AspNetCore >= 6.3.0",
       "Swashbuckle.AspNetCore.Swagger >= 6.3.0",
       "Xamarin.Essentials >= 1.7.1",
-      "Xamarin.Forms >= 5.0.0.2337"
+      "Xamarin.Forms >= 5.0.0.2337",
+      "Xamarin.Forms.DataGrid >= 4.8.0"
     ]
   },
   "packageFolders": {
@@ -4270,6 +4295,10 @@
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[5.0.0.2337, )"
+          },
+          "Xamarin.Forms.DataGrid": {
+            "target": "Package",
+            "version": "[4.8.0, )"
           }
         },
         "imports": [

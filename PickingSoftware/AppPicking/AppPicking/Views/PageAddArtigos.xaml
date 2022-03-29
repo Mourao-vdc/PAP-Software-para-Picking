@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPicking.Views.PageAddArtigos">
+    <ContentPage.Content>
+        <StackLayout Margin="20,20,20,20">
+            <Entry Keyboard="Numeric" TextColor="Black" x:Name="txtID"
+                   PlaceholderColor="DarkGray" Placeholder="ID do Artigo" Margin="0,10,0,0"/>
+            <Entry TextColor="Black" x:Name="txtNome"
+                   PlaceholderColor="DarkGray" Placeholder="Nome do Artigo" Margin="0,10,0,0"/>
+            <Entry TextColor="Black" x:Name="txtCod_Barras"
+                   PlaceholderColor="DarkGray" Placeholder="Codigo de barras" Margin="0,10,0,10"/>
+            <Button BackgroundColor="Black" Text="Adicionar"
+                    x:Name="AddButton"
+                    Clicked="AddButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

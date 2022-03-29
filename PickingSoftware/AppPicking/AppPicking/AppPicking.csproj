@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -10,23 +10,18 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.3.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />  
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />  
+    <PackageReference Include="Xamarin.Forms.DataGrid" Version="4.8.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\DataGridEncomendas.xaml.cs">
-      <DependentUpon>DataGridEncomendas.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\DaraGridArtigos.xaml.cs">
-      <DependentUpon>DaraGridArtigos.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Views\DataGridEncomendas.xaml">
+    <EmbeddedResource Update="Views\PageAddArtigos.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\DaraGridArtigos.xaml">
+    <EmbeddedResource Update="Views\PageDataGridArtigos.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PageDataGridEncomendas.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

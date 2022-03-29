@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "G9Ut/alajCnC45diz7iWXyTT33u+ya2N9om5h+wBKwtEcGjQ4riVskpAht5ASVzQvRpdyZ/yVj91Hf/965Ovrw==",
+  "dgSpecHash": "KdwgjEHUbfxddkFuKrCtL4lpKXHc5pIsrYfSgHHb9ldBHrD4f/a48juyy5XL1myvDGccIBFFo+5POBmleuxpag==",
   "success": true,
   "projectFilePath": "C:\\Users\\estagio\\Documents\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking\\AppPicking.csproj",
   "expectedPackageFiles": [
@@ -88,7 +88,8 @@
     "C:\\Users\\estagio\\.nuget\\packages\\system.threading.tasks\\4.0.11\\system.threading.tasks.4.0.11.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.essentials\\1.7.1\\xamarin.essentials.1.7.1.nupkg.sha512",
-    "C:\\Users\\estagio\\.nuget\\packages\\xamarin.forms\\5.0.0.2337\\xamarin.forms.5.0.0.2337.nupkg.sha512"
+    "C:\\Users\\estagio\\.nuget\\packages\\xamarin.forms\\5.0.0.2337\\xamarin.forms.5.0.0.2337.nupkg.sha512",
+    "C:\\Users\\estagio\\.nuget\\packages\\xamarin.forms.datagrid\\4.8.0\\xamarin.forms.datagrid.4.8.0.nupkg.sha512"
   ],
   "logs": []
 }

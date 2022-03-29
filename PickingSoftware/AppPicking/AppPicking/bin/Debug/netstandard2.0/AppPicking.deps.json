@@ -14,7 +14,8 @@
           "Swashbuckle.AspNetCore": "6.3.0",
           "Swashbuckle.AspNetCore.Swagger": "6.3.0",
           "Xamarin.Essentials": "1.7.1",
-          "Xamarin.Forms": "5.0.0.2337"
+          "Xamarin.Forms": "5.0.0.2337",
+          "Xamarin.Forms.DataGrid": "4.8.0"
         },
         "runtime": {
           "AppPicking.dll": {}
@@ -964,6 +965,17 @@
             "fileVersion": "5.0.0.884"
           }
         }
+      },
+      "Xamarin.Forms.DataGrid/4.8.0": {
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2337"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll": {
+            "assemblyVersion": "4.8.0.0",
+            "fileVersion": "4.8.0.0"
+          }
+        }
       }
     }
   },
@@ -1567,6 +1579,13 @@
       "sha512": "sha512-2AYl2V1YHjEDEmA5d+aP382ielCKr8d/jo3zCgPSvLE/4Pw/em7pHBGmN3yZ/WzxIMV16f7wBfoFCHesMud0AA==",
       "path": "xamarin.forms/5.0.0.2337",
       "hashPath": "xamarin.forms.5.0.0.2337.nupkg.sha512"
+    },
+    "Xamarin.Forms.DataGrid/4.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aWVJQ2W5FKrmJgmt8aBhH1RumvUycM89vL0+JlTril+4QciUwerNCr9FV62jBeEXBp6/VUF4XX+9MfJtzjPWjQ==",
+      "path": "xamarin.forms.datagrid/4.8.0",
+      "hashPath": "xamarin.forms.datagrid.4.8.0.nupkg.sha512"
     }
   }
 }
