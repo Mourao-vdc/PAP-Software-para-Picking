@@ -4,6 +4,7 @@
              xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
              x:Class="AppPicking.Views.PageDataGridArtigos">
     <ContentView>
+        <StackLayout>
         <!-- Place new controls here -->
         <dg:DataGrid x:Name="lvArtigos"  ItemsSource="{Binding ID}" SelectionEnabled="True" SelectedItem="{Binding Nome}" RowHeight="70" HeaderHeight="50"  
                     BorderColor="Black" HeaderBackground="LightGray" PullToRefreshCommand="{Binding Cod_Barras}" IsRefreshing="{Binding IsRefreshing}" ActiveRowColor="#8899AA">
@@ -34,5 +35,17 @@
                 </dg:PaletteCollection>
             </dg:DataGrid.RowsBackgroundColorPalette>
         </dg:DataGrid>
+
+            <ImageButton Source="icon_more.png"
+                         BackgroundColor="Black"
+                         Padding="0,0,0,0"
+                     HorizontalOptions="End"
+                     VerticalOptions="Center"
+                     CornerRadius="20"/>
+
+        </StackLayout>
+
     </ContentView>
+
+    
 </ContentPage>

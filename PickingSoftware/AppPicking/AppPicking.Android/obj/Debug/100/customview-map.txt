@@ -30,7 +30,6 @@ foreground;obj\Debug\100\res\mipmap-anydpi-v26\icon.xml
 foreground;obj\Debug\100\res\mipmap-anydpi-v26\icon_round.xml
 FrameLayout;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\54\jl\res\layout\bottomtablayout.xml
 item;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\54\jl\res\values\styles.xml
-item;obj\Debug\100\res\values\styles.xml
 LinearLayout;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\54\jl\res\layout\bottomtablayout.xml
 paths;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\53\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 resources;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\54\jl\res\values\attrs.xml
