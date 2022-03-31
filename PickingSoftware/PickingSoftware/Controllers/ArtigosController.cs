@@ -28,7 +28,38 @@ namespace PickingSoftware.Controllers
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, Models.Artigos.GetArtigos());
+                Models.Artigos.GetAdicionar(artigos);
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
+
+        [Route("Editar")]
+        [HttpPost]
+        public HttpResponseMessage GetEditar(Models.Artigos artigos)
+        {
+            try
+            {
+                Models.Artigos.GetEditar(artigos);
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
+
+        [Route("Eliminar")]
+        [HttpPost]
+        public HttpResponseMessage GetEliminar(Models.Artigos artigos)
+        {
+            try
+            {
+                Models.Artigos.GetEliminar(artigos);
+                return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception ex)
             {

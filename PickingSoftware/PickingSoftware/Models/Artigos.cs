@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data.SqlServerCe;
 using System.Data.SqlClient;
 
 namespace PickingSoftware.Models
@@ -35,29 +32,60 @@ namespace PickingSoftware.Models
             return _tst;
         }
 
-        public static List<Artigos> GetAdicionar()
+        public static void GetAdicionar(Artigos _artigo)
         {
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
             string query = "INSERT INTO Artigos(" +
-                "ID,Nome,Cod_Barras)" +
-                "VALUES (@ID,@Nome,@Cod_Barras)";
-            SqlCommand cmd = new SqlCommand(query, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            List<Artigos> _tst = new List<Artigos>();
-            while (dr.Read())
+                "Nome,Cod_Barras)" +
+                "VALUES (@Nome,@Cod_Barras)";
+            using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                _tst.Add(new Artigos
-                {
-                    ID = (int)dr["ID"],
-                    Nome = dr["Nome"].ToString(),
-                    Cod_Barras = dr["Cod_Barras"].ToString()
-                });
+                //cmd.Parameters.AddWithValue("@ID", _artigo.ID);
+                cmd.Parameters.AddWithValue("@Nome", _artigo.Nome);
+                cmd.Parameters.AddWithValue("@Cod_Barras", _artigo.Cod_Barras);
+                cmd.ExecuteScalar();
+
+                con.Close();
             }
-            return _tst;
+
         }
 
+        public static void GetEditar(Artigos _artigo)
+        {
+            SqlConnection con =
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+            con.Open();
+            string query = "UPDATE Artigos SET(" +
+                "ID=@ID,Nome=@Nome,Cod_Barras=@Cod_Barras)" +
+                "WHERE ID=@ID";
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@ID", _artigo.ID);
+                cmd.Parameters.AddWithValue("@Nome", _artigo.Nome);
+                cmd.Parameters.AddWithValue("@Cod_Barras", _artigo.Cod_Barras);
+                cmd.ExecuteScalar();
+
+                con.Close();
+            }
+
+        }
+
+        public static void GetEliminar(Artigos _artigo)
+        {
+            SqlConnection con =
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+            con.Open();
+            string query = "DELETE Artigos" +
+                "WHERE ID=@ID";
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+            }
+
+        }
     }
 }

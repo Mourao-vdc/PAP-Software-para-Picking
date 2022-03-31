@@ -27,9 +27,9 @@ namespace AppPicking.Views
 
         private async void AddButton_Clicked(object sender, EventArgs e)
         {
-            if ((string.IsNullOrEmpty(txtID.Text)) || (string.IsNullOrWhiteSpace(txtID.Text)
-                || (string.IsNullOrEmpty(txtNome.Text) || (string.IsNullOrWhiteSpace(txtNome.Text)
-                || (string.IsNullOrEmpty(txtCod_Barras.Text) || (string.IsNullOrWhiteSpace(txtCod_Barras.Text))))))){
+            if (//(string.IsNullOrEmpty(txtID.Text)) || (string.IsNullOrWhiteSpace(txtID.Text)
+                 (string.IsNullOrEmpty(txtNome.Text) || (string.IsNullOrWhiteSpace(txtNome.Text)
+                || (string.IsNullOrEmpty(txtCod_Barras.Text) || (string.IsNullOrWhiteSpace(txtCod_Barras.Text)))))){
 
                 await DisplayAlert("Alerta", "Existem campos por preencher", "Ok");
                 return;
@@ -37,7 +37,7 @@ namespace AppPicking.Views
  
                 Artigos artigos = new Artigos();
                 {
-                    ID = Convert.ToInt16(txtID.Text);
+                    //ID = Convert.ToInt16(txtID.Text);
                     Nome = txtNome.Text;
                     Cod_Barras = txtCod_Barras.Text;
                 }
@@ -47,7 +47,11 @@ namespace AppPicking.Views
                 HttpContent httpContent = new StringContent(json);
                 httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 httpClient.PostAsync(String.Format("http://192.168.51.5:150/api/artigos/adicionar"), httpContent);
-                DisplayAlert("Adicionado", "A sua Base de dados Tem novos registos", "ok");
+                
+                DisplayAlert("Adicionado", "A sua Base de dados tem novos registos", "ok");
+
+            txtNome.Text = "";
+            txtCod_Barras.Text = "";
         }
     }
 }
