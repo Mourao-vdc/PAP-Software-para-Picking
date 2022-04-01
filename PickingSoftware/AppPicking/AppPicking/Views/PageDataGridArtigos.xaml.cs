@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,7 +13,9 @@ namespace AppPicking.Views
         public PageDataGridArtigos()
         {
             InitializeComponent();
+
         }
+
         protected override async void OnAppearing()
         {
             base.OnAppearing();
@@ -28,7 +26,7 @@ namespace AppPicking.Views
         private async void btnPopup_Clicked(object sender, EventArgs e)
         {
 
-            string action = await DisplayActionSheet("Ações: Que ação pretende relizar?", "Cancelar", null, "Adicionar", "Editar", "Remover");
+            string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Adicionar", "Editar", "Remover");
             Debug.WriteLine("Ações: " + action);
 
             if (action == "Adicionar")
@@ -38,6 +36,10 @@ namespace AppPicking.Views
             if (action == "Editar")
             {
                 await Navigation.PushAsync(new PageEditArtigos());
+            }
+            if(action == "Remover")
+            {
+                await Navigation.PushAsync(new PageRemoveArtigos());
             }
         }
     }

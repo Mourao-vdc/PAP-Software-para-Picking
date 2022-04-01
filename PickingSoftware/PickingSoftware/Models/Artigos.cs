@@ -85,7 +85,6 @@ namespace PickingSoftware.Models
 
                 con.Close();
             }
-
         }
     }
 }

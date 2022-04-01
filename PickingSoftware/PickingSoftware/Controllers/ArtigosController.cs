@@ -24,11 +24,11 @@ namespace PickingSoftware.Controllers
 
         [Route("Adicionar")]
         [HttpPost]
-        public HttpResponseMessage GetAdicionar(Models.Artigos artigos)
+        public HttpResponseMessage GetAdicionar(Models.Artigos _artigos)
         {
             try
             {
-                Models.Artigos.GetAdicionar(artigos);
+                Models.Artigos.GetAdicionar(_artigos);
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception ex)
@@ -38,12 +38,12 @@ namespace PickingSoftware.Controllers
         }
 
         [Route("Editar")]
-        [HttpPost]
-        public HttpResponseMessage GetEditar(Models.Artigos artigos)
+        [HttpPut]
+        public HttpResponseMessage GetEditar(Models.Artigos _artigos)
         {
             try
             {
-                Models.Artigos.GetEditar(artigos);
+                Models.Artigos.GetEditar(_artigos);
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception ex)
@@ -53,12 +53,12 @@ namespace PickingSoftware.Controllers
         }
 
         [Route("Eliminar")]
-        [HttpPost]
-        public HttpResponseMessage GetEliminar(Models.Artigos artigos)
+        [HttpDelete]
+        public HttpResponseMessage GetEliminar(Models.Artigos _artigos)
         {
             try
             {
-                Models.Artigos.GetEliminar(artigos);
+                Models.Artigos.GetEliminar(_artigos);
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception ex)

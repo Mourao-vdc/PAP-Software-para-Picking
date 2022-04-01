@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -23,6 +24,7 @@ namespace AppPicking.Views
         public PageAddArtigos()
         {
             InitializeComponent();
+
         }
 
         private async void AddButton_Clicked(object sender, EventArgs e)
@@ -34,7 +36,8 @@ namespace AppPicking.Views
                 await DisplayAlert("Alerta", "Existem campos por preencher", "Ok");
                 return;
             }
- 
+            else
+            {
                 Artigos artigos = new Artigos();
                 {
                     //ID = Convert.ToInt16(txtID.Text);
@@ -42,16 +45,13 @@ namespace AppPicking.Views
                     Cod_Barras = txtCod_Barras.Text;
                 }
 
-                var httpClient = new HttpClient();
-                var json = JsonConvert.SerializeObject(artigos);
-                HttpContent httpContent = new StringContent(json);
-                httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                httpClient.PostAsync(String.Format("http://192.168.51.5:150/api/artigos/adicionar"), httpContent);
-                
-                DisplayAlert("Adicionado", "A sua Base de dados tem novos registos", "ok");
+                await Artigos.AddArtigos(artigos);
 
-            txtNome.Text = "";
-            txtCod_Barras.Text = "";
+                DisplayAlert("Adicionado", "Artigo adiciocado com sucesso", "Ok");
+
+                txtNome.Text = "";
+                txtCod_Barras.Text = "";
+            }           
         }
     }
 }

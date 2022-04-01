@@ -12,7 +12,7 @@ namespace AppPicking.Models
         public int ID { get; set; }
         public string Nome { get; set; }
 
-        public static async Task<List<Permicoes_List>> GetEncomendas()
+        public static async Task<List<Permicoes_List>> GetPermicoes_List()
         {
             using (HttpClient _client = new HttpClient())
             {

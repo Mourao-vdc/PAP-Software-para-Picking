@@ -44,3 +44,4 @@ C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageAddArtigos.xaml.g.cs
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageEditArtigos.xaml.g.cs
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageRemoveArtigos.xaml.g.cs
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageAddEncomendas.xaml.xaml.g.cs

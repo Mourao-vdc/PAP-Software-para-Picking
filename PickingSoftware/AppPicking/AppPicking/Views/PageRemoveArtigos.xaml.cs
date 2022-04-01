@@ -27,7 +27,7 @@ namespace AppPicking.Views
 
         private async void searchButton_Clicked(object sender, EventArgs e)
         {
-            if ((string.IsNullOrEmpty(txtID.Text)) || (string.IsNullOrWhiteSpace(txtID.Text)))
+            if (txtID.SelectedIndex == -1)
 
             {
 
@@ -41,23 +41,19 @@ namespace AppPicking.Views
             }
         }
 
-        private void RemoveButton_Clicked(object sender, EventArgs e)
+        private async void RemoveButton_Clicked(object sender, EventArgs e)
         {
 
             Artigos artigos = new Artigos();
             {
-                ID = Convert.ToInt16(txtID.Text);
+                ID = Convert.ToInt16(txtID.ToString());
                 Nome = txtNome.Text;
                 Cod_Barras = txtCod_Barras.Text;
             }
 
-            //var httpClient = new HttpClient();
-            //var json = JsonConvert.SerializeObject(artigos);
-            //HttpContent httpContent = new StringContent(json);
-            //httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            //httpClient.DeleteAsync(String.Format("http://192.168.51.5:150/api/artigos/eliminar"), httpContent);
+            await Artigos.DellArtigos(artigos);
 
-            //DisplayAlert("Adicionado", "A sua Base de dados Tem novos registos", "ok");
+            DisplayAlert("Removido", "Artigo removido da base de dados", "Ok");
         }
     }
 }

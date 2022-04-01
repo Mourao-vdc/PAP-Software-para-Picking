@@ -16,7 +16,7 @@ namespace AppPicking.Models
         public string Situacao { get; set; }
         public string Quant_artigos { get; set; }
 
-        public static async Task<List<Encomendas_Artigos>> GetEncomendas()
+        public static async Task<List<Encomendas_Artigos>> GetEncomendas_Artigos()
         {
             using (HttpClient _client = new HttpClient())
             {

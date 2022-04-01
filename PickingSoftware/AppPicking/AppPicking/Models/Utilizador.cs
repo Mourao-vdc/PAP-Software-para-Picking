@@ -15,7 +15,7 @@ namespace AppPicking.Models
         public string Email { get; set; }
         public string Password { get; set; }
 
-        public static async Task<List<Utilizador>> GetEncomendas()
+        public static async Task<List<Utilizador>> GetUtilizadores()
         {
             using (HttpClient _client = new HttpClient())
             {

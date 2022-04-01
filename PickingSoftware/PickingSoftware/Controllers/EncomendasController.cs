@@ -10,11 +10,56 @@ namespace PickingSoftware.Controllers
     {
         [Route("Todas")]
         [HttpGet]
-        public HttpResponseMessage GetArtigos()
+        public HttpResponseMessage GetEncomendas()
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, Models.Encomendas.GetArtigos());
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Encomendas.GetEncomendas());
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
+
+        [Route("Adicionar")]
+        [HttpPost]
+        public HttpResponseMessage GetAdicionar(Models.Encomendas _encomendas)
+        {
+            try
+            {
+                Models.Encomendas.GetAdicionar(_encomendas);
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
+
+        [Route("Editar")]
+        [HttpPut]
+        public HttpResponseMessage GetEditar(Models.Encomendas _encomendas)
+        {
+            try
+            {
+                Models.Encomendas.GetEditar(_encomendas);
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
+
+        [Route("Eliminar")]
+        [HttpDelete]
+        public HttpResponseMessage GetEliminar(Models.Encomendas _encomendas)
+        {
+            try
+            {
+                Models.Encomendas.GetEliminar(_encomendas);
+                return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception ex)
             {

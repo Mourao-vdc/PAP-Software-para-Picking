@@ -6,7 +6,7 @@
     <ContentView>
         <StackLayout>
         <!-- Place new controls here -->
-        <dg:DataGrid x:Name="lvArtigos"  ItemsSource="{Binding ID}" SelectionEnabled="True" SelectedItem="{Binding Nome}" RowHeight="70" HeaderHeight="50"  
+            <dg:DataGrid x:Name="lvArtigos"  ItemsSource="{Binding ID}" SelectionEnabled="True" SelectedItem="{Binding Nome}" RowHeight="70" HeaderHeight="50"  
                     BorderColor="Black" HeaderBackground="LightGray" PullToRefreshCommand="{Binding Cod_Barras}" IsRefreshing="{Binding IsRefreshing}" ActiveRowColor="#8899AA">
             <x:Arguments>
                 <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>

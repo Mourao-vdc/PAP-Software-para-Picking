@@ -14,7 +14,7 @@ namespace AppPicking.Models
         public int ID_Permicoes { get; set; }
         public string Estado { get; set; }
 
-        public static async Task<List<Permicoes_Gerais>> GetEncomendas()
+        public static async Task<List<Permicoes_Gerais>> GetPermicoes_Gerais()
         {
             using (HttpClient _client = new HttpClient())
             {
