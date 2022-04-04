@@ -36,6 +36,10 @@ namespace PickingSoftware.Models
             return _tst;
         }
 
+        /// <summary>
+        /// Adicionar
+        /// </summary>
+        /// <param name="_encomendas"></param>
         public static void GetAdicionar(Encomendas _encomendas)
         {
             SqlConnection con =

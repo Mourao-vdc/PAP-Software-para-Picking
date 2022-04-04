@@ -8,28 +8,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("AppPicking.Views.PageAddEncomendas.xaml.xaml", "Views/PageAddEncomendas.xaml.xaml", typeof(global::AppPicking.Views.PageAddEncomendas))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("AppPicking.Views.PageAddArtigos.xaml", "Views/PageAddArtigos.xaml", typeof(global::AppPicking.Views.PageAddArtigos))]
 
 namespace AppPicking.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\PageAddEncomendas.xaml.xaml")]
-    public partial class PageAddEncomendas : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\PageAddArtigos.xaml")]
+    public partial class PageAddArtigos : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Picker txtIDUtilizador;
+        private global::Xamarin.Forms.Entry txtNome;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.DatePicker dpData;
+        private global::Xamarin.Forms.Entry txtCod_Barras;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Button AddButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PageAddEncomendas));
-            txtIDUtilizador = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "txtIDUtilizador");
-            dpData = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.DatePicker>(this, "dpData");
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PageAddArtigos));
+            txtNome = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "txtNome");
+            txtCod_Barras = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "txtCod_Barras");
             AddButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "AddButton");
         }
     }

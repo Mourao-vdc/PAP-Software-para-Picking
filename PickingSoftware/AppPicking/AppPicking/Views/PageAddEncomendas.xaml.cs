@@ -20,9 +20,28 @@ namespace AppPicking.Views
         public int ID_Utilizadores { get; set; }
         public string Data { get; set; }
 
+        private List<Models.Utilizador> listaUtilizadores = new List<Utilizador>();
+
         public PageAddEncomendas()
         {
             InitializeComponent();
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var _list = await Models.Utilizador.GetUtilizadores();
+
+            listaUtilizadores = _list;
+
+            foreach (var _item in _list)
+            {
+                txtIDUtilizador.Items.Add(_item.ID.ToString());
+            }
+
+            //txtID.Items.Add();
+            //txtID.ItemsSource = new ObservableCollection<Models.Artigos>(await Models.Artigos.GetIDArtigos());
         }
 
         private async void AddButton_Clicked(object sender, EventArgs e)
@@ -35,17 +54,13 @@ namespace AppPicking.Views
             }
             else
             {
-                Encomendas encomendas = new Encomendas();
+                Encomendas encomendas = new Encomendas()
                 {
-                    ID_Utilizadores = txtIDUtilizador.SelectedIndex;
-                    Data = dpData.Date.ToString();
-                }
+                    ID_Utilizadores = txtIDUtilizador.SelectedIndex +1,
+                    Data = dpData.Date.ToString(),
+                };
 
-                var httpClient = new HttpClient();
-                var json = JsonConvert.SerializeObject(encomendas);
-                HttpContent httpContent = new StringContent(json);
-                httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                httpClient.PostAsync("http://192.168.51.5:150/api/encomendas/adicionar", httpContent);
+                await Encomendas.AddEncomendas(encomendas);
 
                 DisplayAlert("Adicionado", "Encomenda adicionada com sucesso", "Ok");
             }

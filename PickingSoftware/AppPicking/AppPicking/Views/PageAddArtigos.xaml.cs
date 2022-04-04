@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -38,12 +39,18 @@ namespace AppPicking.Views
             }
             else
             {
-                Artigos artigos = new Artigos();
+
+                Artigos artigos = new Artigos()
                 {
                     //ID = Convert.ToInt16(txtID.Text);
-                    Nome = txtNome.Text;
-                    Cod_Barras = txtCod_Barras.Text;
-                }
+                    Nome = txtNome.Text,
+                    Cod_Barras = txtCod_Barras.Text,
+                };
+
+                Debug.WriteLine("");
+                Debug.WriteLine("NOME");
+                Debug.WriteLine(artigos.Nome);
+                Debug.WriteLine("");
 
                 await Artigos.AddArtigos(artigos);
 

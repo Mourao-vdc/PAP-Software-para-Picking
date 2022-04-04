@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
              x:Class="AppPicking.Views.PageDataGridEncomendas">
     <ContentView>
         <StackLayout>
@@ -18,13 +19,7 @@
                 </dg:DataGrid.HeaderFontSize>
                 <dg:DataGrid.Columns>
                     <dg:DataGridColumn Title="ID" PropertyName="ID" Width="1*"></dg:DataGridColumn>
-                    <dg:DataGridColumn PropertyName="Nome" Width="2*">
-                        <dg:DataGridColumn.FormattedTitle>
-                            <FormattedString>
-                                <Span Text="ID_Utilizadores" FontSize="13" TextColor="White" FontAttributes="Bold"/>
-                            </FormattedString>
-                        </dg:DataGridColumn.FormattedTitle>
-                    </dg:DataGridColumn>
+                    <dg:DataGridColumn Title="ID_Utilizadores" PropertyName="ID_Utilizadores" Width="2*"/>
                     <dg:DataGridColumn Title="Data" PropertyName="Data" Width="2*"/>
                 </dg:DataGrid.Columns>
                 <dg:DataGrid.RowsBackgroundColorPalette>

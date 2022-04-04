@@ -8,16 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("AppPicking.Views.PageEditEncomendas.xaml", "Views/PageEditEncomendas.xaml", typeof(global::AppPicking.Views.PageEditEncomendas))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("AppPicking.Views.PageAddEncomendas.xaml", "Views/PageAddEncomendas.xaml", typeof(global::AppPicking.Views.PageAddEncomendas))]
 
 namespace AppPicking.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\PageEditEncomendas.xaml")]
-    public partial class PageEditEncomendas : global::Xamarin.Forms.ContentPage {
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Picker txtID;
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\PageAddEncomendas.xaml")]
+    public partial class PageAddEncomendas : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Picker txtIDUtilizador;
@@ -26,19 +23,14 @@ namespace AppPicking.Views {
         private global::Xamarin.Forms.DatePicker dpData;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Button EditButton;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Button searchButton;
+        private global::Xamarin.Forms.Button AddButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PageEditEncomendas));
-            txtID = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "txtID");
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PageAddEncomendas));
             txtIDUtilizador = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "txtIDUtilizador");
             dpData = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.DatePicker>(this, "dpData");
-            EditButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "EditButton");
-            searchButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "searchButton");
+            AddButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "AddButton");
         }
     }
 }

@@ -4,5 +4,29 @@
         <name>PickingSoftware</name>
     </assembly>
     <members>
+        <member name="M:PickingSoftware.Models.Artigos.GetAdicionar(PickingSoftware.Models.Artigos)">
+            <summary>
+            Adicionar
+            </summary>
+            <param name="_artigo"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Artigos.GetEditar(PickingSoftware.Models.Artigos)">
+            <summary>
+            Editar
+            </summary>
+            <param name="_artigo"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Artigos.GetEliminar(System.Int32)">
+            <summary>
+            Eliminar
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Encomendas.GetAdicionar(PickingSoftware.Models.Encomendas)">
+            <summary>
+            Adicionar
+            </summary>
+            <param name="_encomendas"></param>
+        </member>
     </members>
 </doc>

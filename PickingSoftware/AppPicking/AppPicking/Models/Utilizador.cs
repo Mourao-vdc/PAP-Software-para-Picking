@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,9 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var content = await _client.GetStringAsync("http://192.168.51.5:150/swagger/ui/index");
+                var content = await _client.GetStringAsync("http://192.168.51.5:150/api/Utilizador/todas");
+
+                Debug.WriteLine(content);
 
                 return JsonConvert.DeserializeObject<List<Utilizador>>(content);
             }

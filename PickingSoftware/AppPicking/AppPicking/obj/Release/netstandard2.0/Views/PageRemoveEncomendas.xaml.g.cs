@@ -8,16 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("AppPicking.Views.PageEditEncomendas.xaml", "Views/PageEditEncomendas.xaml", typeof(global::AppPicking.Views.PageEditEncomendas))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("AppPicking.Views.PageRemoveEncomendas.xaml", "Views/PageRemoveEncomendas.xaml", typeof(global::AppPicking.Views.PageRemoveEncomendas))]
 
 namespace AppPicking.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\PageEditEncomendas.xaml")]
-    public partial class PageEditEncomendas : global::Xamarin.Forms.ContentPage {
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Picker txtID;
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\PageRemoveEncomendas.xaml")]
+    public partial class PageRemoveEncomendas : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Picker txtIDUtilizador;
@@ -33,8 +30,7 @@ namespace AppPicking.Views {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PageEditEncomendas));
-            txtID = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "txtID");
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PageRemoveEncomendas));
             txtIDUtilizador = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "txtIDUtilizador");
             dpData = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.DatePicker>(this, "dpData");
             EditButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "EditButton");

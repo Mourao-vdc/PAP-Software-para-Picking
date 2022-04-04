@@ -4,28 +4,16 @@
              x:Class="AppPicking.Views.PageEditEncomendas">
     <ContentPage.Content>
         <StackLayout Margin="20,20,20,20">
-            <Label Text="Editar Encomenda"
+            <Label Text="Editar Encomendas"
                    TextColor="Black"
                    HorizontalTextAlignment="Center"
                    FontSize="Title"/>
 
-            <Picker x:Name="txtIDUtilizador" Title="ID do Utilizador" FontSize="18" TitleColor="DarkGray" TextColor="Black">
-                <Picker.Items>
-                    <x:String>India</x:String>
-                    <x:String>United States</x:String>
-                    <x:String>Australia</x:String>
-                    <x:String>Bangladesh</x:String>
-                    <x:String>Canada</x:String>
-                    <x:String>China</x:String>
-                    <x:String>Germany</x:String>
-                    <x:String>Mauritius</x:String>
-                    <x:String>Nepal</x:String>
-                    <x:String>Brazil</x:String>
-                </Picker.Items>
-            </Picker>
+            <Picker x:Name="txtID" Title="ID da encomenda" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
 
-            <DatePicker x:Name="dpData" TextColor="Black" FontSize="18"
-                />
+            <Picker x:Name="txtIDUtilizador" Title="ID do utilizador" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
+
+            <DatePicker x:Name="dpData" TextColor="Black" FontSize="18"/>
 
             <Button IsVisible="false" BackgroundColor="Black" Text="Adicionar"
                     x:Name="EditButton"

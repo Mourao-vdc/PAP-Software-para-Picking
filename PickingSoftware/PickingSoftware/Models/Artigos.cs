@@ -32,6 +32,10 @@ namespace PickingSoftware.Models
             return _tst;
         }
 
+        /// <summary>
+        /// Adicionar
+        /// </summary>
+        /// <param name="_artigo"></param>
         public static void GetAdicionar(Artigos _artigo)
         {
             SqlConnection con =
@@ -39,7 +43,7 @@ namespace PickingSoftware.Models
             con.Open();
             string query = "INSERT INTO Artigos(" +
                 "Nome,Cod_Barras)" +
-                "VALUES (@Nome,@Cod_Barras)";
+                " VALUES (@Nome,@Cod_Barras)";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
                 //cmd.Parameters.AddWithValue("@ID", _artigo.ID);
@@ -52,13 +56,17 @@ namespace PickingSoftware.Models
 
         }
 
+        /// <summary>
+        /// Editar
+        /// </summary>
+        /// <param name="_artigo"></param>
         public static void GetEditar(Artigos _artigo)
         {
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
             string query = "UPDATE Artigos SET(" +
-                "ID=@ID,Nome=@Nome,Cod_Barras=@Cod_Barras)" +
+                "Nome=@Nome,Cod_Barras=@Cod_Barras)" +
                 "WHERE ID=@ID";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
@@ -72,7 +80,11 @@ namespace PickingSoftware.Models
 
         }
 
-        public static void GetEliminar(Artigos _artigo)
+        /// <summary>
+        /// Eliminar
+        /// </summary>
+        /// <param name="id"></param>
+        public static void GetEliminar(int id)
         {
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
@@ -81,6 +93,7 @@ namespace PickingSoftware.Models
                 "WHERE ID=@ID";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
+                cmd.Parameters.AddWithValue("@ID", id);
                 cmd.ExecuteNonQuery();
 
                 con.Close();

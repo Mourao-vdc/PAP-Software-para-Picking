@@ -157,3 +157,11 @@ C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoft
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\obj\Release\PickingSoftware.csproj.CopyComplete
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\obj\Release\PickingSoftware.dll
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\obj\Release\PickingSoftware.pdb
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\bin\Xamarin.Forms.Core.dll
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\bin\Xamarin.Forms.DataGrid.dll
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\bin\Xamarin.Forms.Platform.dll
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\bin\Xamarin.Forms.Xaml.dll
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\bin\Xamarin.Forms.Core.pdb
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\bin\Xamarin.Forms.Core.xml
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\bin\Xamarin.Forms.Xaml.pdb
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\bin\Xamarin.Forms.Xaml.xml

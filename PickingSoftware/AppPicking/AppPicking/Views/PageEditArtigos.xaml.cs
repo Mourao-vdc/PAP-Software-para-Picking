@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -20,9 +21,28 @@ namespace AppPicking.Views
         public string Nome { get; set; }
         public string Cod_Barras { get; set; }
 
+        private List<Models.Artigos> listaArtigos = new List<Artigos>();
+
         public PageEditArtigos()
         {
             InitializeComponent();
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var _list = await Models.Artigos.GetArtigos();
+
+            listaArtigos = _list;
+
+            foreach(var _item in _list)
+            {
+                txtID.Items.Add(_item.ID.ToString());
+            }
+            
+            //txtID.Items.Add();
+            //txtID.ItemsSource = new ObservableCollection<Models.Artigos>(await Models.Artigos.GetIDArtigos());
         }
 
         private async void searchButton_Clicked(object sender, EventArgs e)
@@ -30,12 +50,15 @@ namespace AppPicking.Views
             if (txtID.SelectedIndex == -1)
 
             {
-
                 await DisplayAlert("Alerta", "Artigo não encontrado", "Ok");
                 return;
             }
             else
             {
+                var _artigo = listaArtigos.ElementAt(txtID.SelectedIndex);
+
+                txtNome.Text = _artigo.Nome;
+                txtCod_Barras.Text = _artigo.Cod_Barras;
 
                 EditButton.IsVisible = true;
                 searchButton.IsVisible = false;
@@ -52,13 +75,25 @@ namespace AppPicking.Views
             }
             else
             {
-                Artigos artigos = new Artigos();
+
+                Artigos artigos = new Artigos()
                 {
-                    ID = Convert.ToInt16(txtID.ToString());
-                    Nome = txtNome.Text;
-                    Cod_Barras = txtCod_Barras.Text;
-                }
+                    //ID = txtID.SelectedIndex,
+                    //ID = Convert.ToInt32(txtID.ToString());
+                    Nome = txtNome.Text,
+                    Cod_Barras = txtCod_Barras.Text,
+                };
+
+                await Artigos.EditArtigos(artigos);
+
                 DisplayAlert("Editado", "Artigo atulizado com sucesso", "Ok");
+
+                txtID.SelectedIndex = -1;
+                txtNome.Text = "";
+                txtCod_Barras.Text = "";
+
+                EditButton.IsVisible = false;
+                searchButton.IsVisible = true;
             }            
         }
     }
