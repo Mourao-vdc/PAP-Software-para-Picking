@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 
 namespace PickingSoftware.Models
 {
@@ -20,7 +17,7 @@ namespace PickingSoftware.Models
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
-            string query = "SELECT * FROM Utilizador";
+            string query = "SELECT ID, ID_GRUPO, Nome, Email from Utilizador";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
 
@@ -33,23 +30,26 @@ namespace PickingSoftware.Models
                     ID_Grupo = (int)dr["ID_Grupo"],
                     Nome = dr["Nome"].ToString(),
                     Email = dr["Email"].ToString(),
-                    Password = dr["Password"].ToString()
+                    //Password = dr["Password"].ToString()
                 });
             }
             return _tst;
         }
 
+        /// <summary>
+        /// Adicionar
+        /// </summary>
+        /// <param name="_utilizador"></param>
         public static void GetAdicionar(Utilizador _utilizador)
         {
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
             string query = "INSERT INTO Utilizador(" +
-                "ID_Grupo,Nome,Email,Password)" +
-                "VALUES (@ID_Grupo,@Nome,@Email,@Password)";
+                "Nome,Email,Password)" +
+                " VALUES (@Nome,@Email,@Password)";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                cmd.Parameters.AddWithValue("@ID_Grupo", _utilizador.ID_Grupo);
                 cmd.Parameters.AddWithValue("@Nome", _utilizador.Nome);
                 cmd.Parameters.AddWithValue("@Email", _utilizador.Email);
                 cmd.Parameters.AddWithValue("@Password", _utilizador.Password);
@@ -59,6 +59,11 @@ namespace PickingSoftware.Models
             }
 
         }
+
+        /// <summary>
+        /// Editar
+        /// </summary>
+        /// <param name="_utilizador"></param>
 
         public static void GetEditar(Utilizador _utilizador)
         {
@@ -67,7 +72,7 @@ namespace PickingSoftware.Models
             con.Open();
             string query = "UPDATE Utilizador SET(" +
                 "ID_Grupo=@ID_Grupo,Nome=@Nome,Email=@Email,Password=@Password)" +
-                "WHERE ID=@ID";
+                " WHERE ID=@ID";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
                 cmd.Parameters.AddWithValue("@ID_Grupo", _utilizador.ID_Grupo);
@@ -81,19 +86,43 @@ namespace PickingSoftware.Models
 
         }
 
-        public static void GetEliminar(Utilizador _utilizador)
+        /// <summary>
+        /// Eliminar
+        /// </summary>
+        /// <param name="id"></param>
+        public static void GetEliminar(int id)
         {
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
             string query = "DELETE Utilizador" +
-                "WHERE ID=@ID";
+                " WHERE ID=@ID";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
+                cmd.Parameters.AddWithValue("@ID",id);
                 cmd.ExecuteNonQuery();
 
                 con.Close();
             }
+        }
+
+        /// <summary>
+        /// Login
+        /// </summary>
+        /// <param name="_utilizador"></param>
+        public static bool UserLogin(Utilizador _utilizador)
+        {
+            SqlConnection con =
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+            con.Open();
+
+            using (SqlCommand cmd = new SqlCommand("Utilizador_login",con))
+            {
+                cmd.Parameters.AddWithValue("@Nome", _utilizador.Nome);
+                cmd.Parameters.AddWithValue("@Password", _utilizador.Password);
+            }
+
+            return true;
         }
     }
 }

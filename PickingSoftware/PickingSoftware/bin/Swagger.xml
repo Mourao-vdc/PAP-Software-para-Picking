@@ -14,6 +14,7 @@
             <summary>
             Editar
             </summary>
+            <param name="id"></param>
             <param name="_artigo"></param>
         </member>
         <member name="M:PickingSoftware.Models.Artigos.GetEliminar(System.Int32)">
@@ -27,6 +28,108 @@
             Adicionar
             </summary>
             <param name="_encomendas"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Encomendas.GetEditar(PickingSoftware.Models.Encomendas)">
+            <summary>
+            Editar
+            </summary>
+            <param name="_encomendas"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Encomendas.GetEliminar(System.Int32)">
+            <summary>
+            Eliminar
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Encomendas_Artigos.GetAdicionar(PickingSoftware.Models.Encomendas_Artigos)">
+            <summary>
+            Adicionar
+            </summary>
+            <param name="_encomendasartigos"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Encomendas_Artigos.GetEditar(PickingSoftware.Models.Encomendas_Artigos)">
+            <summary>
+            Editar
+            </summary>
+            <param name="_encomendasartigos"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Encomendas_Artigos.GetEliminar(System.Int32)">
+            <summary>
+            Adicionar
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Grupos.GetAdicionar(PickingSoftware.Models.Grupos)">
+            <summary>
+            Adicionar
+            </summary>
+            <param name="_grupos"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Grupos.GetEditar(PickingSoftware.Models.Grupos)">
+            <summary>
+            Editar
+            </summary>
+            <param name="_grupos"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Grupos.GetEliminar(System.Int32)">
+            <summary>
+            Eliminar
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Permicoes_Gerais.GetAdicionar(PickingSoftware.Models.Permicoes_Gerais)">
+            <summary>
+            Adicionar
+            </summary>
+            <param name="_permicoesgerais"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Permicoes_Gerais.GetEditar(PickingSoftware.Models.Permicoes_Gerais)">
+            <summary>
+            Editar
+            </summary>
+            <param name="_permicoesgerais"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Permicoes_Gerais.GetEliminar(System.Int32)">
+            <summary>
+            Eliminar
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Permicoes_List.GetAdicionar(PickingSoftware.Models.Permicoes_List)">
+            <summary>
+            Adicionar
+            </summary>
+            <param name="_permicoeslist"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Permicoes_List.GetEditar(PickingSoftware.Models.Permicoes_List)">
+            <summary>
+            Editar
+            </summary>
+            <param name="_permicoesgerais"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Permicoes_List.GetEliminar(System.Int32)">
+            <summary>
+            Eliminar
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Utilizador.GetAdicionar(PickingSoftware.Models.Utilizador)">
+            <summary>
+            Adicionar
+            </summary>
+            <param name="_utilizador"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Utilizador.GetEditar(PickingSoftware.Models.Utilizador)">
+            <summary>
+            Editar
+            </summary>
+            <param name="_utilizador"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Utilizador.GetEliminar(System.Int32)">
+            <summary>
+            Eliminar
+            </summary>
+            <param name="id"></param>
         </member>
     </members>
 </doc>

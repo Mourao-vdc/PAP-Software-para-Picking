@@ -36,6 +36,10 @@ namespace PickingSoftware.Models
             return _tst;
         }
 
+        /// <summary>
+        /// Adicionar
+        /// </summary>
+        /// <param name="_permicoesgerais"></param>
         public static void GetAdicionar(Permicoes_Gerais _permicoesgerais)
         {
             SqlConnection con =
@@ -43,7 +47,7 @@ namespace PickingSoftware.Models
             con.Open();
             string query = "INSERT INTO Permicoes_Gerais(" +
                 "ID_Grupo,ID_Permicoes,Estado)" +
-                "VALUES (@ID_Grupo,@ID_Permicoes,@Estado)";
+                " VALUES (@ID_Grupo,@ID_Permicoes,@Estado)";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
                 cmd.Parameters.AddWithValue("@ID_Grupo", _permicoesgerais.ID_Grupo);
@@ -56,6 +60,10 @@ namespace PickingSoftware.Models
 
         }
 
+        /// <summary>
+        /// Editar
+        /// </summary>
+        /// <param name="_permicoesgerais"></param>
         public static void GetEditar(Permicoes_Gerais _permicoesgerais)
         {
             SqlConnection con =
@@ -63,7 +71,7 @@ namespace PickingSoftware.Models
             con.Open();
             string query = "UPDATE Permicoes_Gerais SET(" +
                 "ID_Grupo=@ID_Grupo,ID_Permicoes=@ID_Permicoes,Estado=@Estado)" +
-                "WHERE ID=@ID";
+                " WHERE ID=@ID";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
                 cmd.Parameters.AddWithValue("@ID_Grupo", _permicoesgerais.ID_Grupo);
@@ -76,15 +84,20 @@ namespace PickingSoftware.Models
 
         }
 
-        public static void GetEliminar(Permicoes_Gerais _permicoesgerais)
+        /// <summary>
+        /// Eliminar
+        /// </summary>
+        /// <param name="id"></param>
+        public static void GetEliminar(int id)
         {
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
             string query = "DELETE Permicoes_Gerais" +
-                "WHERE ID=@ID";
+                " WHERE ID=@ID";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
+                cmd.Parameters.AddWithValue("@ID",id);
                 cmd.ExecuteNonQuery();
 
                 con.Close();

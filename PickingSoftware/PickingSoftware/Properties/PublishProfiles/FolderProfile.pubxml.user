@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>\\serversofttests\inetpub\wwwroot\Andre_2022</_PublishTargetUrl>
-    <History>True|2022-04-04T16:31:16.5072264Z;True|2022-04-04T17:02:59.9897190+01:00;True|2022-04-04T17:01:32.3658074+01:00;True|2022-04-04T16:59:27.0649192+01:00;True|2022-04-04T16:59:04.4039993+01:00;True|2022-04-04T16:58:41.9388850+01:00;True|2022-04-04T16:57:38.8808824+01:00;True|2022-04-04T16:31:05.5249053+01:00;True|2022-04-04T12:43:34.2122257+01:00;True|2022-04-04T12:23:20.8111415+01:00;True|2022-04-04T10:36:26.5875150+01:00;True|2022-03-28T17:16:48.2686948+01:00;True|2022-03-28T11:35:34.9027024+01:00;</History>
+    <History>True|2022-04-05T15:11:51.4408249Z;True|2022-04-05T15:59:15.3930495+01:00;True|2022-04-05T15:52:55.8492446+01:00;True|2022-04-05T15:47:30.0957399+01:00;True|2022-04-05T15:39:09.7545022+01:00;True|2022-04-05T09:32:10.1852458+01:00;True|2022-04-04T17:31:16.5072264+01:00;True|2022-04-04T17:02:59.9897190+01:00;True|2022-04-04T17:01:32.3658074+01:00;True|2022-04-04T16:59:27.0649192+01:00;True|2022-04-04T16:59:04.4039993+01:00;True|2022-04-04T16:58:41.9388850+01:00;True|2022-04-04T16:57:38.8808824+01:00;True|2022-04-04T16:31:05.5249053+01:00;True|2022-04-04T12:43:34.2122257+01:00;True|2022-04-04T12:23:20.8111415+01:00;True|2022-04-04T10:36:26.5875150+01:00;True|2022-03-28T17:16:48.2686948+01:00;True|2022-03-28T11:35:34.9027024+01:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Microsoft.AspNetCore.Authentication.Abstractions.dll">
@@ -138,10 +138,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/28/2022 09:08:28</publishTime>
     </File>
     <File Include="bin/PickingSoftware.dll">
-      <publishTime>04/04/2022 17:31:12</publishTime>
+      <publishTime>04/05/2022 16:11:48</publishTime>
     </File>
     <File Include="bin/PickingSoftware.pdb">
-      <publishTime>04/04/2022 17:31:12</publishTime>
+      <publishTime>04/05/2022 16:11:48</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>03/28/2022 09:08:20</publishTime>

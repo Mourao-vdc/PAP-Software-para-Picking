@@ -95,7 +95,7 @@ namespace AppPicking.Models
 
                 var content =
                     new StringContent(json, Encoding.UTF8, "application/json");*/
-                var response = await _client.DeleteAsync("http://192.168.51.5:150/api/artigos/eliminar/"+id);
+                var response = await _client.DeleteAsync("http://192.168.51.5:150/api/artigos/eliminar/" + id);
 
                 Debug.WriteLine("");
                 Debug.WriteLine("StatusCode");

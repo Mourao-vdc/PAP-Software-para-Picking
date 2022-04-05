@@ -52,13 +52,13 @@ namespace PickingSoftware.Controllers
             }
         }
 
-        [Route("Eliminar")]
+        [Route("Eliminar/{id}")]
         [HttpDelete]
-        public HttpResponseMessage GetEliminar(Models.Encomendas _encomendas)
+        public HttpResponseMessage GetEliminar(int id)
         {
             try
             {
-                Models.Encomendas.GetEliminar(_encomendas);
+                Models.Encomendas.GetEliminar(id);
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception ex)

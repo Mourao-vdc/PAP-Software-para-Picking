@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPicking.Views.PageLogin"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <StackLayout Padding="40" VerticalOptions="Center"
+                     HorizontalOptions="FillAndExpand">
+            <Image Source="icon_logo.ico" />
+            <Entry x:Name="txtNome" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Nome"/>
+            <Entry x:Name="txtPassword" IsPassword="True" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Password" Margin="0,5,0,10"/>
+            <CheckBox x:Name="ShowPassword" Margin="0,0,0,5" Color="DarkGray" CheckedChanged="ShowPassword_CheckedChanged"/>
+            <Button BackgroundColor="Black" Text="Login" Clicked="Button_Clicked"/>
+            <Label Padding="0,10,0,0" FontSize="20" TextColor="DarkGray" Text="Register" HorizontalOptions="Center" FontAttributes="Bold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

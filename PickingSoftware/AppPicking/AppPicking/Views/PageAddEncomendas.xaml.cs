@@ -40,8 +40,8 @@ namespace AppPicking.Views
                 txtIDUtilizador.Items.Add(_item.ID.ToString());
             }
 
-            //txtID.Items.Add();
-            //txtID.ItemsSource = new ObservableCollection<Models.Artigos>(await Models.Artigos.GetIDArtigos());
+            
+
         }
 
         private async void AddButton_Clicked(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace AppPicking.Views
             {
                 Encomendas encomendas = new Encomendas()
                 {
-                    ID_Utilizadores = txtIDUtilizador.SelectedIndex +1,
+                    ID_Utilizadores = int.Parse(txtIDUtilizador.SelectedItem.ToString()),
                     Data = dpData.Date.ToString(),
                 };
 

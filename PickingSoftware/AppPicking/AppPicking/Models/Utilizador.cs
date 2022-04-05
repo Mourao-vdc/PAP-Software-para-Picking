@@ -27,5 +27,50 @@ namespace AppPicking.Models
                 return JsonConvert.DeserializeObject<List<Utilizador>>(content);
             }
         }
+
+        public static async Task<bool> AddUtilizadores(Utilizador utilizador)
+        {
+            Debug.Write("||||||");
+            Debug.Write("Inserir");
+            Debug.Write("||||||");
+            using (HttpClient _client = new HttpClient())
+            {
+                var json = JsonConvert.SerializeObject(utilizador);
+                Debug.WriteLine("");
+                Debug.WriteLine(json);
+                Debug.WriteLine("");
+
+                var content =
+                    new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await _client.PostAsync("http://192.168.51.5:150/api/utilizador/adicionar", content);
+
+                Debug.WriteLine("");
+                Debug.WriteLine("StatusCode");
+                Debug.WriteLine(response.StatusCode.ToString());
+                Debug.WriteLine(await response.Content.ReadAsStringAsync());
+                Debug.WriteLine("");
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+
+                else
+                    return false;
+            }
+        }
+
+        public static async Task<bool> Userlogin(Utilizador utilizador)
+        {
+            using (HttpClient _client = new HttpClient())
+            {
+
+                var respomse = await _client.GetAsync("http://192.168.51.5:150/api/Utilizador/Login");
+
+                if (respomse.IsSuccessStatusCode)
+                    return true;
+
+                else
+                    return false;
+            }
+        }
     }
 }

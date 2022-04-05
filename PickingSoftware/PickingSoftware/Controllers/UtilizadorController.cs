@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web;
 using System.Web.Http;
 
 namespace PickingSoftware.Controllers
@@ -55,14 +52,32 @@ namespace PickingSoftware.Controllers
             }
         }
 
-        [Route("Eliminar")]
+        [Route("Eliminar/{id}")]
         [HttpDelete]
-        public HttpResponseMessage GetEliminar(Models.Utilizador _utilizador)
+        public HttpResponseMessage GetEliminar(int id)
         {
             try
             {
-                Models.Utilizador.GetEliminar(_utilizador);
+                Models.Utilizador.GetEliminar(id);
                 return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
+
+        [Route("Login")]
+        [HttpGet]
+        public HttpResponseMessage UserLogin(Models.Utilizador _utilizador)
+        {
+            try
+            {
+                if (Models.Utilizador.UserLogin(_utilizador))
+                    return Request.CreateResponse(HttpStatusCode.OK);
+
+                else
+                    return Request.CreateResponse(HttpStatusCode.Unauthorized);
             }
             catch (Exception ex)
             {

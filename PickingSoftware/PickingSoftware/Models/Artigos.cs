@@ -59,6 +59,7 @@ namespace PickingSoftware.Models
         /// <summary>
         /// Editar
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="_artigo"></param>
         public static void GetEditar(Artigos _artigo)
         {
@@ -67,7 +68,7 @@ namespace PickingSoftware.Models
             con.Open();
             string query = "UPDATE Artigos SET(" +
                 "Nome=@Nome,Cod_Barras=@Cod_Barras)" +
-                "WHERE ID=@ID";
+                " WHERE ID=@ID";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
                 cmd.Parameters.AddWithValue("@ID", _artigo.ID);
@@ -90,7 +91,7 @@ namespace PickingSoftware.Models
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
             string query = "DELETE Artigos" +
-                "WHERE ID=@ID";
+                " WHERE ID=@ID";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
                 cmd.Parameters.AddWithValue("@ID", id);

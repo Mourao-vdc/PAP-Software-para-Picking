@@ -78,8 +78,7 @@ namespace AppPicking.Views
 
                 Artigos artigos = new Artigos()
                 {
-                    //ID = txtID.SelectedIndex,
-                    //ID = Convert.ToInt32(txtID.ToString());
+                    ID = int.Parse(txtID.SelectedItem.ToString()),
                     Nome = txtNome.Text,
                     Cod_Barras = txtCod_Barras.Text,
                 };

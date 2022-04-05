@@ -70,11 +70,11 @@ namespace AppPicking.Views
 
             Artigos artigos = new Artigos()
             {
-                ID = txtID.SelectedIndex + 1,
+                ID = int.Parse(txtID.SelectedItem.ToString()),
 
             };
 
-            await Artigos.DellArtigos(txtID.SelectedIndex);
+            await Artigos.DellArtigos(int.Parse(txtID.SelectedItem.ToString()));
 
             DisplayAlert("Removido", "Artigo removido da base de dados", "Ok");
 

@@ -11,7 +11,7 @@
 
             <Picker x:Name="txtIDUtilizador" Title="ID do Utilizador" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
 
-            <DatePicker x:Name="dpData" TextColor="Black" FontSize="18"/>
+            <DatePicker x:Name="dpData" Format="dd/MM/yyyy" TextColor="Black" FontSize="18"/>
 
             <Button BackgroundColor="Black" Text="Adicionar"
                     x:Name="AddButton"

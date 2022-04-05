@@ -55,13 +55,13 @@ namespace PickingSoftware.Controllers
             }
         }
 
-        [Route("Eliminar")]
+        [Route("Eliminar/{id}")]
         [HttpDelete]
-        public HttpResponseMessage GetEliminar(Models.Grupos _grupos)
+        public HttpResponseMessage GetEliminar(int id)
         {
             try
             {
-                Models.Grupos.GetEliminar(_grupos);
+                Models.Grupos.GetEliminar(id);
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception ex)

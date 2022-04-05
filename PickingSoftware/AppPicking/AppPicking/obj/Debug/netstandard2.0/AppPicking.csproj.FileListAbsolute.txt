@@ -47,3 +47,6 @@ C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageAddEncomendas.xaml.g.cs
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageEditEncomendas.xaml.g.cs
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageRemoveEncomendas.xaml.g.cs
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageDataGridUtilizadores.xaml.g.cs
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageLogin.xaml.g.cs
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageSignup.xaml.g.cs

@@ -40,6 +40,10 @@ namespace PickingSoftware.Models
             return _tst;
         }
 
+        /// <summary>
+        /// Adicionar
+        /// </summary>
+        /// <param name="_encomendasartigos"></param>
         public static void GetAdicionar(Encomendas_Artigos _encomendasartigos)
         {
             SqlConnection con =
@@ -47,7 +51,7 @@ namespace PickingSoftware.Models
             con.Open();
             string query = "INSERT INTO Encomendas_Artigos(" +
                 ",ID_Encomendas,ID_Artigos,Cod_Barras,Situacao,Quant_artigos)" +
-                "VALUES (@ID_Encomendas,@ID_Artigos,@Cod_Barras,@Situacao,@Quant_artigos)";
+                " VALUES (@ID_Encomendas,@ID_Artigos,@Cod_Barras,@Situacao,@Quant_artigos)";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
                 //cmd.Parameters.AddWithValue("@ID", _artigo.ID);
@@ -63,6 +67,10 @@ namespace PickingSoftware.Models
 
         }
 
+        /// <summary>
+        /// Editar
+        /// </summary>
+        /// <param name="_encomendasartigos"></param>
         public static void GetEditar(Encomendas_Artigos _encomendasartigos)
         {
             SqlConnection con =
@@ -70,7 +78,7 @@ namespace PickingSoftware.Models
             con.Open();
             string query = "UPDATE Encomendas_Artigos SET(" +
                 "ID_Encomendas=@ID_Encomendas,ID_Artigos=@ID_Artigos,Cod_Barras=@Cod_Barras,Situacao=@Situacao,Quant_artigos=@Quant_artigos)" +
-                "WHERE ID=@ID";
+                " WHERE ID=@ID";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
                 cmd.Parameters.AddWithValue("@ID_Encomendas", _encomendasartigos.ID_Encomendas);
@@ -85,15 +93,20 @@ namespace PickingSoftware.Models
 
         }
 
-        public static void GetEliminar(Encomendas_Artigos _encomendasartigos)
+        /// <summary>
+        /// Adicionar
+        /// </summary>
+        /// <param name="id"></param>
+        public static void GetEliminar(int id)
         {
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
             string query = "DELETE Encomendas_Artigos" +
-                "WHERE ID=@ID";
+                " WHERE ID=@ID";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
+                cmd.Parameters.AddWithValue("@ID",id);
                 cmd.ExecuteNonQuery();
 
                 con.Close();
