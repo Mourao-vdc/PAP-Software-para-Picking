@@ -79,14 +79,29 @@
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
+    
+    <!--Header menu-->
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid HeightRequest="150" BackgroundColor="#2F2F2F">
+                <Image Source="icon_logo.png" HeightRequest="80" WidthRequest="80" HorizontalOptions="Start" Margin="0,0,0,0"/>
+                <Label x:Name="Nome" Text="asdfasfc" TextColor="White" FontSize="20" VerticalOptions="EndAndExpand" Margin="10,0,0,10" HorizontalOptions="StartAndExpand"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    
+    <!--Navigation-->
     <ShellItem Route="PageLogin" FlyoutItemIsVisible="False">
         <ShellContent ContentTemplate="{DataTemplate local:PageLogin}"/>
     </ShellItem>
     <ShellItem Route="PageSignup" FlyoutItemIsVisible="False">
         <ShellContent ContentTemplate="{DataTemplate local:PageSignup}"/>
     </ShellItem>
-    
-    <FlyoutItem  Title="Encomendas" Icon="icon_encomendas.png">
+
+    <FlyoutItem Title="Encomendas" Icon="icon_encomendas.png">
+        <ShellContent Route="PageDataGridEncomendasArtigos" ContentTemplate="{DataTemplate local:PageDataGridEncomendasArtigos}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Pedidos" Icon="icon_encomendas.png">
         <ShellContent Route="PageDataGridEncomendas" ContentTemplate="{DataTemplate local:PageDataGridEncomendas}"/>
     </FlyoutItem>
     <FlyoutItem Title="Artigos" Icon="icon_artigos.png">

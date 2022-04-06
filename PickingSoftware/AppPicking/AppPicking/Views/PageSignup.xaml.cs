@@ -68,6 +68,11 @@ namespace AppPicking.Views
 
                     DisplayAlert("Adicionado", "Artigo adiciocado com sucesso", "Ok");
 
+                    txtNome.Text = "";
+                    txtEmail.Text = "";
+                    txtPassword.Text = "";
+                    txtPassword2.Text = "";
+
                     await Shell.Current.GoToAsync($"//{nameof(PageLogin)}");
                 }
             }

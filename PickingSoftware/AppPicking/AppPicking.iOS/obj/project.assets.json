@@ -924,6 +924,18 @@
           "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll": {}
         }
       },
+      "Xamarin.Forms.InputKit/3.7.2": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Plugin.InputKit.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.InputKit.dll": {}
+        }
+      },
       "AppPicking/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -933,7 +945,8 @@
           "Swashbuckle.AspNetCore.Swagger": "6.3.0",
           "Xamarin.Essentials": "1.7.1",
           "Xamarin.Forms": "5.0.0.2337",
-          "Xamarin.Forms.DataGrid": "4.8.0"
+          "Xamarin.Forms.DataGrid": "4.8.0",
+          "Xamarin.Forms.InputKit": "3.7.2"
         },
         "compile": {
           "bin/placeholder/AppPicking.dll": {}
@@ -1856,6 +1869,18 @@
           "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll": {}
         }
       },
+      "Xamarin.Forms.InputKit/3.7.2": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Plugin.InputKit.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.InputKit.dll": {}
+        }
+      },
       "AppPicking/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1865,7 +1890,8 @@
           "Swashbuckle.AspNetCore.Swagger": "6.3.0",
           "Xamarin.Essentials": "1.7.1",
           "Xamarin.Forms": "5.0.0.2337",
-          "Xamarin.Forms.DataGrid": "4.8.0"
+          "Xamarin.Forms.DataGrid": "4.8.0",
+          "Xamarin.Forms.InputKit": "3.7.2"
         },
         "compile": {
           "bin/placeholder/AppPicking.dll": {}
@@ -2788,6 +2814,18 @@
           "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll": {}
         }
       },
+      "Xamarin.Forms.InputKit/3.7.2": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Plugin.InputKit.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.InputKit.dll": {}
+        }
+      },
       "AppPicking/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -2797,7 +2835,8 @@
           "Swashbuckle.AspNetCore.Swagger": "6.3.0",
           "Xamarin.Essentials": "1.7.1",
           "Xamarin.Forms": "5.0.0.2337",
-          "Xamarin.Forms.DataGrid": "4.8.0"
+          "Xamarin.Forms.DataGrid": "4.8.0",
+          "Xamarin.Forms.InputKit": "3.7.2"
         },
         "compile": {
           "bin/placeholder/AppPicking.dll": {}
@@ -3720,6 +3759,18 @@
           "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll": {}
         }
       },
+      "Xamarin.Forms.InputKit/3.7.2": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Plugin.InputKit.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.InputKit.dll": {}
+        }
+      },
       "AppPicking/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -3729,7 +3780,8 @@
           "Swashbuckle.AspNetCore.Swagger": "6.3.0",
           "Xamarin.Essentials": "1.7.1",
           "Xamarin.Forms": "5.0.0.2337",
-          "Xamarin.Forms.DataGrid": "4.8.0"
+          "Xamarin.Forms.DataGrid": "4.8.0",
+          "Xamarin.Forms.InputKit": "3.7.2"
         },
         "compile": {
           "bin/placeholder/AppPicking.dll": {}
@@ -5694,6 +5746,33 @@
         "xamarin.forms.datagrid.nuspec"
       ]
     },
+    "Xamarin.Forms.InputKit/3.7.2": {
+      "sha512": "RVjq8yqh/+MQ/pSLBHEfVqeqOtjJV9H3htHM0U3K0omD/RNeHJZLKDQAgDAgzQan6m5DBkrGoIqOtacTNRGueg==",
+      "type": "package",
+      "path": "xamarin.forms.inputkit/3.7.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/monoandroid10.0/Plugin.InputKit.dll",
+        "lib/monoandroid10.0/Plugin.InputKit.xml",
+        "lib/monoandroid11.0/Plugin.InputKit.dll",
+        "lib/monoandroid11.0/Plugin.InputKit.xml",
+        "lib/monoandroid90/Plugin.InputKit.dll",
+        "lib/monoandroid90/Plugin.InputKit.xml",
+        "lib/netstandard1.0/Plugin.InputKit.dll",
+        "lib/netstandard1.0/Plugin.InputKit.xml",
+        "lib/netstandard2.0/Plugin.InputKit.dll",
+        "lib/netstandard2.0/Plugin.InputKit.xml",
+        "lib/uap10.0.19041/Plugin.InputKit.dll",
+        "lib/uap10.0.19041/Plugin.InputKit.pri",
+        "lib/uap10.0.19041/Plugin.InputKit.xml",
+        "lib/xamarinios10/Plugin.InputKit.dll",
+        "lib/xamarinios10/Plugin.InputKit.xml",
+        "xamarin.forms.inputkit.3.7.2.nupkg.sha512",
+        "xamarin.forms.inputkit.nuspec"
+      ]
+    },
     "AppPicking/1.0.0": {
       "type": "project",
       "path": "../AppPicking/AppPicking.csproj",
@@ -5707,7 +5786,8 @@
       "Swashbuckle.AspNetCore.Swagger >= 6.3.0",
       "Xamarin.Essentials >= 1.7.1",
       "Xamarin.Forms >= 5.0.0.2337",
-      "Xamarin.Forms.DataGrid >= 4.8.0"
+      "Xamarin.Forms.DataGrid >= 4.8.0",
+      "Xamarin.Forms.InputKit >= 3.7.2"
     ]
   },
   "packageFolders": {
@@ -5771,6 +5851,10 @@
           "Xamarin.Forms.DataGrid": {
             "target": "Package",
             "version": "[4.8.0, )"
+          },
+          "Xamarin.Forms.InputKit": {
+            "target": "Package",
+            "version": "[3.7.2, )"
           }
         }
       }

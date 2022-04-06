@@ -21,7 +21,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var content = await _client.GetStringAsync("http://192.168.51.5:150/api/encomendas/todas");
+                var content = await _client.GetStringAsync("http://192.168.51.5:150/api/Encomendas_Artigos/todas");
 
                 Debug.WriteLine(content);
 

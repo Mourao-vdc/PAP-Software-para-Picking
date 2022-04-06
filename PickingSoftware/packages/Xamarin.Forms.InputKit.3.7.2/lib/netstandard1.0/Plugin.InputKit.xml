@@ -1,0 +1,1153 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.InputKit</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.InputKit.Shared.Configuration.GlobalSetting">
+            <summary>
+            A generic option class for elements.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Configuration.GlobalSetting.Color">
+            <summary>
+            Main color of control
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Configuration.GlobalSetting.BackgroundColor">
+            <summary>
+            Background color of control
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Configuration.GlobalSetting.BorderColor">
+            <summary>
+            Border color of control
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Configuration.GlobalSetting.CornerRadius">
+            <summary>
+            If control has a corner radius, this is it.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Configuration.GlobalSetting.FontSize">
+            <summary>
+            If control has fontsize, this is it.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Configuration.GlobalSetting.Size">
+            ------------------------------------------------------------------
+             <summary>
+             Size of control. ( Like HeightRequest and WidthRequest )
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Configuration.GlobalSetting.TextColor">
+            <summary>
+            Text Color of control.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Configuration.GlobalSetting.FontFamily">
+            <summary>
+            Font family of control.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Configuration.GlobalSetting.LabelPosition">
+            <summary>
+            Label position of control.
+            </summary>
+        </member>
+        <member name="T:Plugin.InputKit.Shared.Controls.AdvancedEntry">
+            <summary>
+            This Entry contains validation and some stuffs inside
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.GlobalSetting">
+            <summary>
+            Keeps default setting of <see cref="T:Plugin.InputKit.Shared.Controls.AdvancedEntry"/>. AdvancedEntry uses this default settings to initalize.
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.AdvancedEntry.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.Text">
+            ------------------------------------------------------------------------
+             <summary>
+             Text of this input
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.Title">
+            ------------------------------------------------------------------------
+             <summary>
+             Title will be shown top of this control
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.TitleColor">
+            ------------------------------------------------------------------------
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.IconImage">
+            ------------------------------------------------------------------------
+             <summary>
+             Icons of this Entry
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.IconColor">
+            ------------------------------------------------------------------------
+             <summary>
+             Color of Icon
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.BackgroundColor">
+            ------------------------------------------------------------------------
+             <summary>
+             BackgroundColor of this Control
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.BorderColor">
+            ------------------------------------------------------------------------
+             <summary>
+             Bordercolor of this control
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.TextColor">
+            ------------------------------------------------------------------------
+             <summary>
+             Text Color of this Control
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.HorizontalTextAlignment">
+            ------------------------------------------------------------------------
+             <summary>
+             HorizontalTextAlignment of this Control
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.PlaceholderColor">
+            ------------------------------------------------------------------------
+             <summary>
+             BackgroundColor of this Control
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.Placeholder">
+            ------------------------------------------------------------------------
+             <summary>
+             Placeholder of entry
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.MaxLength">
+            <summary>
+            Maximum length of this Entry
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.MinLength">
+            ------------------------------------------------------------------------
+             <summary>
+             Minimum length of this Entry
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.CornerRadius">
+            ------------------------------------------------------------------------
+             <summary>
+             Corner radius of Entry.
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.FontFamily">
+            ------------------------------------------------------------------------
+             <summary>
+             To be added.
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.AnnotationMessage">
+            ------------------------------------------------------------------------
+             <summary>
+             This will be shown below title. This automaticly updating. If you set this manually you must set true IgnoreValidationMessage !!! 
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.AnnotationColor">
+            ------------------------------------------------------------------------
+             <summary>
+             AnnotationMessage's color.
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.Annotation">
+            ------------------------------------------------------------------------
+             <summary>
+             will be added
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.IsDisabled">
+            <summary>
+            Disabled this control
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.IsAnnotated">
+            <summary>
+            Finds this entry if Annotated
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.IsPassword">
+            <summary>
+            IsPassword situation of entry.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.IsRequired">
+            <summary>
+            Comes from IValidatable implementation. Shows this if Validated.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.ValidationMessage">
+            <summary>
+            Validation message to update automaticly. This will be shown when entry is not validated
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.IgnoreValidationMessage">
+            <summary>
+            Ignores automaticly update annotationmessage
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.CompletedCommand">
+            ----------------------------------------- -------------------------------
+             <summary>
+             Executed when entry completed.
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.FocusedCommand">
+            ----------------------------------------- -------------------------------
+             <summary>
+             Executed when entry focused.
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.UnfocusedCommand">
+            ----------------------------------------- -------------------------------
+             <summary>
+             Executed when entry unfocused.
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.CommandParameter">
+            ----------------------------------------- -------------------------------
+             <summary>
+             Parameter to send with CompletedCommand
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.RegexPattern">
+            ----------------------------------------- -------------------------------
+             <summary>
+             You need to set Annotation="RegexPattern" to use this.
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.TextFontSize">
+            <summary>
+            Changes Font Size of Entry's Text
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.Keyboard">
+            ----------------------------------------- -------------------------------
+             <summary>
+             Gets and sets keyboard type of this entry
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.ValidationPosition">
+            <summary>
+            Position of Annotation Label for AdvancedEntry
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedEntry.Nullable">
+            <summary>
+            Sets if an Empty Entry is Valid
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.AdvancedEntry.Focus">
+            <summary>
+            Focus on this entry
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.AdvancedEntry.Unfocus">
+            <summary>
+            Onfocus from this entry and hides keyboard.
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.AdvancedEntry.FocusNext">
+            <summary>
+            Automaticly finds next Advanced entry and focus it.
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.AdvancedEntry.Reset">
+            <summary>
+            Resets of current annotation check and hides annotation message 
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.AdvancedEntry.DisplayValidation">
+            ------------------------------------------------------------------------
+             <summary>
+             Triggers to display annotation message
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.Value">
+            ---------------------------------------------------------------------
+             <summary>
+             Value of slider which user selected
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.Title">
+            ---------------------------------------------------------------------
+             <summary>
+             Title of slider, It'll be shown tp of slider
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.ValueSuffix">
+            ---------------------------------------------------------------------
+             <summary>
+             It will be displayed start of value 
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.ValuePrefix">
+            ---------------------------------------------------------------------
+             <summary>
+             It'll be displayed end of value
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.MinValuePrefix">
+            <summary>
+            This will be displayed start of MinValue Text if <see cref="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.DisplayMinMaxValue"/> is true/>
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.MaxValuePrefix">
+            <summary>
+            This will be displayed start of MaxValue Text if <see cref="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.DisplayMinMaxValue"/> is true/>
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.MinValueSuffix">
+            <summary>
+            This will be displayed end of MinValue Text if <see cref="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.DisplayMinMaxValue"/> is true/>
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.MaxValueSuffix">
+            <summary>
+            This will be displayed end of MaxValue Text if <see cref="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.DisplayMinMaxValue"/> is"true/>
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.MinValue">
+            ---------------------------------------------------------------------
+             <summary>
+             Minimum value, user can slide
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.MaxValue">
+            ---------------------------------------------------------------------
+             <summary>
+             Maximum value, user can slide
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.StepValue">
+            ---------------------------------------------------------------------
+             <summary>
+             Slider Increase number
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.DisplayMinMaxValue">
+            ---------------------------------------------------------------------
+             <summary>
+             Visibility of Min value and Max value at right and left
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.TextColor">
+            ---------------------------------------------------------------------
+             <summary>
+             Text color of labels
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.IsRequired">
+            ---------------------------------------------------------------------
+             <summary>
+             This is not available for this control
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.IsValidated">
+            ---------------------------------------------------------------------
+             <summary>
+             this always true, because this control value can not be null
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AdvancedSlider.ValidationMessage">
+            ---------------------------------------------------------------------
+             <summary>
+             It's not available for this control
+             </summary>
+        </member>
+        <member name="E:Plugin.InputKit.Shared.Controls.AdvancedSlider.ValidationChanged">
+            ---------------------------------------------------------------------
+             <summary>
+             doesn't affect
+             </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.AdvancedSlider.DisplayValidation">
+            ---------------------------------------------------------------------
+             <summary>
+             It's not available for this control
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AutoCompleteView.SortingAlgorithm">
+            <summary>
+                Sorting Algorithm for the drop down list. This is a bindable property.
+            </summary>
+            <example>
+            <![CDATA[
+            SortingAlgorithm = (text, values) => values
+                .Where(t => t.ToLower().StartsWith(text.ToLower()))
+                .OrderBy(x => x)
+                .ToList();
+            ]]>
+            </example>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AutoCompleteView.Threshold">
+            <summary>
+                The number of characters the user must type before the dropdown is shown. This is a bindable property.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AutoCompleteView.SelectedItem">
+            <summary>
+                Item selected from the DropDown List. This is a bindable property.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.AutoCompleteView.ItemsSource">
+            <summary>
+                Drop Down List Items Source. This is a bindable property.
+            </summary>
+        </member>
+        <member name="T:Plugin.InputKit.Shared.Controls.CheckBox">
+            <summary>
+            A checkbox for boolean inputs. It Includes a text inside
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.CheckBox.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.CheckBox.#ctor(System.String,System.Int32)">
+            <summary>
+            Quick generator constructor
+            </summary>
+            <param name="optionName">Text to Display</param>
+            <param name="key">Value to keep it like an ID</param>
+        </member>
+        <member name="E:Plugin.InputKit.Shared.Controls.CheckBox.CheckChanged">
+            <summary>
+            Invoked when check changed
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.ApplyIsCheckedAction">
+            <summary>
+            Method to run when check changed. Default value is <see cref="M:Plugin.InputKit.Shared.Controls.CheckBox.ApplyIsChecked(Plugin.InputKit.Shared.Controls.CheckBox,System.Boolean)"/> It's not recommended to change this field. But you can set your custom <see cref="T:System.Void"/> if you really need.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.ApplyIsPressedAction">
+            <summary>
+            Applies pressed effect. Default value is <see cref="M:Plugin.InputKit.Shared.Controls.CheckBox.ApplyIsChecked(Plugin.InputKit.Shared.Controls.CheckBox,System.Boolean)"/>. You can set another <see cref="T:System.Void"/> to make custom pressed effects.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.CheckChangedCommand">
+            <summary>
+            Executed when check changed
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.CommandParameter">
+            <summary>
+            Command Parameter for Commands. If this is null, CommandParameter will be sent as itself of CheckBox
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.Key">
+            <summary>
+            You can set a Unique key for each control
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.Text">
+            <summary>
+            Text to display right of CheckBox
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.IsChecked">
+            <summary>
+            IsChecked Property
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.BoxBackgroundColor">
+            <summary>
+            Checkbox box background color. Default is LightGray
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.IsDisabled">
+            <summary>
+            Gets or sets the checkbutton enabled or not. If checkbox is disabled, checkbox can not be interacted.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.Color">
+            <summary>
+            Color of Checkbox checked
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.TextColor">
+            <summary>
+            Color of text
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.IconColor">
+            <summary>
+            Gets or sets icon color of checked state. If you leave null, checkbox will make a decision between Black and White depending on Color.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.Type">
+            <summary>
+            Which icon will be shown when checkbox is checked
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.BoxSize">
+            <summary>
+            Size of Checkbox
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.BoxSizeRequest">
+            <summary>
+            SizeRequest of CheckBox
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.TextFontSize">
+            <summary>
+            Fontsize of Checkbox text
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.BorderColor">
+            <summary>
+            Border color of around CheckBox
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.IsRequired">
+            <summary>
+            WARNING! : If you set this as required, user must set checked this control to be validated!
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.IsValidated">
+            <summary>
+            Checks if entry required and checked
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.ValidationMessage">
+            <summary>
+            Not available for this control
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.FontFamily">
+            <summary>
+            Fontfamily of CheckBox Text
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.CornerRadius">
+            <summary>
+            Corner radius of Box of CheckBox.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.CheckBox.LabelPosition">
+            <summary>
+            Gets or sets the label position.
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.CheckBox.DisplayValidation">
+            <summary>
+            Not available for this control
+            </summary>
+        </member>
+        <member name="T:Plugin.InputKit.Shared.Controls.Dropdown">
+            <summary>
+            A dropdown picker
+            </summary>
+        </member>
+        <member name="T:Plugin.InputKit.Shared.Controls.FormView">
+            <summary>
+            Quickly gets last result of all IValidatable elements inside of this
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.FormView.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.FormView.IsValidated">
+            <summary>
+            Shows if all elements inside of this are validated or not
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.FormView.CheckValidation(Xamarin.Forms.Layout{Xamarin.Forms.View})">
+            <summary>
+            Checks and element is validated or not
+            </summary>
+            <param name="view">A view which IValidated implemented</param>
+            <returns></returns>
+        </member>
+        <member name="T:Plugin.InputKit.Shared.Controls.IconView">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="T:Plugin.InputKit.Shared.Controls.RadioButton">
+            -----------------------------------------------------------------------------
+             <summary>
+             Radio Button with Text
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.GlobalSetting">
+            <summary>
+            Default values of RadioButton
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.RadioButton.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.RadioButton.#ctor(System.Object,System.String,System.Boolean)">
+            -----------------------------------------------------------------------------
+             <summary>
+             Quick generating constructor.
+             </summary>
+             <param name="value">Value to keep in radio button</param>
+             <param name="displayMember">If you send an ojbect as value. Which property will be displayed. Or override .ToString() inside of your object.</param>
+             <param name="isChecked"> Checked or not situation</param>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.RadioButton.#ctor(System.String,System.Boolean)">
+            <summary>
+            Quick generating constructor.
+            </summary>
+            <param name="text">Text to display right of Radio button </param>
+            <param name="isChecked">IsSelected situation</param>
+        </member>
+        <member name="E:Plugin.InputKit.Shared.Controls.RadioButton.Clicked">
+            <summary>
+            Click event, triggered when clicked
+            </summary>
+        </member>
+        <member name="E:Plugin.InputKit.Shared.Controls.RadioButton.Checked">
+            <summary>
+            Event triggered when the Checked property changed, which may occur due to a click or setting the 
+            IsChecked property in code.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.ApplyIsCheckedAction">
+            <summary>
+            Method to run when check changed. Default value is <see cref="M:Plugin.InputKit.Shared.Controls.RadioButton.ApplyIsChecked(System.Boolean)"/> It's not recommended to change this field. But you can set your custom <see cref="T:System.Void"/> if you really need.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.ApplyIsPressedAction">
+            <summary>
+            Applies pressed effect. Default value is <see cref="M:Plugin.InputKit.Shared.Controls.RadioButton.ApplyIsPressed(System.Boolean)"/>. You can set another <see cref="T:System.Void"/> to make custom pressed effects.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.ClickCommand">
+            <summary>
+            Click command, executed when clicked.  Parameter will be Value property if CommandParameter is not set
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.CommandParameter">
+            <summary>
+            A command parameter will be sent to commands.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.Value">
+            <summary>
+            Value to keep inside of Radio Button
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.IsChecked">
+            <summary>
+            Gets or Sets, is that Radio Button selected/choosed/Checked
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.IsDisabled">
+            <summary>
+            this control if is Disabled
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.Text">
+            <summary>
+            Text Description of Radio Button. It will be displayed right of Radio Button
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.TextFontSize">
+            <summary>
+            Fontsize of Description Text
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.CircleSize">
+            <summary>
+            Size of Radio Button
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.CircleImage">
+            <summary>
+            Set your own background image instead of default circle.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.FontFamily">
+            <summary>
+            To be added.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.Color">
+            <summary>
+            Color of Radio Button's checked.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.CircleColor">
+            <summary>
+            Color of radio button's outline border 
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.TextColor">
+            <summary>
+            Color of description text of Radio Button
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.IsPressed">
+            <summary>
+            Internal use only. Applies effect when pressed.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButton.LabelPosition">
+            <summary>
+            Gets or sets the label position.
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.RadioButton.Tapped">
+            <summary>
+            That handles tapps and triggers event, commands etc.
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.RadioButton.SetCircleSize(System.Double)">
+            <summary>
+            Sets size of Circle
+            </summary>
+        </member>
+        <member name="T:Plugin.InputKit.Shared.Controls.RadioButtonGroupView">
+            <summary>
+            Groups radiobuttons, Inherited StackLayout.
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.RadioButtonGroupView.#ctor">
+            <summary>
+            Default constructor of RadioButtonGroupView
+            </summary>
+        </member>
+        <member name="E:Plugin.InputKit.Shared.Controls.RadioButtonGroupView.SelectedItemChanged">
+            <summary>
+            Invokes when tapped on RadioButon
+            </summary>
+        </member>
+        <member name="E:Plugin.InputKit.Shared.Controls.RadioButtonGroupView.ValidationChanged">
+            <summary>
+            Implementation of IValidatable, Triggered when value changed.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButtonGroupView.SelectedItemChangedCommand">
+            <summary>
+            Executes when tapped on RadioButton
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButtonGroupView.CommandParameter">
+            <summary>
+            Command Parameter will be sent in SelectedItemChangedCommand
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.RadioButtonGroupView.DisplayValidation">
+            <summary>
+            this will be added later
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButtonGroupView.SelectedIndex">
+            <summary>
+            Returns selected radio button's index from inside of this.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButtonGroupView.SelectedItem">
+            <summary>
+            Returns selected radio button's Value from inside of this.
+            You can change the selectedItem too by sending a Value which matches ones of radio button's value
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButtonGroupView.IsRequired">
+            <summary>
+            It will be added later
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButtonGroupView.IsValidated">
+            <summary>
+            It will be added later
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.RadioButtonGroupView.ValidationMessage">
+            <summary>
+            It will be added later
+            </summary>
+        </member>
+        <member name="T:Plugin.InputKit.Shared.Controls.SelectionView">
+            <summary>
+            a custom list for selections,
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.GlobalSetting">
+            <summary>
+            Manages default values of selectionview
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.SelectionView.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.SelectionType">
+            <summary>
+            Selection Type, More types will be added later
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.IsDisabledPropertyName">
+            ----------------------------------------------------------
+             <summary>
+             Added later
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.ColumnNumber">
+            ----------------------------------------------------------
+             <summary>
+             Column of this view
+             </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.DisabledSource">
+            <summary>
+            Disables these options. They can not be choosen
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.Color">
+            <summary>
+            Color of selections
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.ItemsSource">
+            <summary>
+            Items Source of selections
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.SelectedItem">
+            <summary>
+            Sets or Gets SelectedItem of SelectionView
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.SelectedIndex">
+            <summary>
+            Sets or Gets SelectedItem of SelectionView
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.SelectedIndexes">
+            <summary>
+            To be added....
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.SelectedItems">
+            <summary>
+            Selected Items for the multiple selections, 
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.BackgroundColor">
+            <summary>
+            Changes all <see cref="P:Plugin.InputKit.Shared.Controls.SelectionView.SelectableButton.UnselectedColor"/> in <see cref="T:Plugin.InputKit.Shared.Controls.SelectionView"/>
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.LabelPosition">
+            <summary>
+            Gets or sets the label position.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.ItemDisplayBinding">
+             <summary>
+                     Gets or sets a binding that selects the property that will be displayed for each
+            object in the list of items.
+             </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.SelectionView.UpdateView">
+            <summary>
+            Updates views when data changed
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.SelectionView.UpdateColor">
+            <summary>
+            Updates colors of inside, when color property changed on runtime
+            </summary>
+        </member>
+        <member name="T:Plugin.InputKit.Shared.Controls.SelectionView.SelectableButton">
+            <summary>
+            A Button which ISelection Implemented
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.SelectionView.SelectableButton.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.SelectionView.SelectableButton.#ctor(System.Object)">
+            <summary>
+            Generates with its value
+            </summary>
+            <param name="value">Value to keep</param>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.SelectionView.SelectableButton.#ctor(System.Object,Xamarin.Forms.Color)">
+            <summary>
+            Colored Constructor
+            </summary>
+            <param name="value"></param>
+            <param name="selectionColor">Color of selected situation</param>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.SelectableButton.IsSelected">
+            <summary>
+            This button is selected or not
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.SelectionView.SelectableButton.UpdateColors">
+            <summary>
+            Updates colors, Triggered when color property changed
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.SelectableButton.Value">
+            <summary>
+            Value is stored on this control
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.SelectableButton.IsDisabled">
+            <summary>
+            This button is disabled or not. Disabled buttons(if it's true) can not be choosen.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.SelectableButton.CanChangeSelectedState">
+            <summary>
+            Defines Can Selected State Change by itself
+            </summary>
+        </member>
+        <member name="T:Plugin.InputKit.Shared.Controls.SelectionView.SelectableRadioButton">
+            <summary>
+            A Radio Button which ISelection Implemented
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.SelectionView.SelectableRadioButton.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.SelectionView.SelectableRadioButton.#ctor(System.Object)">
+            <summary>
+            Constructor with value
+            </summary>
+            <param name="value">Value to keep</param>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.SelectionView.SelectableRadioButton.#ctor(System.Object,Xamarin.Forms.Color)">
+            <summary>
+            Colored Constructor
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.SelectableRadioButton.IsSelected">
+            <summary>
+            ISelection interface property
+            </summary>
+        </member>
+        <member name="T:Plugin.InputKit.Shared.Controls.SelectionView.SelectableCheckBox">
+            <summary>
+            A CheckBox which ISelection Implemented
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.SelectionView.SelectableCheckBox.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.SelectionView.SelectableCheckBox.#ctor(System.Object)">
+            <summary>
+            Constructor with Value
+            </summary>
+            <param name="value">Parameter too keep</param>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Controls.SelectionView.SelectableCheckBox.#ctor(System.Object,Xamarin.Forms.Color)">
+            <summary>
+            Constructor with Value
+            </summary>
+            <param name="value">Parameter too keep</param>
+            <param name="color">Color of control</param>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.SelectableCheckBox.IsSelected">
+            <summary>
+            Capsulated IsChecked
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Controls.SelectionView.SelectableCheckBox.Value">
+            <summary>
+            Parameter to keep
+            </summary>
+        </member>
+        <member name="E:Plugin.InputKit.Shared.Controls.SelectionView.SelectableCheckBox.Clicked">
+            <summary>
+            Triggers when CheckChanged
+            </summary>
+        </member>
+        <member name="T:Plugin.InputKit.Shared.Controls.SelectionType">
+            <summary>
+            Types of selectionlist
+            </summary>
+        </member>
+        <member name="T:Plugin.InputKit.Shared.AnnotationType">
+            <summary>
+            Enum of Annotations. Detail will be added later.
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.None">
+            <summary>
+            None of check. Allows all inputs and returns IsValidated as true.
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.LettersOnly">
+            <summary>
+            Letter chars only
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.DigitsOnly">
+            <summary>
+            Digits characters only. Also that means 'Integer' numbers.
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.NonDigitsOnly">
+            <summary>
+            NonDigits characters only.
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.Decimal">
+            <summary>
+            Standard decimal check with coma or dot (depends on culture).
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.Email">
+            <summary>
+            Standard email check.
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.Password">
+            <summary>
+            Standard password check (at least a number and at least a char). MinLength should be set seperately.
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.Phone">
+            <summary>
+            Standard phone number check. Also you should use MinLength property with this type.
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.RegexPattern">
+            <summary>
+            You need to set RegexPattern property as your regex query to use this.
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.ShortType">
+            <summary>
+            Short Type only
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.IntType">
+            <summary>
+            Int Type only
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.LongType">
+            <summary>
+            Long Type only
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.FloatType">
+            <summary>
+            Float Type only
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.DoubleType">
+            <summary>
+            Double Type only
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.DecimalType">
+            <summary>
+            Decimal Type only
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.ByteType">
+            <summary>
+            Byte Type only
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.SByteType">
+            <summary>
+            SByte Type only
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.CharType">
+            <summary>
+            Char Type only
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.UIntType">
+            <summary>
+            UInt Type only
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.ULongType">
+            <summary>
+            ULong Type only
+            </summary>
+        </member>
+        <member name="F:Plugin.InputKit.Shared.AnnotationType.UShortType">
+            <summary>
+            UShort Type only
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Helpers.ColorExtensions.ToSurfaceColor(Xamarin.Forms.Color)">
+            <summary>
+            Defines a surface color will be black or white.
+            </summary>
+            <param name="color">Background color</param>
+            <returns>Surface color on background color</returns>
+        </member>
+        <member name="T:Plugin.InputKit.Shared.Layouts.StatefulStackLayout">
+            <summary>
+            This class generated for prevent future errors with VisualStates of StackLayout. This StackLayout has VisaulStates like 'Pressed', 'Normal' etc. 
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.Shared.Utils.PopupMenu.ItemsSource">
+            <summary>
+            Items to display.
+            </summary>
+        </member>
+        <member name="M:Plugin.InputKit.Shared.Utils.PopupMenu.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Plugin.InputKit.Shared.Utils.PopupMenu.InternalPopupEffect">
+            <summary>
+            INTERNAL USE ONLY.
+            This is used by the Popup Menu as routing effects can not normally be bound, this provides the routing effect whereas the PopupMenu provides the bindable.
+            </summary>
+        </member>
+        <member name="T:Plugin.InputKit.CrossInputKit">
+            <summary>
+            Cross InputKit
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.CrossInputKit.IsSupported">
+            <summary>
+            Gets if the plugin is supported on the current platform.
+            </summary>
+        </member>
+        <member name="P:Plugin.InputKit.CrossInputKit.Current">
+            <summary>
+            Current plugin implementation to use
+            </summary>
+        </member>
+    </members>
+</doc>

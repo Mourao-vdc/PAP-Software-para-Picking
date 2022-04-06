@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -28,18 +23,28 @@ namespace AppPicking.Views
 
             if(await Models.Utilizador.Userlogin(_user))
             {
-                await Shell.Current.GoToAsync($"//{nameof(PageDataGridEncomendas)}");
+                txtNome.Text = "";
+                txtPassword.Text = "";
+
+                await Shell.Current.GoToAsync($"//{nameof(PageDataGridEncomendasArtigos)}");
+            }
+            else
+            {
+                await DisplayAlert("Erro","Nome ou Password incorreta","Ok");
             }
         }
 
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
+            txtNome.Text = "";
+            txtPassword.Text = "";
+
             await Shell.Current.GoToAsync($"//{nameof(PageSignup)}");
         }
 
         private void ShowPassword_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            if(ShowPassword.IsChecked)
+            if (ShowPassword.IsChecked)
             {
                 txtPassword.IsPassword = false;
             }

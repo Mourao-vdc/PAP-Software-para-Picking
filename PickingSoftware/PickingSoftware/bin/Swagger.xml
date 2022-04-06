@@ -131,5 +131,11 @@
             </summary>
             <param name="id"></param>
         </member>
+        <member name="M:PickingSoftware.Models.Utilizador.UserLogin(PickingSoftware.Models.Utilizador)">
+            <summary>
+            Login
+            </summary>
+            <param name="_utilizador"></param>
+        </member>
     </members>
 </doc>

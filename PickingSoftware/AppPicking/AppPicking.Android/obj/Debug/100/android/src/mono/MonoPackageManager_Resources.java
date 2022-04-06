@@ -43,6 +43,7 @@ public class MonoPackageManager_Resources {
 		"Microsoft.Net.Http.Headers.dll",
 		"Microsoft.OpenApi.dll",
 		"Newtonsoft.Json.dll",
+		"Plugin.InputKit.dll",
 		"Swashbuckle.AspNetCore.Swagger.dll",
 		"Swashbuckle.AspNetCore.SwaggerGen.dll",
 		"Swashbuckle.AspNetCore.SwaggerUI.dll",
