@@ -52,3 +52,4 @@ C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageSignup.xaml.g.cs
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageDataGridEncomendasArtigos.xaml.g.cs
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageAddEncomendasArtigos.xaml.g.cs
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Debug\netstandard2.0\Views\PageEditEncomendasArtigos.xaml.g.cs

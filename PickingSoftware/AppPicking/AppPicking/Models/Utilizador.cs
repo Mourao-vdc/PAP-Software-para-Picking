@@ -60,27 +60,49 @@ namespace AppPicking.Models
 
         public static async Task<bool> Userlogin(Utilizador utilizador)
         {
-            using (HttpClient _client = new HttpClient())
+
+            Debug.Write("||||||");
+            Debug.Write("Login");
+            Debug.Write("||||||");
+
+            var keyvalues = new List<KeyValuePair<string, string>>
             {
+                new KeyValuePair<string, string>("username", utilizador.Nome),
+                new KeyValuePair<string, string>("password", utilizador.Password),
+                new KeyValuePair<string, string>("grant_type", "password")
+            };
 
-                Debug.Write("||||||");
-                Debug.Write("Login");
-                Debug.Write("||||||");
+            var request = new HttpRequestMessage(HttpMethod.Post, "http://192.168.51.5:150/api/utilizador/login/" + "token");
 
-                var respomse = await _client.GetAsync("http://192.168.51.5:150/token");
+            request.Content = new FormUrlEncodedContent(keyvalues);
 
-                Debug.WriteLine("");
-                Debug.WriteLine("StatusCode");
-                Debug.WriteLine(respomse.StatusCode.ToString());
-                Debug.WriteLine(await respomse.Content.ReadAsStringAsync());
-                Debug.WriteLine("");
+            var client = new HttpClient();
 
-                if (respomse.IsSuccessStatusCode)
-                    return true;
+            var response = await client.SendAsync(request);
 
-                else
-                    return false;
-            }
+            if (response.IsSuccessStatusCode)
+                return true;
+
+            else
+                return false;
+
+            /*Debug.Write("||||||");
+            Debug.Write("Login");
+            Debug.Write("||||||");
+
+            var respomse = await _client.GetAsync("http://192.168.51.5:150/token");
+
+            Debug.WriteLine("");
+            Debug.WriteLine("StatusCode");
+            Debug.WriteLine(respomse.StatusCode.ToString());
+            Debug.WriteLine(await respomse.Content.ReadAsStringAsync());
+            Debug.WriteLine("");
+
+            if (respomse.IsSuccessStatusCode)
+                return true;
+
+            else
+                return false;*/
         }
     }
 }

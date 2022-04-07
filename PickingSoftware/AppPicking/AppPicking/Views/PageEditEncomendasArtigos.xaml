@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPicking.Views.PageEditEncomendasArtigos">
+    <ContentPage.Content>
+        <StackLayout Margin="20,20,20,20">
+            <Label Text="Adicionar Encomendas" 
+                   TextColor="Black"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Title"/>
+
+            <Picker x:Name="txtID" Title="ID" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
+
+            <Picker x:Name="txtIDEncomenda" Title="ID da Encomenda" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
+
+            <Picker x:Name="txtIDArtigo" Title="ID do Artigo" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
+
+            <Entry Keyboard="Numeric" TextColor="Black" x:Name="txtQuantArtigos"
+                   PlaceholderColor="DarkGray" Placeholder="Quantidade de Artigos" Margin="0,10,0,0"/>
+
+            <Entry TextColor="Black" x:Name="txtCodBarras"
+                   PlaceholderColor="DarkGray" Placeholder="Código de barras" Margin="0,10,0,0"/>
+
+            <Button BackgroundColor="Black" Text="Procurar"
+                    x:Name="searchButton"
+                    Clicked="searchButton_Clicked"/>
+
+            <Button IsVisible="false" BackgroundColor="Black" Text="Editar"
+                    x:Name="EditButton"
+                    Clicked="EditButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
