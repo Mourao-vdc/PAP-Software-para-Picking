@@ -12,7 +12,7 @@ namespace PickingSoftware.Models
         public int ID_Encomendas { get; set; }
         public int ID_Artigos { get; set; }
         public string Cod_Barras { get; set; }
-        public string Situacao { get; set; }
+        public bool Situacao { get; set; }
         public string Quant_artigos { get; set; }
 
         public static List<Encomendas_Artigos> GetEncomendas_Artigos()
@@ -33,7 +33,7 @@ namespace PickingSoftware.Models
                     ID_Encomendas = (int)dr["ID_Encomendas"],
                     ID_Artigos = (int)dr["ID_Artigos"],
                     Cod_Barras = dr["Cod_Barras"].ToString(),
-                    Situacao = dr["Situacao"].ToString(),
+                    Situacao = (bool)dr["Situacao"],
                     Quant_artigos = dr["Quant_artigos"].ToString()
                 });
             }

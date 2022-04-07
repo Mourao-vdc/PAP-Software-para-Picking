@@ -14,7 +14,7 @@ namespace AppPicking.Models
         public int ID_Encomendas { get; set; }
         public int ID_Artigos { get; set; }
         public string Cod_Barras { get; set; }
-        public string Situacao { get; set; }
+        public bool Situacao { get; set; }
         public string Quant_artigos { get; set; }
 
         public static async Task<List<Encomendas_Artigos>> GetEncomendas_Artigos()

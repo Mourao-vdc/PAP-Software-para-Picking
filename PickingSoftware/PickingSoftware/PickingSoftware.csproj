@@ -336,6 +336,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AuthorizeAttribute.cs" />
+    <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ArtigosController.cs" />
@@ -354,12 +356,12 @@
     <Compile Include="Models\Grupos.cs" />
     <Compile Include="Models\Permicoes_Gerais.cs" />
     <Compile Include="Models\Permicoes_List.cs" />
-    <Compile Include="Models\ProviderDeTokensDeAcesso.cs" />
-    <Compile Include="Models\Startup.cs" />
+    <Compile Include="App_Start\ProviderDeTokensDeAcesso.cs" />
     <Compile Include="Models\Utilizador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="libman.json" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

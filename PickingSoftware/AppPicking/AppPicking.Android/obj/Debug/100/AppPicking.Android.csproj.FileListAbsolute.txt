@@ -715,3 +715,4 @@ C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\android\src\crc64dbf290ea7e69bd26\EmptyEntryRenderer.java
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\android\src\crc64dbf290ea7e69bd26\NewIconViewRenderer.java
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\android\src\crc64dbf290ea7e69bd26\StatefulStackLayoutRenderer.java
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\res\drawable\icon_pedidos.png

@@ -101,7 +101,7 @@
     <FlyoutItem Title="Encomendas" Icon="icon_encomendas.png">
         <ShellContent Route="PageDataGridEncomendasArtigos" ContentTemplate="{DataTemplate local:PageDataGridEncomendasArtigos}"/>
     </FlyoutItem>
-    <FlyoutItem Title="Pedidos" Icon="icon_encomendas.png">
+    <FlyoutItem Title="Pedidos" Icon="icon_pedidos.png">
         <ShellContent Route="PageDataGridEncomendas" ContentTemplate="{DataTemplate local:PageDataGridEncomendas}"/>
     </FlyoutItem>
     <FlyoutItem Title="Artigos" Icon="icon_artigos.png">

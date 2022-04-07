@@ -63,7 +63,17 @@ namespace AppPicking.Models
             using (HttpClient _client = new HttpClient())
             {
 
-                var respomse = await _client.GetAsync("http://192.168.51.5:150/api/Utilizador/Login");
+                Debug.Write("||||||");
+                Debug.Write("Login");
+                Debug.Write("||||||");
+
+                var respomse = await _client.GetAsync("http://192.168.51.5:150/token");
+
+                Debug.WriteLine("");
+                Debug.WriteLine("StatusCode");
+                Debug.WriteLine(respomse.StatusCode.ToString());
+                Debug.WriteLine(await respomse.Content.ReadAsStringAsync());
+                Debug.WriteLine("");
 
                 if (respomse.IsSuccessStatusCode)
                     return true;

@@ -39,9 +39,6 @@ namespace AppPicking.Views
             {
                 txtIDUtilizador.Items.Add(_item.ID.ToString());
             }
-
-            
-
         }
 
         private async void AddButton_Clicked(object sender, EventArgs e)
