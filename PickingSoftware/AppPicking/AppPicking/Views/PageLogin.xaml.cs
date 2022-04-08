@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,7 +16,12 @@ namespace AppPicking.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            Models.Utilizador _user = new Models.Utilizador()
+
+            Debug.Write("||||||");
+            Debug.Write("PageLogin");
+            Debug.Write("||||||");
+
+            /*Models.Utilizador _user = new Models.Utilizador()
             {
                 Nome = txtNome.Text,
                 Password = txtPassword.Text
@@ -24,14 +30,19 @@ namespace AppPicking.Views
             if(await Models.Utilizador.Userlogin(_user))
             {
                 txtNome.Text = "";
-                txtPassword.Text = "";
+                txtPassword.Text = "";*/
 
-                await Shell.Current.GoToAsync($"//{nameof(PageDataGridEncomendasArtigos)}");
-            }
+                await Shell.Current.GoToAsync($"//{nameof(PageDataGridEncomendas)}");
+            /*}
             else
             {
                 await DisplayAlert("Erro","Nome ou Password incorreta","Ok");
-            }
+            }*/
+
+            Debug.Write("||||||");
+            Debug.Write("PageLogin");
+            Debug.Write("||||||");
+
         }
 
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)

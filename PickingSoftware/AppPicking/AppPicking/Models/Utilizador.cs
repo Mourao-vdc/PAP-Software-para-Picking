@@ -20,7 +20,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var content = await _client.GetStringAsync("http://192.168.51.5:150/api/Utilizador/todas");
+                var content = await _client.GetStringAsync("http://192.168.51.5:150/api/utilizador/todas");
 
                 Debug.WriteLine(content);
 
@@ -65,27 +65,34 @@ namespace AppPicking.Models
             Debug.Write("Login");
             Debug.Write("||||||");
 
-            var keyvalues = new List<KeyValuePair<string, string>>
+            using (HttpClient _client = new HttpClient())
             {
+
+                var keyvalues = new List<KeyValuePair<string, string>>
+                {
                 new KeyValuePair<string, string>("username", utilizador.Nome),
                 new KeyValuePair<string, string>("password", utilizador.Password),
                 new KeyValuePair<string, string>("grant_type", "password")
-            };
+                };
 
-            var request = new HttpRequestMessage(HttpMethod.Post, "http://192.168.51.5:150/api/utilizador/login/" + "token");
+                var request = new HttpRequestMessage(HttpMethod.Post, "http://192.168.51.5:150/" + "token");
 
-            request.Content = new FormUrlEncodedContent(keyvalues);
+                request.Content = new FormUrlEncodedContent(keyvalues);
 
-            var client = new HttpClient();
+                var client = new HttpClient();
 
-            var response = await client.SendAsync(request);
+                var response = await client.SendAsync(request);
 
-            if (response.IsSuccessStatusCode)
-                return true;
+                Debug.WriteLine("");
+                Debug.WriteLine(await response.Content.ReadAsStringAsync());
+                Debug.WriteLine("");
 
-            else
-                return false;
+                if (response.IsSuccessStatusCode)
+                    return true;
 
+                else
+                    return false;
+            }
             /*Debug.Write("||||||");
             Debug.Write("Login");
             Debug.Write("||||||");
@@ -103,6 +110,19 @@ namespace AppPicking.Models
 
             else
                 return false;*/
+        }
+
+        public static bool IsValidEmail(string _email)
+        {
+            try
+            {
+                var enderecoemail = new System.Net.Mail.MailAddress(_email);
+                return enderecoemail.Address == _email;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

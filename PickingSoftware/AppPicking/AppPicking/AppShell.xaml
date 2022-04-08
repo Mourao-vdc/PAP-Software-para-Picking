@@ -85,7 +85,7 @@
         <DataTemplate>
             <Grid HeightRequest="150" BackgroundColor="#2F2F2F">
                 <Image Source="icon_logo.png" HeightRequest="80" WidthRequest="80" HorizontalOptions="Start" Margin="0,0,0,0"/>
-                <Label x:Name="Nome" Text="asdfasfc" TextColor="White" FontSize="20" VerticalOptions="EndAndExpand" Margin="10,0,0,10" HorizontalOptions="StartAndExpand"/>
+                <Label x:Name="txtNome" Text="asdfasfc" TextColor="White" FontSize="20" VerticalOptions="EndAndExpand" Margin="10,0,0,10" HorizontalOptions="StartAndExpand"/>
             </Grid>
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
@@ -107,8 +107,14 @@
     <FlyoutItem Title="Artigos" Icon="icon_artigos.png">
         <ShellContent Route="PageDataGridArtigos" ContentTemplate="{DataTemplate local:PageDataGridArtigos}" />
     </FlyoutItem>
+    <FlyoutItem Title="Estado das encomendas" Icon="icon_estado.png">
+        <ShellContent Route="PageDataGridArtigos" ContentTemplate="{DataTemplate local:PageDataGridArtigos}" />
+    </FlyoutItem>
     <FlyoutItem Title="Utilizadores" Icon="icon_utilizadores.png">
         <ShellContent Route="PageDataGridUtilizadores" ContentTemplate="{DataTemplate local:PageDataGridUtilizadores}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Sair" Icon="icon_logout.png">
+        <ShellContent Route="PagePageLogin" ContentTemplate="{DataTemplate local:PageLogin}" />
     </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->

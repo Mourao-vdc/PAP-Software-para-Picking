@@ -37,7 +37,7 @@ application_config:
 	/* system_property_count */
 	.long	0
 	/* number_of_assemblies_in_apk */
-	.long	150
+	.long	151
 	/* bundled_assembly_name_width */
 	.long	70
 	/* number_of_assembly_store_files */
@@ -84,7 +84,7 @@ mono_aot_mode_name:
 	.section	.rodata.env.str.8,"aMS",@progbits,1
 	.type	.L.env.str.8, @object
 .L.env.str.8:
-	.asciz	"38f72c24-efdf-4a93-8972-b8a5f7d7651c"
+	.asciz	"14a36a24-26c4-41df-9f30-19bf54c43d73"
 	.size	.L.env.str.8, 37
 	.section	.rodata.env.str.9,"aMS",@progbits,1
 	.type	.L.env.str.9, @object
@@ -442,6 +442,8 @@ app_system_properties:
 .L.env.buf.149:
 	.zero	70
 .L.env.buf.150:
+	.zero	70
+.L.env.buf.151:
 	.zero	70
 
 	/* Bundled assemblies data */
@@ -2700,7 +2702,22 @@ bundled_assemblies:
 	.zero	4
 	.quad	.L.env.buf.150
 
-	.size	bundled_assemblies, 6000
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.151
+
+	.size	bundled_assemblies, 6040
 
 
 	/* Assembly store individual assembly data */

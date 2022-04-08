@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RnEPGonPIAXQgnD1CG5ldKFMe+3S1DwreML92P3vqEEK1QQIQBgYCBkFJHSmMZr3mkcFfYfUoQUXC9PU1m4Gmw==",
+  "dgSpecHash": "rj8jC455kHOdUkA8It/Os+F7LeiWnL9ezhvYDDb1XWb/mpW9wPxOfcsldBIrmEND/hQnjaCvGJvrDCHmtalA2A==",
   "success": true,
   "projectFilePath": "C:\\Users\\estagio\\Documents\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking.Android\\AppPicking.Android.csproj",
   "expectedPackageFiles": [
@@ -120,6 +120,7 @@
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.androidx.versionedparcelable\\1.1.1.8\\xamarin.androidx.versionedparcelable.1.1.1.8.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.androidx.viewpager\\1.0.0.8\\xamarin.androidx.viewpager.1.0.0.8.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.androidx.viewpager2\\1.0.0.10\\xamarin.androidx.viewpager2.1.0.0.10.nupkg.sha512",
+    "C:\\Users\\estagio\\.nuget\\packages\\xamarin.communitytoolkit\\2.0.1\\xamarin.communitytoolkit.2.0.1.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.essentials\\1.7.1\\xamarin.essentials.1.7.1.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.forms\\5.0.0.2337\\xamarin.forms.5.0.0.2337.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.forms.datagrid\\4.8.0\\xamarin.forms.datagrid.4.8.0.nupkg.sha512",

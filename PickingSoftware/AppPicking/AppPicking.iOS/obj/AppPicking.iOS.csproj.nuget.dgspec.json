@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[6.3.0, )"
             },
+            "Xamarin.CommunityToolkit": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.7.1, )"
@@ -138,6 +142,10 @@
             "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",
               "version": "[6.3.0, )"
+            },
+            "Xamarin.CommunityToolkit": {
+              "target": "Package",
+              "version": "[2.0.1, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

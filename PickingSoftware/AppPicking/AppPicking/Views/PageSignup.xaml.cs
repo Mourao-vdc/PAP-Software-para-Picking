@@ -50,30 +50,44 @@ namespace AppPicking.Views
             }
             else
             {
-                if(txtPassword.Text != txtPassword2.Text)
+                if(Models.Utilizador.IsValidEmail(txtEmail.Text))
                 {
-                    await DisplayAlert("Alerta", "As passwords não coincidem", "Ok");
-                    return;
+                    if((txtPassword.Text.Length >= 8) || (txtPassword2.Text.Length >= 8))
+                    {
+                        if (txtPassword.Text != txtPassword2.Text)
+                        {
+                            await DisplayAlert("Alerta", "As passwords não coincidem", "Ok");
+                            return;
+                        }
+                        else
+                        {
+                            Utilizador utilizador = new Utilizador()
+                            {
+                                Nome = txtNome.Text,
+                                Email = txtEmail.Text,
+                                Password = txtPassword.Text,
+                            };
+
+                            await Utilizador.AddUtilizadores(utilizador);
+
+                            DisplayAlert("Adicionado", "Artigo adiciocado com sucesso", "Ok");
+
+                            txtNome.Text = "";
+                            txtEmail.Text = "";
+                            txtPassword.Text = "";
+                            txtPassword2.Text = "";
+
+                            await Shell.Current.GoToAsync($"//{nameof(PageLogin)}");
+                        }
+                    }
+                    else
+                    {
+                        DisplayAlert("Erro", "Password deve ter no mínimo 8 caracteres", "Ok");
+                    }
                 }
                 else
                 {
-                    Utilizador utilizador = new Utilizador()
-                    {
-                        Nome = txtNome.Text,
-                        Email = txtEmail.Text,
-                        Password = txtPassword.Text,
-                    };
-
-                    await Utilizador.AddUtilizadores(utilizador);
-
-                    DisplayAlert("Adicionado", "Artigo adiciocado com sucesso", "Ok");
-
-                    txtNome.Text = "";
-                    txtEmail.Text = "";
-                    txtPassword.Text = "";
-                    txtPassword2.Text = "";
-
-                    await Shell.Current.GoToAsync($"//{nameof(PageLogin)}");
+                    DisplayAlert("Erro", "Email inválido", "Ok");
                 }
             }
         }

@@ -1,7 +1,5 @@
-﻿using AppPicking.ViewModels;
-using AppPicking.Views;
+﻿using AppPicking.Views;
 using System;
-using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace AppPicking

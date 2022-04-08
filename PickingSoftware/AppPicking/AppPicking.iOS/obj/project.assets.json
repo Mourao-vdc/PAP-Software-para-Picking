@@ -772,6 +772,21 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
+      "Xamarin.CommunityToolkit/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2291"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.7.1": {
         "type": "package",
         "dependencies": {
@@ -943,6 +958,7 @@
           "Newtonsoft.Json": "13.0.1",
           "Swashbuckle.AspNetCore": "6.3.0",
           "Swashbuckle.AspNetCore.Swagger": "6.3.0",
+          "Xamarin.CommunityToolkit": "2.0.1",
           "Xamarin.Essentials": "1.7.1",
           "Xamarin.Forms": "5.0.0.2337",
           "Xamarin.Forms.DataGrid": "4.8.0",
@@ -1717,6 +1733,21 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
+      "Xamarin.CommunityToolkit/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2291"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.7.1": {
         "type": "package",
         "dependencies": {
@@ -1888,6 +1919,7 @@
           "Newtonsoft.Json": "13.0.1",
           "Swashbuckle.AspNetCore": "6.3.0",
           "Swashbuckle.AspNetCore.Swagger": "6.3.0",
+          "Xamarin.CommunityToolkit": "2.0.1",
           "Xamarin.Essentials": "1.7.1",
           "Xamarin.Forms": "5.0.0.2337",
           "Xamarin.Forms.DataGrid": "4.8.0",
@@ -2662,6 +2694,21 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
+      "Xamarin.CommunityToolkit/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2291"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.7.1": {
         "type": "package",
         "dependencies": {
@@ -2833,6 +2880,7 @@
           "Newtonsoft.Json": "13.0.1",
           "Swashbuckle.AspNetCore": "6.3.0",
           "Swashbuckle.AspNetCore.Swagger": "6.3.0",
+          "Xamarin.CommunityToolkit": "2.0.1",
           "Xamarin.Essentials": "1.7.1",
           "Xamarin.Forms": "5.0.0.2337",
           "Xamarin.Forms.DataGrid": "4.8.0",
@@ -3607,6 +3655,21 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
+      "Xamarin.CommunityToolkit/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2291"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.7.1": {
         "type": "package",
         "dependencies": {
@@ -3778,6 +3841,7 @@
           "Newtonsoft.Json": "13.0.1",
           "Swashbuckle.AspNetCore": "6.3.0",
           "Swashbuckle.AspNetCore.Swagger": "6.3.0",
+          "Xamarin.CommunityToolkit": "2.0.1",
           "Xamarin.Essentials": "1.7.1",
           "Xamarin.Forms": "5.0.0.2337",
           "Xamarin.Forms.DataGrid": "4.8.0",
@@ -5476,6 +5540,47 @@
         "version.txt"
       ]
     },
+    "Xamarin.CommunityToolkit/2.0.1": {
+      "sha512": "eZK7MiqWaI4UPsP2XJMI0zPU+EkNtLiUtsDggaY/MOXlzkQa5L+i6NYMlOOOFcaG1Nn6p10FvidQLPPff39Gng==",
+      "type": "package",
+      "path": "xamarin.communitytoolkit/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "analyzers/dotnet/xct/cs/Xamarin.CommunityToolkit.SourceGenerator.dll",
+        "icon.png",
+        "lib/monoandroid10.0/Xamarin.CommunityToolkit.dll",
+        "lib/monoandroid10.0/Xamarin.CommunityToolkit.xml",
+        "lib/net471/Xamarin.CommunityToolkit.dll",
+        "lib/net471/Xamarin.CommunityToolkit.xml",
+        "lib/net472/Xamarin.CommunityToolkit.dll",
+        "lib/net472/Xamarin.CommunityToolkit.xml",
+        "lib/netcoreapp3.1/Xamarin.CommunityToolkit.dll",
+        "lib/netcoreapp3.1/Xamarin.CommunityToolkit.xml",
+        "lib/netstandard1.0/Xamarin.CommunityToolkit.dll",
+        "lib/netstandard1.0/Xamarin.CommunityToolkit.xml",
+        "lib/netstandard2.0/Xamarin.CommunityToolkit.dll",
+        "lib/netstandard2.0/Xamarin.CommunityToolkit.xml",
+        "lib/netstandard2.1/Xamarin.CommunityToolkit.dll",
+        "lib/netstandard2.1/Xamarin.CommunityToolkit.xml",
+        "lib/tizen40/Xamarin.CommunityToolkit.dll",
+        "lib/tizen40/Xamarin.CommunityToolkit.xml",
+        "lib/uap10.0.18362/Xamarin.CommunityToolkit.dll",
+        "lib/uap10.0.18362/Xamarin.CommunityToolkit.pri",
+        "lib/uap10.0.18362/Xamarin.CommunityToolkit.xml",
+        "lib/xamarinios10/Xamarin.CommunityToolkit.dll",
+        "lib/xamarinios10/Xamarin.CommunityToolkit.xml",
+        "lib/xamarinmac20/Xamarin.CommunityToolkit.dll",
+        "lib/xamarinmac20/Xamarin.CommunityToolkit.xml",
+        "lib/xamarintvos10/Xamarin.CommunityToolkit.dll",
+        "lib/xamarintvos10/Xamarin.CommunityToolkit.xml",
+        "lib/xamarinwatchos10/Xamarin.CommunityToolkit.dll",
+        "lib/xamarinwatchos10/Xamarin.CommunityToolkit.xml",
+        "xamarin.communitytoolkit.2.0.1.nupkg.sha512",
+        "xamarin.communitytoolkit.nuspec"
+      ]
+    },
     "Xamarin.Essentials/1.7.1": {
       "sha512": "u7pUgvHJKTYo5ATiwRZvYviq2O0AQXIqxdna+sMxqidfWpbD7FBgFOLNAZzWKSll/AQBPeDrqLAWZNLq+ztpmQ==",
       "type": "package",
@@ -5784,6 +5889,7 @@
       "AppPicking >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.3.0",
       "Swashbuckle.AspNetCore.Swagger >= 6.3.0",
+      "Xamarin.CommunityToolkit >= 2.0.1",
       "Xamarin.Essentials >= 1.7.1",
       "Xamarin.Forms >= 5.0.0.2337",
       "Xamarin.Forms.DataGrid >= 4.8.0",
@@ -5839,6 +5945,10 @@
           "Swashbuckle.AspNetCore.Swagger": {
             "target": "Package",
             "version": "[6.3.0, )"
+          },
+          "Xamarin.CommunityToolkit": {
+            "target": "Package",
+            "version": "[2.0.1, )"
           },
           "Xamarin.Essentials": {
             "target": "Package",

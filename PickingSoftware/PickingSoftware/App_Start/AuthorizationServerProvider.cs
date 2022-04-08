@@ -15,11 +15,22 @@ namespace PickingSoftware.App_Start
         {
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
 
-            identity.AddClaim(new Claim(ClaimTypes.Role, "Geral"));
-            identity.AddClaim(new Claim("Email", context.UserName));
-            identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
+            Models.Utilizador _user = new Models.Utilizador()
+            {
+                Nome = context.UserName,
+                Password = context.Password
+            };
 
-            context.Validated(identity);
+            if (Models.Utilizador.UserLogin(_user))
+            {
+                identity.AddClaim(new Claim(ClaimTypes.Role, "Geral"));
+                identity.AddClaim(new Claim("Email", context.UserName));
+                identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
+
+                context.Validated(identity);
+            }
+
+            return;
         }
     }
 }

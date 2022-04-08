@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AtCRQ+5RrFDwPqMokctPn6rrZoWu+SNKS2m8RB8ugzuZ2y0ZM8kbNhoV1TGj9ismmtRZd/9hldZ8zCsn4Lv47Q==",
+  "dgSpecHash": "oWnqF2gYHFr40jXcCI0LreS0j+Riuxc2Elb/M11TJ1c17MUQTXykl7rnqJNfzmc3dRY4voSRSAQflpVB/QV8Ew==",
   "success": true,
   "projectFilePath": "C:\\Users\\estagio\\Documents\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking\\AppPicking.csproj",
   "expectedPackageFiles": [
@@ -69,8 +69,8 @@
     "C:\\Users\\estagio\\.nuget\\packages\\system.objectmodel\\4.0.12\\system.objectmodel.4.0.12.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\system.reflection\\4.1.0\\system.reflection.4.1.0.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\system.reflection.emit\\4.0.1\\system.reflection.emit.4.0.1.nupkg.sha512",
-    "C:\\Users\\estagio\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.0.1\\system.reflection.emit.ilgeneration.4.0.1.nupkg.sha512",
-    "C:\\Users\\estagio\\.nuget\\packages\\system.reflection.emit.lightweight\\4.0.1\\system.reflection.emit.lightweight.4.0.1.nupkg.sha512",
+    "C:\\Users\\estagio\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.7.0\\system.reflection.emit.ilgeneration.4.7.0.nupkg.sha512",
+    "C:\\Users\\estagio\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\system.reflection.extensions\\4.0.1\\system.reflection.extensions.4.0.1.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\system.reflection.primitives\\4.0.1\\system.reflection.primitives.4.0.1.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\system.reflection.typeextensions\\4.1.0\\system.reflection.typeextensions.4.1.0.nupkg.sha512",
@@ -86,7 +86,8 @@
     "C:\\Users\\estagio\\.nuget\\packages\\system.text.json\\4.6.0\\system.text.json.4.6.0.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\system.threading\\4.0.11\\system.threading.4.0.11.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\system.threading.tasks\\4.0.11\\system.threading.tasks.4.0.11.nupkg.sha512",
-    "C:\\Users\\estagio\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512",
+    "C:\\Users\\estagio\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\estagio\\.nuget\\packages\\xamarin.communitytoolkit\\2.0.1\\xamarin.communitytoolkit.2.0.1.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.essentials\\1.7.1\\xamarin.essentials.1.7.1.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.forms\\5.0.0.2337\\xamarin.forms.5.0.0.2337.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.forms.datagrid\\4.8.0\\xamarin.forms.datagrid.4.8.0.nupkg.sha512",
