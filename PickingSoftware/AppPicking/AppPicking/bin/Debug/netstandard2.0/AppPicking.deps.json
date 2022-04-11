@@ -13,6 +13,7 @@
           "Newtonsoft.Json": "13.0.1",
           "Swashbuckle.AspNetCore": "6.3.0",
           "Swashbuckle.AspNetCore.Swagger": "6.3.0",
+          "Syncfusion.Xamarin.Buttons": "20.1.0.47",
           "Xamarin.CommunityToolkit": "2.0.1",
           "Xamarin.Essentials": "1.7.1",
           "Xamarin.Forms": "5.0.0.2337",
@@ -546,6 +547,38 @@
           "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
             "assemblyVersion": "6.3.0.0",
             "fileVersion": "6.3.0.0"
+          }
+        }
+      },
+      "Syncfusion.Licensing/20.1.0.47": {
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "20.1.0.47",
+            "fileVersion": "20.1.0.47"
+          }
+        }
+      },
+      "Syncfusion.Xamarin.Buttons/20.1.0.47": {
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "20.1.0.47",
+          "Xamarin.Forms": "5.0.0.2337"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Buttons.XForms.dll": {
+            "assemblyVersion": "20.1451.0.47",
+            "fileVersion": "20.1451.0.47"
+          }
+        }
+      },
+      "Syncfusion.Xamarin.Core/20.1.0.47": {
+        "dependencies": {
+          "Syncfusion.Licensing": "20.1.0.47",
+          "Xamarin.Forms": "5.0.0.2337"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Core.XForms.dll": {
+            "assemblyVersion": "20.1451.0.47",
+            "fileVersion": "20.1451.0.47"
           }
         }
       },
@@ -1328,6 +1361,27 @@
       "sha512": "sha512-OmVLGzyeNBFUAx6E/bqrZW4uxfv9q2MtegYzeHv5Dj8N34ry8104d6OcyRIV4BhwHBSFD1rMvDlPciguFMtQ5w==",
       "path": "swashbuckle.aspnetcore.swaggerui/6.3.0",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.3.0.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/20.1.0.47": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wvtXu+N9seO8rHt18VmOGX9B2/aAzyxKteyDVXJPUBcuLf8PuRppBE9cx3gKeBokvMK03zihC/39xcz4kWdtNA==",
+      "path": "syncfusion.licensing/20.1.0.47",
+      "hashPath": "syncfusion.licensing.20.1.0.47.nupkg.sha512"
+    },
+    "Syncfusion.Xamarin.Buttons/20.1.0.47": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0uObBtDscXDpvsj9G4od6K5TGfMRlrAbzDQipae5nebfDFzpvi94UTYYFkYsMgbbvdypJR4hB5HEAyhSYK7UpQ==",
+      "path": "syncfusion.xamarin.buttons/20.1.0.47",
+      "hashPath": "syncfusion.xamarin.buttons.20.1.0.47.nupkg.sha512"
+    },
+    "Syncfusion.Xamarin.Core/20.1.0.47": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-L6RiJZK7BZ/ijjjXYolMf1wkz4+gep6tLmeZqzsr9+d0WcFmAN4YwLV5i3gQq7gvqo2Niij/+CPCWr55VADzvg==",
+      "path": "syncfusion.xamarin.core/20.1.0.47",
+      "hashPath": "syncfusion.xamarin.core.20.1.0.47.nupkg.sha512"
     },
     "System.AppContext/4.1.0": {
       "type": "package",

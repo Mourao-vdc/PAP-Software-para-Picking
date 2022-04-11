@@ -104,3 +104,5 @@ androidx.legacy.legacy-support-v4.aar
 androidx.browser.browser.aar
 Plugin.InputKit.dll
 Xamarin.CommunityToolkit.dll
+Syncfusion.Buttons.XForms.Android.dll
+Syncfusion.Core.XForms.Android.dll

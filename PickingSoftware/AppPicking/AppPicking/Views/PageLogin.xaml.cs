@@ -21,7 +21,7 @@ namespace AppPicking.Views
             Debug.Write("PageLogin");
             Debug.Write("||||||");
 
-            /*Models.Utilizador _user = new Models.Utilizador()
+            Models.Utilizador _user = new Models.Utilizador()
             {
                 Nome = txtNome.Text,
                 Password = txtPassword.Text
@@ -30,14 +30,14 @@ namespace AppPicking.Views
             if(await Models.Utilizador.Userlogin(_user))
             {
                 txtNome.Text = "";
-                txtPassword.Text = "";*/
+                txtPassword.Text = "";
 
-                await Shell.Current.GoToAsync($"//{nameof(PageDataGridEncomendas)}");
-            /*}
+                await Shell.Current.GoToAsync($"//{nameof(PageDataGridEncomendasArtigos)}");
+            }
             else
             {
                 await DisplayAlert("Erro","Nome ou Password incorreta","Ok");
-            }*/
+            }
 
             Debug.Write("||||||");
             Debug.Write("PageLogin");

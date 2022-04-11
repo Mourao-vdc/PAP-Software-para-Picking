@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rj8jC455kHOdUkA8It/Os+F7LeiWnL9ezhvYDDb1XWb/mpW9wPxOfcsldBIrmEND/hQnjaCvGJvrDCHmtalA2A==",
+  "dgSpecHash": "yDTpTqZ0H4eLvUdVy0y+f0A9fHTtqShE0XxKF23jMk6rnOPewwjCa0SwTy53/OhuW86LCMnwCF6MKNpcrH8KqQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\estagio\\Documents\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking.Android\\AppPicking.Android.csproj",
   "expectedPackageFiles": [
@@ -47,6 +47,9 @@
     "C:\\Users\\estagio\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.0\\swashbuckle.aspnetcore.swagger.6.3.0.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.3.0\\swashbuckle.aspnetcore.swaggergen.6.3.0.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.3.0\\swashbuckle.aspnetcore.swaggerui.6.3.0.nupkg.sha512",
+    "C:\\Users\\estagio\\.nuget\\packages\\syncfusion.licensing\\20.1.0.47\\syncfusion.licensing.20.1.0.47.nupkg.sha512",
+    "C:\\Users\\estagio\\.nuget\\packages\\syncfusion.xamarin.buttons\\20.1.0.47\\syncfusion.xamarin.buttons.20.1.0.47.nupkg.sha512",
+    "C:\\Users\\estagio\\.nuget\\packages\\syncfusion.xamarin.core\\20.1.0.47\\syncfusion.xamarin.core.20.1.0.47.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\system.appcontext\\4.1.0\\system.appcontext.4.1.0.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\system.collections\\4.0.11\\system.collections.4.0.11.nupkg.sha512",

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             x:Class="AppPicking.Views.PageEstadoEncomendas">
+    <ContentPage.Content>
+        <StackLayout Margin="20,20,20,20">
+            <Label Text="Estado das Encomendas" 
+                   TextColor="Black"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Title"/>
+
+            <Picker x:Name="txtEncomenda" Title="ID da Encomenda" FontSize="18" TitleColor="DarkGray" TextColor="Black" Margin="0,10,0,0" SelectedIndexChanged="txtEncomenda_SelectedIndexChanged"/>
+
+            <StackLayout Spacing="0" x:Name="rbestado" Padding = "0,110" IsVisible="false">
+                <input:RadioButtonGroupView x:Name="rbsituacao" VerticalOptions="Center">
+                    <Grid ColumnDefinitions="100,*,*,*" ColumnSpacing="10" VerticalOptions="Center">
+                        <Image Source="icon_preparar.png" Grid.Column="1"/>
+                        <Image Source="icon_dist.png" Grid.Column="2" Margin="70,0,0,0"/>
+                        <Image Source="icon_entr.png" Grid.Column="3" Margin="0,15,0,0"/>
+                        <input:RadioButton x:Name="rbprepara" TextFontSize="18" Text = "A preparar" Color="Black" TextColor="Black" Padding="0,10,0,10" Grid.Column="1" VerticalOptions="End"/>
+                        <input:RadioButton x:Name="rbdistribuicao" TextFontSize="18" Text = "Em distribuição" Color="Black" TextColor="Black" Padding="0,10,0,10" Grid.Column="2"/>
+                        <input:RadioButton x:Name="rbentregue" TextFontSize="18" Text = "Entregue" Color="Black" TextColor="Black" Padding="0,10,0,10" Grid.Column="3"/>
+                    </Grid>
+                </input:RadioButtonGroupView>
+            </StackLayout>
+
+            <Button x:Name="btnconcluir" BackgroundColor="Black" Text="Concluír" IsVisible="false" Clicked="btnconcluir_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

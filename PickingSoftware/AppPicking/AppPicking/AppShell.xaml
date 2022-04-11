@@ -41,7 +41,7 @@
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="LightGray" />
+                                    <Setter Property="BackgroundColor" Value="#9C9C9C" />
                                     <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="Black" />
                                 </VisualState.Setters>
                             </VisualState>
@@ -108,7 +108,7 @@
         <ShellContent Route="PageDataGridArtigos" ContentTemplate="{DataTemplate local:PageDataGridArtigos}" />
     </FlyoutItem>
     <FlyoutItem Title="Estado das encomendas" Icon="icon_estado.png">
-        <ShellContent Route="PageDataGridArtigos" ContentTemplate="{DataTemplate local:PageDataGridArtigos}" />
+        <ShellContent Route="PageDataGridArtigos" ContentTemplate="{DataTemplate local:PageEstadoEncomendas}" />
     </FlyoutItem>
     <FlyoutItem Title="Utilizadores" Icon="icon_utilizadores.png">
         <ShellContent Route="PageDataGridUtilizadores" ContentTemplate="{DataTemplate local:PageDataGridUtilizadores}" />

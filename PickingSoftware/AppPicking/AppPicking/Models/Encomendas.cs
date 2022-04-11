@@ -54,5 +54,32 @@ namespace AppPicking.Models
                     return false;
             }
         }
+
+        public static async Task<bool> DellEncomenda(int id)
+        {
+            using (HttpClient _client = new HttpClient())
+            {
+                /*var json = JsonConvert.SerializeObject(artigos);
+                Debug.WriteLine("");
+                Debug.WriteLine(json);
+                Debug.WriteLine("");
+
+                var content =
+                    new StringContent(json, Encoding.UTF8, "application/json");*/
+                var response = await _client.DeleteAsync("http://192.168.51.5:150/api/encomendas/eliminar/" + id);
+
+                Debug.WriteLine("");
+                Debug.WriteLine("StatusCode");
+                Debug.WriteLine(response.StatusCode.ToString());
+                Debug.WriteLine(await response.Content.ReadAsStringAsync());
+                Debug.WriteLine("");
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+
+                else
+                    return false;
+            }
+        }
     }
 }

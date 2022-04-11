@@ -81,6 +81,8 @@ namespace AppPicking.Views
             txtID.SelectedIndex = -1;
             txtNome.Text = "";
             txtCod_Barras.Text = "";
+            RemoveButton.IsVisible= false;
+            searchButton.IsVisible= true;
         }
     }
 }

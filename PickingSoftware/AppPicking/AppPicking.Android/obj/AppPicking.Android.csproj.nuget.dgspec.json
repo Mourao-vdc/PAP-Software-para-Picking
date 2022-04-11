@@ -132,6 +132,10 @@
               "target": "Package",
               "version": "[6.3.0, )"
             },
+            "Syncfusion.Xamarin.Buttons": {
+              "target": "Package",
+              "version": "[20.1.0.47, )"
+            },
             "Xamarin.CommunityToolkit": {
               "target": "Package",
               "version": "[2.0.1, )"

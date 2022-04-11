@@ -181,4 +181,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_estado.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_dist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_preparar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_entr.png" />
+  </ItemGroup>
 </Project>
