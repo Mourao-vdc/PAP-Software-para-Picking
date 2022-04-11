@@ -12,7 +12,7 @@ CREATE TABLE Encomendas_Artigos (
     ID_Artigos int,
     Cod_Barras nvarchar(254),
     Situacao nvarchar(254),
-    Quant_artigos nvarchar(254)
+    Quant_artigos int
 );
 
 CREATE TABLE Encomendas (
