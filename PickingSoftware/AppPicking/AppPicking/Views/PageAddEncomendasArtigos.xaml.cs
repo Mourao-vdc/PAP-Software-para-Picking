@@ -17,8 +17,8 @@ namespace AppPicking.Views
         public int ID_Encomendas { get; set; }
         public int ID_Artigos { get; set; }
         public string Cod_Barras { get; set; }
-        public bool Situacao { get; set; }
-        public string Quant_artigos { get; set; }
+        public string Situacao { get; set; }
+        public int Quant_artigos { get; set; }
 
         private List<Models.Encomendas> listaEncomenda = new List<Encomendas>();
         
@@ -46,7 +46,7 @@ namespace AppPicking.Views
 
             listaArtigo = _listt;
 
-            foreach (var _item in _list)
+            foreach (var _item in _listt)
             {
                 txtIDArtigo.Items.Add(_item.ID.ToString());
             }
@@ -61,13 +61,16 @@ namespace AppPicking.Views
             }
             else
             {
-                //Encomendas_Artigos encomendas_artigos = new Encomendas()
-                //{
-                    //ID_Utilizadores = int.Parse(txtIDUtilizador.SelectedItem.ToString()),
-                    //Data = dpData.Date.ToString(),
-                //};
+                Encomendas_Artigos encomendas_artigos = new Encomendas_Artigos()
+                {
+                    ID_Encomendas = int.Parse(txtIDEncomenda.SelectedItem.ToString()),
+                    ID_Artigos = int.Parse(txtIDArtigo.SelectedItem.ToString()),
+                    Quant_artigos = int.Parse(txtQuantArtigos.Text.ToString()),
+                    Cod_Barras = txtCodBarras.Text,
+                    Situacao = txtsituacao.Text,
+                };
 
-                //await Encomendas_Artigos.AddEncomendas_Artigos(encomendas_artigos);
+                await Encomendas_Artigos.AddEncomendas_Artigos(encomendas_artigos);
 
                 DisplayAlert("Adicionado", "Encomenda adicionada com sucesso", "Ok");
             }

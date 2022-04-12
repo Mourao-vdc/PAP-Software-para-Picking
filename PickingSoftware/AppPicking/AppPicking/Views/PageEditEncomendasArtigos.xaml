@@ -4,16 +4,16 @@
              x:Class="AppPicking.Views.PageEditEncomendasArtigos">
     <ContentPage.Content>
         <StackLayout Margin="20,20,20,20">
-            <Label Text="Adicionar Encomendas" 
+            <Label Text="Editar Encomendas" 
                    TextColor="Black"
                    HorizontalTextAlignment="Center"
                    FontSize="Title"/>
 
-            <Picker x:Name="txtID" Title="ID" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
+            <Picker x:Name="txtID" Title="ID" FontSize="18" TitleColor="DarkGray" TextColor="Black" SelectedIndexChanged="txtID_SelectedIndexChanged" Margin="0,10,0,0"/>
 
-            <Picker x:Name="txtIDEncomenda" Title="ID da Encomenda" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
+            <Picker x:Name="txtIDEncomenda" Title="ID da Encomenda" FontSize="18" TitleColor="DarkGray" TextColor="Black" Margin="0,10,0,0"/>
 
-            <Picker x:Name="txtIDArtigo" Title="ID do Artigo" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
+            <Picker x:Name="txtIDArtigo" Title="ID do Artigo" FontSize="18" TitleColor="DarkGray" TextColor="Black" Margin="0,10,0,0"/>
 
             <Entry Keyboard="Numeric" TextColor="Black" x:Name="txtQuantArtigos"
                    PlaceholderColor="DarkGray" Placeholder="Quantidade de Artigos" Margin="0,10,0,0"/>

@@ -9,13 +9,13 @@
                    HorizontalTextAlignment="Center"
                    FontSize="Title"/>
 
-            <Picker x:Name="txtID" Title="ID da encomenda" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
+            <Picker x:Name="txtID" SelectedIndexChanged="txtID_SelectedIndexChanged" Title="ID da encomenda" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
 
             <Picker x:Name="txtIDUtilizador" Title="ID do utilizador" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
 
             <DatePicker x:Name="dpData" TextColor="Black" FontSize="18"/>
 
-            <Button IsVisible="false" BackgroundColor="Black" Text="Adicionar"
+            <Button IsVisible="false" BackgroundColor="Black" Text="Editar"
                     x:Name="EditButton"
                     Clicked="EditButton_Clicked"/>
 

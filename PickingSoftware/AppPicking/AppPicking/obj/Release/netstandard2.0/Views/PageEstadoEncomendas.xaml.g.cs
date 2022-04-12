@@ -23,6 +23,9 @@ namespace AppPicking.Views {
         private global::Xamarin.Forms.StackLayout rbestado;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Plugin.InputKit.Shared.Controls.RadioButtonGroupView rbsituacao;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Plugin.InputKit.Shared.Controls.RadioButton rbprepara;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
@@ -39,6 +42,7 @@ namespace AppPicking.Views {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PageEstadoEncomendas));
             txtEncomenda = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "txtEncomenda");
             rbestado = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "rbestado");
+            rbsituacao = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Plugin.InputKit.Shared.Controls.RadioButtonGroupView>(this, "rbsituacao");
             rbprepara = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Plugin.InputKit.Shared.Controls.RadioButton>(this, "rbprepara");
             rbdistribuicao = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Plugin.InputKit.Shared.Controls.RadioButton>(this, "rbdistribuicao");
             rbentregue = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Plugin.InputKit.Shared.Controls.RadioButton>(this, "rbentregue");

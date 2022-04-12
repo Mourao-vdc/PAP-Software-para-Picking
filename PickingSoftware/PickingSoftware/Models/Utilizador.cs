@@ -70,11 +70,12 @@ namespace PickingSoftware.Models
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
-            string query = "UPDATE Utilizador SET(" +
-                "ID_Grupo=@ID_Grupo,Nome=@Nome,Email=@Email,Password=@Password)" +
+            string query = "UPDATE Utilizador SET" +
+                " ID_Grupo=@ID_Grupo,Nome=@Nome,Email=@Email,Password=@Password" +
                 " WHERE ID=@ID";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
+                cmd.Parameters.AddWithValue("@ID", _utilizador.ID);
                 cmd.Parameters.AddWithValue("@ID_Grupo", _utilizador.ID_Grupo);
                 cmd.Parameters.AddWithValue("@Nome", _utilizador.Nome);
                 cmd.Parameters.AddWithValue("@Email", _utilizador.Email);

@@ -50,7 +50,7 @@ namespace PickingSoftware.Models
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
             string query = "INSERT INTO Encomendas_Artigos(" +
-                ",ID_Encomendas,ID_Artigos,Cod_Barras,Situacao,Quant_artigos)" +
+                "ID_Encomendas,ID_Artigos,Cod_Barras,Situacao,Quant_artigos)" +
                 " VALUES (@ID_Encomendas,@ID_Artigos,@Cod_Barras,@Situacao,@Quant_artigos)";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
@@ -76,15 +76,15 @@ namespace PickingSoftware.Models
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
-            string query = "UPDATE Encomendas_Artigos SET(" +
-                "ID_Encomendas=@ID_Encomendas,ID_Artigos=@ID_Artigos,Cod_Barras=@Cod_Barras,Situacao=@Situacao,Quant_artigos=@Quant_artigos)" +
+            string query = "UPDATE Encomendas_Artigos SET" +
+                " ID_Encomendas=@ID_Encomendas,ID_Artigos=@ID_Artigos,Cod_Barras=@Cod_Barras,Quant_artigos=@Quant_artigos" +
                 " WHERE ID=@ID";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
+                cmd.Parameters.AddWithValue("@ID", _encomendasartigos.ID);
                 cmd.Parameters.AddWithValue("@ID_Encomendas", _encomendasartigos.ID_Encomendas);
                 cmd.Parameters.AddWithValue("@ID_Artigos", _encomendasartigos.ID_Artigos);
                 cmd.Parameters.AddWithValue("@Cod_Barras", _encomendasartigos.Cod_Barras);
-                cmd.Parameters.AddWithValue("@Situacao", _encomendasartigos.Situacao);
                 cmd.Parameters.AddWithValue("@Quant_artigos", _encomendasartigos.Quant_artigos);
                 cmd.ExecuteScalar();
 
@@ -108,6 +108,28 @@ namespace PickingSoftware.Models
             {
                 cmd.Parameters.AddWithValue("@ID",id);
                 cmd.ExecuteNonQuery();
+
+                con.Close();
+            }
+        }
+
+        /// <summary>
+        /// Editar Estado
+        /// </summary>
+        /// <param name="_encomendasartigos"></param>
+        public static void GetEstado(Encomendas_Artigos _encomendasartigos)
+        {
+            SqlConnection con =
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+            con.Open();
+            string query = "UPDATE Encomendas_Artigos SET" +
+                " Situacao=@Situacao" +
+                " WHERE ID=@ID";
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@ID", _encomendasartigos.ID);
+                cmd.Parameters.AddWithValue("@Situacao", _encomendasartigos.Situacao);
+                cmd.ExecuteScalar();
 
                 con.Close();
             }

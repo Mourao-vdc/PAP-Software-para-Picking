@@ -2,6 +2,7 @@
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using Xamarin.Forms.Platform.Android;
 
 namespace AppPicking.Droid
 {
@@ -12,6 +13,8 @@ namespace AppPicking.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+
+            this.SetStatusBarColor(Xamarin.Forms.Color.FromHex("#000000").ToAndroid());
 
             base.OnCreate(savedInstanceState);
 

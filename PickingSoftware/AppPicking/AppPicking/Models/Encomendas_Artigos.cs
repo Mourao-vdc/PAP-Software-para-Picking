@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
@@ -44,6 +43,62 @@ namespace AppPicking.Models
                 var content =
                     new StringContent(json, Encoding.UTF8, "application/json");
                 var response = await _client.PostAsync("http://192.168.51.5:150/api/Encomendas_Artigos/adicionar", content);
+
+                Debug.WriteLine("");
+                Debug.WriteLine("StatusCode");
+                Debug.WriteLine(response.StatusCode.ToString());
+                Debug.WriteLine(await response.Content.ReadAsStringAsync());
+                Debug.WriteLine("");
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+
+                else
+                    return false;
+            }
+        }
+
+        public static async Task<bool> EditEncomendas_Artigos(Encomendas_Artigos encomendas_Artigos)
+        {
+            Debug.Write("||||||");
+            Debug.Write("Editar");
+            Debug.Write("||||||");
+            using (HttpClient _client = new HttpClient())
+            {
+                var json = JsonConvert.SerializeObject(encomendas_Artigos);
+                Debug.WriteLine("");
+                Debug.WriteLine(json);
+                Debug.WriteLine("");
+
+                var content =
+                    new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await _client.PutAsync("http://192.168.51.5:150/api/Encomendas_Artigos/editar", content);
+
+                Debug.WriteLine("");
+                Debug.WriteLine("StatusCode");
+                Debug.WriteLine(response.StatusCode.ToString());
+                Debug.WriteLine("");
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+
+                else
+                    return false;
+            }
+        }
+
+        public static async Task<bool> DellEncomendas_Artigos(int id)
+        {
+            using (HttpClient _client = new HttpClient())
+            {
+                /*var json = JsonConvert.SerializeObject(artigos);
+                Debug.WriteLine("");
+                Debug.WriteLine(json);
+                Debug.WriteLine("");
+
+                var content =
+                    new StringContent(json, Encoding.UTF8, "application/json");*/
+                var response = await _client.DeleteAsync("http://192.168.51.5:150/api/Encomendas_Artigos/eliminar/" + id);
 
                 Debug.WriteLine("");
                 Debug.WriteLine("StatusCode");

@@ -46,6 +46,7 @@ group;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPi
 item;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\2\jl\res\drawable\sfcheckbox_animation.xml
 item;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\2\jl\res\values\values.xml
 item;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\58\jl\res\values\styles.xml
+item;obj\Debug\100\res\values\styles.xml
 LinearLayout;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\58\jl\res\layout\bottomtablayout.xml
 objectAnimator;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\2\jl\res\anim\sfcheckbox_checked_inner.xml
 objectAnimator;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\2\jl\res\anim\sfcheckbox_checked_null.xml

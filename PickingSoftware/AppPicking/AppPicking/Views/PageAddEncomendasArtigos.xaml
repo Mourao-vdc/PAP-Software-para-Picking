@@ -9,15 +9,18 @@
                    HorizontalTextAlignment="Center"
                    FontSize="Title"/>
 
-            <Picker x:Name="txtIDEncomenda" Title="ID da Encomenda" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
+            <Picker x:Name="txtIDEncomenda" Title="ID da Encomenda" FontSize="18" TitleColor="DarkGray" TextColor="Black" Margin="0,10,0,0"/>
 
-            <Picker x:Name="txtIDArtigo" Title="ID do Artigo" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
+            <Picker x:Name="txtIDArtigo" Title="ID do Artigo" FontSize="18" TitleColor="DarkGray" TextColor="Black" Margin="0,10,0,0"/>
 
             <Entry Keyboard="Numeric" TextColor="Black" x:Name="txtQuantArtigos"
                    PlaceholderColor="DarkGray" Placeholder="Quantidade de Artigos" Margin="0,10,0,0"/>
 
             <Entry TextColor="Black" x:Name="txtCodBarras"
                    PlaceholderColor="DarkGray" Placeholder="Código de barras" Margin="0,10,0,0"/>
+
+            <Entry TextColor="Black" x:Name="txtsituacao"
+                   PlaceholderColor="DarkGray" IsVisible="false" Text="A preparar" Margin="0,10,0,0"/>
 
             <Button BackgroundColor="Black" Text="Adicionar"
                     x:Name="AddButton"

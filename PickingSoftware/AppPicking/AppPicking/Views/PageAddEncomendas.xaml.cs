@@ -55,11 +55,12 @@ namespace AppPicking.Views
                 {
                     ID_Utilizadores = int.Parse(txtIDUtilizador.SelectedItem.ToString()),
                     Data = dpData.Date.ToString(),
+                    
                 };
 
                 await Encomendas.AddEncomendas(encomendas);
 
-                DisplayAlert("Adicionado", "Encomenda adicionada com sucesso", "Ok");
+                DisplayAlert("Adicionado", "Pedido adicionada com sucesso", "Ok");
             }
         }
     }

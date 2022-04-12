@@ -69,11 +69,12 @@ namespace PickingSoftware.Models
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
-            string query = "UPDATE Permicoes_Gerais SET(" +
-                "ID_Grupo=@ID_Grupo,ID_Permicoes=@ID_Permicoes,Estado=@Estado)" +
+            string query = "UPDATE Permicoes_Gerais SET" +
+                " ID_Grupo=@ID_Grupo,ID_Permicoes=@ID_Permicoes,Estado=@Estado" +
                 " WHERE ID=@ID";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
+                cmd.Parameters.AddWithValue("@ID", _permicoesgerais.ID);
                 cmd.Parameters.AddWithValue("@ID_Grupo", _permicoesgerais.ID_Grupo);
                 cmd.Parameters.AddWithValue("@ID_Permicoes", _permicoesgerais.ID_Permicoes);
                 cmd.Parameters.AddWithValue("@Estado", _permicoesgerais.Estado);

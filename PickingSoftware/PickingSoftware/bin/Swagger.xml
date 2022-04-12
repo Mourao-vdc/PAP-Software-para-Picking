@@ -59,6 +59,12 @@
             </summary>
             <param name="id"></param>
         </member>
+        <member name="M:PickingSoftware.Models.Encomendas_Artigos.GetEstado(PickingSoftware.Models.Encomendas_Artigos)">
+            <summary>
+            Editar Estado
+            </summary>
+            <param name="_encomendasartigos"></param>
+        </member>
         <member name="M:PickingSoftware.Models.Grupos.GetAdicionar(PickingSoftware.Models.Grupos)">
             <summary>
             Adicionar

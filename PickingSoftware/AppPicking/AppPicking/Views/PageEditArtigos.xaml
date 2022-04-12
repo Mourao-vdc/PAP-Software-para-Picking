@@ -9,7 +9,7 @@
                    HorizontalTextAlignment="Center"
                    FontSize="Title"/>
 
-            <Picker x:Name="txtID" Title="ID do Artigo" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
+            <Picker x:Name="txtID" SelectedIndexChanged="txtID_SelectedIndexChanged" Title="ID do Artigo" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
 
 
             <Entry TextColor="Black" x:Name="txtNome"

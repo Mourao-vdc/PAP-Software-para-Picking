@@ -69,5 +69,20 @@ namespace PickingSoftware.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
             }
         }
+
+        [Route("Estado")]
+        [HttpPut]
+        public HttpResponseMessage GetEstado(Models.Encomendas_Artigos _encomendasartigos)
+        {
+            try
+            {
+                Models.Encomendas_Artigos.GetEstado(_encomendasartigos);
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
     }
 }

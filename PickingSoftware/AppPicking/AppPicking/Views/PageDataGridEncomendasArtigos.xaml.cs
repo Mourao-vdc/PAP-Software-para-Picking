@@ -33,15 +33,15 @@ namespace AppPicking.Views
 
             if (action == "Adicionar")
             {
-                await Navigation.PushAsync(new PageAddEncomendas());
+                await Navigation.PushAsync(new PageAddEncomendasArtigos());
             }
             if (action == "Editar")
             {
-                await Navigation.PushAsync(new PageEditEncomendas());
+                await Navigation.PushAsync(new PageEditEncomendasArtigos());
             }
             if (action == "Remover")
             {
-                await Navigation.PushAsync(new PageRemoveEncomendas());
+                await Navigation.PushAsync(new PageRemoveEncomendasArtigos());
             }
         }
     }

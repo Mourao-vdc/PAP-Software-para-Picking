@@ -29,6 +29,8 @@ namespace AppPicking.Views
 
             if(await Models.Utilizador.Userlogin(_user))
             {
+                Models.Username.valor = txtNome.Text;
+
                 txtNome.Text = "";
                 txtPassword.Text = "";
 

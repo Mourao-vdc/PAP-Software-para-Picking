@@ -11,8 +11,8 @@
             <Entry x:Name="txtNome" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Nome"/>
             <Entry x:Name="txtPassword" IsTextPredictionEnabled="false" IsSpellCheckEnabled="false" IsPassword="True" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Password" Margin="0,5,0,10"/>
             <CheckBox x:Name="ShowPassword" Margin="0,0,0,5" Color="DarkGray" CheckedChanged="ShowPassword_CheckedChanged"/>
-            <Button BackgroundColor="Black" Text="Login" Clicked="Button_Clicked"/>
-            <Label Padding="0,10,0,0" FontSize="20" TextColor="DarkGray" Text="Register" HorizontalOptions="Center" FontAttributes="Bold">
+            <Button BackgroundColor="Black" Text="Entrar" Clicked="Button_Clicked"/>
+            <Label Padding="0,10,0,0" FontSize="20" TextColor="DarkGray" Text="Novo Utilizador" HorizontalOptions="Center" FontAttributes="Bold">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                 </Label.GestureRecognizers>

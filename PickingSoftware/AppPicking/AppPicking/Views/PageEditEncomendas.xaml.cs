@@ -51,31 +51,51 @@ namespace AppPicking.Views
 
         private async void searchButton_Clicked(object sender, EventArgs e)
         {
-            if(txtIDUtilizador.SelectedIndex == -1)
+            if(txtID.SelectedIndex == -1)
             {
                 await DisplayAlert("Alerta", "Encomenda não encontrado", "Ok");
                 return;
             }
             else 
             {
-                var _artigo = lvEncomendas.ElementAt(txtIDUtilizador.SelectedIndex);
+                var _artigo = lvEncomendas.ElementAt(txtID.SelectedIndex);
 
                 txtIDUtilizador.SelectedIndex = _artigo.ID_Utilizadores;
-                //dpData.Date = _artigo.Data;
+                dpData.Date = Convert.ToDateTime(_artigo.Data);
 
                 EditButton.IsVisible = true;
                 searchButton.IsVisible = false;
             }
         }
 
-        private void EditButton_Clicked(object sender, EventArgs e)
+        private async void EditButton_Clicked(object sender, EventArgs e)
         {
-            Encomendas encomendas = new Encomendas();
+            Encomendas encomendas = new Encomendas()
             {
-                ID_Utilizadores = txtIDUtilizador.SelectedIndex;
-                Data = dpData.Date.ToString();
-            }
-            DisplayAlert("Editado", "Encomenda atualizada com sucesso", "Ok");
+                ID_Utilizadores = int.Parse(txtIDUtilizador.SelectedItem.ToString()),
+                Data = dpData.ToString(),
+            };
+
+            await Encomendas.EditEncomendas(encomendas);
+
+            DisplayAlert("Editado", "Pedido atualizada com sucesso", "Ok");
+
+            txtID.SelectedIndex = -1;
+            txtIDUtilizador.SelectedIndex = -1;
+            Data = DateTime.Now.ToString();
+            EditButton.IsVisible = false;
+            searchButton.IsVisible = true;
+        }
+
+        private void txtID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtIDUtilizador.SelectedIndex = -1;
+            Data = DateTime.Now.ToString();
+            EditButton.IsVisible = false;
+            searchButton.IsVisible = true;
+
+            EditButton.IsVisible = false;
+            searchButton.IsVisible = true;
         }
     }
 }

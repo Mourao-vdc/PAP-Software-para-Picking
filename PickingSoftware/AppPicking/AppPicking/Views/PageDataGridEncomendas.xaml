@@ -20,7 +20,7 @@
                 <dg:DataGrid.Columns>
                     <dg:DataGridColumn Title="ID" PropertyName="ID" Width="1*"></dg:DataGridColumn>
                     <dg:DataGridColumn Title="ID_Utilizadores" PropertyName="ID_Utilizadores" Width="2*"/>
-                    <dg:DataGridColumn Title="Data" PropertyName="Data" Width="2*"/>
+                    <dg:DataGridColumn Title="Data" PropertyName="Data" x:Name="txtdata" Width="2*"/>
                 </dg:DataGrid.Columns>
                 <dg:DataGrid.RowsBackgroundColorPalette>
                     <dg:PaletteCollection>
