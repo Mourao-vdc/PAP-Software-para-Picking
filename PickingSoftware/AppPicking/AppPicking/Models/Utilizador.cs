@@ -112,6 +112,30 @@ namespace AppPicking.Models
                 return false;*/
         }
 
+        public static async Task<List<Utilizador>> VerifyEmail()
+        {
+            using (HttpClient _client = new HttpClient())
+            {
+                var content = await _client.GetStringAsync("http://192.168.51.5:150/api/utilizador/VerifiEmail");
+
+                Debug.WriteLine(content);
+
+                return JsonConvert.DeserializeObject<List<Utilizador>>(content);
+            }
+        }
+
+        public static async Task<List<Utilizador>> VerifyNome()
+        {
+            using (HttpClient _client = new HttpClient())
+            {
+                var content = await _client.GetStringAsync("http://192.168.51.5:150/api/utilizador/VerifyNome");
+
+                Debug.WriteLine(content);
+
+                return JsonConvert.DeserializeObject<List<Utilizador>>(content);
+            }
+        }
+
         public static bool IsValidEmail(string _email)
         {
             try

@@ -124,10 +124,10 @@ namespace PickingSoftware.Models
             con.Open();
             string query = "UPDATE Encomendas_Artigos SET" +
                 " Situacao=@Situacao" +
-                " WHERE ID=@ID";
+                " WHERE ID_Encomendas=@ID_Encomendas";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                cmd.Parameters.AddWithValue("@ID", _encomendasartigos.ID);
+                cmd.Parameters.AddWithValue("@ID_Encomendas", _encomendasartigos.ID_Encomendas);
                 cmd.Parameters.AddWithValue("@Situacao", _encomendasartigos.Situacao);
                 cmd.ExecuteScalar();
 

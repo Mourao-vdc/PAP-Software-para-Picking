@@ -61,6 +61,9 @@ namespace AppPicking.Views
                 await Encomendas.AddEncomendas(encomendas);
 
                 DisplayAlert("Adicionado", "Pedido adicionada com sucesso", "Ok");
+
+                txtIDUtilizador.SelectedIndex = -1;
+                Data = DateTime.Now.ToString();
             }
         }
     }

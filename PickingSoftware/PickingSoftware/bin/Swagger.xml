@@ -143,5 +143,17 @@
             </summary>
             <param name="_utilizador"></param>
         </member>
+        <member name="M:PickingSoftware.Models.Utilizador.UserVerifyEmail(PickingSoftware.Models.Utilizador)">
+            <summary>
+            Verify Email
+            </summary>
+            <param name="_utilizador"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Utilizador.UserVerifyNome(PickingSoftware.Models.Utilizador)">
+            <summary>
+            Verify Nome
+            </summary>
+            <param name="_utilizador"></param>
+        </member>
     </members>
 </doc>

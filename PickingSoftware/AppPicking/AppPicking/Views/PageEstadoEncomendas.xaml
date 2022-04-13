@@ -25,7 +25,7 @@
                 </input:RadioButtonGroupView>
             </StackLayout>
 
-            <Button x:Name="btnconcluir" BackgroundColor="Black" Text="Concluír" IsVisible="false" Clicked="btnconcluir_Clicked"/>
+            <Button x:Name="btnconcluir" BackgroundColor="Black" Text="Alterar" IsVisible="false" Clicked="btnconcluir_Clicked"/>
 
         </StackLayout>
     </ContentPage.Content>

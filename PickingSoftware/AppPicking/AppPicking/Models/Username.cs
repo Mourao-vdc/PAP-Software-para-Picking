@@ -6,11 +6,13 @@ namespace AppPicking.Models
 {
     internal class Username
     {
-        private static string _valor = "";
-        public static string valor
+        public string valor { get; set; }
+
+        private static string _Nome = "";
+        public static string Nome
         {
-            get { return _valor; }
-            set { _valor = value; }
+            get { return _Nome; }
+            set { _Nome = value; }
         }
     }
 }

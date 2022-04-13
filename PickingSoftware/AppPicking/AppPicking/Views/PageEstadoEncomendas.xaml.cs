@@ -1,6 +1,7 @@
 ﻿using AppPicking.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,6 +10,11 @@ namespace AppPicking.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageEstadoEncomendas : ContentPage
     {
+        string estado;
+
+        public int ID_Encomendas { get; set; }
+        public string Situacao { get; set; }
+
         public PageEstadoEncomendas()
         {
             InitializeComponent();
@@ -49,24 +55,51 @@ namespace AppPicking.Views
             }
         }
 
+        private void PassEstado()
+        {
+            if (rbprepara.IsChecked == true)
+            {
+                estado = "A preparar";
+            }
+            if (rbdistribuicao.IsChecked == true)
+            {
+                estado = "Em distribuição";
+            }
+            if (rbentregue.IsChecked == true)
+            {
+                estado = "Entregue";
+            }
+        }
+
         private async void btnconcluir_Clicked(object sender, EventArgs e)
         {
+            string action = await DisplayActionSheet("Estado: Pretende alterar o estado da encomenda?", "Não", "Sim");
+            Debug.WriteLine("Ações: " + action);
+            if (action == "Sim")
+            {
+                Encomendas_Artigos encomendas_artigos = new Encomendas_Artigos()
+                {
+                    ID_Encomendas = int.Parse(txtEncomenda.SelectedItem.ToString()),
+                    //Situacao = PassEstado(estado),
+                };
 
+                await Encomendas_Artigos.EditEstado(encomendas_artigos);
+
+                DisplayAlert("Concuído", "Estado da encomendas alterado", "Ok");
+
+                txtEncomenda.SelectedIndex = -1;
+                rbestado.IsVisible = false;
+                btnconcluir.IsVisible = false;
+            }
+            return;
+            
         }
 
         private async void txtEncomenda_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (txtEncomenda.SelectedIndex == -1)
-            {
-                await DisplayAlert("Alerta", "Selecione o ID da encomenda pretendida", "Ok");
-                return;
-            }
-            else
-            {
                 Estado();
                 rbestado.IsVisible = true;
                 btnconcluir.IsVisible = true;
-            }
         }
     }
 }

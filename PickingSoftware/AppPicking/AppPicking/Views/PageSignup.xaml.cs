@@ -65,12 +65,12 @@ namespace AppPicking.Views
                             {
                                 Nome = txtNome.Text,
                                 Email = txtEmail.Text,
-                                Password = txtPassword.Text,
+                                Password = Cryptography.Encrypt(txtPassword.Text.ToString()),
                             };
 
                             await Utilizador.AddUtilizadores(utilizador);
 
-                            DisplayAlert("Adicionado", "Artigo adiciocado com sucesso", "Ok");
+                            DisplayAlert("Criado", "Novo utilizador criado com  sucesso", "Ok");
 
                             txtNome.Text = "";
                             txtEmail.Text = "";

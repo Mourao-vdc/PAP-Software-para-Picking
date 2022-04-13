@@ -125,5 +125,41 @@ namespace PickingSoftware.Models
 
             return true;
         }
+
+        /// <summary>
+        /// Verify Email
+        /// </summary>
+        /// <param name="_utilizador"></param>
+        public static bool UserVerifyEmail(Utilizador _utilizador)
+        {
+            SqlConnection con =
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+            con.Open();
+
+            using (SqlCommand cmd = new SqlCommand("verify_emails", con))
+            {
+                cmd.Parameters.AddWithValue("@email", _utilizador.Email);
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Verify Nome
+        /// </summary>
+        /// <param name="_utilizador"></param>
+        public static bool UserVerifyNome(Utilizador _utilizador)
+        {
+            SqlConnection con =
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+            con.Open();
+
+            using (SqlCommand cmd = new SqlCommand("verify_nome", con))
+            {
+                cmd.Parameters.AddWithValue("@nome", _utilizador.Nome);
+            }
+
+            return true;
+        }
     }
 }

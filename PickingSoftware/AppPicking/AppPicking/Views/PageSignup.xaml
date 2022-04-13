@@ -9,10 +9,10 @@
         <StackLayout Padding="40" VerticalOptions="Center"
                      HorizontalOptions="FillAndExpand">
             <Image Source="icon_logo.ico" />
-            <Entry x:Name="txtNome" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Nome"/>
-            <Entry x:Name="txtEmail" Keyboard="Email" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Email" Margin="0,5,0,0"/>
-            <Entry x:Name="txtPassword" IsTextPredictionEnabled="false" IsSpellCheckEnabled="false" IsPassword="True" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Password" Margin="0,5,0,0"/>
-            <Entry x:Name="txtPassword2" IsTextPredictionEnabled="false" IsSpellCheckEnabled="false" IsPassword="True" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Repetir password" Margin="0,5,0,10"/>
+            <Entry x:Name="txtNome" ClearButtonVisibility="WhileEditing" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Nome"/>
+            <Entry x:Name="txtEmail" ClearButtonVisibility="WhileEditing" Keyboard="Email" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Email" Margin="0,5,0,0"/>
+            <Entry x:Name="txtPassword" ClearButtonVisibility="WhileEditing" IsTextPredictionEnabled="false" IsSpellCheckEnabled="false" IsPassword="True" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Password" Margin="0,5,0,0"/>
+            <Entry x:Name="txtPassword2" ClearButtonVisibility="WhileEditing" IsTextPredictionEnabled="false" IsSpellCheckEnabled="false" IsPassword="True" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Repetir password" Margin="0,5,0,10"/>
             <CheckBox x:Name="ShowPassword" Margin="0,0,0,5" Color="DarkGray" CheckedChanged="ShowPassword_CheckedChanged"/>
             <Button BackgroundColor="Black" Text="Criar utilizador" Clicked="Button_Clicked"/>
             <Label Padding="0,10,0,0" FontSize="20" TextColor="DarkGray" Text="Login" HorizontalOptions="Center" FontAttributes="Bold">

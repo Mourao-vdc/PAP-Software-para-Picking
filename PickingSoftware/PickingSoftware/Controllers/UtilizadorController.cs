@@ -84,5 +84,41 @@ namespace PickingSoftware.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
             }
         }
+
+        [Route("VerifiEmail")]
+        [HttpGet]
+        public HttpResponseMessage UserVerifyEmail(Models.Utilizador _utilizador)
+        {
+            try
+            {
+                if (Models.Utilizador.UserVerifyEmail(_utilizador))
+                    return Request.CreateResponse(HttpStatusCode.OK);
+
+                else
+                    return Request.CreateResponse(HttpStatusCode.Unauthorized);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
+
+        [Route("VerifyNome")]
+        [HttpGet]
+        public HttpResponseMessage UserVerifyNome(Models.Utilizador _utilizador)
+        {
+            try
+            {
+                if (Models.Utilizador.UserVerifyNome(_utilizador))
+                    return Request.CreateResponse(HttpStatusCode.OK);
+
+                else
+                    return Request.CreateResponse(HttpStatusCode.Unauthorized);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
     }
 }

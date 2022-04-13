@@ -113,5 +113,34 @@ namespace AppPicking.Models
                     return false;
             }
         }
+
+        public static async Task<bool> EditEstado(Encomendas_Artigos encomendas_Artigos)
+        {
+            Debug.Write("||||||");
+            Debug.Write("Editar");
+            Debug.Write("||||||");
+            using (HttpClient _client = new HttpClient())
+            {
+                var json = JsonConvert.SerializeObject(encomendas_Artigos);
+                Debug.WriteLine("");
+                Debug.WriteLine(json);
+                Debug.WriteLine("");
+
+                var content =
+                    new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await _client.PutAsync("http://192.168.51.5:150/api/Encomendas_Artigos/estado", content);
+
+                Debug.WriteLine("");
+                Debug.WriteLine("StatusCode");
+                Debug.WriteLine(response.StatusCode.ToString());
+                Debug.WriteLine("");
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+
+                else
+                    return false;
+            }
+        }
     }
 }

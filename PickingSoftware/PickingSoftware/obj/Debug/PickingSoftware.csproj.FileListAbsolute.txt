@@ -588,3 +588,5 @@ C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoft
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\bin\Syncfusion.SfNumericTextBox.XForms.xml
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\bin\Xamarin.CommunityToolkit.xml
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\bin\Xamarin.Forms.Platform.WPF.pdb
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\bin\AppPicking.dll
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\bin\AppPicking.pdb

@@ -72,8 +72,9 @@ namespace AppPicking.Views
         {
             Encomendas encomendas = new Encomendas()
             {
+                ID = int.Parse(txtID.SelectedItem.ToString()),
                 ID_Utilizadores = int.Parse(txtIDUtilizador.SelectedItem.ToString()),
-                Data = dpData.ToString(),
+                Data = dpData.Date.ToString(),
             };
 
             await Encomendas.EditEncomendas(encomendas);

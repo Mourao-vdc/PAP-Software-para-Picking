@@ -73,6 +73,11 @@ namespace AppPicking.Views
                 await Encomendas_Artigos.AddEncomendas_Artigos(encomendas_artigos);
 
                 DisplayAlert("Adicionado", "Encomenda adicionada com sucesso", "Ok");
+
+                txtIDEncomenda.SelectedIndex = -1;
+                txtIDArtigo.SelectedIndex = -1;
+                txtCodBarras.Text = "";
+                txtQuantArtigos.Text = "";
             }
         }
     }
