@@ -143,13 +143,13 @@
             </summary>
             <param name="_utilizador"></param>
         </member>
-        <member name="M:PickingSoftware.Models.Utilizador.UserVerifyEmail(PickingSoftware.Models.Utilizador)">
+        <member name="M:PickingSoftware.Models.Utilizador.UserVerifyEmail(System.String)">
             <summary>
             Verify Email
             </summary>
             <param name="_utilizador"></param>
         </member>
-        <member name="M:PickingSoftware.Models.Utilizador.UserVerifyNome(PickingSoftware.Models.Utilizador)">
+        <member name="M:PickingSoftware.Models.Utilizador.UserVerifyNome(System.String)">
             <summary>
             Verify Nome
             </summary>

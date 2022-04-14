@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace PickingSoftware.Models
@@ -129,37 +130,62 @@ namespace PickingSoftware.Models
         /// <summary>
         /// Verify Email
         /// </summary>
-        /// <param name="_utilizador"></param>
-        public static bool UserVerifyEmail(Utilizador _utilizador)
+        /// <param name="email"></param>
+        public static bool UserVerifyEmail(string email)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
-            con.Open();
-
+    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             using (SqlCommand cmd = new SqlCommand("verify_emails", con))
             {
-                cmd.Parameters.AddWithValue("@email", _utilizador.Email);
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                cmd.Parameters.AddWithValue("@email", email);
+                SqlDataReader rd = cmd.ExecuteReader();
+                if (rd.HasRows)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-
-            return true;
         }
 
         /// <summary>
         /// Verify Nome
         /// </summary>
-        /// <param name="_utilizador"></param>
-        public static bool UserVerifyNome(Utilizador _utilizador)
+        /// <param name="nome"></param>
+        public static bool UserVerifyNome(string nome)
         {
             SqlConnection con =
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+            using (SqlCommand cmd = new SqlCommand("verify_nome", con))
+            { 
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                cmd.Parameters.AddWithValue("@nome", nome);
+                SqlDataReader rd = cmd.ExecuteReader();
+                if(rd.HasRows)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            /*SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
 
             using (SqlCommand cmd = new SqlCommand("verify_nome", con))
             {
-                cmd.Parameters.AddWithValue("@nome", _utilizador.Nome);
+                cmd.Parameters.AddWithValue("@nome", nome);
             }
 
-            return true;
+            return true;*/
         }
     }
 }

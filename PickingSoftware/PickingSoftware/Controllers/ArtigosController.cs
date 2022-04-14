@@ -28,12 +28,14 @@ namespace PickingSoftware.Controllers
         {
             try
             {
-                Models.Artigos.GetAdicionar(_artigos);
-                return Request.CreateResponse(HttpStatusCode.OK);
+                if (Models.Artigos.GetAdicionar(_artigos))
+                    return Request.CreateResponse(HttpStatusCode.OK, "Artigo inserido com sucesso!");
+                else
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível inserir o artigo!");
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
 

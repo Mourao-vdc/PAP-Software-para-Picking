@@ -61,23 +61,40 @@ namespace AppPicking.Views
                         }
                         else
                         {
-                            Utilizador utilizador = new Utilizador()
+
+                            if (await Models.Utilizador.VerifyEmail(txtEmail.Text))
                             {
-                                Nome = txtNome.Text,
-                                Email = txtEmail.Text,
-                                Password = Cryptography.Encrypt(txtPassword.Text.ToString()),
-                            };
+                                await DisplayAlert("Erro","O Email inserido ja se encontra registado","Ok");
+                                return;
+                            }
+                            else
+                            {
+                                if(await Models.Utilizador.VerifyNome(txtNome.Text))
+                                {
+                                    await DisplayAlert("Erro", "O Nome inserido ja se encontra registado", "Ok");
+                                    return;
+                                }
+                                else
+                                {
+                                    Utilizador utilizador = new Utilizador()
+                                    {
+                                        Nome = txtNome.Text,
+                                        Email = txtEmail.Text,
+                                        Password = Cryptography.Encrypt(txtPassword.Text.ToString()),
+                                    };
 
-                            await Utilizador.AddUtilizadores(utilizador);
+                                    await Utilizador.AddUtilizadores(utilizador);
 
-                            DisplayAlert("Criado", "Novo utilizador criado com  sucesso", "Ok");
+                                    DisplayAlert("Criado", "Novo utilizador criado com  sucesso", "Ok");
 
-                            txtNome.Text = "";
-                            txtEmail.Text = "";
-                            txtPassword.Text = "";
-                            txtPassword2.Text = "";
+                                    txtNome.Text = "";
+                                    txtEmail.Text = "";
+                                    txtPassword.Text = "";
+                                    txtPassword2.Text = "";
 
-                            await Shell.Current.GoToAsync($"//{nameof(PageLogin)}");
+                                    await Shell.Current.GoToAsync($"//{nameof(PageLogin)}");
+                                }
+                            }
                         }
                     }
                     else

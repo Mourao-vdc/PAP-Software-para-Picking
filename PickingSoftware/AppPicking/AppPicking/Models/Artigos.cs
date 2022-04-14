@@ -25,7 +25,7 @@ namespace AppPicking.Models
             }
         }
 
-        public static async Task<bool> AddArtigos(Artigos artigos)
+        public static async Task<string> AddArtigos(Artigos artigos)
         {
             Debug.Write("||||||");
             Debug.Write("Inserir");
@@ -47,11 +47,13 @@ namespace AppPicking.Models
                 Debug.WriteLine(await response.Content.ReadAsStringAsync());
                 Debug.WriteLine("");
 
-                if (response.IsSuccessStatusCode)
+                return JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
+
+                /*if (response.IsSuccessStatusCode)
                 return true;
 
                 else
-                return false;
+                return false;*/
             }
         }
 

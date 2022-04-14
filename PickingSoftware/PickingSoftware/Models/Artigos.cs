@@ -36,22 +36,32 @@ namespace PickingSoftware.Models
         /// Adicionar
         /// </summary>
         /// <param name="_artigo"></param>
-        public static void GetAdicionar(Artigos _artigo)
+        public static bool GetAdicionar(Artigos _artigo)
         {
-            SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
-            con.Open();
-            string query = "INSERT INTO Artigos(" +
-                "Nome,Cod_Barras)" +
-                " VALUES (@Nome,@Cod_Barras)";
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            try
             {
-                //cmd.Parameters.AddWithValue("@ID", _artigo.ID);
-                cmd.Parameters.AddWithValue("@Nome", _artigo.Nome);
-                cmd.Parameters.AddWithValue("@Cod_Barras", _artigo.Cod_Barras);
-                cmd.ExecuteScalar();
+                SqlConnection con =
+                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                con.Open();
+                string query = "INSERT INTO Artigos(" +
+                    "Nome,Cod_Barras)" +
+                    " VALUES (@Nome,@Cod_Barras)";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    //cmd.Parameters.AddWithValue("@ID", _artigo.ID);
+                    cmd.Parameters.AddWithValue("@Nome", _artigo.Nome);
+                    cmd.Parameters.AddWithValue("@Cod_Barras", _artigo.Cod_Barras);
+                    cmd.ExecuteScalar();
 
-                con.Close();
+                    con.Close();
+
+                    return true;
+                }
+            }
+
+            catch
+            {
+                return false;
             }
 
         }

@@ -85,13 +85,13 @@ namespace PickingSoftware.Controllers
             }
         }
 
-        [Route("VerifiEmail")]
+        [Route("VerifiEmail/{email}")]
         [HttpGet]
-        public HttpResponseMessage UserVerifyEmail(Models.Utilizador _utilizador)
+        public HttpResponseMessage UserVerifyEmail(string email)
         {
             try
             {
-                if (Models.Utilizador.UserVerifyEmail(_utilizador))
+                if (Models.Utilizador.UserVerifyEmail(email))
                     return Request.CreateResponse(HttpStatusCode.OK);
 
                 else
@@ -103,13 +103,13 @@ namespace PickingSoftware.Controllers
             }
         }
 
-        [Route("VerifyNome")]
+        [Route("VerifyNome/{nome}")]
         [HttpGet]
-        public HttpResponseMessage UserVerifyNome(Models.Utilizador _utilizador)
+        public HttpResponseMessage UserVerifyNome(string nome)
         {
             try
             {
-                if (Models.Utilizador.UserVerifyNome(_utilizador))
+                if (Models.Utilizador.UserVerifyNome(nome))
                     return Request.CreateResponse(HttpStatusCode.OK);
 
                 else
