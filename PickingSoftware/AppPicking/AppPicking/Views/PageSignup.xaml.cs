@@ -83,9 +83,7 @@ namespace AppPicking.Views
                                         Password = Cryptography.Encrypt(txtPassword.Text.ToString()),
                                     };
 
-                                    await Utilizador.AddUtilizadores(utilizador);
-
-                                    DisplayAlert("Criado", "Novo utilizador criado com  sucesso", "Ok");
+                                    await DisplayAlert("Resposta", await Utilizador.AddUtilizadores(utilizador), "Ok");
 
                                     txtNome.Text = "";
                                     txtEmail.Text = "";

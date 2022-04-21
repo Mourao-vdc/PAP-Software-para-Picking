@@ -45,12 +45,14 @@ namespace PickingSoftware.Controllers
         {
             try
             {
-                Models.Artigos.GetEditar(_artigos);
-                return Request.CreateResponse(HttpStatusCode.OK);
+                if (Models.Artigos.GetEditar(_artigos))
+                    return Request.CreateResponse(HttpStatusCode.OK, "Artigo atualizado com sucesso!");
+                else
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível editar o artigo!");
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
 
@@ -60,12 +62,14 @@ namespace PickingSoftware.Controllers
         {
             try
             {
-                Models.Artigos.GetEliminar(id);
-                return Request.CreateResponse(HttpStatusCode.OK);
+                if (Models.Artigos.GetEliminar(id))
+                    return Request.CreateResponse(HttpStatusCode.OK, "Artigo removido com sucesso!");
+                else
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível remover o artigo!");
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
     }

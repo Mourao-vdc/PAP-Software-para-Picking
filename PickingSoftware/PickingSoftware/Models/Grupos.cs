@@ -36,66 +36,91 @@ namespace PickingSoftware.Models
         /// Adicionar
         /// </summary>
         /// <param name="_grupos"></param>
-        public static void GetAdicionar(Grupos _grupos)
+        public static bool GetAdicionar(Grupos _grupos)
         {
-            SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
-            con.Open();
-            string query = "INSERT INTO Grupos(" +
-                "ID,Nome)" +
-                " VALUES (@ID,@Nome)";
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            try
             {
-                //cmd.Parameters.AddWithValue("@ID", _artigo.ID);
-                cmd.Parameters.AddWithValue("@ID", _grupos.ID);
-                cmd.Parameters.AddWithValue("@Nome", _grupos.Nome);
-                cmd.ExecuteScalar();
+                SqlConnection con =
+                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                con.Open();
+                string query = "INSERT INTO Grupos(" +
+                    "ID,Nome)" +
+                    " VALUES (@ID,@Nome)";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    //cmd.Parameters.AddWithValue("@ID", _artigo.ID);
+                    cmd.Parameters.AddWithValue("@ID", _grupos.ID);
+                    cmd.Parameters.AddWithValue("@Nome", _grupos.Nome);
+                    cmd.ExecuteScalar();
 
-                con.Close();
+                    con.Close();
+
+                    return true;
+                }
             }
-
+            catch
+            {
+                return false;
+            }
         }
 
         /// <summary>
         /// Editar
         /// </summary>
         /// <param name="_grupos"></param>
-        public static void GetEditar(Grupos _grupos)
+        public static bool GetEditar(Grupos _grupos)
         {
-            SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
-            con.Open();
-            string query = "UPDATE Grupos SET" +
-                " Nome=@Nome" +
-                " WHERE ID=@ID";
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            try
             {
-                cmd.Parameters.AddWithValue("@ID", _grupos.ID);
-                cmd.Parameters.AddWithValue("@Nome", _grupos.Nome);
-                cmd.ExecuteScalar();
+                SqlConnection con =
+                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                con.Open();
+                string query = "UPDATE Grupos SET" +
+                    " Nome=@Nome" +
+                    " WHERE ID=@ID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ID", _grupos.ID);
+                    cmd.Parameters.AddWithValue("@Nome", _grupos.Nome);
+                    cmd.ExecuteScalar();
 
-                con.Close();
+                    con.Close();
+
+                    return true;
+                }
             }
-
+            catch
+            {
+                return false;
+            }
         }
 
         /// <summary>
         /// Eliminar
         /// </summary>
         /// <param name="id"></param>
-        public static void GetEliminar(int id)
+        public static bool GetEliminar(int id)
         {
-            SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
-            con.Open();
-            string query = "DELETE Grupos" +
-                " WHERE ID=@ID";
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            try
             {
-                cmd.Parameters.AddWithValue("@ID", id);
-                cmd.ExecuteNonQuery();
+                SqlConnection con =
+                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                con.Open();
+                string query = "DELETE Grupos" +
+                    " WHERE ID=@ID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ID", id);
+                    cmd.ExecuteNonQuery();
 
-                con.Close();
+                    con.Close();
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
             }
         }
     }

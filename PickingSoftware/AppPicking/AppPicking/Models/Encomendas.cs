@@ -25,7 +25,7 @@ namespace AppPicking.Models
             }
         }
 
-        public static async Task<bool> AddEncomendas(Encomendas encomendas)
+        public static async Task<string> AddEncomendas(Encomendas encomendas)
         {
             Debug.Write("||||||");
             Debug.Write("Inserir");
@@ -47,15 +47,11 @@ namespace AppPicking.Models
                 Debug.WriteLine(await response.Content.ReadAsStringAsync());
                 Debug.WriteLine("");
 
-                if (response.IsSuccessStatusCode)
-                    return true;
-
-                else
-                    return false;
+                return JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
             }
         }
 
-        public static async Task<bool> EditEncomendas(Encomendas encomendas)
+        public static async Task<string> EditEncomendas(Encomendas encomendas)
         {
             Debug.Write("||||||");
             Debug.Write("Editar");
@@ -76,15 +72,11 @@ namespace AppPicking.Models
                 Debug.WriteLine(response.StatusCode.ToString());
                 Debug.WriteLine("");
 
-                if (response.IsSuccessStatusCode)
-                    return true;
-
-                else
-                    return false;
+                return JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
             }
         }
 
-        public static async Task<bool> DellEncomenda(int id)
+        public static async Task<string> DellEncomenda(int id)
         {
             using (HttpClient _client = new HttpClient())
             {
@@ -103,11 +95,7 @@ namespace AppPicking.Models
                 Debug.WriteLine(await response.Content.ReadAsStringAsync());
                 Debug.WriteLine("");
 
-                if (response.IsSuccessStatusCode)
-                    return true;
-
-                else
-                    return false;
+                return JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
             }
         }
     }

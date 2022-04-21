@@ -28,12 +28,14 @@ namespace PickingSoftware.Controllers
         {
             try
             {
-                Models.Encomendas.GetAdicionar(_encomendas);
-                return Request.CreateResponse(HttpStatusCode.OK);
+                if (Models.Encomendas.GetAdicionar(_encomendas))
+                    return Request.CreateResponse(HttpStatusCode.OK, "Pedido inserido com sucesso!");
+                else
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível inserir o pedido!");
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
 
@@ -43,12 +45,14 @@ namespace PickingSoftware.Controllers
         {
             try
             {
-                Models.Encomendas.GetEditar(_encomendas);
-                return Request.CreateResponse(HttpStatusCode.OK);
+                if (Models.Encomendas.GetEditar(_encomendas))
+                    return Request.CreateResponse(HttpStatusCode.OK, "Pedido atulizado com sucesso");
+                else
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível editar o pedido!");
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
 
@@ -58,12 +62,14 @@ namespace PickingSoftware.Controllers
         {
             try
             {
-                Models.Encomendas.GetEliminar(id);
-                return Request.CreateResponse(HttpStatusCode.OK);
+                if (Models.Encomendas.GetEliminar(id))
+                    return Request.CreateResponse(HttpStatusCode.OK, "Pedido removido com sucesso!");
+                else
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível remover o pedido!");
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
     }

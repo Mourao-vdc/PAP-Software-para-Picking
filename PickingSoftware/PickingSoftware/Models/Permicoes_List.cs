@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 
 namespace PickingSoftware.Models
 {
@@ -36,65 +33,90 @@ namespace PickingSoftware.Models
         /// Adicionar
         /// </summary>
         /// <param name="_permicoeslist"></param>
-        public static void GetAdicionar(Permicoes_List _permicoeslist)
+        public static bool GetAdicionar(Permicoes_List _permicoeslist)
         {
-            SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
-            con.Open();
-            string query = "INSERT INTO Permicoes_List(" +
-                "Nome)" +
-                " VALUES (@Nome)";
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            try
             {
-                cmd.Parameters.AddWithValue("@Nome", _permicoeslist.Nome);
-                cmd.ExecuteScalar();
+                SqlConnection con =
+                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                con.Open();
+                string query = "INSERT INTO Permicoes_List(" +
+                    "Nome)" +
+                    " VALUES (@Nome)";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Nome", _permicoeslist.Nome);
+                    cmd.ExecuteScalar();
 
-                con.Close();
+                    con.Close();
+
+                    return true;
+                }
             }
-
+            catch
+            {
+                return false;
+            }
         }
 
         /// <summary>
         /// Editar
         /// </summary>
         /// <param name="_permicoesgerais"></param>
-        public static void GetEditar(Permicoes_List _permicoeslist)
+        public static bool GetEditar(Permicoes_List _permicoeslist)
         {
-            SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
-            con.Open();
-            string query = "UPDATE Permicoes_List SET" +
-                " Nome=@Nome" +
-                " WHERE ID=@ID";
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            try
             {
-                cmd.Parameters.AddWithValue("@ID", _permicoeslist.ID);
-                cmd.Parameters.AddWithValue("@Nome", _permicoeslist.Nome);
+                SqlConnection con =
+                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                con.Open();
+                string query = "UPDATE Permicoes_List SET" +
+                    " Nome=@Nome" +
+                    " WHERE ID=@ID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ID", _permicoeslist.ID);
+                    cmd.Parameters.AddWithValue("@Nome", _permicoeslist.Nome);
 
-                cmd.ExecuteScalar();
+                    cmd.ExecuteScalar();
 
-                con.Close();
+                    con.Close();
+
+                    return true;
+                }
             }
-
+            catch
+            {
+                return false;
+            }
         }
 
         /// <summary>
         /// Eliminar
         /// </summary>
         /// <param name="id"></param>
-        public static void GetEliminar(int id)
+        public static bool GetEliminar(int id)
         {
-            SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
-            con.Open();
-            string query = "DELETE Permicoes_List" +
-                " WHERE ID=@ID";
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            try
             {
-                cmd.Parameters.AddWithValue("@ID",id);
-                cmd.ExecuteNonQuery();
+                SqlConnection con =
+                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                con.Open();
+                string query = "DELETE Permicoes_List" +
+                    " WHERE ID=@ID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ID", id);
+                    cmd.ExecuteNonQuery();
 
-                con.Close();
+                    con.Close();
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
             }
         }
     }

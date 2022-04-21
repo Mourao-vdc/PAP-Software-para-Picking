@@ -36,7 +36,7 @@ namespace AppPicking.Views
                 txtNome.Text = "";
                 txtPassword.Text = "";
 
-                await Shell.Current.GoToAsync($"//{nameof(PageDataGridEncomendasArtigos)}");
+                await Shell.Current.GoToAsync($"//{nameof(PageDataGridEncomendas)}");
             }
             else
             {

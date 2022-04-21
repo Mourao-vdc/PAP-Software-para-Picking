@@ -83,9 +83,7 @@ namespace AppPicking.Views
                     Cod_Barras = txtCod_Barras.Text,
                 };
 
-                await Artigos.EditArtigos(artigos);
-
-                DisplayAlert("Editado", "Artigo atulizado com sucesso", "Ok");
+                await DisplayAlert("Resposta", await Artigos.EditArtigos(artigos), "Ok");
 
                 txtID.SelectedIndex = -1;
                 txtNome.Text = "";

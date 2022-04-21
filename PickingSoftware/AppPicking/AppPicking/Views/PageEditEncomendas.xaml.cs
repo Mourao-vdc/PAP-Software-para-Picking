@@ -77,9 +77,7 @@ namespace AppPicking.Views
                 Data = dpData.Date.ToString(),
             };
 
-            await Encomendas.EditEncomendas(encomendas);
-
-            DisplayAlert("Editado", "Pedido atualizada com sucesso", "Ok");
+            await DisplayAlert("Resposta", await Encomendas.EditEncomendas(encomendas), "Ok");
 
             txtID.SelectedIndex = -1;
             txtIDUtilizador.SelectedIndex = -1;

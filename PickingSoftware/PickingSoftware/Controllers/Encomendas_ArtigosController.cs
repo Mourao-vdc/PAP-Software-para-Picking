@@ -31,12 +31,14 @@ namespace PickingSoftware.Controllers
         {
             try
             {
-                Models.Encomendas_Artigos.GetAdicionar(_encomendasartigos);
-                return Request.CreateResponse(HttpStatusCode.OK);
+                if(Models.Encomendas_Artigos.GetAdicionar(_encomendasartigos))
+                    return Request.CreateResponse(HttpStatusCode.OK, "Encomenda inserida com sucesso!");
+                else
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível inserir a encomenda!");
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
 
@@ -46,12 +48,14 @@ namespace PickingSoftware.Controllers
         {
             try
             {
-                Models.Encomendas_Artigos.GetEditar(_encomendasartigos);
-                return Request.CreateResponse(HttpStatusCode.OK);
+                if (Models.Encomendas_Artigos.GetEditar(_encomendasartigos))
+                    return Request.CreateResponse(HttpStatusCode.OK, "Encomenda inserida com sucesso!");
+                else
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível inserir a encomenda!");
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
 
@@ -61,12 +65,14 @@ namespace PickingSoftware.Controllers
         {
             try
             {
-                Models.Encomendas_Artigos.GetEliminar(id);
-                return Request.CreateResponse(HttpStatusCode.OK);
+                if (Models.Encomendas_Artigos.GetEliminar(id))
+                    return Request.CreateResponse(HttpStatusCode.OK, "Encomenda inserida com sucesso!");
+                else
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível inserir a encomenda!");
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
 

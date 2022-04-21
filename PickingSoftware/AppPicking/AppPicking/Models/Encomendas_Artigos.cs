@@ -28,7 +28,7 @@ namespace AppPicking.Models
             }
         }
 
-        public static async Task<bool> AddEncomendas_Artigos(Encomendas_Artigos encomendas_Artigos)
+        public static async Task<string> AddEncomendas_Artigos(Encomendas_Artigos encomendas_Artigos)
         {
             Debug.Write("||||||");
             Debug.Write("Inserir");
@@ -50,15 +50,11 @@ namespace AppPicking.Models
                 Debug.WriteLine(await response.Content.ReadAsStringAsync());
                 Debug.WriteLine("");
 
-                if (response.IsSuccessStatusCode)
-                    return true;
-
-                else
-                    return false;
+                return JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
             }
         }
 
-        public static async Task<bool> EditEncomendas_Artigos(Encomendas_Artigos encomendas_Artigos)
+        public static async Task<string> EditEncomendas_Artigos(Encomendas_Artigos encomendas_Artigos)
         {
             Debug.Write("||||||");
             Debug.Write("Editar");
@@ -79,15 +75,11 @@ namespace AppPicking.Models
                 Debug.WriteLine(response.StatusCode.ToString());
                 Debug.WriteLine("");
 
-                if (response.IsSuccessStatusCode)
-                    return true;
-
-                else
-                    return false;
+                return JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
             }
         }
 
-        public static async Task<bool> DellEncomendas_Artigos(int id)
+        public static async Task<string> DellEncomendas_Artigos(int id)
         {
             using (HttpClient _client = new HttpClient())
             {
@@ -106,11 +98,7 @@ namespace AppPicking.Models
                 Debug.WriteLine(await response.Content.ReadAsStringAsync());
                 Debug.WriteLine("");
 
-                if (response.IsSuccessStatusCode)
-                    return true;
-
-                else
-                    return false;
+                return JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
             }
         }
 

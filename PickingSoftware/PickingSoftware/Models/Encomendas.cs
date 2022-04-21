@@ -36,22 +36,31 @@ namespace PickingSoftware.Models
         /// Adicionar
         /// </summary>
         /// <param name="_encomendas"></param>
-        public static void GetAdicionar(Encomendas _encomendas)
+        public static bool GetAdicionar(Encomendas _encomendas)
         {
-            SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
-            con.Open();
-            string query = "INSERT INTO Encomendas(" +
-                "ID_Utilizadores,Data)" +
-                " VALUES (@ID_Utilizadores,@Data)";
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            try
             {
-                //cmd.Parameters.AddWithValue("@ID", _artigo.ID);
-                cmd.Parameters.AddWithValue("@ID_Utilizadores", _encomendas.ID_Utilizadores);
-                cmd.Parameters.AddWithValue("@Data", _encomendas.Data);
-                cmd.ExecuteScalar();
+                SqlConnection con =
+                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                con.Open();
+                string query = "INSERT INTO Encomendas(" +
+                    "ID_Utilizadores,Data)" +
+                    " VALUES (@ID_Utilizadores,@Data)";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    //cmd.Parameters.AddWithValue("@ID", _artigo.ID);
+                    cmd.Parameters.AddWithValue("@ID_Utilizadores", _encomendas.ID_Utilizadores);
+                    cmd.Parameters.AddWithValue("@Data", _encomendas.Data);
+                    cmd.ExecuteScalar();
 
-                con.Close();
+                    con.Close();
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
             }
 
         }
@@ -60,22 +69,31 @@ namespace PickingSoftware.Models
         /// Editar
         /// </summary>
         /// <param name="_encomendas"></param>
-        public static void GetEditar(Encomendas _encomendas)
+        public static bool GetEditar(Encomendas _encomendas)
         {
-            SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
-            con.Open();
-            string query = "UPDATE Encomendas SET" +
-                " ID_Utilizadores=@ID_Utilizadores,Data=@Data" +
-                " WHERE ID=@ID";
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            try
             {
-                cmd.Parameters.AddWithValue("@ID", _encomendas.ID);
-                cmd.Parameters.AddWithValue("@ID_Utilizadores", _encomendas.ID_Utilizadores);
-                cmd.Parameters.AddWithValue("@Data", _encomendas.Data);
-                cmd.ExecuteScalar();
+                SqlConnection con =
+                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                con.Open();
+                string query = "UPDATE Encomendas SET" +
+                    " ID_Utilizadores=@ID_Utilizadores,Data=@Data" +
+                    " WHERE ID=@ID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ID", _encomendas.ID);
+                    cmd.Parameters.AddWithValue("@ID_Utilizadores", _encomendas.ID_Utilizadores);
+                    cmd.Parameters.AddWithValue("@Data", _encomendas.Data);
+                    cmd.ExecuteScalar();
 
-                con.Close();
+                    con.Close();
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
             }
 
         }
@@ -84,19 +102,28 @@ namespace PickingSoftware.Models
         /// Eliminar
         /// </summary>
         /// <param name="id"></param>
-        public static void GetEliminar(int id)
+        public static bool GetEliminar(int id)
         {
-            SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
-            con.Open();
-            string query = "DELETE Encomendas" +
-                " WHERE ID=@ID";
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            try
             {
-                cmd.Parameters.AddWithValue("@ID", id);
-                cmd.ExecuteNonQuery();
+                SqlConnection con =
+                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                con.Open();
+                string query = "DELETE Encomendas" +
+                    " WHERE ID=@ID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ID", id);
+                    cmd.ExecuteNonQuery();
 
-                con.Close();
+                    con.Close();
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
             }
         }
     }

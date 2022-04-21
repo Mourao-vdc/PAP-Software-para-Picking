@@ -72,9 +72,7 @@ namespace AppPicking.Views
                 ID = int.Parse(txtID.SelectedItem.ToString()),
             };
 
-            await Encomendas.DellEncomenda(int.Parse(txtID.SelectedItem.ToString()));
-
-            DisplayAlert("Removido", "Pedido removido da base de dados", "Ok");
+            await DisplayAlert("Resposta", await Encomendas.DellEncomenda(int.Parse(txtID.SelectedItem.ToString())), "Ok");
 
             txtID.SelectedIndex = -1;
             txtIDUtilizador.SelectedIndex = -1;

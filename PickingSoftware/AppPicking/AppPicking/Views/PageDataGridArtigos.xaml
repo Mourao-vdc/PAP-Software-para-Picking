@@ -6,7 +6,7 @@
     <ContentView>
         <StackLayout>
         <!-- Place new controls here -->
-            <dg:DataGrid x:Name="lvArtigos"  ItemsSource="{Binding ID}" SelectionEnabled="True" SelectedItem="{Binding Nome}" RowHeight="70" HeaderHeight="50"  
+            <dg:DataGrid x:Name="lvArtigos" HeaderTextColor="Black" ItemsSource="{Binding ID}" SelectionEnabled="True" SelectedItem="{Binding Nome}" RowHeight="70" HeaderHeight="50"  
                     BorderColor="Black" HeaderBackground="LightGray" PullToRefreshCommand="{Binding Cod_Barras}" IsRefreshing="{Binding IsRefreshing}" ActiveRowColor="#8899AA">
             <x:Arguments>
                 <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
@@ -22,7 +22,7 @@
                 <dg:DataGridColumn PropertyName="Nome" Width="2*">
                     <dg:DataGridColumn.FormattedTitle>
                         <FormattedString>
-                            <Span Text="Nome" FontSize="13" TextColor="White" FontAttributes="Bold"/>
+                                <Span Text="Nome" FontSize="13" FontAttributes="Bold"/>
                         </FormattedString>
                     </dg:DataGridColumn.FormattedTitle>
                 </dg:DataGridColumn>
@@ -40,7 +40,7 @@
                      WidthRequest="40"
                      HeightRequest="40"
                      Margin="0,10,30,10"
-                     ImageSource="icon_more.png"
+                     ImageSource="icon_add.png"
                      BackgroundColor="Black"
                      HorizontalOptions="End"
                      VerticalOptions="End"

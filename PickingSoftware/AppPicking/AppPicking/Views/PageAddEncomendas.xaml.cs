@@ -58,10 +58,8 @@ namespace AppPicking.Views
                     
                 };
 
-                await Encomendas.AddEncomendas(encomendas);
-
-                DisplayAlert("Adicionado", "Pedido adicionada com sucesso", "Ok");
-
+                await DisplayAlert("Resposta", await Encomendas.AddEncomendas(encomendas), "Ok");
+                
                 txtIDUtilizador.SelectedIndex = -1;
                 Data = DateTime.Now.ToString();
             }

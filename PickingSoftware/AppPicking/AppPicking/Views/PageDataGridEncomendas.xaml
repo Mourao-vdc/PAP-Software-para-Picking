@@ -6,7 +6,7 @@
     <ContentView>
         <StackLayout>
             <!-- Place new controls here -->
-            <dg:DataGrid x:Name="lvEncomendas"  ItemsSource="{Binding ID}" SelectionEnabled="True" SelectedItem="{Binding ID_Utilizadores}" RowHeight="70" HeaderHeight="50"  
+            <dg:DataGrid x:Name="lvEncomendas" HeaderTextColor="Black" ItemsSource="{Binding ID}" SelectionEnabled="True" SelectedItem="{Binding ID_Utilizadores}" RowHeight="70" HeaderHeight="50"  
                     BorderColor="Black" HeaderBackground="LightGray" PullToRefreshCommand="{Binding Data}">
                 <x:Arguments>
                     <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
@@ -34,7 +34,7 @@
                      WidthRequest="40"
                      HeightRequest="40"
                      Margin="0,10,30,10"
-                     ImageSource="icon_more.png"
+                     ImageSource="icon_add.png"
                      BackgroundColor="Black"
                      HorizontalOptions="End"
                      VerticalOptions="End"

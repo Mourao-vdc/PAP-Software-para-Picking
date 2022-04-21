@@ -41,24 +41,32 @@ namespace PickingSoftware.Models
         /// Adicionar
         /// </summary>
         /// <param name="_utilizador"></param>
-        public static void GetAdicionar(Utilizador _utilizador)
+        public static bool GetAdicionar(Utilizador _utilizador)
         {
-            SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
-            con.Open();
-            string query = "INSERT INTO Utilizador(" +
-                "Nome,Email,Password)" +
-                " VALUES (@Nome,@Email,@Password)";
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            try
             {
-                cmd.Parameters.AddWithValue("@Nome", _utilizador.Nome);
-                cmd.Parameters.AddWithValue("@Email", _utilizador.Email);
-                cmd.Parameters.AddWithValue("@Password", _utilizador.Password);
-                cmd.ExecuteScalar();
+                SqlConnection con =
+                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                con.Open();
+                string query = "INSERT INTO Utilizador(" +
+                    "Nome,Email,Password)" +
+                    " VALUES (@Nome,@Email,@Password)";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Nome", _utilizador.Nome);
+                    cmd.Parameters.AddWithValue("@Email", _utilizador.Email);
+                    cmd.Parameters.AddWithValue("@Password", _utilizador.Password);
+                    cmd.ExecuteScalar();
 
-                con.Close();
+                    con.Close();
+
+                    return true;
+                }
             }
-
+            catch
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -66,24 +74,33 @@ namespace PickingSoftware.Models
         /// </summary>
         /// <param name="_utilizador"></param>
 
-        public static void GetEditar(Utilizador _utilizador)
+        public static bool GetEditar(Utilizador _utilizador)
         {
-            SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
-            con.Open();
-            string query = "UPDATE Utilizador SET" +
-                " ID_Grupo=@ID_Grupo,Nome=@Nome,Email=@Email,Password=@Password" +
-                " WHERE ID=@ID";
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            try
             {
-                cmd.Parameters.AddWithValue("@ID", _utilizador.ID);
-                cmd.Parameters.AddWithValue("@ID_Grupo", _utilizador.ID_Grupo);
-                cmd.Parameters.AddWithValue("@Nome", _utilizador.Nome);
-                cmd.Parameters.AddWithValue("@Email", _utilizador.Email);
-                cmd.Parameters.AddWithValue("@Password", _utilizador.Password);
-                cmd.ExecuteScalar();
+                SqlConnection con =
+                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                con.Open();
+                string query = "UPDATE Utilizador SET" +
+                    " ID_Grupo=@ID_Grupo,Nome=@Nome,Email=@Email,Password=@Password" +
+                    " WHERE ID=@ID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ID", _utilizador.ID);
+                    cmd.Parameters.AddWithValue("@ID_Grupo", _utilizador.ID_Grupo);
+                    cmd.Parameters.AddWithValue("@Nome", _utilizador.Nome);
+                    cmd.Parameters.AddWithValue("@Email", _utilizador.Email);
+                    cmd.Parameters.AddWithValue("@Password", _utilizador.Password);
+                    cmd.ExecuteScalar();
 
-                con.Close();
+                    con.Close();
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
             }
 
         }
@@ -92,19 +109,28 @@ namespace PickingSoftware.Models
         /// Eliminar
         /// </summary>
         /// <param name="id"></param>
-        public static void GetEliminar(int id)
+        public static bool GetEliminar(int id)
         {
-            SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
-            con.Open();
-            string query = "DELETE Utilizador" +
-                " WHERE ID=@ID";
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            try
             {
-                cmd.Parameters.AddWithValue("@ID",id);
-                cmd.ExecuteNonQuery();
+                SqlConnection con =
+                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                con.Open();
+                string query = "DELETE Utilizador" +
+                    " WHERE ID=@ID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ID", id);
+                    cmd.ExecuteNonQuery();
 
-                con.Close();
+                    con.Close();
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
             }
         }
 

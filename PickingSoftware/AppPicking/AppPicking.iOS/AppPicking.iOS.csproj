@@ -193,4 +193,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_entr.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_add.png" />
+  </ItemGroup>
 </Project>

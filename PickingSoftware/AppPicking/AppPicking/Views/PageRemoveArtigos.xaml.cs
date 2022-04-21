@@ -74,9 +74,7 @@ namespace AppPicking.Views
 
             };
 
-            await Artigos.DellArtigos(int.Parse(txtID.SelectedItem.ToString()));
-
-            DisplayAlert("Removido", "Artigo removido da base de dados", "Ok");
+            await DisplayAlert("Resposta", await Artigos.DellArtigos(int.Parse(txtID.SelectedItem.ToString())), "Ok");
 
             txtID.SelectedIndex = -1;
             txtNome.Text = "";

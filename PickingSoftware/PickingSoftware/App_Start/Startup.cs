@@ -1,9 +1,7 @@
 ﻿using Microsoft.Owin;
-using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System;
-using System.Web.Http;
 
 [assembly: OwinStartup(typeof(PickingSoftware.App_Start.Startup))]
 

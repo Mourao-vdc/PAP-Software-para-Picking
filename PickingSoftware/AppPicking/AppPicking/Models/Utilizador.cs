@@ -28,7 +28,7 @@ namespace AppPicking.Models
             }
         }
 
-        public static async Task<bool> AddUtilizadores(Utilizador utilizador)
+        public static async Task<string> AddUtilizadores(Utilizador utilizador)
         {
             Debug.Write("||||||");
             Debug.Write("Inserir");
@@ -50,11 +50,7 @@ namespace AppPicking.Models
                 Debug.WriteLine(await response.Content.ReadAsStringAsync());
                 Debug.WriteLine("");
 
-                if (response.IsSuccessStatusCode)
-                    return true;
-
-                else
-                    return false;
+                return JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
             }
         }
 
@@ -116,7 +112,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var response = await _client.GetAsync("http://192.168.51.5:150/api/utilizador/VerifiEmail/" + email);
+                var response = await _client.GetAsync("http://192.168.51.5:150/api/utilizador/VerifyEmail/" + email);
 
                 Debug.WriteLine(response.StatusCode.ToString());
 
@@ -132,7 +128,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var response = await _client.GetAsync("http://192.168.51.5:150/api/utilizador/VerifiEmail/" + nome);
+                var response = await _client.GetAsync("http://192.168.51.5:150/api/utilizador/VerifyNome/" + nome);
 
                 if (response.IsSuccessStatusCode)
                     return true;

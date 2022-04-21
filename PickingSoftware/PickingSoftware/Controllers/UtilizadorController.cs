@@ -28,8 +28,10 @@ namespace PickingSoftware.Controllers
         {
             try
             {
-                Models.Utilizador.GetAdicionar(_utilizador);
-                return Request.CreateResponse(HttpStatusCode.OK);
+                if (Models.Utilizador.GetAdicionar(_utilizador))
+                    return Request.CreateResponse(HttpStatusCode.OK, "Utilizador criado com sucesso!");
+                else
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possivel criar o utilizador!");
             }
             catch (Exception ex)
             {
@@ -85,7 +87,7 @@ namespace PickingSoftware.Controllers
             }
         }
 
-        [Route("VerifiEmail/{email}")]
+        [Route("VerifyEmail/{email}")]
         [HttpGet]
         public HttpResponseMessage UserVerifyEmail(string email)
         {
