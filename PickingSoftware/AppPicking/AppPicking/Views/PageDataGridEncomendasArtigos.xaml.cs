@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AppPicking.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -28,13 +24,14 @@ namespace AppPicking.Views
 
         private async void btnPopup_Clicked(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Adicionar", "Editar", "Remover");
+            await Navigation.PushAsync(new PageAddEncomendasArtigos());
+        }
+
+        private async void lvEncomendasArtigos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover", "Alterar quantidade");
             Debug.WriteLine("Ações: " + action);
 
-            if (action == "Adicionar")
-            {
-                await Navigation.PushAsync(new PageAddEncomendasArtigos());
-            }
             if (action == "Editar")
             {
                 await Navigation.PushAsync(new PageEditEncomendasArtigos());
@@ -42,6 +39,43 @@ namespace AppPicking.Views
             if (action == "Remover")
             {
                 await Navigation.PushAsync(new PageRemoveEncomendasArtigos());
+            }
+            if (action == "Alterar quantidade")
+            {
+                //await Navigation.PushAsync(new PageEditSituacao());
+
+                string result = await DisplayPromptAsync("Quantidade", "Teste","Confirmar","Cancelar",keyboard:Keyboard.Numeric);
+
+                if (result == "")
+                {
+                    return;
+                }
+                if (int.Parse(result.ToString()) < 10)
+                {
+                    Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
+                    { 
+                        Quant_artigos = int.Parse(result.ToString()),
+                        Situacao = "A preparar",
+                    };
+
+                    await Encomendas_Artigos.EditEncomendas_Artigos(_encomendasartigos);
+                }
+                if (int.Parse(result.ToString()) == 10)
+                {
+                    Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
+                    {
+                        Quant_artigos = 0,
+                        Situacao = "Pronto",
+                    };
+
+                    await Encomendas_Artigos.EditEncomendas_Artigos(_encomendasartigos);
+                }
+                if (int.Parse(result.ToString()) < 10)
+                {
+                    await DisplayAlert("Erro","A Quantidade inserida é maior do que a pedida!","Ok");
+
+                    return;
+                }
             }
         }
     }

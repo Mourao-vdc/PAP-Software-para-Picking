@@ -1,10 +1,5 @@
 ﻿using AppPicking.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -78,6 +73,7 @@ namespace AppPicking.Views
                                 {
                                     Utilizador utilizador = new Utilizador()
                                     {
+                                        ID_Grupo = 1,
                                         Nome = txtNome.Text,
                                         Email = txtEmail.Text,
                                         Password = Cryptography.Encrypt(txtPassword.Text.ToString()),

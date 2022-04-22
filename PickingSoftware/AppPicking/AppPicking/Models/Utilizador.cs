@@ -20,11 +20,17 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var content = await _client.GetStringAsync("http://192.168.51.5:150/api/utilizador/todas");
+                var content = await _client.GetAsync("http://192.168.51.5:150/api/utilizador/todas");
 
-                Debug.WriteLine(content);
+                Debug.WriteLine("");
+                Debug.WriteLine(content.StatusCode.ToString());
+                Debug.WriteLine("");
 
-                return JsonConvert.DeserializeObject<List<Utilizador>>(content);
+                if (content.IsSuccessStatusCode)
+                    return JsonConvert.DeserializeObject<List<Utilizador>>(await content.Content.ReadAsStringAsync());
+
+                else
+                    return new List<Utilizador>();
             }
         }
 

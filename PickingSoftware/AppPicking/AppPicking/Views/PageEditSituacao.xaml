@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPicking.Views.PageEditSituacao">
+    <ContentPage.Content>
+        <StackLayout Margin="20,20,20,20">
+            <Label Text="Remover Artigos" 
+                   TextColor="Black"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Title"/>
+
+            <Entry x:Name="txtIDPedido" TextColor="Black" IsEnabled="False"/>
+
+            <Entry x:Name="txtNomeArtigo" TextColor="Black" IsEnabled="False"/>
+
+            <Entry x:Name="txtQuant" Keyboard="Numeric" TextColor="Black"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

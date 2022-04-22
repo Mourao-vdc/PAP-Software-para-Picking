@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -27,13 +22,14 @@ namespace AppPicking.Views
 
         private async void btnPopup_Clicked(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Adicionar", "Editar", "Remover");
+            await Navigation.PushAsync(new PageAddEncomendas());
+        }
+
+        private async void lvUtilizadores_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover");
             Debug.WriteLine("Ações: " + action);
 
-            if (action == "Adicionar")
-            {
-                await Navigation.PushAsync(new PageAddEncomendas());
-            }
             if (action == "Editar")
             {
                 await Navigation.PushAsync(new PageEditEncomendas());

@@ -55,7 +55,7 @@
         </member>
         <member name="M:PickingSoftware.Models.Encomendas_Artigos.GetEliminar(System.Int32)">
             <summary>
-            Adicionar
+            Eliminar
             </summary>
             <param name="id"></param>
         </member>
@@ -147,13 +147,13 @@
             <summary>
             Verify Email
             </summary>
-            <param name="_utilizador"></param>
+            <param name="email"></param>
         </member>
         <member name="M:PickingSoftware.Models.Utilizador.UserVerifyNome(System.String)">
             <summary>
             Verify Nome
             </summary>
-            <param name="_utilizador"></param>
+            <param name="nome"></param>
         </member>
     </members>
 </doc>

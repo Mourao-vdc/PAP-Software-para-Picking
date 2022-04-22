@@ -12,7 +12,6 @@ namespace AppPicking.Views
         public PageDataGridArtigos()
         {
             InitializeComponent();
-
         }
 
         protected override async void OnAppearing()
@@ -24,19 +23,19 @@ namespace AppPicking.Views
 
         private async void btnPopup_Clicked(object sender, EventArgs e)
         {
+            await Navigation.PushAsync(new PageAddArtigos());
+        }
 
-            string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Adicionar", "Editar", "Remover");
+        private async void lvArtigos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover");
             Debug.WriteLine("Ações: " + action);
 
-            if (action == "Adicionar")
-            {
-                await Navigation.PushAsync(new PageAddArtigos());
-            }
             if (action == "Editar")
             {
                 await Navigation.PushAsync(new PageEditArtigos());
             }
-            if(action == "Remover")
+            if (action == "Remover")
             {
                 await Navigation.PushAsync(new PageRemoveArtigos());
             }

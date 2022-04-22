@@ -16,7 +16,7 @@ namespace AppPicking
 
             Models.Username _username = new Models.Username
             {
-                valor = Models.Username.Nome,
+                valor = "Bem-vindo(a): ",
             };
 
             Debug.Write("||||||");

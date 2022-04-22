@@ -31,7 +31,6 @@ namespace PickingSoftware.Models
                     ID_Grupo = (int)dr["ID_Grupo"],
                     Nome = dr["Nome"].ToString(),
                     Email = dr["Email"].ToString(),
-                    //Password = dr["Password"].ToString()
                 });
             }
             return _tst;
@@ -49,10 +48,11 @@ namespace PickingSoftware.Models
                     new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
                 con.Open();
                 string query = "INSERT INTO Utilizador(" +
-                    "Nome,Email,Password)" +
-                    " VALUES (@Nome,@Email,@Password)";
+                    "ID_Grupo,Nome,Email,Password)" +
+                    " VALUES (@ID_Grupo,@Nome,@Email,@Password)";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
+                    cmd.Parameters.AddWithValue("@ID_Grupo", _utilizador.ID_Grupo);
                     cmd.Parameters.AddWithValue("@Nome", _utilizador.Nome);
                     cmd.Parameters.AddWithValue("@Email", _utilizador.Email);
                     cmd.Parameters.AddWithValue("@Password", _utilizador.Password);
