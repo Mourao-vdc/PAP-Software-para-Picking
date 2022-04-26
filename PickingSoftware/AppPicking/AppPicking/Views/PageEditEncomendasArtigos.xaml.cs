@@ -97,9 +97,7 @@ namespace AppPicking.Views
                 Quant_artigos = int.Parse(txtQuantArtigos.Text.ToString()),
             };
 
-            await Encomendas_Artigos.EditEncomendas_Artigos(_encomendasartigos);
-
-            DisplayAlert("Editado", "Artigo atulizado com sucesso", "Ok");
+            await DisplayAlert("Resposta", await Encomendas_Artigos.EditEncomendas_Artigos(_encomendasartigos), "Ok");
 
             txtID.SelectedIndex = -1;
             txtIDEncomenda.SelectedIndex = -1;

@@ -11,6 +11,7 @@ namespace AppPicking.Models
     {
         public int ID { get; set; }
         public int ID_Encomendas { get; set; }
+        public string Nome { get; set; }
         public int ID_Artigos { get; set; }
         public string Cod_Barras { get; set; }
         public string Situacao { get; set; }

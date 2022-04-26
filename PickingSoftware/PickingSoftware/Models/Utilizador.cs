@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using AppPicking.Models;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -142,15 +143,23 @@ namespace PickingSoftware.Models
         {
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
-            con.Open();
 
             using (SqlCommand cmd = new SqlCommand("Utilizador_login",con))
             {
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
                 cmd.Parameters.AddWithValue("@Nome", _utilizador.Nome);
-                cmd.Parameters.AddWithValue("@Password", _utilizador.Password);
+                cmd.Parameters.AddWithValue("@Password", Cryptography.Encrypt(_utilizador.Password));
+                SqlDataReader rd = cmd.ExecuteReader();
+                if (rd.HasRows)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-
-            return true;
         }
 
         /// <summary>

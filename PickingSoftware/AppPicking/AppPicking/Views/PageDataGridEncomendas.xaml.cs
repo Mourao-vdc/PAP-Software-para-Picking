@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppPicking.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using Xamarin.Forms;
@@ -23,7 +24,25 @@ namespace AppPicking.Views
 
         private async void btnPopup_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PageAddEncomendas());
+            string action = await DisplayActionSheet("Deseja realizar uma nova encomendas?", "Sim","Não");
+            Debug.WriteLine("Ações: " + action);
+
+            if (action == "Sim")
+            {
+                Encomendas encomendas = new Encomendas()
+                {
+                    //ID_Utilizadores = Models.Utilizador.Userlogin(),
+                    Data = DateTime.Now.ToString(),
+                };
+
+                await DisplayAlert("Resposta", await Encomendas.AddEncomendas(encomendas), "Ok");
+
+                await Navigation.PushAsync(new PageDataGridEncomendasArtigos());
+            }
+            if (action == "Não")
+            {
+                return;
+            }
         }
 
         private async void lvEncomendas_ItemSelected(object sender, SelectedItemChangedEventArgs e)

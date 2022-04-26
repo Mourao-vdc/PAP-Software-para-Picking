@@ -14,7 +14,7 @@ namespace AppPicking
             InitializeComponent();
 
             //DependencyService.Register<MockDataStore>();
-            MainPage = new AppShell();
+            MainPage = new PageLogin();
         }
 
         protected override void OnStart()

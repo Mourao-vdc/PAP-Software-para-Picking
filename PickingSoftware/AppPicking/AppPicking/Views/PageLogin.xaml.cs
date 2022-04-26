@@ -33,10 +33,20 @@ namespace AppPicking.Views
 
                 //Debug.Write(Models.Username.Nome);
 
+                Models.Username.Nome = txtNome.Text;
+
                 txtNome.Text = "";
                 txtPassword.Text = "";
 
-                await Shell.Current.GoToAsync($"//{nameof(PageDataGridEncomendas)}");
+                //await Shell.Current.GoToAsync($"//{nameof(PageDataGridEncomendas)}");
+
+                App.Current.MainPage = new AppShell();
+
+                Debug.Write("|||||||||");
+                Debug.Write("|||||||||");
+                Debug.WriteLine(Models.Username.Nome);
+                Debug.Write("|||||||||");
+                Debug.Write("|||||||||");
             }
             else
             {

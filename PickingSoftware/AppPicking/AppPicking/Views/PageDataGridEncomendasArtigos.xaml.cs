@@ -9,7 +9,7 @@ namespace AppPicking.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageDataGridEncomendasArtigos : ContentPage
-    {
+    { 
         public PageDataGridEncomendasArtigos()
         {
             InitializeComponent();
@@ -46,21 +46,16 @@ namespace AppPicking.Views
 
                 string result = await DisplayPromptAsync("Quantidade", "Teste","Confirmar","Cancelar",keyboard:Keyboard.Numeric);
 
-                if (result == "")
-                {
-                    return;
-                }
-                if (int.Parse(result.ToString()) < 10)
+                if (int.Parse(result.ToString()) != 0)
                 {
                     Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
                     { 
                         Quant_artigos = int.Parse(result.ToString()),
-                        Situacao = "A preparar",
                     };
 
                     await Encomendas_Artigos.EditEncomendas_Artigos(_encomendasartigos);
                 }
-                if (int.Parse(result.ToString()) == 10)
+                if (int.Parse(result.ToString()) == 0)
                 {
                     Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
                     {
@@ -70,12 +65,12 @@ namespace AppPicking.Views
 
                     await Encomendas_Artigos.EditEncomendas_Artigos(_encomendasartigos);
                 }
-                if (int.Parse(result.ToString()) < 10)
+                /*if (int.Parse(result.ToString()) > 10)
                 {
                     await DisplayAlert("Erro","A Quantidade inserida é maior do que a pedida!","Ok");
 
                     return;
-                }
+                }*/
             }
         }
     }

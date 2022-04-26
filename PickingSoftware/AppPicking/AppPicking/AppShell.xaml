@@ -93,12 +93,12 @@
     </Shell.FlyoutHeaderTemplate>
     
     <!--Navigation-->
-    <ShellItem Route="PageLogin" FlyoutItemIsVisible="False">
+    <!--<ShellItem Route="PageLogin" FlyoutItemIsVisible="False">
         <ShellContent ContentTemplate="{DataTemplate local:PageLogin}"/>
-    </ShellItem>
+    </ShellItem
     <ShellItem Route="PageSignup" FlyoutItemIsVisible="False">
         <ShellContent ContentTemplate="{DataTemplate local:PageSignup}"/>
-    </ShellItem>
+    </ShellItem>>-->
 
     <!--<FlyoutItem Title="Encomendas" Icon="icon_encomendas.png">
         <ShellContent Route="PageDataGridEncomendasArtigos" ContentTemplate="{DataTemplate local:PageDataGridEncomendasArtigos}"/>
@@ -117,6 +117,9 @@
     </FlyoutItem>
     <FlyoutItem Title="Sair" Icon="icon_logout.png">
         <ShellContent Route="PagePageLogin" ContentTemplate="{DataTemplate local:PageLogin}" />
+    </FlyoutItem>
+    <FlyoutItem FlyoutItemIsVisible="False" Title="Sair" Icon="icon_logout.png">
+        <ShellContent Route="PageSignup" ContentTemplate="{DataTemplate local:PageSignup}" />
     </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->

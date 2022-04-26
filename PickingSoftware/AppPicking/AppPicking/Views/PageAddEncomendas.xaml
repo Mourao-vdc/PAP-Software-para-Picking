@@ -9,7 +9,7 @@
                    HorizontalTextAlignment="Center"
                    FontSize="Title"/>
 
-            <Picker x:Name="txtIDUtilizador" Title="ID do Utilizador" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
+            <Picker x:Name="txtIDUtilizador" Title="Nome do Utilizador" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
 
             <DatePicker x:Name="dpData" Format="dd/MM/yyyy" TextColor="Black" FontSize="18"/>
 

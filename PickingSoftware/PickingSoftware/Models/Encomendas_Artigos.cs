@@ -10,6 +10,7 @@ namespace PickingSoftware.Models
     {
         public int ID { get; set; }
         public int ID_Encomendas { get; set; }
+        public string Nome { get; set; }
         public int ID_Artigos { get; set; }
         public string Cod_Barras { get; set; }
         public string Situacao { get; set; }
@@ -20,7 +21,8 @@ namespace PickingSoftware.Models
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
-            string query = "SELECT * FROM Encomendas_Artigos";
+            string query = "Select Encomendas_Artigos.ID, Encomendas_Artigos.ID_Encomendas, Artigos.Nome, Encomendas_Artigos.Quant_artigos, Encomendas_Artigos.Situacao, Encomendas_Artigos.Cod_Barras" +
+                " from Encomendas_Artigos Inner join Artigos on Artigos.ID = Encomendas_Artigos.ID_Artigos WHERE Situacao = 'A preparar'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
 
@@ -31,7 +33,7 @@ namespace PickingSoftware.Models
                 {
                     ID = (int)dr["ID"],
                     ID_Encomendas = (int)dr["ID_Encomendas"],
-                    ID_Artigos = (int)dr["ID_Artigos"],
+                    Nome = dr["Nome"].ToString(),
                     Cod_Barras = dr["Cod_Barras"].ToString(),
                     Situacao = dr["Situacao"].ToString(),
                     Quant_artigos = (int)dr["Quant_artigos"]

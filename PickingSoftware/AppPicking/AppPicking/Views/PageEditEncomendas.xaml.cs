@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -45,7 +42,7 @@ namespace AppPicking.Views
 
             foreach (var _item in _lista)
             {
-                txtIDUtilizador.Items.Add(_item.ID.ToString());
+                txtIDUtilizador.Items.Add(_item.Nome.ToString());
             }
         }
 
@@ -60,7 +57,7 @@ namespace AppPicking.Views
             {
                 var _artigo = lvEncomendas.ElementAt(txtID.SelectedIndex);
 
-                txtIDUtilizador.SelectedIndex = _artigo.ID_Utilizadores;
+                txtIDUtilizador.SelectedIndex = int.Parse(_artigo.Nome);
                 dpData.Date = Convert.ToDateTime(_artigo.Data);
 
                 EditButton.IsVisible = true;
@@ -73,7 +70,7 @@ namespace AppPicking.Views
             Encomendas encomendas = new Encomendas()
             {
                 ID = int.Parse(txtID.SelectedItem.ToString()),
-                ID_Utilizadores = int.Parse(txtIDUtilizador.SelectedItem.ToString()),
+                Nome = txtIDUtilizador.SelectedItem.ToString(),
                 Data = dpData.Date.ToString(),
             };
 

@@ -28,7 +28,7 @@ namespace PickingSoftware.Controllers
         {
             try
             {
-                if (Models.Encomendas.GetAdicionar(_encomendas))
+                if (Models.Encomendas.GetAdicionar(_encomendas, RequestContext.Principal.Identity.Name))
                     return Request.CreateResponse(HttpStatusCode.OK, "Pedido inserido com sucesso!");
                 else
                     return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível inserir o pedido!");
@@ -70,6 +70,24 @@ namespace PickingSoftware.Controllers
             catch (Exception ex)
             {
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [Route("IDM/{nome}")]
+        [HttpGet]
+        public HttpResponseMessage IDM(string nome)
+        {
+            try
+            {
+                if (Models.Encomendas.IDM(nome))
+                    return Request.CreateResponse(HttpStatusCode.OK);
+
+                else
+                    return Request.CreateResponse(HttpStatusCode.Unauthorized);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
             }
         }
     }

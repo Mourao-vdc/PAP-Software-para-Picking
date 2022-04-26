@@ -34,7 +34,7 @@ namespace AppPicking.Views
 
             foreach (var _item in _list)
             {
-                txtIDUtilizador.Items.Add(_item.ID.ToString());
+                txtIDUtilizador.Items.Add(_item.Nome.ToString());
             }
         }
 

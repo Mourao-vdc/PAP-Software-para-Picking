@@ -23,7 +23,7 @@
             </summary>
             <param name="id"></param>
         </member>
-        <member name="M:PickingSoftware.Models.Encomendas.GetAdicionar(PickingSoftware.Models.Encomendas)">
+        <member name="M:PickingSoftware.Models.Encomendas.GetAdicionar(PickingSoftware.Models.Encomendas,System.String)">
             <summary>
             Adicionar
             </summary>

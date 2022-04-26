@@ -20,7 +20,7 @@
                 <dg:DataGrid.Columns>
                     <dg:DataGridColumn Title="ID" PropertyName="ID" Width="1*"/>
                     <dg:DataGridColumn Title="ID_Pedido" PropertyName="ID_Encomendas" Width="2*"/>
-                    <dg:DataGridColumn Title="Nome_Artigo" PropertyName="ID_Artigos" Width="2*"/>
+                    <dg:DataGridColumn Title="Nome_Artigo" PropertyName="Nome" Width="2*"/>
                     <dg:DataGridColumn Title="Quant_artigos" PropertyName="Quant_artigos" Width="1*"/>
                     <dg:DataGridColumn Title="Situação" PropertyName="Situacao" Width="2*"/>
                     <dg:DataGridColumn Title="Cod_barras" PropertyName="Cod_Barras" Width="2*"/>

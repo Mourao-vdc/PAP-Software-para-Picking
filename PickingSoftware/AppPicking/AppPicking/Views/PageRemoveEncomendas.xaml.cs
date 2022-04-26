@@ -57,7 +57,7 @@ namespace AppPicking.Views
                 //var _utilizadores = listaUtilizador.ElementAt(txtIDUtilizador.SelectedIndex);
                 var _pedido = listaPedido.ElementAt(txtID.SelectedIndex);
 
-                txtIDUtilizador.SelectedItem = _pedido.ID_Utilizadores.ToString();
+                txtIDUtilizador.SelectedItem = _pedido.Nome.ToString();
                 dpData.Date = Convert.ToDateTime(_pedido.Data);
 
                 RemoveButton.IsVisible = true;

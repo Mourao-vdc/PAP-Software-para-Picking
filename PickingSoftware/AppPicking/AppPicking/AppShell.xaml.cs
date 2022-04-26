@@ -16,7 +16,7 @@ namespace AppPicking
 
             Models.Username _username = new Models.Username
             {
-                valor = "Bem-vindo(a): ",
+                valor = "Bem-vindo(a): " + Models.Username.Nome,
             };
 
             Debug.Write("||||||");
@@ -30,7 +30,8 @@ namespace AppPicking
 
         private async void OnMenuItemClicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("//LoginPage");
+            //await Shell.Current.GoToAsync("//LoginPage");
+            await Shell.Current.GoToAsync($"//{nameof(PageDataGridEncomendas)}");
         }
     }
 }

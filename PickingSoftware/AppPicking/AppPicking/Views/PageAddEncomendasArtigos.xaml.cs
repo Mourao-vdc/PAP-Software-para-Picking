@@ -1,10 +1,6 @@
 ﻿using AppPicking.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +11,7 @@ namespace AppPicking.Views
     {
         public int ID { get; set; }
         public int ID_Encomendas { get; set; }
+        public string Nome { get; set; }
         public int ID_Artigos { get; set; }
         public string Cod_Barras { get; set; }
         public string Situacao { get; set; }
@@ -48,7 +45,7 @@ namespace AppPicking.Views
 
             foreach (var _item in _listt)
             {
-                txtIDArtigo.Items.Add(_item.ID.ToString());
+                txtIDArtigo.Items.Add(_item.Nome.ToString());
             }
         }
 
@@ -70,9 +67,7 @@ namespace AppPicking.Views
                     Situacao = txtsituacao.Text,
                 };
 
-                await Encomendas_Artigos.AddEncomendas_Artigos(encomendas_artigos);
-
-                DisplayAlert("Adicionado", "Encomenda adicionada com sucesso", "Ok");
+                await DisplayAlert("Resposta", await Encomendas_Artigos.AddEncomendas_Artigos(encomendas_artigos), "Ok");
 
                 txtIDEncomenda.SelectedIndex = -1;
                 txtIDArtigo.SelectedIndex = -1;

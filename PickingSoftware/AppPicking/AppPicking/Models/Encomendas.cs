@@ -11,6 +11,7 @@ namespace AppPicking.Models
     {
         public int ID { get; set; }
         public int ID_Utilizadores { get; set; }
+        public string Nome { get; set; }
         public string Data { get; set; }
 
         public static async Task<List<Encomendas>> GetEncomendas()

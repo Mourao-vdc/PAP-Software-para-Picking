@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace PickingSoftware.Models
 {
@@ -7,6 +9,7 @@ namespace PickingSoftware.Models
     {
         public int ID { get; set; }
         public int ID_Utilizadores { get; set; }
+        public string Nome { get; set; }
         public string Data { get; set; }
 
 
@@ -15,7 +18,9 @@ namespace PickingSoftware.Models
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
-            string query = "SELECT ID,ID_Utilizadores,Data FROM Encomendas";
+            string query = "SELECT Encomendas.ID, Utilizador.Nome, Encomendas.Data FROM Encomendas" +
+                " INNER JOIN Utilizador" +
+                " ON Utilizador.ID = Encomendas.ID_Utilizadores";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
 
@@ -25,7 +30,7 @@ namespace PickingSoftware.Models
                 _tst.Add(new Encomendas
                 {
                     ID = (int)dr["ID"],
-                    ID_Utilizadores = (int)dr["ID_Utilizadores"],
+                    Nome = dr["Nome"].ToString(),
                     Data = dr["Data"].ToString()
                 });
             }
@@ -36,7 +41,7 @@ namespace PickingSoftware.Models
         /// Adicionar
         /// </summary>
         /// <param name="_encomendas"></param>
-        public static bool GetAdicionar(Encomendas _encomendas)
+        public static bool GetAdicionar(Encomendas _encomendas, string _nome)
         {
             try
             {
@@ -48,8 +53,13 @@ namespace PickingSoftware.Models
                     " VALUES (@ID_Utilizadores,@Data)";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
+                    Debug.WriteLine("");
+                    Debug.WriteLine("NOME");
+                    Debug.WriteLine(_nome);
+                    Debug.WriteLine("");
+
                     //cmd.Parameters.AddWithValue("@ID", _artigo.ID);
-                    cmd.Parameters.AddWithValue("@ID_Utilizadores", _encomendas.ID_Utilizadores);
+                    cmd.Parameters.AddWithValue("@ID_Utilizadores", IDM(_nome));
                     cmd.Parameters.AddWithValue("@Data", _encomendas.Data);
                     cmd.ExecuteScalar();
 
@@ -82,7 +92,7 @@ namespace PickingSoftware.Models
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@ID", _encomendas.ID);
-                    cmd.Parameters.AddWithValue("@ID_Utilizadores", _encomendas.ID_Utilizadores);
+                    cmd.Parameters.AddWithValue("@ID_Utilizadores", _encomendas.Nome);
                     cmd.Parameters.AddWithValue("@Data", _encomendas.Data);
                     cmd.ExecuteScalar();
 
@@ -125,6 +135,23 @@ namespace PickingSoftware.Models
             {
                 return false;
             }
+        }
+
+        public static bool IDM(string _nome)
+        {
+            SqlConnection con =
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+            con.Open();
+            string query = "SELECT ID FROM Utilizador WHERE Nome=@Nome";
+            
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@Nome", _nome);
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+            }
+            return true;
         }
     }
 }

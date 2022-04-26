@@ -105,9 +105,7 @@ namespace AppPicking.Views
                 Quant_artigos = int.Parse(txtQuantArtigos.Text.ToString()),
             };
 
-            await Encomendas_Artigos.DellEncomendas_Artigos(int.Parse(txtID.SelectedItem.ToString()));
-
-            DisplayAlert("Removido", "Encomenda removida da base de dados", "Ok");
+            await DisplayAlert("Resposta", await Encomendas_Artigos.DellEncomendas_Artigos(int.Parse(txtID.SelectedItem.ToString())), "Ok");
 
             txtID.SelectedIndex = -1;
             txtIDEncomenda.SelectedIndex = -1;

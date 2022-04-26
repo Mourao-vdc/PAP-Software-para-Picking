@@ -1,5 +1,5 @@
-﻿using AppPicking.Models;
-using Microsoft.Owin.Security.OAuth;
+﻿using Microsoft.Owin.Security.OAuth;
+using System.Diagnostics;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -22,7 +22,13 @@ namespace PickingSoftware.App_Start
                 Password = context.Password
             };
 
-            if (Cryptography.Decrypt(_user.Password).Equals(context.Password))
+            var test = Models.Utilizador.UserLogin(_user);
+
+            Debug.WriteLine("");
+            Debug.WriteLine(test.ToString());
+            Debug.WriteLine("");
+
+            if (test)
             {
                 identity.AddClaim(new Claim(ClaimTypes.Role, "Geral"));
                 identity.AddClaim(new Claim("Password", context.Password));
@@ -31,7 +37,12 @@ namespace PickingSoftware.App_Start
                 context.Validated(identity);
             }
 
-            return;
+            else
+            {
+                context.SetError("invalid_grant", "Credenciais incorretas");
+
+                return;
+            }
         }
     }
 }
