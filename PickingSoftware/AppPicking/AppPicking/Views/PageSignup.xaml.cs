@@ -86,7 +86,9 @@ namespace AppPicking.Views
                                     txtPassword.Text = "";
                                     txtPassword2.Text = "";
 
-                                    await Shell.Current.GoToAsync($"//{nameof(PageLogin)}");
+                                    await teste.FadeTo(0, 500, Easing.Linear);
+
+                                    await Navigation.PushModalAsync(new PageLogin());
                                 }
                             }
                         }
@@ -105,7 +107,14 @@ namespace AppPicking.Views
 
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync($"//{nameof(PageLogin)}");
+            txtNome.Text = "";
+            txtEmail.Text = "";
+            txtPassword.Text = "";
+            txtPassword2.Text = "";
+
+            await teste.FadeTo(0, 500, Easing.Linear);
+
+            await Navigation.PushModalAsync(new PageLogin());
         }
     }
 }

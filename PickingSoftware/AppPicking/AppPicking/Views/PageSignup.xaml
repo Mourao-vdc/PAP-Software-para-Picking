@@ -4,11 +4,12 @@
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="AppPicking.Views.PageSignup"
              Shell.FlyoutBehavior="Disabled"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout Padding="40" VerticalOptions="Center"
+        <StackLayout x:Name="teste" Padding="40" VerticalOptions="Center"
                      HorizontalOptions="FillAndExpand">
-            <Image Source="icon_logo.ico" />
+            <Image x:Name="teste2" Source="icon_logo.ico" />
             <Entry x:Name="txtNome" ClearButtonVisibility="WhileEditing" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Nome"/>
             <Entry x:Name="txtEmail" ClearButtonVisibility="WhileEditing" Keyboard="Email" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Email" Margin="0,5,0,0"/>
             <Entry x:Name="txtPassword" ClearButtonVisibility="WhileEditing" IsTextPredictionEnabled="false" IsSpellCheckEnabled="false" IsPassword="True" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Password" Margin="0,5,0,0"/>

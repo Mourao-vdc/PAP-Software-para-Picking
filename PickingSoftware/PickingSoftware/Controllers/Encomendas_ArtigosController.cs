@@ -90,5 +90,22 @@ namespace PickingSoftware.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
             }
         }
+
+        [Route("EditQuantSituacao")]
+        [HttpPut]
+        public HttpResponseMessage EditQuantSituacao(Models.Encomendas_Artigos _encomendasartigos)
+        {
+            try
+            {
+                if (Models.Encomendas_Artigos.EditQuantSituacao(_encomendasartigos))
+                    return Request.CreateResponse(HttpStatusCode.OK, "Quantidade alterada com sucesso!");
+                else
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível editar a quantidade!");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
     }
 }

@@ -12,7 +12,6 @@ namespace AppPicking
             InitializeComponent();
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
-            //txtNome.Text = Models.Username.valor;
 
             Models.Username _username = new Models.Username
             {

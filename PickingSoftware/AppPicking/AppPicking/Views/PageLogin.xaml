@@ -6,7 +6,7 @@
              Shell.NavBarIsVisible="False"
              BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout Padding="40" VerticalOptions="Center"
+        <StackLayout x:Name="teste" Padding="40" VerticalOptions="Center"
                      HorizontalOptions="FillAndExpand">
             <Image Source="icon_logo.ico" />
             <Entry x:Name="txtNome" ClearButtonVisibility="WhileEditing"  TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Nome"/>

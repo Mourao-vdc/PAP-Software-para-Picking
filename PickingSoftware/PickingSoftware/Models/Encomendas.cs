@@ -18,7 +18,7 @@ namespace PickingSoftware.Models
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
-            string query = "SELECT Encomendas.ID, Utilizador.Nome, Encomendas.Data FROM Encomendas" +
+            string query = "SELECT Encomendas.ID, Utilizador.Nome, FORMAT (Data, 'dd/MM/yyyy ') as Data FROM Encomendas" +
                 " INNER JOIN Utilizador" +
                 " ON Utilizador.ID = Encomendas.ID_Utilizadores";
             SqlCommand cmd = new SqlCommand(query, con);

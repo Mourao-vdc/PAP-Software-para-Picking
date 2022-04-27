@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 
 namespace PickingSoftware.Models
 {
@@ -110,7 +107,6 @@ namespace PickingSoftware.Models
             {
                 return false;
             }
-
         }
 
         /// <summary>
@@ -154,12 +150,40 @@ namespace PickingSoftware.Models
                     new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
                 con.Open();
                 string query = "UPDATE Encomendas_Artigos SET" +
-                    " Situacao=@Situacao" +
+                    " " +
                     " WHERE ID_Encomendas=@ID_Encomendas";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@ID_Encomendas", _encomendasartigos.ID_Encomendas);
                     cmd.Parameters.AddWithValue("@Situacao", _encomendasartigos.Situacao);
+                    cmd.ExecuteScalar();
+
+                    con.Close();
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool EditQuantSituacao(Encomendas_Artigos _encomendasartigos)
+        {
+            try
+            {
+                SqlConnection con =
+                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                con.Open();
+                string query = "UPDATE Encomendas_Artigos SET" +
+                    " Situacao=@Situacao,Quant_artigos=@Quant_artigos" +
+                    " WHERE ID=@ID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ID", _encomendasartigos.ID);
+                    cmd.Parameters.AddWithValue("@Situacao", _encomendasartigos.Situacao);
+                    cmd.Parameters.AddWithValue("@Quant_artigos", _encomendasartigos.Quant_artigos);
                     cmd.ExecuteScalar();
 
                     con.Close();

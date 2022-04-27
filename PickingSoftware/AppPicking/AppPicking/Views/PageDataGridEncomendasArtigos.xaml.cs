@@ -9,16 +9,21 @@ namespace AppPicking.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageDataGridEncomendasArtigos : ContentPage
-    { 
+    {
         public PageDataGridEncomendasArtigos()
         {
             InitializeComponent();
         }
 
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
 
+            apresentadados();
+        }
+
+        async void apresentadados()
+        {
             lvEncomendasArtigos.ItemsSource = new ObservableCollection<Models.Encomendas_Artigos>(await Models.Encomendas_Artigos.GetEncomendas_Artigos());
         }
 
@@ -29,6 +34,17 @@ namespace AppPicking.Views
 
         private async void lvEncomendasArtigos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            //int id = int.Parse(txtID.ToString());
+
+            //Dados da linha selecionada
+            var aux = e.SelectedItem as Models.Encomendas_Artigos;
+
+            Debug.Write("|||||");
+            Debug.Write("|||||");
+            Debug.WriteLine(aux.ID);
+            Debug.Write("|||||");
+            Debug.Write("|||||");
+
             string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover", "Alterar quantidade");
             Debug.WriteLine("Ações: " + action);
 
@@ -44,33 +60,45 @@ namespace AppPicking.Views
             {
                 //await Navigation.PushAsync(new PageEditSituacao());
 
-                string result = await DisplayPromptAsync("Quantidade", "Teste","Confirmar","Cancelar",keyboard:Keyboard.Numeric);
+                string result = await DisplayPromptAsync("Quantidade", "Teste", "Confirmar", "Cancelar", keyboard: Keyboard.Numeric);
 
-                if (int.Parse(result.ToString()) != 0)
+                if (result != null)
                 {
-                    Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
-                    { 
-                        Quant_artigos = int.Parse(result.ToString()),
-                    };
-
-                    await Encomendas_Artigos.EditEncomendas_Artigos(_encomendasartigos);
-                }
-                if (int.Parse(result.ToString()) == 0)
-                {
-                    Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
+                    if (int.Parse(result.ToString()) != 0)
                     {
-                        Quant_artigos = 0,
-                        Situacao = "Pronto",
-                    };
+                        Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
+                        {
+                            ID = aux.ID,
+                            Quant_artigos = int.Parse(result.ToString()),
+                            Situacao = "A preparar",
+                        };
 
-                    await Encomendas_Artigos.EditEncomendas_Artigos(_encomendasartigos);
+                        await DisplayAlert("Resposta", await Encomendas_Artigos.EditQuantSituacao(_encomendasartigos), "Ok");
+
+                        apresentadados();
+                    }
+                    if (int.Parse(result.ToString()) == 0)
+                    {
+                        Encomendas_Artigos _encomendasartigoss = new Encomendas_Artigos()
+                        {
+                            ID = aux.ID,
+                            Quant_artigos = 0,
+                            Situacao = "Pronto",
+                        };
+
+                        await DisplayAlert("Resposta", await Encomendas_Artigos.EditQuantSituacao(_encomendasartigoss), "Ok");
+
+                        apresentadados();
+                    }
+                    if (result.ToString() == "")
+                    { 
+                        await DisplayAlert("Erro!", "A quantidade esta vazia", "Ok");
+                    }
                 }
-                /*if (int.Parse(result.ToString()) > 10)
+                else
                 {
-                    await DisplayAlert("Erro","A Quantidade inserida é maior do que a pedida!","Ok");
-
                     return;
-                }*/
+                }
             }
         }
     }

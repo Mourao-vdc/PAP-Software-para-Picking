@@ -64,7 +64,10 @@ namespace AppPicking.Views
             txtNome.Text = "";
             txtPassword.Text = "";
 
-            await Shell.Current.GoToAsync($"//{nameof(PageSignup)}");
+            //await Shell.Current.GoToAsync($"//{nameof(PageSignup)}");
+            await teste.FadeTo(0, 500, Easing.Linear);
+
+            await Navigation.PushModalAsync(new PageSignup());
         }
 
         private void ShowPassword_CheckedChanged(object sender, CheckedChangedEventArgs e)

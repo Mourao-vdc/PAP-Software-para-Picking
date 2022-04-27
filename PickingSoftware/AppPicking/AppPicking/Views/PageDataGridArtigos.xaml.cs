@@ -28,11 +28,18 @@ namespace AppPicking.Views
 
         private async void lvArtigos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            var aux = e.SelectedItem as Models.Artigos;
+
+            Models.PassValor.valor1 = aux.ID.ToString();
+            Models.PassValor.valor2 = aux.Nome.ToString();
+            Models.PassValor.valor3 = aux.Cod_Barras.ToString();
+
             string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover");
             Debug.WriteLine("Ações: " + action);
 
             if (action == "Editar")
             {
+                //await Shell.Current.GoToAsync($"//{nameof(PageEditArtigos)}");
                 await Navigation.PushAsync(new PageEditArtigos());
             }
             if (action == "Remover")

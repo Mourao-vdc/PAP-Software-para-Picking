@@ -52,11 +52,7 @@ namespace AppPicking.Views
                 Debug.WriteLine(artigos.Nome);
                 Debug.WriteLine("");
 
-                /*if (await Artigos.AddArtigos(artigos))
-                    DisplayAlert("Adicionado", "Artigo adiciocado com sucesso", "Ok");
-
-                else*/
-                    await DisplayAlert("Resposta", await Artigos.AddArtigos(artigos), "Ok");
+                await DisplayAlert("Resposta", await Artigos.AddArtigos(artigos), "Ok");
 
                 txtNome.Text = "";
                 txtCod_Barras.Text = "";
