@@ -1,7 +1,6 @@
 ﻿using AppPicking.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -33,14 +32,14 @@ namespace AppPicking.Views
         {
             base.OnAppearing();
 
-            var _list = await Models.Encomendas_Artigos.GetEncomendas_Artigos();
+            /*var _list = await Models.Encomendas_Artigos.GetEncomendas_Artigos();
 
             lvEncomendasartigos = _list;
 
             foreach (var _item in _list)
             {
                 txtID.Items.Add(_item.ID.ToString());
-            }
+            }*/
 
             var _listt = await Models.Artigos.GetArtigos();
 
@@ -48,7 +47,7 @@ namespace AppPicking.Views
 
             foreach (var _item in _listt)
             {
-                txtIDArtigo.Items.Add(_item.ID.ToString());
+                txtIDArtigo.Items.Add(_item.Nome.ToString());
             }
 
             var _listtt = await Models.Encomendas.GetEncomendas();
@@ -59,9 +58,15 @@ namespace AppPicking.Views
             {
                 txtIDEncomenda.Items.Add(_item.ID.ToString());
             }
+
+            txtID.Text = Models.PassValor.valor1;
+            //txtIDEncomenda.SelectedIndex = int.Parse(Models.PassValor.valor2);
+            //txtIDArtigo.SelectedIndex = int.Parse(Models.PassValor.valor3);
+            txtQuantArtigos.Text = Models.PassValor.valor4;
+            txtCodBarras.Text = Models.PassValor.valor6;
         }
 
-        private async void searchButton_Clicked(object sender, EventArgs e)
+        /*private async void searchButton_Clicked(object sender, EventArgs e)
         {
             if (txtID.SelectedIndex == -1)
 
@@ -81,9 +86,9 @@ namespace AppPicking.Views
                 RemoveButton.IsVisible = true;
                 searchButton.IsVisible = false;
             }
-        }
+        }*/
 
-        private void txtID_SelectedIndexChanged(object sender, EventArgs e)
+        /*private void txtID_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtIDEncomenda.SelectedIndex = -1;
             txtIDArtigo.SelectedIndex = -1;
@@ -92,29 +97,27 @@ namespace AppPicking.Views
 
             RemoveButton.IsVisible = false;
             searchButton.IsVisible = true;
-        }
+        }*/
 
         private async void RemoveButton_Clicked(object sender, EventArgs e)
         {
             Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
             {
-                ID = int.Parse(txtID.SelectedItem.ToString()),
-                ID_Encomendas = int.Parse(txtIDEncomenda.SelectedItem.ToString()),
-                ID_Artigos = int.Parse(txtIDArtigo.SelectedItem.ToString()),
-                Cod_Barras = txtCodBarras.Text,
-                Quant_artigos = int.Parse(txtQuantArtigos.Text.ToString()),
+                ID = int.Parse(txtID.ToString()),
             };
 
-            await DisplayAlert("Resposta", await Encomendas_Artigos.DellEncomendas_Artigos(int.Parse(txtID.SelectedItem.ToString())), "Ok");
+            await DisplayAlert("Resposta", await Encomendas_Artigos.DellEncomendas_Artigos(int.Parse(txtID.ToString())), "Ok");
 
-            txtID.SelectedIndex = -1;
+            //txtID.SelectedIndex = -1;
+            txtID.Text = "";
             txtIDEncomenda.SelectedIndex = -1;
             txtIDArtigo.SelectedIndex = -1;
             txtCodBarras.Text = "";
             txtQuantArtigos.Text = "";
 
-            RemoveButton.IsVisible = false;
-            searchButton.IsVisible = true;
+            await Shell.Current.GoToAsync("..");
+            //RemoveButton.IsVisible = false;
+            //searchButton.IsVisible = true;
         }
     }
 }

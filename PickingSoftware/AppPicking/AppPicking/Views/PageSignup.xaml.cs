@@ -95,12 +95,14 @@ namespace AppPicking.Views
                     }
                     else
                     {
-                        DisplayAlert("Erro", "Password deve ter no mínimo 8 caracteres", "Ok");
+                        await DisplayAlert("Erro", "Password deve ter no mínimo 8 caracteres", "Ok");
                     }
                 }
                 else
                 {
-                    DisplayAlert("Erro", "Email inválido", "Ok");
+                    await DisplayAlert("Erro", "Email inválido", "Ok");
+                    
+                    txtEmail.Text = "";
                 }
             }
         }

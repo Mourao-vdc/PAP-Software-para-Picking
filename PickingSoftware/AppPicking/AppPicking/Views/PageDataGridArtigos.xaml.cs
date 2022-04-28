@@ -18,7 +18,17 @@ namespace AppPicking.Views
         {
             base.OnAppearing();
 
-            lvArtigos.ItemsSource = new ObservableCollection<Models.Artigos>(await Models.Artigos.GetArtigos());
+            try
+            {
+                lvArtigos.ItemsSource = new ObservableCollection<Models.Artigos>(await Models.Artigos.GetArtigos());
+            }
+
+            catch (Exception ex)
+            {
+                Debug.WriteLine("");
+                Debug.WriteLine(ex.ToString());
+                Debug.WriteLine("");
+            }
         }
 
         private async void btnPopup_Clicked(object sender, EventArgs e)
@@ -28,23 +38,34 @@ namespace AppPicking.Views
 
         private async void lvArtigos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var aux = e.SelectedItem as Models.Artigos;
-
-            Models.PassValor.valor1 = aux.ID.ToString();
-            Models.PassValor.valor2 = aux.Nome.ToString();
-            Models.PassValor.valor3 = aux.Cod_Barras.ToString();
-
-            string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover");
-            Debug.WriteLine("Ações: " + action);
-
-            if (action == "Editar")
+            try
             {
-                //await Shell.Current.GoToAsync($"//{nameof(PageEditArtigos)}");
-                await Navigation.PushAsync(new PageEditArtigos());
+                var aux = e.SelectedItem as Models.Artigos;
+
+                if (aux != null)
+                {
+                    Models.PassValor.valor1 = aux.ID.ToString();
+                    Models.PassValor.valor2 = aux.Nome.ToString();
+                    Models.PassValor.valor3 = aux.Cod_Barras.ToString();
+
+                    string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover");
+                    Debug.WriteLine("Ações: " + action);
+
+                    if (action == "Editar")
+                    {
+                        await Navigation.PushAsync(new PageEditArtigos());
+                    }
+                    if (action == "Remover")
+                    {
+                        await Navigation.PushAsync(new PageRemoveArtigos());
+                    }
+                }
             }
-            if (action == "Remover")
+            catch (Exception ex)
             {
-                await Navigation.PushAsync(new PageRemoveArtigos());
+                Debug.WriteLine("");
+                Debug.WriteLine(ex.ToString());
+                Debug.WriteLine("");
             }
         }
     }

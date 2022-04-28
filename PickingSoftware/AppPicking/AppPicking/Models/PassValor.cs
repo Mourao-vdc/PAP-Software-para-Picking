@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AppPicking.Models
+﻿namespace AppPicking.Models
 {
     class PassValor
     {
@@ -32,6 +28,27 @@ namespace AppPicking.Models
         {
             get { return _valor4; }
             set { _valor4 = value; }
+        }
+
+        private static string _valor5 = "";
+        public static string valor5
+        {
+            get { return _valor5; }
+            set { _valor5 = value; }
+        }
+
+        private static string _valor6 = "";
+        public static string valor6
+        {
+            get { return _valor6; }
+            set { _valor6 = value; }
+        }
+
+        private static string _recup = "";
+        public static string recup
+        {
+            get { return _recup; }
+            set { _recup = value; }
         }
     }
 }

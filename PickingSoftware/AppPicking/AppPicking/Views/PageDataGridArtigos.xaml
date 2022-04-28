@@ -6,8 +6,8 @@
     <ContentView>
         <StackLayout>
             <!-- Place new controls here -->
-            <dg:DataGrid x:Name="lvArtigos" HeaderTextColor="Black" ItemsSource="{Binding ID}" SelectionEnabled="True" ItemSelected="lvArtigos_ItemSelected" RowHeight="70" HeaderHeight="50"  
-                    BorderColor="Black" HeaderBackground="LightGray" PullToRefreshCommand="{Binding Cod_Barras}" IsRefreshing="{Binding IsRefreshing}" ActiveRowColor="#8899AA">
+            <dg:DataGrid x:Name="lvArtigos" HeaderTextColor="Black" SelectionEnabled="True" ItemSelected="lvArtigos_ItemSelected" RowHeight="70" 
+                         HeaderHeight="50" BorderColor="Black" HeaderBackground="LightGray" ActiveRowColor="#8899AA">
                 <x:Arguments>
                     <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
                 </x:Arguments>
@@ -18,14 +18,8 @@
                     </OnIdiom>
                 </dg:DataGrid.HeaderFontSize>
                 <dg:DataGrid.Columns>
-                    <dg:DataGridColumn Title="ID" PropertyName="ID" Width="1*"></dg:DataGridColumn>
-                    <dg:DataGridColumn PropertyName="Nome" Width="2*">
-                        <dg:DataGridColumn.FormattedTitle>
-                            <FormattedString>
-                                <Span Text="Nome" FontSize="13" FontAttributes="Bold"/>
-                            </FormattedString>
-                        </dg:DataGridColumn.FormattedTitle>
-                    </dg:DataGridColumn>
+                    <dg:DataGridColumn Title="ID" PropertyName="ID" Width="1*"/>
+                    <dg:DataGridColumn Title="Nome"  PropertyName="Nome" Width="2*"/>
                     <dg:DataGridColumn Title="Cod_Barras" PropertyName="Cod_Barras" Width="2*"/>
                 </dg:DataGrid.Columns>
                 <dg:DataGrid.RowsBackgroundColorPalette>
@@ -59,7 +53,5 @@
                      Clicked="btnPopup_Clicked"/>
 
         </StackLayout>
-
     </ContentView>
-
 </ContentPage>

@@ -81,5 +81,12 @@ namespace AppPicking.Views
                 txtPassword.IsPassword = true;
             }
         }
+
+        private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+        {
+            await teste.FadeTo(0, 500, Easing.Linear);
+
+            await Navigation.PushModalAsync(new PageRecuperarConta());
+        }
     }
 }

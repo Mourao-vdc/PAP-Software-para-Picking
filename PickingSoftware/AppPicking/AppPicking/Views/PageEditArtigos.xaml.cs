@@ -1,14 +1,6 @@
 ﻿using AppPicking.Models;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -95,10 +87,7 @@ namespace AppPicking.Views
                 //EditButton.IsVisible = false;
                 //searchButton.IsVisible = true;
 
-                //await Shell.Current.GoToAsync("..");
-                await Navigation.PopToRootAsync();
-
-                //await Navigation.PushAsync(new PageDataGridArtigos());
+                await Shell.Current.GoToAsync("..");
             }            
         }
 

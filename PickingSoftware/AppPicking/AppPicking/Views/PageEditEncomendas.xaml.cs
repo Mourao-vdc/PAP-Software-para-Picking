@@ -27,14 +27,14 @@ namespace AppPicking.Views
         {
             base.OnAppearing();
 
-            var _list = await Models.Encomendas.GetEncomendas();
+            /*var _list = await Models.Encomendas.GetEncomendas();
 
             lvEncomendas = _list;
 
             foreach (var _item in _list)
             {
                 txtID.Items.Add(_item.ID.ToString());
-            }
+            }*/
 
             var _lista = await Models.Utilizador.GetUtilizadores();
 
@@ -44,9 +44,13 @@ namespace AppPicking.Views
             {
                 txtIDUtilizador.Items.Add(_item.Nome.ToString());
             }
+
+            txtID.Text = Models.PassValor.valor1;
+            //txtIDUtilizador.SelectedIndex = int.Parse(Models.PassValor.valor2);
+            dpData.Date = DateTime.Parse(Models.PassValor.valor3);
         }
 
-        private async void searchButton_Clicked(object sender, EventArgs e)
+        /*private async void searchButton_Clicked(object sender, EventArgs e)
         {
             if(txtID.SelectedIndex == -1)
             {
@@ -63,27 +67,30 @@ namespace AppPicking.Views
                 EditButton.IsVisible = true;
                 searchButton.IsVisible = false;
             }
-        }
+        }*/
 
         private async void EditButton_Clicked(object sender, EventArgs e)
         {
             Encomendas encomendas = new Encomendas()
             {
-                ID = int.Parse(txtID.SelectedItem.ToString()),
+                ID = int.Parse(txtID.Text),
                 Nome = txtIDUtilizador.SelectedItem.ToString(),
                 Data = dpData.Date.ToString(),
             };
 
             await DisplayAlert("Resposta", await Encomendas.EditEncomendas(encomendas), "Ok");
 
-            txtID.SelectedIndex = -1;
+            //txtID.SelectedIndex = -1;
+            txtID.Text = "";
             txtIDUtilizador.SelectedIndex = -1;
             Data = DateTime.Now.ToString();
-            EditButton.IsVisible = false;
-            searchButton.IsVisible = true;
+
+            await Shell.Current.GoToAsync("..");
+            //EditButton.IsVisible = false;
+            //searchButton.IsVisible = true;
         }
 
-        private void txtID_SelectedIndexChanged(object sender, EventArgs e)
+        /*private void txtID_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtIDUtilizador.SelectedIndex = -1;
             Data = DateTime.Now.ToString();
@@ -92,6 +99,6 @@ namespace AppPicking.Views
 
             EditButton.IsVisible = false;
             searchButton.IsVisible = true;
-        }
+        }*/
     }
 }

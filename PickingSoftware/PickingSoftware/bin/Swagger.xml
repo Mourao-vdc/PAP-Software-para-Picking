@@ -119,6 +119,11 @@
             </summary>
             <param name="id"></param>
         </member>
+        <member name="M:PickingSoftware.Models.Utilizador.GetUtilizadores">
+            <summary>
+            Show Utilizadores
+            </summary>
+        </member>
         <member name="M:PickingSoftware.Models.Utilizador.GetAdicionar(PickingSoftware.Models.Utilizador)">
             <summary>
             Adicionar
@@ -154,6 +159,11 @@
             Verify Nome
             </summary>
             <param name="nome"></param>
+        </member>
+        <member name="M:PickingSoftware.Models.Utilizador.SendEmail(System.String)">
+            <summary>
+            Send Email
+            </summary>
         </member>
     </members>
 </doc>

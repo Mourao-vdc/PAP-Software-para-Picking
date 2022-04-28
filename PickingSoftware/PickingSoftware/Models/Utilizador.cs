@@ -13,7 +13,9 @@ namespace PickingSoftware.Models
         public string Email { get; set; }
         public string Password { get; set; }
 
-
+        /// <summary>
+        /// Show Utilizadores
+        /// </summary>
         public static List<Utilizador> GetUtilizadores()
         {
             SqlConnection con =
@@ -210,17 +212,30 @@ namespace PickingSoftware.Models
                     return false;
                 }
             }
+        }
 
-            /*SqlConnection con =
+        /// <summary>
+        /// Send Email
+        /// </summary>
+        public static bool SendEmail(string email)
+        {
+            SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
-            con.Open();
-
-            using (SqlCommand cmd = new SqlCommand("verify_nome", con))
+            string query = "SELECT Nome, Password FROM Utilizador WHERE Email=@Email";
+            using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                cmd.Parameters.AddWithValue("@nome", nome);
+                con.Open();
+                cmd.Parameters.AddWithValue("@Email", email);
+                SqlDataReader rd = cmd.ExecuteReader();
+                if (rd.HasRows)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-
-            return true;*/
         }
     }
 }

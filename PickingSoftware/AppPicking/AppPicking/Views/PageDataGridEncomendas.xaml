@@ -6,8 +6,8 @@
     <ContentView>
         <StackLayout>
             <!-- Place new controls here -->
-            <dg:DataGrid x:Name="lvEncomendas" HeaderTextColor="Black" SelectionEnabled="True" ItemSelected="lvEncomendas_ItemSelected" RowHeight="70" HeaderHeight="50"  
-                    BorderColor="Black" HeaderBackground="LightGray">
+            <dg:DataGrid x:Name="lvEncomendas" HeaderTextColor="Black" SelectionEnabled="True" ItemSelected="lvEncomendas_ItemSelected" RowHeight="70" 
+                         HeaderHeight="50" BorderColor="Black" HeaderBackground="LightGray">
                 <x:Arguments>
                     <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
                 </x:Arguments>
@@ -18,7 +18,7 @@
                     </OnIdiom>
                 </dg:DataGrid.HeaderFontSize>
                 <dg:DataGrid.Columns>
-                    <dg:DataGridColumn Title="ID" PropertyName="ID" Width="1*"></dg:DataGridColumn>
+                    <dg:DataGridColumn Title="ID" PropertyName="ID" Width="1*"/>
                     <dg:DataGridColumn Title="Nome_Utilizadores" PropertyName="Nome" Width="2*"/>
                     <dg:DataGridColumn Title="Data" PropertyName="Data" x:Name="txtdata" Width="2*"/>
                 </dg:DataGrid.Columns>

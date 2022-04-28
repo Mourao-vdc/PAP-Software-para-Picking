@@ -47,20 +47,37 @@ namespace AppPicking.Views
 
         private async void lvEncomendas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover", "Detalhes");
-            Debug.WriteLine("Ações: " + action);
+            try
+            {
+                var aux = e.SelectedItem as Models.Encomendas;
 
-            if (action == "Editar")
-            {
-                await Navigation.PushAsync(new PageEditEncomendas());
+                if (aux != null)
+                {
+                    Models.PassValor.valor1 = aux.ID.ToString();
+                    Models.PassValor.valor2 = aux.Nome.ToString();
+                    Models.PassValor.valor3 = aux.Data.ToString();
+                    string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover", "Detalhes");
+                    Debug.WriteLine("Ações: " + action);
+
+                    if (action == "Editar")
+                    {
+                        await Navigation.PushAsync(new PageEditEncomendas());
+                    }
+                    if (action == "Remover")
+                    {
+                        await Navigation.PushAsync(new PageRemoveEncomendas());
+                    }
+                    if (action == "Detalhes")
+                    {
+                        await Navigation.PushAsync(new PageDataGridEncomendasArtigos());
+                    }
+                }
             }
-            if (action == "Remover")
+            catch (Exception ex)
             {
-                await Navigation.PushAsync(new PageRemoveEncomendas());
-            }
-            if (action == "Detalhes")
-            {
-                await Navigation.PushAsync(new PageDataGridEncomendasArtigos());
+                Debug.WriteLine("");
+                Debug.WriteLine(ex.ToString());
+                Debug.WriteLine("");
             }
         }
     }

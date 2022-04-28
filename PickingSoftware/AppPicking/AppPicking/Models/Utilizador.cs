@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
@@ -154,6 +153,20 @@ namespace AppPicking.Models
             catch
             {
                 return false;
+            }
+        }
+
+        public static async Task<bool> SendEmail(string _email)
+        {
+            using (HttpClient _client = new HttpClient())
+            {
+                var response = await _client.GetAsync("http://192.168.51.5:150/api/utilizador/SendEmail/" + _email);
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+
+                else
+                    return false;
             }
         }
     }

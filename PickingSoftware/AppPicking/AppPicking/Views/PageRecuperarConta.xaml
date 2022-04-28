@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPicking.Views.PageRecuperarConta"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout x:Name="teste" Padding="40" VerticalOptions="Center"
+                     HorizontalOptions="FillAndExpand">
+            <Image Source="icon_logo.ico" />
+            <Label Text="Recuperar conta:" TextColor="Black" FontSize="18" FontAttributes="Bold" Margin="0,5,0,0"/>
+            <Entry x:Name="txtEmail" Keyboard="Email" ClearButtonVisibility="WhileEditing" IsTextPredictionEnabled="false" IsSpellCheckEnabled="false" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Inserir email" Margin="0,5,0,10"/>
+            <Button BackgroundColor="Black" Text="Recuperar" Clicked="Button_Clicked"/>
+            <Label Padding="0,10,0,0" FontSize="20" TextColor="DarkGray" Text="Login" HorizontalOptions="Center" FontAttributes="Bold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

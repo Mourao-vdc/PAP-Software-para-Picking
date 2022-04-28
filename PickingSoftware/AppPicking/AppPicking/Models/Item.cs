@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AppPicking.Models
+﻿namespace AppPicking.Models
 {
     public class Item
     {

@@ -122,5 +122,22 @@ namespace PickingSoftware.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
             }
         }
+
+        [Route("SendEmail/{email}")]
+        [HttpGet]
+        public HttpResponseMessage SendEmail(string email)
+        {
+            try
+            {
+                if(Models.Utilizador.SendEmail(email))
+                    return Request.CreateResponse(HttpStatusCode.OK);
+                else
+                    return Request.CreateResponse(HttpStatusCode.Unauthorized);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
     }
 }

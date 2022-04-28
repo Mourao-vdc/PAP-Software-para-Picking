@@ -36,69 +36,83 @@ namespace AppPicking.Views
         {
             //int id = int.Parse(txtID.ToString());
 
-            //Dados da linha selecionada
-            var aux = e.SelectedItem as Models.Encomendas_Artigos;
-
-            Debug.Write("|||||");
-            Debug.Write("|||||");
-            Debug.WriteLine(aux.ID);
-            Debug.Write("|||||");
-            Debug.Write("|||||");
-
-            string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover", "Alterar quantidade");
-            Debug.WriteLine("Ações: " + action);
-
-            if (action == "Editar")
+            try
             {
-                await Navigation.PushAsync(new PageEditEncomendasArtigos());
-            }
-            if (action == "Remover")
-            {
-                await Navigation.PushAsync(new PageRemoveEncomendasArtigos());
-            }
-            if (action == "Alterar quantidade")
-            {
-                //await Navigation.PushAsync(new PageEditSituacao());
+                //Dados da linha selecionada
+                var aux = e.SelectedItem as Models.Encomendas_Artigos;
 
-                string result = await DisplayPromptAsync("Quantidade", "Teste", "Confirmar", "Cancelar", keyboard: Keyboard.Numeric);
-
-                if (result != null)
+                if (aux != null)
                 {
-                    if (int.Parse(result.ToString()) != 0)
+                    Models.PassValor.valor1 = aux.ID.ToString();
+                    Models.PassValor.valor2 = aux.ID_Encomendas.ToString();
+                    Models.PassValor.valor3 = aux.Nome.ToString();
+                    Models.PassValor.valor4 = aux.Quant_artigos.ToString();
+                    Models.PassValor.valor5 = aux.Situacao.ToString();
+                    Models.PassValor.valor6 = aux.Cod_Barras.ToString();
+
+
+                    string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover", "Alterar quantidade");
+                    Debug.WriteLine("Ações: " + action);
+
+                    if (action == "Editar")
                     {
-                        Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
-                        {
-                            ID = aux.ID,
-                            Quant_artigos = int.Parse(result.ToString()),
-                            Situacao = "A preparar",
-                        };
-
-                        await DisplayAlert("Resposta", await Encomendas_Artigos.EditQuantSituacao(_encomendasartigos), "Ok");
-
-                        apresentadados();
+                        await Navigation.PushAsync(new PageEditEncomendasArtigos());
                     }
-                    if (int.Parse(result.ToString()) == 0)
+                    if (action == "Remover")
                     {
-                        Encomendas_Artigos _encomendasartigoss = new Encomendas_Artigos()
-                        {
-                            ID = aux.ID,
-                            Quant_artigos = 0,
-                            Situacao = "Pronto",
-                        };
-
-                        await DisplayAlert("Resposta", await Encomendas_Artigos.EditQuantSituacao(_encomendasartigoss), "Ok");
-
-                        apresentadados();
+                        await Navigation.PushAsync(new PageRemoveEncomendasArtigos());
                     }
-                    if (result.ToString() == "")
-                    { 
-                        await DisplayAlert("Erro!", "A quantidade esta vazia", "Ok");
+                    if (action == "Alterar quantidade")
+                    {
+                        //await Navigation.PushAsync(new PageEditSituacao());
+
+                        string result = await DisplayPromptAsync("Quantidade", "Teste", "Confirmar", "Cancelar", keyboard: Keyboard.Numeric);
+
+                        if (result != null)
+                        {
+                            if (int.Parse(result.ToString()) != 0)
+                            {
+                                Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
+                                {
+                                    ID = aux.ID,
+                                    Quant_artigos = int.Parse(result.ToString()),
+                                    Situacao = "A preparar",
+                                };
+
+                                await DisplayAlert("Resposta", await Encomendas_Artigos.EditQuantSituacao(_encomendasartigos), "Ok");
+
+                                apresentadados();
+                            }
+                            if (int.Parse(result.ToString()) == 0)
+                            {
+                                Encomendas_Artigos _encomendasartigoss = new Encomendas_Artigos()
+                                {
+                                    ID = aux.ID,
+                                    Quant_artigos = 0,
+                                    Situacao = "Pronto",
+                                };
+
+                                await DisplayAlert("Resposta", await Encomendas_Artigos.EditQuantSituacao(_encomendasartigoss), "Ok");
+
+                                apresentadados();
+                            }
+                            if (result.ToString() == "")
+                            {
+                                await DisplayAlert("Erro!", "A quantidade esta vazia", "Ok");
+                            }
+                        }
+                        else
+                        {
+                            return;
+                        }
                     }
                 }
-                else
-                {
-                    return;
-                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("");
+                Debug.WriteLine(ex.ToString());
+                Debug.WriteLine("");
             }
         }
     }

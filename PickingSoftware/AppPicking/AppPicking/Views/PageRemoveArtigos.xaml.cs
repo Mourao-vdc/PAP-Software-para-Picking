@@ -29,7 +29,7 @@ namespace AppPicking.Views
 
         protected override async void OnAppearing()
         {
-            base.OnAppearing();
+            /*base.OnAppearing();
 
             var _list = await Models.Artigos.GetArtigos();
 
@@ -38,13 +38,16 @@ namespace AppPicking.Views
             foreach (var _item in _list)
             {
                 txtID.Items.Add(_item.ID.ToString());
-            }
+            }*/
 
+            txtID.Text = Models.PassValor.valor1;
+            txtNome.Text = Models.PassValor.valor2;
+            txtCod_Barras.Text = Models.PassValor.valor3;
             //txtID.Items.Add();
             //txtID.ItemsSource = new ObservableCollection<Models.Artigos>(await Models.Artigos.GetIDArtigos());
         }
 
-        private async void searchButton_Clicked(object sender, EventArgs e)
+        /*private async void searchButton_Clicked(object sender, EventArgs e)
         {
             if (txtID.SelectedIndex == -1)
 
@@ -63,25 +66,27 @@ namespace AppPicking.Views
                 RemoveButton.IsVisible = true;
                 searchButton.IsVisible = false;
             }
-        }
+        }*/
 
         private async void RemoveButton_Clicked(object sender, EventArgs e)
         {
 
             Artigos artigos = new Artigos()
             {
-                ID = int.Parse(txtID.SelectedItem.ToString()),
-
+                ID = int.Parse(txtID.Text),
             };
 
-            await DisplayAlert("Resposta", await Artigos.DellArtigos(int.Parse(txtID.SelectedItem.ToString())), "Ok");
+            await DisplayAlert("Resposta", await Artigos.DellArtigos(int.Parse(txtID.Text)), "Ok");
 
-            txtID.SelectedIndex = -1;
+            //txtID.SelectedIndex = -1;
+            txtID.Text = "";
             txtNome.Text = "";
             txtCod_Barras.Text = "";
 
-            RemoveButton.IsVisible= false;
-            searchButton.IsVisible= true;
+            //RemoveButton.IsVisible= false;
+            //searchButton.IsVisible= true;
+
+            await Shell.Current.GoToAsync("..");
         }
 
         private void txtID_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,8 +94,8 @@ namespace AppPicking.Views
             txtNome.Text = "";
             txtCod_Barras.Text = "";
 
-            RemoveButton.IsVisible = false;
-            searchButton.IsVisible = true;
+            //RemoveButton.IsVisible = false;
+            //searchButton.IsVisible = true;
         }
     }
 }
