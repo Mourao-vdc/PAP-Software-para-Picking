@@ -18,7 +18,7 @@
   </queries>
   <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/icon" android:label="AppPicking.Android" android:theme="@style/MainTheme" android:usesCleartextTraffic="true">
     <uses-library android:name="org.apache.http.legacy" android:required="false" />
-    <activity android:name="crc64ec9872d07c7b0b69.MainActivity" android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:exported="true" android:icon="@mipmap/icon" android:label="AppPicking" android:theme="@style/MainTheme">
+    <activity android:name="crc64ec9872d07c7b0b69.MainActivity" android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:exported="true" android:icon="@drawable/logo" android:label="AppPicking" android:theme="@style/MainTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

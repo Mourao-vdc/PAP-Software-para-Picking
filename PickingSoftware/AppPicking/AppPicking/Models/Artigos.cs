@@ -9,14 +9,6 @@ namespace AppPicking.Models
 {
     class Artigos
     {
-
-        /*private static string _aaaa = "";
-        public static string aaaa
-        {
-            get { return _aaaa; }
-            set { _aaaa = value; }
-        }*/
-
         public int ID { get; set; }
         public string Nome { get; set; }
         public string Cod_Barras { get; set; }
