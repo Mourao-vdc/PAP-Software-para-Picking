@@ -51,7 +51,7 @@ namespace AppPicking.Views
                     Models.PassValor.valor6 = aux.Cod_Barras.ToString();
 
 
-                    string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover", "Alterar quantidade");
+                    string action = await DisplayActionSheet("Detalhes: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover", "Alterar quantidade");
                     Debug.WriteLine("Ações: " + action);
 
                     if (action == "Editar")

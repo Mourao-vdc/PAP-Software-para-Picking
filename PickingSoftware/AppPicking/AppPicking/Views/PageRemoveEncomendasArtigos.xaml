@@ -4,7 +4,7 @@
              x:Class="AppPicking.Views.PageRemoveEncomendasArtigos">
     <ContentPage.Content>
         <StackLayout Margin="20,20,20,20">
-            <Label Text="Remover Encomendas" 
+            <Label Text="Remover Pedido" 
                    TextColor="Black"
                    HorizontalTextAlignment="Center"
                    FontSize="Title"/>

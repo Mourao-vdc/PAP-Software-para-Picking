@@ -4,7 +4,7 @@
              x:Class="AppPicking.Views.PageEditEncomendasArtigos">
     <ContentPage.Content>
         <StackLayout Margin="20,20,20,20">
-            <Label Text="Editar Encomendas" 
+            <Label Text="Editar Pedido" 
                    TextColor="Black"
                    HorizontalTextAlignment="Center"
                    FontSize="Title"/>

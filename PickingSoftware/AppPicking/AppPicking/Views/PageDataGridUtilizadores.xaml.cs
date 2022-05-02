@@ -27,7 +27,7 @@ namespace AppPicking.Views
 
         private async void lvUtilizadores_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            string action = await DisplayActionSheet("Ações: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover");
+            string action = await DisplayActionSheet("Utilizadores: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover");
             Debug.WriteLine("Ações: " + action);
 
             if (action == "Editar")
