@@ -33,6 +33,7 @@ namespace AppPicking.Views
 
                 //Debug.Write(Models.Username.Nome);
 
+                //Models.Username.ID = (await Models.Utilizador.perfil()).ID.ToString();
                 Models.Username.Nome = txtNome.Text;
 
                 txtNome.Text = "";
@@ -47,6 +48,12 @@ namespace AppPicking.Views
                 Debug.WriteLine(Models.Username.Nome);
                 Debug.Write("|||||||||");
                 Debug.Write("|||||||||");
+
+                /*Debug.Write("|||||||||");
+                Debug.Write("|||||||||");
+                Debug.WriteLine(Models.Username.ID);
+                Debug.Write("|||||||||");
+                Debug.Write("|||||||||");*/
             }
             else
             {

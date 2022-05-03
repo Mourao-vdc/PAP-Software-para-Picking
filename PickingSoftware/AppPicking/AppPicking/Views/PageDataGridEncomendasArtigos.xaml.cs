@@ -56,11 +56,18 @@ namespace AppPicking.Views
 
                     if (action == "Editar")
                     {
+                        lvEncomendasArtigos.SelectedItem = null;
                         await Navigation.PushAsync(new PageEditEncomendasArtigos());
                     }
                     if (action == "Remover")
                     {
+                        lvEncomendasArtigos.SelectedItem = null;
                         await Navigation.PushAsync(new PageRemoveEncomendasArtigos());
+                    }
+                    if (action == null || action == "Cancelar")
+                    {
+                        lvEncomendasArtigos.SelectedItem = null;
+                        return;
                     }
                     if (action == "Alterar quantidade")
                     {

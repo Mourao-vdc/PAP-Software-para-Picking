@@ -28,7 +28,7 @@ namespace PickingSoftware.Controllers
         {
             try
             {
-                if (Models.Encomendas.GetAdicionar(_encomendas, RequestContext.Principal.Identity.Name))
+                if (Models.Encomendas.GetAdicionar(_encomendas/*, RequestContext.Principal.Identity.Name*/))
                     return Request.CreateResponse(HttpStatusCode.OK, "Pedido inserido com sucesso!");
                 else
                     return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível inserir o pedido!");

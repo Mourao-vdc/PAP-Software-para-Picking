@@ -31,9 +31,15 @@ namespace AppPicking.Views
             {
                 Encomendas encomendas = new Encomendas()
                 {
-                    //ID_Utilizadores = Models.Utilizador.Userlogin(),
-                    Data = DateTime.Now.ToString(),
+                    ID_Utilizadores = (await Models.Utilizador.perfil()).ID,
+                    Data = DateTime.Now.ToString("MM/dd/yyyy"),
                 };
+
+                Debug.Write("||||||");
+                Debug.Write("||||||");
+                Debug.WriteLine(encomendas.ID_Utilizadores);
+                Debug.Write("||||||");
+                Debug.Write("||||||");
 
                 await DisplayAlert("Resposta", await Encomendas.AddEncomendas(encomendas), "Ok");
 
@@ -61,16 +67,59 @@ namespace AppPicking.Views
 
                     if (action == "Editar")
                     {
+                        lvEncomendas.SelectedItem = null;
                         await Navigation.PushAsync(new PageEditEncomendas());
                     }
                     if (action == "Remover")
                     {
-                        await Navigation.PushAsync(new PageRemoveEncomendas());
+                        Debug.WriteLine(Models.PassValor.valor3);
+                        Debug.WriteLine(DateTime.Now.ToString("dd/MM/yyyy"));
+                        if (DateTime.Now.ToString("dd/MM/yyyy") == aux.Data.ToString())
+                        {
+                            lvEncomendas.SelectedItem = null;
+                            await Navigation.PushAsync(new PageRemoveEncomendas());
+                        }
+                        else
+                        {
+                            await DisplayAlert("Erro","Não pode cancelar uma encomenda antiga","Ok");
+                            return;
+                        }
                     }
                     if (action == "Detalhes")
                     {
+                        lvEncomendas.SelectedItem = null;
                         await Navigation.PushAsync(new PageDataGridEncomendasArtigos());
                     }
+                    if (action == null || action == "Cancelar")
+                    {
+                        lvEncomendas.SelectedItem = null;
+                        return;
+                    }
+
+                    /*string action = await DisplayActionSheet("Deseja eliminar a encomenda selecionada?", "Sim", "Não");
+                    Debug.WriteLine("Ações: " + action);
+
+                    if (action == "Sim")
+                    {
+                        Encomendas encomendas = new Encomendas()
+                        {
+                            ID = int.Parse(Models.PassValor.valor1),
+                        };
+
+                        await DisplayAlert("Resposta", await Encomendas.DellEncomenda(int.Parse(Models.PassValor.valor1)), "Ok");
+
+                        await Navigation.PushAsync(new PageDataGridEncomendasArtigos());
+                    }
+                    if (action == "Não")
+                    {
+                        lvEncomendas.SelectedItem = null;
+                        return;
+                    }
+                    if (action == null)
+                    {
+                        lvEncomendas.SelectedItem = null;
+                        return;
+                    }*/
                 }
             }
             catch (Exception ex)

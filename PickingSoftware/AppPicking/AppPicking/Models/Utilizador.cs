@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
@@ -15,10 +16,32 @@ namespace AppPicking.Models
         public string Email { get; set; }
         public string Password { get; set; }
 
+        public static async Task<Utilizador> perfil()
+        {
+            using (HttpClient _client = new HttpClient())
+            {
+                _client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+
+                var content = await _client.GetAsync("http://192.168.51.5:150/api/utilizador/perfil");
+
+                Debug.WriteLine("");
+                Debug.WriteLine(content.StatusCode.ToString());
+                Debug.WriteLine("");
+
+                if (content.IsSuccessStatusCode)
+                    return JsonConvert.DeserializeObject<Utilizador>(await content.Content.ReadAsStringAsync());
+
+                else
+                    return new Utilizador();
+            }
+        }
+
         public static async Task<List<Utilizador>> GetUtilizadores()
         {
             using (HttpClient _client = new HttpClient())
             {
+                _client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+
                 var content = await _client.GetAsync("http://192.168.51.5:150/api/utilizador/todas");
 
                 Debug.WriteLine("");
@@ -59,6 +82,8 @@ namespace AppPicking.Models
             }
         }
 
+        public static string token { get; set; }
+
         public static async Task<bool> Userlogin(Utilizador utilizador)
         {
 
@@ -89,7 +114,13 @@ namespace AppPicking.Models
                 Debug.WriteLine("");
 
                 if (response.IsSuccessStatusCode)
+                {
+                    JObject jwtDynamic = JsonConvert.DeserializeObject<dynamic>(await response.Content.ReadAsStringAsync());
+
+                    token = jwtDynamic.Value<string>("access_token");
+
                     return true;
+                }
 
                 else
                     return false;

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ozOB+oNRxyi1hN33b+5BoUu7/aC2zjw8YUQtHC5ZiS9O1BkSC/f5xgxrF+75Px36ZqWy1rquFVqhBo9k6IesQQ==",
+  "dgSpecHash": "wNL1gO7MmW4d3BYaP1tQ+IAa4kwh13pXqzjnc4IzenlDxYKmhKd00INQfHJvATUNPFijHXbR8wj0STFPJtK32Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\estagio\\Documents\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking.iOS\\AppPicking.iOS.csproj",
   "expectedPackageFiles": [
@@ -24,6 +24,7 @@
     "C:\\Users\\estagio\\.nuget\\packages\\microsoft.aspnetcore.staticfiles\\2.1.0\\microsoft.aspnetcore.staticfiles.2.1.0.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.1.0\\microsoft.aspnetcore.webutilities.2.1.0.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.0.0\\microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
+    "C:\\Users\\estagio\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.1.0\\microsoft.dotnet.platformabstractions.2.1.0.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.1.0\\microsoft.extensions.configuration.abstractions.2.1.0.nupkg.sha512",

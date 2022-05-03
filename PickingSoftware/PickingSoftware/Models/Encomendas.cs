@@ -18,7 +18,7 @@ namespace PickingSoftware.Models
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
             string query = "SELECT Encomendas.ID, Utilizador.Nome, FORMAT (Data, 'dd/MM/yyyy ') as Data FROM Encomendas" +
-                " INNER JOIN Utilizador" +
+                " JOIN Utilizador" +
                 " ON Utilizador.ID = Encomendas.ID_Utilizadores";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
@@ -40,7 +40,7 @@ namespace PickingSoftware.Models
         /// Adicionar
         /// </summary>
         /// <param name="_encomendas"></param>
-        public static bool GetAdicionar(Encomendas _encomendas, string _nome)
+        public static bool GetAdicionar(Encomendas _encomendas)
         {
             try
             {
@@ -52,13 +52,9 @@ namespace PickingSoftware.Models
                     " VALUES (@ID_Utilizadores,@Data)";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    Debug.WriteLine("");
-                    Debug.WriteLine("NOME");
-                    Debug.WriteLine(_nome);
-                    Debug.WriteLine("");
 
                     //cmd.Parameters.AddWithValue("@ID", _artigo.ID);
-                    cmd.Parameters.AddWithValue("@ID_Utilizadores", IDM(_nome));
+                    cmd.Parameters.AddWithValue("@ID_Utilizadores", _encomendas.ID_Utilizadores);
                     cmd.Parameters.AddWithValue("@Data", _encomendas.Data);
                     cmd.ExecuteScalar();
 

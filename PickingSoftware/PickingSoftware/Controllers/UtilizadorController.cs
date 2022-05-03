@@ -1,15 +1,32 @@
 ﻿using System;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
 namespace PickingSoftware.Controllers
 {
-    [RoutePrefix("api/Utilizador")]
+    [RoutePrefix("api/utilizador")]
     public class UtilizadorController : ApiController
     {
+        [Route("perfil")]
+        [HttpGet]
+        [Authorize]
+        public HttpResponseMessage perfil()
+        {
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Utilizador.GetUtilizadores().Where(x => x.Nome == RequestContext.Principal.Identity.Name).First());
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
+
         [Route("Todas")]
         [HttpGet]
+        [Authorize]
         public HttpResponseMessage GetUtilizadores()
         {
             try

@@ -10,5 +10,12 @@
             get { return _Nome; }
             set { _Nome = value; }
         }
+
+        private static string _ID = "";
+        public static string ID
+        {
+            get { return _ID; }
+            set { _ID = value; }
+        }
     }
 }

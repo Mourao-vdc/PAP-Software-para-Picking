@@ -789,3 +789,5 @@ C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\res\drawable\icon_entr.png
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\res\drawable\icon_add.png
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\res\drawable\logo.ico
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\android\assets\Microsoft.CSharp.dll
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\android\assets\Microsoft.CSharp.pdb
