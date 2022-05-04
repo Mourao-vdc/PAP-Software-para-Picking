@@ -1,6 +1,7 @@
 ﻿using AppPicking.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,8 @@ namespace AppPicking.Views
         public int ID_Encomendas { get; set; }
         public int ID_Artigos { get; set; }
         public string Cod_Barras { get; set; }
-        public bool Situacao { get; set; }
-        public string Quant_artigos { get; set; }
+        public string Situacao { get; set; }
+        public int Quant_artigos { get; set; }
 
 
         private List<Models.Encomendas_Artigos> lvEncomendasartigos = new List<Encomendas_Artigos>();
@@ -64,8 +65,8 @@ namespace AppPicking.Views
             }
 
             txtID.Text = Models.PassValor.valor1;
-            //txtIDEncomenda.SelectedIndex = int.Parse(Models.PassValor.valor2);
-            //txtIDArtigo.SelectedIndex = int.Parse(Models.PassValor.valor3);
+            txtIDEncomenda.SelectedItem = Models.PassValor.valor2;
+            txtIDArtigo.SelectedItem = Models.PassValor.valor3;
             txtQuantArtigos.Text = Models.PassValor.valor4;
             txtCodBarras.Text = Models.PassValor.valor6;
 
@@ -95,27 +96,44 @@ namespace AppPicking.Views
 
         private async void EditButton_Clicked(object sender, EventArgs e)
         {
-            Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
+            try
             {
-                ID = int.Parse(txtID.ToString()),
-                ID_Encomendas = int.Parse(txtIDEncomenda.SelectedItem.ToString()),
-                ID_Artigos = int.Parse(txtIDArtigo.SelectedItem.ToString()),
-                Cod_Barras = txtCodBarras.Text,
-                Quant_artigos = int.Parse(txtQuantArtigos.Text.ToString()),
-            };
+                int _ID = await Models.Encomendas_Artigos.IDNM(txtIDArtigo.SelectedItem.ToString());
 
-            await DisplayAlert("Resposta", await Encomendas_Artigos.EditEncomendas_Artigos(_encomendasartigos), "Ok");
+                Debug.Write("|||||");
+                Debug.Write("|||||");
+                Debug.WriteLine(_ID);
+                Debug.Write("|||||");
+                Debug.Write("|||||");
 
-            //txtID.SelectedIndex = -1;
-            txtID.Text = "";
-            txtIDEncomenda.SelectedIndex = -1;
-            txtIDArtigo.SelectedIndex = -1;
-            txtCodBarras.Text = "";
-            txtQuantArtigos.Text = "";
+                if (_ID != -1)
+                {
+                    Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
+                    {
+                        ID = int.Parse(txtID.Text),
+                        ID_Encomendas = int.Parse(txtIDEncomenda.SelectedItem.ToString()),
+                        ID_Artigos = _ID,
+                        Quant_artigos = int.Parse(txtQuantArtigos.Text.ToString()),
+                        Cod_Barras = txtCodBarras.Text,
+                    };
 
-            await Shell.Current.GoToAsync("..");
-            //EditButton.IsVisible = false;
-            //searchButton.IsVisible = true;
+                    await DisplayAlert("Resposta", await Encomendas_Artigos.EditEncomendas_Artigos(_encomendasartigos), "Ok");
+
+                    //txtID.SelectedIndex = -1;
+                    txtID.Text = "";
+                    txtIDEncomenda.SelectedIndex = -1;
+                    txtIDArtigo.SelectedIndex = -1;
+                    txtCodBarras.Text = "";
+                    txtQuantArtigos.Text = "";
+
+                    await Shell.Current.GoToAsync("..");
+                    //EditButton.IsVisible = false;
+                    //searchButton.IsVisible = true;
+                }
+            }
+
+            catch (Exception ex)
+            { Debug.WriteLine(ex.ToString()); }
         }
 
         /*private void txtID_SelectedIndexChanged(object sender, EventArgs e)

@@ -107,5 +107,19 @@ namespace PickingSoftware.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
+
+        [Route("idnm/{_Nome}")]
+        [HttpGet]
+        public HttpResponseMessage IDNM(string _Nome)
+        {
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Encomendas_Artigos.IDNM(_Nome));
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
     }
 }

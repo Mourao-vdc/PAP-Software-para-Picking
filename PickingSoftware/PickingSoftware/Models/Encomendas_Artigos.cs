@@ -196,5 +196,23 @@ namespace PickingSoftware.Models
                 return false;
             }
         }
+
+        public static int IDNM(string _Nome)
+        {
+            SqlConnection con =
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+            con.Open();
+            string query = "SELECT ID FROM Artigos WHERE Nome like '" + _Nome + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            List<Encomendas_Artigos> _tst = new List<Encomendas_Artigos>();
+            while (dr.Read())
+            {
+                return (int)dr["ID"];
+            }
+
+            return -1;
+        }
     }
 }

@@ -29,9 +29,9 @@ namespace PickingSoftware.Controllers
             try
             {
                 if (Models.Encomendas.GetAdicionar(_encomendas/*, RequestContext.Principal.Identity.Name*/))
-                    return Request.CreateResponse(HttpStatusCode.OK, "Pedido inserido com sucesso!");
+                    return Request.CreateResponse(HttpStatusCode.OK, "Encomenda criada com sucesso!");
                 else
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível inserir o pedido!");
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível criar a encomenda!");
             }
             catch (Exception ex)
             {
@@ -73,17 +73,13 @@ namespace PickingSoftware.Controllers
             }
         }
 
-        [Route("IDM/{nome}")]
+        [Route("maxid")]
         [HttpGet]
-        public HttpResponseMessage IDM(string nome)
+        public HttpResponseMessage GetMAXID()
         {
             try
             {
-                if (Models.Encomendas.IDM(nome))
-                    return Request.CreateResponse(HttpStatusCode.OK);
-
-                else
-                    return Request.CreateResponse(HttpStatusCode.Unauthorized);
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Encomendas.GetMAXID());
             }
             catch (Exception ex)
             {

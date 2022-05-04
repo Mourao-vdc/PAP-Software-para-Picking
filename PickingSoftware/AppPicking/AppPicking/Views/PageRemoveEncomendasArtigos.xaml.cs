@@ -13,8 +13,8 @@ namespace AppPicking.Views
         public int ID_Encomendas { get; set; }
         public int ID_Artigos { get; set; }
         public string Cod_Barras { get; set; }
-        public bool Situacao { get; set; }
-        public string Quant_artigos { get; set; }
+        public string Situacao { get; set; }
+        public int Quant_artigos { get; set; }
 
 
         private List<Models.Encomendas_Artigos> lvEncomendasartigos = new List<Encomendas_Artigos>();
@@ -60,8 +60,8 @@ namespace AppPicking.Views
             }
 
             txtID.Text = Models.PassValor.valor1;
-            //txtIDEncomenda.SelectedIndex = int.Parse(Models.PassValor.valor2);
-            //txtIDArtigo.SelectedIndex = int.Parse(Models.PassValor.valor3);
+            txtIDEncomenda.SelectedItem = Models.PassValor.valor2;
+            txtIDArtigo.SelectedItem = Models.PassValor.valor3;
             txtQuantArtigos.Text = Models.PassValor.valor4;
             txtCodBarras.Text = Models.PassValor.valor6;
         }
@@ -103,10 +103,10 @@ namespace AppPicking.Views
         {
             Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
             {
-                ID = int.Parse(txtID.ToString()),
+                ID = int.Parse(txtID.Text),
             };
 
-            await DisplayAlert("Resposta", await Encomendas_Artigos.DellEncomendas_Artigos(int.Parse(txtID.ToString())), "Ok");
+            await DisplayAlert("Resposta", await Encomendas_Artigos.DellEncomendas_Artigos(int.Parse(txtID.Text)), "Ok");
 
             //txtID.SelectedIndex = -1;
             txtID.Text = "";

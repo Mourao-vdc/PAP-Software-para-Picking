@@ -35,6 +35,8 @@ namespace AppPicking.Views
                     Data = DateTime.Now.ToString("MM/dd/yyyy"),
                 };
 
+                Models.PassValor.valor1 = (await Models.Encomendas.GetMAXID()).ID.ToString();
+
                 Debug.Write("||||||");
                 Debug.Write("||||||");
                 Debug.WriteLine(encomendas.ID_Utilizadores);
@@ -72,18 +74,8 @@ namespace AppPicking.Views
                     }
                     if (action == "Remover")
                     {
-                        Debug.WriteLine(Models.PassValor.valor3);
-                        Debug.WriteLine(DateTime.Now.ToString("dd/MM/yyyy"));
-                        if (DateTime.Now.ToString("dd/MM/yyyy") == aux.Data.ToString())
-                        {
                             lvEncomendas.SelectedItem = null;
                             await Navigation.PushAsync(new PageRemoveEncomendas());
-                        }
-                        else
-                        {
-                            await DisplayAlert("Erro","Não pode cancelar uma encomenda antiga","Ok");
-                            return;
-                        }
                     }
                     if (action == "Detalhes")
                     {

@@ -32,6 +32,24 @@ namespace AppPicking.Models
             }
         }
 
+        public static async Task<Encomendas> GetMAXID()
+        {
+            using (HttpClient _client = new HttpClient())
+            {
+                var content = await _client.GetAsync("http://192.168.51.5:150/api/encomendas/maxid");
+
+                Debug.WriteLine("");
+                Debug.WriteLine(content.StatusCode.ToString());
+                Debug.WriteLine("");
+
+                if (content.IsSuccessStatusCode)
+                    return JsonConvert.DeserializeObject<Encomendas>(await content.Content.ReadAsStringAsync());
+
+                else
+                    return new Encomendas();
+            }
+        }
+
         public static async Task<string> AddEncomendas(Encomendas encomendas)
         {
             Debug.Write("||||||");

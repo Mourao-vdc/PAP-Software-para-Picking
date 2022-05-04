@@ -52,13 +52,14 @@ namespace AppPicking.Views
                 {
                     ID_Utilizadores = int.Parse(txtIDUtilizador.SelectedItem.ToString()),
                     Data = dpData.Date.ToString(),
-                    
                 };
 
                 await DisplayAlert("Resposta", await Encomendas.AddEncomendas(encomendas), "Ok");
                 
                 txtIDUtilizador.SelectedIndex = -1;
                 Data = DateTime.Now.ToString();
+
+                await Shell.Current.GoToAsync("..");
             }
         }
     }
