@@ -25,7 +25,7 @@ CREATE TABLE Permicoes_Gerais (
     ID int PRIMARY KEY NOT NULL IDENTITY(1,1),
     ID_Grupo int ,
     ID_Permicoes int ,
-    Estado bit
+    Estado nvarchar(254)
 );
 
 CREATE TABLE Grupos (
