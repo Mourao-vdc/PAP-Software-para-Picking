@@ -18,6 +18,7 @@ namespace AppPicking.Models
 
         public static async Task<Utilizador> perfil()
         {
+
             using (HttpClient _client = new HttpClient())
             {
                 _client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
@@ -26,6 +27,7 @@ namespace AppPicking.Models
 
                 Debug.WriteLine("");
                 Debug.WriteLine(content.StatusCode.ToString());
+                Debug.WriteLine(await content.Content.ReadAsStringAsync());
                 Debug.WriteLine("");
 
                 if (content.IsSuccessStatusCode)

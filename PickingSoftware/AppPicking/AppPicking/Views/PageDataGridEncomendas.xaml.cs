@@ -20,11 +20,20 @@ namespace AppPicking.Views
             base.OnAppearing();
 
             lvEncomendas.ItemsSource = new ObservableCollection<Models.Encomendas>(await Models.Encomendas.GetEncomendas());
+
+            Debug.Write("|||||");
+            Debug.Write("|||||");
+            Debug.WriteLine((await Models.Utilizador.perfil()).ID);
+            Debug.Write("|||||");
+            Debug.Write("|||||");
+            Debug.WriteLine(await Models.Encomendas.GetMAXID());
+            Debug.Write("|||||");
+            Debug.Write("|||||");
         }
 
         private async void btnPopup_Clicked(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("Deseja realizar uma nova encomendas?", "Sim","Não");
+            string action = await DisplayActionSheet("Deseja realizar uma nova encomendas?", "Sim", "Não");
             Debug.WriteLine("Ações: " + action);
 
             if (action == "Sim")
@@ -35,8 +44,6 @@ namespace AppPicking.Views
                     Data = DateTime.Now.ToString("MM/dd/yyyy"),
                 };
 
-                Models.PassValor.valor1 = (await Models.Encomendas.GetMAXID()).ID.ToString();
-
                 Debug.Write("||||||");
                 Debug.Write("||||||");
                 Debug.WriteLine(encomendas.ID_Utilizadores);
@@ -44,6 +51,8 @@ namespace AppPicking.Views
                 Debug.Write("||||||");
 
                 await DisplayAlert("Resposta", await Encomendas.AddEncomendas(encomendas), "Ok");
+
+                Models.PassValor.valor1 = (await Models.Encomendas.GetMAXID()).ToString();
 
                 await Navigation.PushAsync(new PageDataGridEncomendasArtigos());
             }
@@ -74,8 +83,25 @@ namespace AppPicking.Views
                     }
                     if (action == "Remover")
                     {
+                        string action2 = await DisplayActionSheet("Deseja remover a encomenda selecionada?", "Sim", "Não");
+                        Debug.WriteLine("Ações: " + action2);
+
+                        if (action2 == "Sim")
+                        {
+                            Encomendas encomendas = new Encomendas()
+                            {
+                                ID = int.Parse(Models.PassValor.valor1),
+                            };
+
+                            await DisplayAlert("Resposta", await Encomendas.DellEncomenda(int.Parse(Models.PassValor.valor1)), "Ok");
+
+                            OnAppearing();
                             lvEncomendas.SelectedItem = null;
-                            await Navigation.PushAsync(new PageRemoveEncomendas());
+                        }
+                        if (action == "Não")
+                        {
+                            return;
+                        }
                     }
                     if (action == "Detalhes")
                     {
@@ -88,30 +114,30 @@ namespace AppPicking.Views
                         return;
                     }
 
-                    /*string action = await DisplayActionSheet("Deseja eliminar a encomenda selecionada?", "Sim", "Não");
-                    Debug.WriteLine("Ações: " + action);
+                        /*string action = await DisplayActionSheet("Deseja eliminar a encomenda selecionada?", "Sim", "Não");
+                        Debug.WriteLine("Ações: " + action);
 
-                    if (action == "Sim")
-                    {
-                        Encomendas encomendas = new Encomendas()
+                        if (action == "Sim")
                         {
-                            ID = int.Parse(Models.PassValor.valor1),
-                        };
+                            Encomendas encomendas = new Encomendas()
+                            {
+                                ID = int.Parse(Models.PassValor.valor1),
+                            };
 
-                        await DisplayAlert("Resposta", await Encomendas.DellEncomenda(int.Parse(Models.PassValor.valor1)), "Ok");
+                            await DisplayAlert("Resposta", await Encomendas.DellEncomenda(int.Parse(Models.PassValor.valor1)), "Ok");
 
-                        await Navigation.PushAsync(new PageDataGridEncomendasArtigos());
-                    }
-                    if (action == "Não")
-                    {
-                        lvEncomendas.SelectedItem = null;
-                        return;
-                    }
-                    if (action == null)
-                    {
-                        lvEncomendas.SelectedItem = null;
-                        return;
-                    }*/
+                            await Navigation.PushAsync(new PageDataGridEncomendasArtigos());
+                        }
+                        if (action == "Não")
+                        {
+                            lvEncomendas.SelectedItem = null;
+                            return;
+                        }
+                        if (action == null)
+                        {
+                            lvEncomendas.SelectedItem = null;
+                            return;
+                        }*/
                 }
             }
             catch (Exception ex)

@@ -23,7 +23,7 @@ namespace AppPicking.Views
 
             Models.Utilizador _user = new Models.Utilizador()
             {
-                Nome = txtNome.Text,
+                Nome = txtNome.Text.TrimEnd().TrimStart(),
                 Password = txtPassword.Text
             };
 

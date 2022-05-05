@@ -132,24 +132,22 @@ namespace PickingSoftware.Models
             }
         }
 
-        public static List<Encomendas> GetMAXID()
+        public static int GetMAXID()
         {
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
-            string query = "select max(ID + 1) from Encomendas";
+            string query = "select max(ID) ID from Encomendas";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
 
             List<Encomendas> _tst = new List<Encomendas>();
             while (dr.Read())
             {
-                _tst.Add(new Encomendas
-                {
-                    ID = (int)dr["ID"],
-                });
+                return (int)dr["ID"];
             }
-            return _tst;
+
+            return -1;
         }
     }
 }

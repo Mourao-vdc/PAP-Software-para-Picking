@@ -73,8 +73,8 @@ namespace AppPicking.Views
                                 {
                                     Utilizador utilizador = new Utilizador()
                                     {
-                                        ID_Grupo = 1,
-                                        Nome = txtNome.Text,
+                                        ID_Grupo = 2,
+                                        Nome = txtNome.Text.TrimEnd().TrimStart(),
                                         Email = txtEmail.Text,
                                         Password = Cryptography.Encrypt(txtPassword.Text.ToString()),
                                     };

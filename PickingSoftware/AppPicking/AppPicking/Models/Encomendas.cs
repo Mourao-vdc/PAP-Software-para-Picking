@@ -32,7 +32,7 @@ namespace AppPicking.Models
             }
         }
 
-        public static async Task<Encomendas> GetMAXID()
+        public static async Task<int> GetMAXID()
         {
             using (HttpClient _client = new HttpClient())
             {
@@ -43,10 +43,10 @@ namespace AppPicking.Models
                 Debug.WriteLine("");
 
                 if (content.IsSuccessStatusCode)
-                    return JsonConvert.DeserializeObject<Encomendas>(await content.Content.ReadAsStringAsync());
+                    return JsonConvert.DeserializeObject<int>(await content.Content.ReadAsStringAsync());
 
                 else
-                    return new Encomendas();
+                    return -1;
             }
         }
 

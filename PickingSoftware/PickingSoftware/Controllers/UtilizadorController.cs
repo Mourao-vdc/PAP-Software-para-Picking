@@ -16,7 +16,8 @@ namespace PickingSoftware.Controllers
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, Models.Utilizador.GetUtilizadores().Where(x => x.Nome == RequestContext.Principal.Identity.Name).First());
+                //return Request.CreateResponse(HttpStatusCode.OK, Models.Utilizador.GetUtilizadores().Where(x => x.Nome == RequestContext.Principal.Identity.Name).First());
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Utilizador.GetUtilizadorNome(RequestContext.Principal.Identity.Name));
             }
             catch (Exception ex)
             {

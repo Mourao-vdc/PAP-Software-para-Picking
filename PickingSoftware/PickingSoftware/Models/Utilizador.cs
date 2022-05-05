@@ -1,7 +1,9 @@
 ﻿using AppPicking.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace PickingSoftware.Models
 {
@@ -37,6 +39,48 @@ namespace PickingSoftware.Models
                 });
             }
             return _tst;
+        }
+
+        public static Utilizador GetUtilizadorNome(string _nome)
+        {
+            try
+            {
+                SqlConnection con =
+                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                con.Open();
+                string query = "SELECT ID, ID_GRUPO, Nome, Email from Utilizador where nome like '" + _nome.TrimEnd().TrimStart() + "'";
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        Debug.WriteLine("");
+                        Debug.WriteLine("NOME");
+                        Debug.WriteLine(dr["nome"].ToString());
+                        Debug.WriteLine("");
+
+                        return new Utilizador
+                        {
+                            ID = (int)dr["ID"],
+                            ID_Grupo = (int)dr["ID_Grupo"],
+                            Nome = dr["Nome"].ToString(),
+                            Email = dr["Email"].ToString(),
+                        };
+                    }
+                }
+
+                return new Utilizador();
+            }
+
+            catch (Exception ex)
+            {
+                return new Utilizador()
+                {
+                    Nome = ex.ToString()
+                };
+            }
         }
 
         /// <summary>
