@@ -27,14 +27,14 @@ namespace AppPicking.Views
         {
             base.OnAppearing();
 
-            var _list = await Models.Encomendas_Artigos.GetEncomendas_Artigos();
+            /*var _list = await Models.Encomendas_Artigos.GetEncomendas_Artigos();
 
             listaUtilizadores = _list;
 
             foreach (var _item in _list)
             {
                 txtEncomenda.Items.Add(_item.ID.ToString());
-            }
+            }*/
         }
 
         private void Estado()

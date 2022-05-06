@@ -19,7 +19,7 @@ namespace AppPicking.Views
         {
             base.OnAppearing();
 
-            lvEncomendas.ItemsSource = new ObservableCollection<Models.Encomendas>(await Models.Encomendas.GetEncomendas());
+            lvEncomendas.ItemsSource = new ObservableCollection<Models.Encomendas>(await Models.Encomendas.GetEncomendas((await Models.Utilizador.perfil()).Nome));
 
             Debug.Write("|||||");
             Debug.Write("|||||");

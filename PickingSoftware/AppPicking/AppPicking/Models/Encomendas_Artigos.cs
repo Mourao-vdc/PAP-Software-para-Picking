@@ -17,11 +17,11 @@ namespace AppPicking.Models
         public string Situacao { get; set; }
         public int Quant_artigos { get; set; }
 
-        public static async Task<List<Encomendas_Artigos>> GetEncomendas_Artigos()
+        public static async Task<List<Encomendas_Artigos>> GetEncomendas_Artigos(int _idencomenda)
         {
             using (HttpClient _client = new HttpClient())
             {
-                var content = await _client.GetStringAsync("http://192.168.51.5:150/api/Encomendas_Artigos/todas");
+                var content = await _client.GetStringAsync("http://192.168.51.5:150/api/Encomendas_Artigos/todas/" + _idencomenda);
 
                 Debug.WriteLine(content);
 

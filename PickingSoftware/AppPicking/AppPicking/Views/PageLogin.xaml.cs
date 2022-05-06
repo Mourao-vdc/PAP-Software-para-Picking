@@ -41,6 +41,8 @@ namespace AppPicking.Views
 
                 //await Shell.Current.GoToAsync($"//{nameof(PageDataGridEncomendas)}");
 
+                await teste.FadeTo(0, 500, Easing.Linear);
+
                 App.Current.MainPage = new AppShell();
 
                 Debug.Write("|||||||||");

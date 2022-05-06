@@ -13,13 +13,13 @@ namespace PickingSoftware.Models
         public string Situacao { get; set; }
         public int Quant_artigos { get; set; }
 
-        public static List<Encomendas_Artigos> GetEncomendas_Artigos()
+        public static List<Encomendas_Artigos> GetEncomendas_Artigos(int _idencomenda)
         {
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
             string query = "Select Encomendas_Artigos.ID, Encomendas_Artigos.ID_Encomendas, Artigos.Nome, Encomendas_Artigos.Quant_artigos, Encomendas_Artigos.Situacao, Encomendas_Artigos.Cod_Barras" +
-                " from Encomendas_Artigos Inner join Artigos on Artigos.ID = Encomendas_Artigos.ID_Artigos ORDER BY Situacao ASC";
+                " from Encomendas_Artigos Inner join Artigos on Artigos.ID = Encomendas_Artigos.ID_Artigos WHERE ID_Encomendas='" + _idencomenda + "' ORDER BY Situacao ASC";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
 

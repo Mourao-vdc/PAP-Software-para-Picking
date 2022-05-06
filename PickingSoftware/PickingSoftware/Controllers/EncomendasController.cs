@@ -8,13 +8,13 @@ namespace PickingSoftware.Controllers
     [RoutePrefix("api/Encomendas")]
     public class EncomendasController : ApiController
     {
-        [Route("Todas")]
+        [Route("Todas/{_nome}")]
         [HttpGet]
-        public HttpResponseMessage GetEncomendas()
+        public HttpResponseMessage GetEncomendas(string _nome)
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, Models.Encomendas.GetEncomendas());
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Encomendas.GetEncomendas(_nome));
             }
             catch (Exception ex)
             {

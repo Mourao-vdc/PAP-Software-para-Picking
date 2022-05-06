@@ -19,9 +19,25 @@ namespace AppPicking.Views
         {
             base.OnAppearing();
 
-            lvEncomendasArtigos.ItemsSource = new ObservableCollection<Models.Encomendas_Artigos>(await Models.Encomendas_Artigos.GetEncomendas_Artigos());
-        }
+            try
+            {
+                Debug.Write("|||||");
+                Debug.Write("|||||");
+                Debug.WriteLine(Models.PassValor.valor1);
+                Debug.Write("|||||");
+                Debug.Write("|||||");
 
+                int idencomenda = int.Parse(Models.PassValor.valor1);
+
+                lvEncomendasArtigos.ItemsSource = new ObservableCollection<Models.Encomendas_Artigos>(await Models.Encomendas_Artigos.GetEncomendas_Artigos(idencomenda));
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+        }
+    
         private async void btnPopup_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new PageAddEncomendasArtigos());

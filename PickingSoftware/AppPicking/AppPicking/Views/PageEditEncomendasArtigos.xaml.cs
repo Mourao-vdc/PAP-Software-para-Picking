@@ -55,7 +55,7 @@ namespace AppPicking.Views
                 txtIDArtigo.Items.Add(_item.Nome.ToString());
             }
 
-            var _listtt = await Models.Encomendas.GetEncomendas();
+            var _listtt = await Models.Encomendas.GetEncomendas((await Models.Utilizador.perfil()).Nome);
 
             lvEncomendas = _listtt;
 
