@@ -11,6 +11,29 @@ namespace PickingSoftware.Models
         public string Nome { get; set; }
         public string Data { get; set; }
 
+        public static List<Encomendas> GetEncomendastodas()
+        {
+            SqlConnection con =
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+            con.Open();
+            string query = "SELECT Encomendas.ID, Utilizador.Nome, FORMAT (Data, 'dd/MM/yyyy ') as Data FROM Encomendas" +
+                " JOIN Utilizador" +
+                " ON Utilizador.ID = Encomendas.ID_Utilizadores";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            List<Encomendas> _tst = new List<Encomendas>();
+            while (dr.Read())
+            {
+                _tst.Add(new Encomendas
+                {
+                    ID = (int)dr["ID"],
+                    Nome = dr["Nome"].ToString(),
+                    Data = dr["Data"].ToString()
+                });
+            }
+            return _tst;
+        }
 
         public static List<Encomendas> GetEncomendas(string _nome)
         {

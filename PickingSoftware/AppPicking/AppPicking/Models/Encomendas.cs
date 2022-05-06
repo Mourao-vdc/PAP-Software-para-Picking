@@ -14,6 +14,24 @@ namespace AppPicking.Models
         public string Nome { get; set; }
         public string Data { get; set; }
 
+        public static async Task<List<Encomendas>> GetEncomendastodas()
+        {
+            using (HttpClient _client = new HttpClient())
+            {
+                var content = await _client.GetAsync("http://192.168.51.5:150/api/encomendas/todas");
+
+                Debug.WriteLine("");
+                Debug.WriteLine(content.StatusCode.ToString());
+                Debug.WriteLine("");
+
+                if (content.IsSuccessStatusCode)
+                    return JsonConvert.DeserializeObject<List<Encomendas>>(await content.Content.ReadAsStringAsync());
+
+                else
+                    return new List<Encomendas>();
+            }
+        }
+
         public static async Task<List<Encomendas>> GetEncomendas(string _nome)
         {
             using (HttpClient _client = new HttpClient())

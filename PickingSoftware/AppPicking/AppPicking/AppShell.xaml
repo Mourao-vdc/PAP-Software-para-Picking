@@ -112,7 +112,7 @@
     <!--<FlyoutItem Title="Estado das encomendas" Icon="icon_estado.png">
         <ShellContent Route="PageEstadoEncomendas" ContentTemplate="{DataTemplate local:PageEstadoEncomendas}" />
     </FlyoutItem>-->
-    <FlyoutItem Title="Utilizadores" Icon="icon_utilizadores.png">
+    <FlyoutItem Title="Utilizadores" x:Name="utilizadores" Icon="icon_utilizadores.png">
         <ShellContent Route="PageDataGridUtilizadores" ContentTemplate="{DataTemplate local:PageDataGridUtilizadores}" />
     </FlyoutItem>
     <FlyoutItem Title="Sair" Icon="icon_logout.png">
