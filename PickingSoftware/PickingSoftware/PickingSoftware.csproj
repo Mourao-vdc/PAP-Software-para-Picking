@@ -375,7 +375,7 @@
     <Compile Include="Controllers\EncomendasController.cs" />
     <Compile Include="Controllers\Encomendas_ArtigosController.cs" />
     <Compile Include="Controllers\GruposController.cs" />
-    <Compile Include="Controllers\Permicoes_GeraisController.cs" />
+    <Compile Include="Controllers\Permissoes_GeraisController.cs" />
     <Compile Include="Controllers\Permicoes_ListController.cs" />
     <Compile Include="Controllers\UtilizadorController.cs" />
     <Compile Include="Global.asax.cs">
@@ -385,8 +385,8 @@
     <Compile Include="Models\Encomendas.cs" />
     <Compile Include="Models\Encomendas_Artigos.cs" />
     <Compile Include="Models\Grupos.cs" />
-    <Compile Include="Models\Permicoes_Gerais.cs" />
-    <Compile Include="Models\Permicoes_List.cs" />
+    <Compile Include="Models\Permissoes_Gerais.cs" />
+    <Compile Include="Models\Permissoes_List.cs" />
     <Compile Include="Models\Utilizador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

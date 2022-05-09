@@ -15,12 +15,13 @@
             <Entry x:Name="txtPassword" ClearButtonVisibility="WhileEditing" IsTextPredictionEnabled="false" IsSpellCheckEnabled="false" IsPassword="True" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Password" Margin="0,5,0,0"/>
             <Entry x:Name="txtPassword2" ClearButtonVisibility="WhileEditing" IsTextPredictionEnabled="false" IsSpellCheckEnabled="false" IsPassword="True" TextColor="Black" PlaceholderColor="DarkGray" Placeholder="Repetir password" Margin="0,5,0,10"/>
             <CheckBox x:Name="ShowPassword" Margin="0,0,0,5" Color="DarkGray" CheckedChanged="ShowPassword_CheckedChanged"/>
-            <Button BackgroundColor="Black" Text="Criar utilizador" Clicked="Button_Clicked"/>
-            <Label Padding="0,10,0,0" FontSize="20" TextColor="DarkGray" Text="Login" HorizontalOptions="Center" FontAttributes="Bold">
+            <Button x:Name="btnAdd" BackgroundColor="Black" Text="Criar utilizador" Clicked="Button_Clicked"/>
+            <Label x:Name="lblLogin" Padding="0,10,0,0" FontSize="20" TextColor="DarkGray" Text="Login" HorizontalOptions="Center" FontAttributes="Bold">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                 </Label.GestureRecognizers>
             </Label>
+            <ActivityIndicator x:Name="loading" IsRunning="False" Color="Black"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

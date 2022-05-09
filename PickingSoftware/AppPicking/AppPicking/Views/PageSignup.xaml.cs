@@ -34,6 +34,10 @@ namespace AppPicking.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            btnAdd.IsVisible = false;
+            lblLogin.IsVisible = false;
+            loading.IsRunning = true;
+
             if (//(string.IsNullOrEmpty(txtID.Text)) || (string.IsNullOrWhiteSpace(txtID.Text)
                  (string.IsNullOrEmpty(txtNome.Text) || (string.IsNullOrWhiteSpace(txtNome.Text)
                 || (string.IsNullOrEmpty(txtPassword.Text) || (string.IsNullOrWhiteSpace(txtPassword.Text)
@@ -41,17 +45,23 @@ namespace AppPicking.Views
                 || (string.IsNullOrEmpty(txtPassword2.Text) || (string.IsNullOrWhiteSpace(txtPassword2.Text))))))))))
             {
                 await DisplayAlert("Alerta", "Existem campos por preencher", "Ok");
+                btnAdd.IsVisible = true;
+                lblLogin.IsVisible = true;
+                loading.IsRunning = false;
                 return;
             }
             else
             {
                 if(Models.Utilizador.IsValidEmail(txtEmail.Text))
                 {
-                    if((txtPassword.Text.Length >= 8) || (txtPassword2.Text.Length >= 8))
-                    {
+                    //if((txtPassword.Text.Length >= 8) || (txtPassword2.Text.Length >= 8))
+                    //{
                         if (txtPassword.Text != txtPassword2.Text)
                         {
                             await DisplayAlert("Alerta", "As passwords não coincidem", "Ok");
+                            btnAdd.IsVisible = true;
+                            lblLogin.IsVisible = true;
+                            loading.IsRunning = false;
                             return;
                         }
                         else
@@ -60,6 +70,9 @@ namespace AppPicking.Views
                             if (await Models.Utilizador.VerifyEmail(txtEmail.Text))
                             {
                                 await DisplayAlert("Erro","O Email inserido ja se encontra registado","Ok");
+                                btnAdd.IsVisible = true;
+                                lblLogin.IsVisible = true;
+                                loading.IsRunning = false;
                                 return;
                             }
                             else
@@ -67,6 +80,9 @@ namespace AppPicking.Views
                                 if(await Models.Utilizador.VerifyNome(txtNome.Text))
                                 {
                                     await DisplayAlert("Erro", "O Nome inserido ja se encontra registado", "Ok");
+                                    btnAdd.IsVisible = true;
+                                    lblLogin.IsVisible = true;
+                                    loading.IsRunning = false;
                                     return;
                                 }
                                 else
@@ -89,14 +105,18 @@ namespace AppPicking.Views
                                     await teste.FadeTo(0, 500, Easing.Linear);
 
                                     await Navigation.PushModalAsync(new PageLogin());
+
+                                    btnAdd.IsVisible = true;
+                                    lblLogin.IsVisible = true;
+                                    loading.IsRunning = false;
                                 }
                             }
                         }
-                    }
-                    else
-                    {
-                        await DisplayAlert("Erro", "Password deve ter no mínimo 8 caracteres", "Ok");
-                    }
+                    //}
+                    //else
+                    //{
+                        //await DisplayAlert("Erro", "Password deve ter no mínimo 8 caracteres", "Ok");
+                    //}
                 }
                 else
                 {

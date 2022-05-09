@@ -211,4 +211,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_add.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_permissoes.png" />
+  </ItemGroup>
 </Project>

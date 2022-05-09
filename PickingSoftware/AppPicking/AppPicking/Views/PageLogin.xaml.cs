@@ -16,6 +16,9 @@ namespace AppPicking.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            btnLogin.IsVisible = false;
+            lblNA.IsVisible = false;
+            loading.IsRunning = true;
 
             Debug.Write("||||||");
             Debug.Write("PageLogin");
@@ -43,6 +46,10 @@ namespace AppPicking.Views
 
                 await teste.FadeTo(0, 500, Easing.Linear);
 
+                btnLogin.IsVisible = true;
+                lblNA.IsVisible = true;
+                loading.IsRunning = false;
+
                 App.Current.MainPage = new AppShell();
 
                 Debug.Write("|||||||||");
@@ -60,6 +67,10 @@ namespace AppPicking.Views
             else
             {
                 await DisplayAlert("Erro","Nome ou Password incorreta","Ok");
+
+                btnLogin.IsVisible = true;
+                lblNA.IsVisible = true;
+                loading.IsRunning = false;
             }
 
             Debug.Write("||||||");

@@ -10,7 +10,6 @@
     
         https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
     -->
-
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
@@ -26,7 +25,6 @@
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
-
             <!--
             Default Styles for all Flyout Items
             https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#flyoutitem-and-menuitem-style-classes
@@ -109,11 +107,14 @@
     <FlyoutItem Title="Artigos" Icon="icon_artigos.png">
         <ShellContent Route="PageDataGridArtigos" ContentTemplate="{DataTemplate local:PageDataGridArtigos}" />
     </FlyoutItem>
-    <!--<FlyoutItem Title="Estado das encomendas" Icon="icon_estado.png">
+        <!--<FlyoutItem Title="Estado das encomendas" Icon="icon_estado.png">
         <ShellContent Route="PageEstadoEncomendas" ContentTemplate="{DataTemplate local:PageEstadoEncomendas}" />
     </FlyoutItem>-->
     <FlyoutItem Title="Utilizadores" x:Name="utilizadores" Icon="icon_utilizadores.png">
         <ShellContent Route="PageDataGridUtilizadores" ContentTemplate="{DataTemplate local:PageDataGridUtilizadores}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Permições" x:Name="permissões" Icon="icon_permissoes.png">
+        <ShellContent Route="PagePermicoes" ContentTemplate="{DataTemplate local:PagePermicoes}" />
     </FlyoutItem>
     <FlyoutItem Title="Sair" Icon="icon_logout.png">
         <ShellContent Route="PageLogin" ContentTemplate="{DataTemplate local:PageLogin}"/>

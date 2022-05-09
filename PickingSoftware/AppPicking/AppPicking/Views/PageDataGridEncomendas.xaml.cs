@@ -59,6 +59,8 @@ namespace AppPicking.Views
 
                 await DisplayAlert("Resposta", await Encomendas.AddEncomendas(encomendas), "Ok");
 
+                OnAppearing();
+
                 Models.PassValor.valor1 = (await Models.Encomendas.GetMAXID()).ToString();
 
                 await Navigation.PushAsync(new PageDataGridEncomendasArtigos());
@@ -172,6 +174,7 @@ namespace AppPicking.Views
                     if (action == "Sim")
                     {
                         lvEncomendas.SelectedItem = null;
+                        OnAppearing();
                         await Navigation.PushAsync(new PageDataGridEncomendasArtigos());
                     }
                     if (action == "Não")

@@ -17,7 +17,7 @@ namespace PickingSoftware.Controllers
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, Models.Permicoes_List.GetPermicoes_List());
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Permissoes_List.GetPermicoes_List());
             }
             catch (Exception ex)
             {
@@ -27,11 +27,11 @@ namespace PickingSoftware.Controllers
 
         [Route("Adicionar")]
         [HttpPost]
-        public HttpResponseMessage GetAdicionar(Models.Permicoes_List _permicoeslist)
+        public HttpResponseMessage GetAdicionar(Models.Permissoes_List _permicoeslist)
         {
             try
             {
-                Models.Permicoes_List.GetAdicionar(_permicoeslist);
+                Models.Permissoes_List.GetAdicionar(_permicoeslist);
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception ex)
@@ -42,11 +42,11 @@ namespace PickingSoftware.Controllers
 
         [Route("Editar")]
         [HttpPut]
-        public HttpResponseMessage GetEditar(Models.Permicoes_List _permicoeslist)
+        public HttpResponseMessage GetEditar(Models.Permissoes_List _permicoeslist)
         {
             try
             {
-                Models.Permicoes_List.GetEditar(_permicoeslist);
+                Models.Permissoes_List.GetEditar(_permicoeslist);
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception ex)
@@ -61,7 +61,7 @@ namespace PickingSoftware.Controllers
         {
             try
             {
-                Models.Permicoes_List.GetEliminar(id);
+                Models.Permissoes_List.GetEliminar(id);
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception ex)

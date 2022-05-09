@@ -15,6 +15,7 @@ namespace AppPicking.Models
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public static string token { get; set; }
 
         public static async Task<Utilizador> perfil()
         {
@@ -83,8 +84,6 @@ namespace AppPicking.Models
                 return JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
             }
         }
-
-        public static string token { get; set; }
 
         public static async Task<bool> Userlogin(Utilizador utilizador)
         {

@@ -83,37 +83,37 @@
             </summary>
             <param name="id"></param>
         </member>
-        <member name="M:PickingSoftware.Models.Permicoes_Gerais.GetAdicionar(PickingSoftware.Models.Permicoes_Gerais)">
+        <member name="M:PickingSoftware.Models.Permissoes_Gerais.GetAdicionar(PickingSoftware.Models.Permissoes_Gerais)">
             <summary>
             Adicionar
             </summary>
             <param name="_permicoesgerais"></param>
         </member>
-        <member name="M:PickingSoftware.Models.Permicoes_Gerais.GetEditar(PickingSoftware.Models.Permicoes_Gerais)">
+        <member name="M:PickingSoftware.Models.Permissoes_Gerais.GetEditar(PickingSoftware.Models.Permissoes_Gerais)">
             <summary>
             Editar
             </summary>
             <param name="_permicoesgerais"></param>
         </member>
-        <member name="M:PickingSoftware.Models.Permicoes_Gerais.GetEliminar(System.Int32)">
+        <member name="M:PickingSoftware.Models.Permissoes_Gerais.GetEliminar(System.Int32)">
             <summary>
             Eliminar
             </summary>
             <param name="id"></param>
         </member>
-        <member name="M:PickingSoftware.Models.Permicoes_List.GetAdicionar(PickingSoftware.Models.Permicoes_List)">
+        <member name="M:PickingSoftware.Models.Permissoes_List.GetAdicionar(PickingSoftware.Models.Permissoes_List)">
             <summary>
             Adicionar
             </summary>
             <param name="_permicoeslist"></param>
         </member>
-        <member name="M:PickingSoftware.Models.Permicoes_List.GetEditar(PickingSoftware.Models.Permicoes_List)">
+        <member name="M:PickingSoftware.Models.Permissoes_List.GetEditar(PickingSoftware.Models.Permissoes_List)">
             <summary>
             Editar
             </summary>
             <param name="_permicoesgerais"></param>
         </member>
-        <member name="M:PickingSoftware.Models.Permicoes_List.GetEliminar(System.Int32)">
+        <member name="M:PickingSoftware.Models.Permissoes_List.GetEliminar(System.Int32)">
             <summary>
             Eliminar
             </summary>

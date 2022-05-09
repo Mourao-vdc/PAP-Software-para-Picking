@@ -17,8 +17,16 @@ namespace AppPicking.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+            if ((await Models.Utilizador.perfil()).ID_Grupo != 1)
+            {
+                btnPopup.IsVisible = false;
+            }
+            else
+            {
+                btnPopup.IsVisible = true;
+            }
 
-            try
+                try
             {
                 lvArtigos.ItemsSource = new ObservableCollection<Models.Artigos>(await Models.Artigos.GetArtigos());
             }
@@ -38,41 +46,44 @@ namespace AppPicking.Views
 
         private async void lvArtigos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            try
+            if ((await Models.Utilizador.perfil()).ID_Grupo == 1)
             {
-                var aux = e.SelectedItem as Models.Artigos;
-
-                if (aux != null)
+                try
                 {
-                    Models.PassValor.valor1 = aux.ID.ToString();
-                    Models.PassValor.valor2 = aux.Nome.ToString();
-                    Models.PassValor.valor3 = aux.Cod_Barras.ToString();
+                    var aux = e.SelectedItem as Models.Artigos;
 
-                    string action = await DisplayActionSheet("Artigos: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover");
-                    Debug.WriteLine("Ações: " + action);
+                    if (aux != null)
+                    {
+                        Models.PassValor.valor1 = aux.ID.ToString();
+                        Models.PassValor.valor2 = aux.Nome.ToString();
+                        Models.PassValor.valor3 = aux.Cod_Barras.ToString();
 
-                    if (action == "Editar")
-                    {
-                        lvArtigos.SelectedItem = null;
-                        await Navigation.PushAsync(new PageEditArtigos());
-                    }
-                    if (action == "Remover")
-                    {
-                        lvArtigos.SelectedItem = null;
-                        await Navigation.PushAsync(new PageRemoveArtigos());
-                    }
-                    if (action == null || action == "Cancelar")
-                    {
-                        lvArtigos.SelectedItem = null;
-                        return;
+                        string action = await DisplayActionSheet("Artigos: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover");
+                        Debug.WriteLine("Ações: " + action);
+
+                        if (action == "Editar")
+                        {
+                            lvArtigos.SelectedItem = null;
+                            await Navigation.PushAsync(new PageEditArtigos());
+                        }
+                        if (action == "Remover")
+                        {
+                            lvArtigos.SelectedItem = null;
+                            await Navigation.PushAsync(new PageRemoveArtigos());
+                        }
+                        if (action == null || action == "Cancelar")
+                        {
+                            lvArtigos.SelectedItem = null;
+                            return;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine("");
-                Debug.WriteLine(ex.ToString());
-                Debug.WriteLine("");
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("");
+                    Debug.WriteLine(ex.ToString());
+                    Debug.WriteLine("");
+                }
             }
         }
     }
