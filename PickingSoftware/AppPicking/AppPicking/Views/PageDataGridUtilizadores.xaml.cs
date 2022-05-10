@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -28,6 +29,21 @@ namespace AppPicking.Views
         private async void lvUtilizadores_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
 
+        }
+
+        private async void refresh_Refreshing(object sender, EventArgs e)
+        {
+            await Task.Delay(1500);
+            OnAppearing();
+            refresh.IsRefreshing = false;
+        }
+
+        private async void tbItemAtualizar_Clicked(object sender, EventArgs e)
+        {
+            refresh.IsRefreshing = true;
+            await Task.Delay(1500);
+            OnAppearing();
+            refresh.IsRefreshing = false;
         }
     }
 }

@@ -2,10 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -96,44 +92,38 @@ namespace AppPicking.Views
 
         private async void EditButton_Clicked(object sender, EventArgs e)
         {
-            try
+            int _ID = await Models.Encomendas_Artigos.IDNM(txtIDArtigo.SelectedItem.ToString());
+
+            Debug.Write("|||||");
+            Debug.Write("|||||");
+            Debug.WriteLine(_ID);
+            Debug.Write("|||||");
+            Debug.Write("|||||");
+
+            if (_ID != -1)
             {
-                int _ID = await Models.Encomendas_Artigos.IDNM(txtIDArtigo.SelectedItem.ToString());
-
-                Debug.Write("|||||");
-                Debug.Write("|||||");
-                Debug.WriteLine(_ID);
-                Debug.Write("|||||");
-                Debug.Write("|||||");
-
-                if (_ID != -1)
+                Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
                 {
-                    Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
-                    {
-                        ID = int.Parse(txtID.Text),
-                        ID_Encomendas = int.Parse(txtIDEncomenda.SelectedItem.ToString()),
-                        ID_Artigos = _ID,
-                        Quant_artigos = int.Parse(txtQuantArtigos.Text.ToString()),
-                        Cod_Barras = txtCodBarras.Text,
-                    };
+                    ID = int.Parse(txtID.Text),
+                    ID_Encomendas = int.Parse(txtIDEncomenda.SelectedItem.ToString()),
+                    ID_Artigos = _ID,
+                    Quant_artigos = int.Parse(txtQuantArtigos.Text.ToString()),
+                    Cod_Barras = txtCodBarras.Text,
+                };
 
-                    await DisplayAlert("Resposta", await Encomendas_Artigos.EditEncomendas_Artigos(_encomendasartigos), "Ok");
+                await DisplayAlert("Resposta", await Encomendas_Artigos.EditEncomendas_Artigos(_encomendasartigos), "Ok");
 
-                    //txtID.SelectedIndex = -1;
-                    txtID.Text = "";
-                    txtIDEncomenda.SelectedIndex = -1;
-                    txtIDArtigo.SelectedIndex = -1;
-                    txtCodBarras.Text = "";
-                    txtQuantArtigos.Text = "";
+                //txtID.SelectedIndex = -1;
+                txtID.Text = "";
+                txtIDEncomenda.SelectedIndex = -1;
+                txtIDArtigo.SelectedIndex = -1;
+                txtCodBarras.Text = "";
+                txtQuantArtigos.Text = "";
 
-                    await Shell.Current.GoToAsync("..");
-                    //EditButton.IsVisible = false;
-                    //searchButton.IsVisible = true;
-                }
+                await Shell.Current.GoToAsync("..");
+                //EditButton.IsVisible = false;
+                //searchButton.IsVisible = true;
             }
-
-            catch (Exception ex)
-            { Debug.WriteLine(ex.ToString()); }
         }
 
         /*private void txtID_SelectedIndexChanged(object sender, EventArgs e)

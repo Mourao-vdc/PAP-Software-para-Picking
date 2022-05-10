@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -47,9 +48,24 @@ namespace AppPicking.Views
             Debug.WriteLine("Ações: " + action);
         }
 
-        private async void txtprocurar_TextChanged(object sender, TextChangedEventArgs e)
+        private async void refresh_Refreshing(object sender, EventArgs e)
         {
-            lvPermicoes.ItemsSource = new ObservableCollection<Models.Permissoes_Gerais>(await Models.Permissoes_Gerais.GetPermicoes_Gerais(txtprocurar.Text));
+            await Task.Delay(1500);
+            OnAppearing();
+            refresh.IsRefreshing = false;
+        }
+
+        private async void tbItemAtualizar_Clicked(object sender, EventArgs e)
+        {
+            refresh.IsRefreshing = true;
+            await Task.Delay(1500);
+            OnAppearing();
+            refresh.IsRefreshing = false;
+        }
+
+        private void txtprocurar_SearchButtonPressed(object sender, EventArgs e)
+        {
+            OnAppearing();
         }
     }
 }

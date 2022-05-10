@@ -76,7 +76,7 @@ namespace PickingSoftware.Models
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
 
-                    //cmd.Parameters.AddWithValue("@ID", _artigo.ID);
+                    cmd.Parameters.AddWithValue("@ID", _encomendas.ID);
                     cmd.Parameters.AddWithValue("@ID_Utilizadores", _encomendas.ID_Utilizadores);
                     cmd.Parameters.AddWithValue("@Data", _encomendas.Data);
                     cmd.ExecuteScalar();
@@ -110,7 +110,7 @@ namespace PickingSoftware.Models
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@ID", _encomendas.ID);
-                    cmd.Parameters.AddWithValue("@ID_Utilizadores", _encomendas.Nome);
+                    cmd.Parameters.AddWithValue("@ID_Utilizadores", _encomendas.ID_Utilizadores);
                     cmd.Parameters.AddWithValue("@Data", _encomendas.Data);
                     cmd.ExecuteScalar();
 
@@ -165,6 +165,24 @@ namespace PickingSoftware.Models
             SqlDataReader dr = cmd.ExecuteReader();
 
             List<Encomendas> _tst = new List<Encomendas>();
+            while (dr.Read())
+            {
+                return (int)dr["ID"];
+            }
+
+            return -1;
+        }
+
+        public static int IDNM2(string _Nome)
+        {
+            SqlConnection con =
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+            con.Open();
+            string query = "SELECT ID FROM Utilizador WHERE Nome like '" + _Nome + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            List<Utilizador> _tst = new List<Utilizador>();
             while (dr.Read())
             {
                 return (int)dr["ID"];

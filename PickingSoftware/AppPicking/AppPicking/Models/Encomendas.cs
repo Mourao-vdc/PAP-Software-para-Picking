@@ -141,5 +141,23 @@ namespace AppPicking.Models
                 return JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
             }
         }
+
+        public static async Task<int> IDNM2(string _Nome)
+        {
+            using (HttpClient _client = new HttpClient())
+            {
+                var content = await _client.GetAsync("http://192.168.51.5:150/api/Encomendas/idnm2/" + _Nome);
+
+                Debug.WriteLine("");
+                Debug.WriteLine(content.StatusCode.ToString());
+                Debug.WriteLine("");
+
+                if (content.IsSuccessStatusCode)
+                    return JsonConvert.DeserializeObject<int>(await content.Content.ReadAsStringAsync());
+
+                else
+                    return -1;
+            }
+        }
     }
 }

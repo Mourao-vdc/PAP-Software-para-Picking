@@ -60,9 +60,9 @@ namespace PickingSoftware.Controllers
             try
             {
                 if (Models.Encomendas.GetEditar(_encomendas))
-                    return Request.CreateResponse(HttpStatusCode.OK, "Pedido atulizado com sucesso");
+                    return Request.CreateResponse(HttpStatusCode.OK, "Encomenda atulizado com sucesso");
                 else
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível editar o pedido!");
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível editar a encomenda!");
             }
             catch (Exception ex)
             {
@@ -77,9 +77,9 @@ namespace PickingSoftware.Controllers
             try
             {
                 if (Models.Encomendas.GetEliminar(id))
-                    return Request.CreateResponse(HttpStatusCode.OK, "Pedido removido com sucesso!");
+                    return Request.CreateResponse(HttpStatusCode.OK, "Encomenda removido com sucesso!");
                 else
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível remover o pedido!");
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível remover a encomenda!");
             }
             catch (Exception ex)
             {
@@ -94,6 +94,20 @@ namespace PickingSoftware.Controllers
             try
             {
                 return Request.CreateResponse(HttpStatusCode.OK, Models.Encomendas.GetMAXID());
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
+
+        [Route("idnm2/{_Nome}")]
+        [HttpGet]
+        public HttpResponseMessage IDNM2(string _Nome)
+        {
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Encomendas.IDNM2(_Nome));
             }
             catch (Exception ex)
             {

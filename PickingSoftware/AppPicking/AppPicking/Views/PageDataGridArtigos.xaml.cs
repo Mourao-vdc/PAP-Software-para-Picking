@@ -1,6 +1,8 @@
-﻿using System;
+﻿using AppPicking.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -68,8 +70,24 @@ namespace AppPicking.Views
                         }
                         if (action == "Remover")
                         {
-                            lvArtigos.SelectedItem = null;
-                            await Navigation.PushAsync(new PageRemoveArtigos());
+                            string action2 = await DisplayActionSheet("Deseja remover a encomenda selecionada?", "Sim", "Não");
+                            Debug.WriteLine("Ações: " + action2);
+
+                            if (action2 == "Sim")
+                            {
+                                lvArtigos.SelectedItem = null;
+                                Artigos artigos = new Artigos()
+                                {
+                                    ID = int.Parse(Models.PassValor.valor1),
+                                };
+
+                                await DisplayAlert("Resposta", await Artigos.DellArtigos(int.Parse(Models.PassValor.valor1)), "Ok");
+                            }
+                            else
+                            {
+                                lvArtigos.SelectedItem = null;
+                                return;
+                            }
                         }
                         if (action == null || action == "Cancelar")
                         {
@@ -85,6 +103,21 @@ namespace AppPicking.Views
                     Debug.WriteLine("");
                 }
             }
+        }
+
+        private async void RefreshView_Refreshing(object sender, EventArgs e)
+        {
+            await Task.Delay(1500);
+            OnAppearing();
+            refresh.IsRefreshing = false;
+        }
+
+        private async void tbItemAtualizar_Clicked(object sender, EventArgs e)
+        {
+            refresh.IsRefreshing = true;
+            await Task.Delay(1500);
+            OnAppearing();
+            refresh.IsRefreshing = false;
         }
     }
 }

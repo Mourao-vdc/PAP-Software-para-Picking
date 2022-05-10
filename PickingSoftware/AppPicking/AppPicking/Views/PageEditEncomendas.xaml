@@ -11,7 +11,7 @@
 
             <!--<Picker x:Name="txtID" SelectedIndexChanged="txtID_SelectedIndexChanged" Title="ID da encomenda" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>-->
 
-            <Entry x:Name="txtID" IsReadOnly="False" Placeholder="ID da encomenda" FontSize="18" PlaceholderColor="DarkGray" TextColor="Black"/>
+            <Entry x:Name="txtID" IsReadOnly="True" Placeholder="ID da encomenda" FontSize="18" PlaceholderColor="DarkGray" TextColor="Black"/>
 
             <Picker x:Name="txtIDUtilizador" Title="Nome do utilizador" FontSize="18" TitleColor="DarkGray" TextColor="Black"/>
 

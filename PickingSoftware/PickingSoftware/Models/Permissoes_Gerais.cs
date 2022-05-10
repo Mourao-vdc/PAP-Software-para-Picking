@@ -18,7 +18,7 @@ namespace PickingSoftware.Models
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
             string query = "SELECT Permissoes_Gerais.ID, Permissoes_List.Nome, Grupos.Nome NomeG, Permissoes_Gerais.Estado FROM Permissoes_Gerais " +
-                " JOIN Permissoes_List ON Permissoes_List.ID = Permissoes_Gerais.ID_Permissoes" +
+                " JOIN Permissoes_List ON Permissoes_List.ID = Permissoes_Gerais.ID_Permicoes" +
                 " JOIN Grupos ON Permissoes_Gerais.ID_Grupo = Grupos.ID WHERE Grupos.Nome='" + _nome + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();

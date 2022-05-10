@@ -46,7 +46,7 @@ namespace AppPicking.Views
             }
 
             txtID.Text = Models.PassValor.valor1;
-            //txtIDUtilizador.SelectedIndex = int.Parse(Models.PassValor.valor2);
+            txtIDUtilizador.SelectedItem = Models.PassValor.valor2;
             dpData.Date = DateTime.Parse(Models.PassValor.valor3);
         }
 
@@ -71,23 +71,29 @@ namespace AppPicking.Views
 
         private async void EditButton_Clicked(object sender, EventArgs e)
         {
-            Encomendas encomendas = new Encomendas()
+            int _ID = await Models.Encomendas.IDNM2(txtIDUtilizador.SelectedItem.ToString());
+
+
+            if (_ID != -1)
             {
-                ID = int.Parse(txtID.Text),
-                Nome = txtIDUtilizador.SelectedItem.ToString(),
-                Data = dpData.Date.ToString(),
-            };
+                Encomendas encomendas = new Encomendas()
+                {
+                    ID = int.Parse(txtID.Text),
+                    ID_Utilizadores = _ID,
+                    Data = dpData.Date.ToString("MM/dd/yyyy"),
+                };
 
-            await DisplayAlert("Resposta", await Encomendas.EditEncomendas(encomendas), "Ok");
+                await DisplayAlert("Resposta", await Encomendas.EditEncomendas(encomendas), "Ok");
 
-            //txtID.SelectedIndex = -1;
-            txtID.Text = "";
-            txtIDUtilizador.SelectedIndex = -1;
-            Data = DateTime.Now.ToString();
+                //txtID.SelectedIndex = -1;
+                txtID.Text = "";
+                txtIDUtilizador.SelectedIndex = -1;
+                Data = DateTime.Now.ToString();
 
-            await Shell.Current.GoToAsync("..");
-            //EditButton.IsVisible = false;
-            //searchButton.IsVisible = true;
+                await Shell.Current.GoToAsync("..");
+                //EditButton.IsVisible = false;
+                //searchButton.IsVisible = true;
+            }
         }
 
         /*private void txtID_SelectedIndexChanged(object sender, EventArgs e)

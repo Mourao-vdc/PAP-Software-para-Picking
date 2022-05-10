@@ -4,55 +4,50 @@
              xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
              x:Class="AppPicking.Views.PageDataGridArtigos"
              Title="Artigos">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Atualizar"
+                     x:Name="tbItemAtualizar"
+                     Clicked="tbItemAtualizar_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentView>
         <StackLayout>
-            <!-- Place new controls here -->
-            <dg:DataGrid x:Name="lvArtigos" HeaderTextColor="Black" SelectionEnabled="True" ItemSelected="lvArtigos_ItemSelected" RowHeight="70" 
-                         HeaderHeight="50" BorderColor="Black" HeaderBackground="LightGray" ActiveRowColor="#8899AA">
-                <x:Arguments>
-                    <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
-                </x:Arguments>
-                <dg:DataGrid.HeaderFontSize>
-                    <OnIdiom x:TypeArguments="x:Double">
-                        <OnIdiom.Tablet>15</OnIdiom.Tablet>
-                        <OnIdiom.Phone>12</OnIdiom.Phone>
-                    </OnIdiom>
-                </dg:DataGrid.HeaderFontSize>
-                <dg:DataGrid.Columns>
-                    <dg:DataGridColumn Title="ID" PropertyName="ID" Width="1*"/>
-                    <dg:DataGridColumn Title="Nome"  PropertyName="Nome" Width="2*"/>
-                    <dg:DataGridColumn Title="Cod_Barras" PropertyName="Cod_Barras" Width="2*"/>
-                </dg:DataGrid.Columns>
-                <dg:DataGrid.RowsBackgroundColorPalette>
-                    <dg:PaletteCollection>
-                        <Color>#F2F2F2</Color>
-                        <Color>#FFFFFF</Color>
-                    </dg:PaletteCollection>
-                </dg:DataGrid.RowsBackgroundColorPalette>
-            </dg:DataGrid>
-
-            <!--<Button  x:Name="btnPopup"
-                     WidthRequest="40"
-                     HeightRequest="40"
-                     Margin="0,10,30,10"
-                     ImageSource="icon_add.png"
-                     BackgroundColor="Black"
-                     HorizontalOptions="End"
-                     VerticalOptions="End"
-                     CornerRadius="20"
-                     Clicked="btnPopup_Clicked"/>-->
-
+            <RefreshView x:Name="refresh" RefreshColor="Black" Refreshing="RefreshView_Refreshing">
+                <ScrollView>
+                <!-- Place new controls here -->
+                <dg:DataGrid x:Name="lvArtigos" HeaderTextColor="Black" SelectionEnabled="True" ItemSelected="lvArtigos_ItemSelected" RowHeight="70" 
+                                 HeaderHeight="50" BorderColor="Black" HeaderBackground="LightGray" ActiveRowColor="#8899AA">
+                    <x:Arguments>
+                        <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
+                    </x:Arguments>
+                    <dg:DataGrid.HeaderFontSize>
+                        <OnIdiom x:TypeArguments="x:Double">
+                            <OnIdiom.Tablet>15</OnIdiom.Tablet>
+                            <OnIdiom.Phone>12</OnIdiom.Phone>
+                        </OnIdiom>
+                    </dg:DataGrid.HeaderFontSize>
+                    <dg:DataGrid.Columns>
+                        <dg:DataGridColumn Title="ID" PropertyName="ID" Width="1*"/>
+                        <dg:DataGridColumn Title="Nome"  PropertyName="Nome" Width="2*"/>
+                        <dg:DataGridColumn Title="Cod_Barras" PropertyName="Cod_Barras" Width="2*"/>
+                    </dg:DataGrid.Columns>
+                    <dg:DataGrid.RowsBackgroundColorPalette>
+                        <dg:PaletteCollection>
+                            <Color>#F2F2F2</Color>
+                            <Color>#FFFFFF</Color>
+                        </dg:PaletteCollection>
+                    </dg:DataGrid.RowsBackgroundColorPalette>
+                </dg:DataGrid>
+                </ScrollView>
+            </RefreshView>
             <ImageButton Source="icon_add.png"
-                     x:Name="btnPopup"
-                     BackgroundColor="Transparent"
-                     WidthRequest="50"
-                     HeightRequest="50"
-                     Margin="0,10,30,10"
-                     HorizontalOptions="End"
-                     VerticalOptions="End"
-                     CornerRadius="20"
-                     Clicked="btnPopup_Clicked"/>
-
+                             x:Name="btnPopup"
+                             BackgroundColor="Transparent"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             Margin="0,10,30,10"
+                             CornerRadius="20"
+                             HorizontalOptions="End"
+                             Clicked="btnPopup_Clicked"/>
         </StackLayout>
     </ContentView>
 </ContentPage>

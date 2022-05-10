@@ -4,60 +4,56 @@
              xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid" 
              x:Class="AppPicking.Views.PageDataGridEncomendasArtigos"
              Title="Detalhes das encomendas">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Atualizar"
+                     x:Name="tbItemAtualizar"
+                     Clicked="tbItemAtualizar_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentView>
         <StackLayout>
-            <!-- Place new controls here -->
-            <dg:DataGrid x:Name="lvEncomendasArtigos" HeaderTextColor="Black" ItemsSource="{Binding ID}" SelectionEnabled="True" ItemSelected="lvEncomendasArtigos_ItemSelected"  SelectedItem="{Binding ID_Utilizadores}" RowHeight="70" HeaderHeight="50"  
-                    BorderColor="Black" HeaderBackground="LightGray" PullToRefreshCommand="{Binding RefreshDg}">
-                <x:Arguments>
-                    <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
-                </x:Arguments>
-                <dg:DataGrid.HeaderFontSize>
-                    <OnIdiom x:TypeArguments="x:Double">
-                        <OnIdiom.Tablet>15</OnIdiom.Tablet>
-                        <OnIdiom.Phone>12</OnIdiom.Phone>
-                    </OnIdiom>
-                </dg:DataGrid.HeaderFontSize>
-                <dg:DataGrid.Columns>
-                    <dg:DataGridColumn Title="ID" PropertyName="ID" Width="1*"/>
-                    <dg:DataGridColumn Title="ID_Encomenda" PropertyName="ID_Encomendas" Width="2*"/>
-                    <dg:DataGridColumn Title="Nome_Artigo" PropertyName="Nome" Width="2*"/>
-                    <dg:DataGridColumn Title="Quant_artigos" PropertyName="Quant_artigos" Width="1*"/>
-                    <dg:DataGridColumn Title="Situação" PropertyName="Situacao" Width="2*" x:Name="txtsituacao"/>
-                    <dg:DataGridColumn Title="Cod_barras" PropertyName="Cod_Barras" Width="2*"/>
-                </dg:DataGrid.Columns>
-                <dg:DataGrid.RowsBackgroundColorPalette>
-                    <dg:PaletteCollection>
-                        <Color>#F2F2F2</Color>
-                        <Color>#FFFFFF</Color>
-                    </dg:PaletteCollection>
-                </dg:DataGrid.RowsBackgroundColorPalette>
-                <dg:DataGrid.Resources>
-                </dg:DataGrid.Resources>
-            </dg:DataGrid>
-
-            <!--<Button  x:Name="btnPopup"
-                     WidthRequest="40"
-                     HeightRequest="40"
-                     Margin="0,10,30,10"
-                     ImageSource="icon_add.png"
-                     BackgroundColor="Black"
-                     HorizontalOptions="End"
-                     VerticalOptions="End"
-                     CornerRadius="20"
-                     Clicked="btnPopup_Clicked"/>-->
-
-            <ImageButton Source="icon_add.png"
-                     x:Name="btnPopup"
-                     BackgroundColor="Transparent"
-                     WidthRequest="50"
-                     HeightRequest="50"
-                     Margin="0,10,30,10"
-                     HorizontalOptions="End"
-                     VerticalOptions="End"
-                     CornerRadius="20"
-                     Clicked="btnPopup_Clicked"/>
-
+            <RefreshView x:Name="refresh" RefreshColor="Black" Refreshing="refresh_Refreshing">
+                <ScrollView>
+                <!-- Place new controls here -->
+                <dg:DataGrid x:Name="lvEncomendasArtigos" HeaderTextColor="Black" ItemsSource="{Binding ID}" SelectionEnabled="True" ItemSelected="lvEncomendasArtigos_ItemSelected"  SelectedItem="{Binding ID_Utilizadores}" RowHeight="70" HeaderHeight="50"  
+                            BorderColor="Black" HeaderBackground="LightGray" PullToRefreshCommand="{Binding RefreshDg}">
+                    <x:Arguments>
+                        <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
+                    </x:Arguments>
+                    <dg:DataGrid.HeaderFontSize>
+                        <OnIdiom x:TypeArguments="x:Double">
+                            <OnIdiom.Tablet>15</OnIdiom.Tablet>
+                            <OnIdiom.Phone>12</OnIdiom.Phone>
+                        </OnIdiom>
+                    </dg:DataGrid.HeaderFontSize>
+                    <dg:DataGrid.Columns>
+                        <dg:DataGridColumn Title="ID" PropertyName="ID" Width="1*"/>
+                        <dg:DataGridColumn Title="ID_Encomenda" PropertyName="ID_Encomendas" Width="2*"/>
+                        <dg:DataGridColumn Title="Nome_Artigo" PropertyName="Nome" Width="2*"/>
+                        <dg:DataGridColumn Title="Quant_artigos" PropertyName="Quant_artigos" Width="1*"/>
+                        <dg:DataGridColumn Title="Situação" PropertyName="Situacao" Width="2*" x:Name="txtsituacao"/>
+                        <dg:DataGridColumn Title="Cod_barras" PropertyName="Cod_Barras" Width="2*"/>
+                    </dg:DataGrid.Columns>
+                    <dg:DataGrid.RowsBackgroundColorPalette>
+                        <dg:PaletteCollection>
+                            <Color>#F2F2F2</Color>
+                            <Color>#FFFFFF</Color>
+                        </dg:PaletteCollection>
+                    </dg:DataGrid.RowsBackgroundColorPalette>
+                    <dg:DataGrid.Resources>
+                    </dg:DataGrid.Resources>
+                </dg:DataGrid>
+                </ScrollView>
+            </RefreshView>
+                <ImageButton Source="icon_add.png"
+                        x:Name="btnPopup"
+                        BackgroundColor="Transparent"
+                        WidthRequest="50"
+                        HeightRequest="50"
+                        Margin="0,10,30,10"
+                        HorizontalOptions="End"
+                        VerticalOptions="End"
+                        CornerRadius="20"
+                        Clicked="btnPopup_Clicked"/>
         </StackLayout>
     </ContentView>
 </ContentPage>

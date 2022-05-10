@@ -4,47 +4,42 @@
              xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
              x:Class="AppPicking.Views.PagePermicoes"
              Title="Permissões">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Atualizar"
+                     x:Name="tbItemAtualizar"
+                     Clicked="tbItemAtualizar_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentView>
-        <StackLayout>
-            <!-- Place new controls here -->
-            <SearchBar x:Name="txtprocurar" Placeholder="Nome do grupo" PlaceholderColor="DarkGray" TextColor="Black" TextChanged="txtprocurar_TextChanged"/>
-            <dg:DataGrid x:Name="lvPermicoes" HeaderTextColor="Black" ItemsSource="{Binding ID}" SelectionEnabled="True" ItemSelected="lvPermicoes_ItemSelected"  SelectedItem="{Binding ID_Utilizadores}" RowHeight="70" HeaderHeight="50"  
-                    BorderColor="Black" HeaderBackground="LightGray" PullToRefreshCommand="{Binding Data}">
-                <x:Arguments>
-                    <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
-                </x:Arguments>
-                <dg:DataGrid.HeaderFontSize>
-                    <OnIdiom x:TypeArguments="x:Double">
-                        <OnIdiom.Tablet>15</OnIdiom.Tablet>
-                        <OnIdiom.Phone>12</OnIdiom.Phone>
-                    </OnIdiom>
-                </dg:DataGrid.HeaderFontSize>
-                <dg:DataGrid.Columns>
-                    <dg:DataGridColumn Title="ID" PropertyName="ID" Width="1*"/>
-                    <dg:DataGridColumn Title="Permissão" PropertyName="Nome" Width="2*"/>
-                    <dg:DataGridColumn Title="Grupo" PropertyName="NomeG" Width="2*"/>
-                    <dg:DataGridColumn Title="Estado" PropertyName="Estado" Width="2*"/>
-                    <!-- <dg:DataGridColumn Title="Password" PropertyName="Password" Width="2*"/> -->
-                </dg:DataGrid.Columns>
-                <dg:DataGrid.RowsBackgroundColorPalette>
-                    <dg:PaletteCollection>
-                        <Color>#F2F2F2</Color>
-                        <Color>#FFFFFF</Color>
-                    </dg:PaletteCollection>
-                </dg:DataGrid.RowsBackgroundColorPalette>
-            </dg:DataGrid>
-
-            <!--<Button  x:Name="btnPopup"
-                     WidthRequest="40"
-                     HeightRequest="40"
-                     Margin="0,10,30,10"
-                     ImageSource="icon_add.png"
-                     BackgroundColor="Black"
-                     HorizontalOptions="End"
-                     VerticalOptions="End"
-                     CornerRadius="20"
-                     Clicked="btnPopup_Clicked"/>-->
-
-        </StackLayout>
+        <RefreshView x:Name="refresh" RefreshColor="Black" Refreshing="refresh_Refreshing">
+            <StackLayout>
+                <!-- Place new controls here -->
+                <SearchBar x:Name="txtprocurar" Placeholder="Nome do grupo" PlaceholderColor="DarkGray" TextColor="Black" SearchButtonPressed="txtprocurar_SearchButtonPressed"/>
+                <dg:DataGrid x:Name="lvPermicoes" HeaderTextColor="Black" ItemsSource="{Binding ID}" SelectionEnabled="True" ItemSelected="lvPermicoes_ItemSelected"  SelectedItem="{Binding ID_Utilizadores}" RowHeight="70" HeaderHeight="50"  
+                            BorderColor="Black" HeaderBackground="LightGray" PullToRefreshCommand="{Binding Data}">
+                    <x:Arguments>
+                        <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
+                    </x:Arguments>
+                    <dg:DataGrid.HeaderFontSize>
+                        <OnIdiom x:TypeArguments="x:Double">
+                            <OnIdiom.Tablet>15</OnIdiom.Tablet>
+                            <OnIdiom.Phone>12</OnIdiom.Phone>
+                        </OnIdiom>
+                    </dg:DataGrid.HeaderFontSize>
+                    <dg:DataGrid.Columns>
+                        <dg:DataGridColumn Title="ID" PropertyName="ID" Width="1*"/>
+                        <dg:DataGridColumn Title="Permissão" PropertyName="Nome" Width="2*"/>
+                        <dg:DataGridColumn Title="Grupo" PropertyName="NomeG" Width="2*"/>
+                        <dg:DataGridColumn Title="Estado" PropertyName="Estado" Width="2*"/>
+                        <!-- <dg:DataGridColumn Title="Password" PropertyName="Password" Width="2*"/> -->
+                    </dg:DataGrid.Columns>
+                    <dg:DataGrid.RowsBackgroundColorPalette>
+                        <dg:PaletteCollection>
+                            <Color>#F2F2F2</Color>
+                            <Color>#FFFFFF</Color>
+                        </dg:PaletteCollection>
+                    </dg:DataGrid.RowsBackgroundColorPalette>
+                </dg:DataGrid>
+            </StackLayout>
+        </RefreshView>
     </ContentView>
 </ContentPage>

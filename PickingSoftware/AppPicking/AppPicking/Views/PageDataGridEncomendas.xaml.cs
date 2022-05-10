@@ -2,6 +2,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -94,11 +95,13 @@ namespace AppPicking.Views
                         }
                         if (action == "Remover")
                         {
+                            lvEncomendas.SelectedItem = null;
                             string action2 = await DisplayActionSheet("Deseja remover a encomenda selecionada?", "Sim", "Não");
                             Debug.WriteLine("Ações: " + action2);
 
                             if (action2 == "Sim")
                             {
+                                lvEncomendas.SelectedItem = null;
                                 Encomendas encomendas = new Encomendas()
                                 {
                                     ID = int.Parse(Models.PassValor.valor1),
@@ -107,10 +110,10 @@ namespace AppPicking.Views
                                 await DisplayAlert("Resposta", await Encomendas.DellEncomenda(int.Parse(Models.PassValor.valor1)), "Ok");
 
                                 OnAppearing();
-                                lvEncomendas.SelectedItem = null;
                             }
                             if (action == "Não")
                             {
+                                lvEncomendas.SelectedItem = null;
                                 return;
                             }
                         }
@@ -183,6 +186,21 @@ namespace AppPicking.Views
                     }
                 }
             }
+        }
+
+        private async void refresh_Refreshing(object sender, EventArgs e)
+        {
+            await Task.Delay(1500);
+            OnAppearing();
+            refresh.IsRefreshing = false;
+        }
+
+        private async void tbItemAtualizar_Clicked(object sender, EventArgs e)
+        {
+            refresh.IsRefreshing = true;
+            await Task.Delay(1500);
+            OnAppearing();
+            refresh.IsRefreshing = false;
         }
     }
 }

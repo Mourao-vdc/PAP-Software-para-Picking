@@ -32,9 +32,9 @@ namespace PickingSoftware.Controllers
             try
             {
                 if(Models.Encomendas_Artigos.GetAdicionar(_encomendasartigos))
-                    return Request.CreateResponse(HttpStatusCode.OK, "Encomenda inserida com sucesso!");
+                    return Request.CreateResponse(HttpStatusCode.OK, "Pedido inserida com sucesso!");
                 else
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível inserir a encomenda!");
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível inserir o pedido!");
             }
             catch (Exception ex)
             {
@@ -49,9 +49,9 @@ namespace PickingSoftware.Controllers
             try
             {
                 if (Models.Encomendas_Artigos.GetEditar(_encomendasartigos))
-                    return Request.CreateResponse(HttpStatusCode.OK, "Encomenda inserida com sucesso!");
+                    return Request.CreateResponse(HttpStatusCode.OK, "Pedido editado com sucesso!");
                 else
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível inserir a encomenda!");
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível editar o pedido!");
             }
             catch (Exception ex)
             {
@@ -66,9 +66,9 @@ namespace PickingSoftware.Controllers
             try
             {
                 if (Models.Encomendas_Artigos.GetEliminar(id))
-                    return Request.CreateResponse(HttpStatusCode.OK, "Encomenda inserida com sucesso!");
+                    return Request.CreateResponse(HttpStatusCode.OK, "Pedido removido com sucesso!");
                 else
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível inserir a encomenda!");
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível remover o pedido!");
             }
             catch (Exception ex)
             {

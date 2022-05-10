@@ -2,6 +2,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -82,6 +83,7 @@ namespace AppPicking.Views
 
                                 if (action2 == "Sim")
                                 {
+                                    lvEncomendasArtigos.SelectedItem = null;
                                     Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
                                     {
                                         ID = int.Parse(Models.PassValor.valor1),
@@ -94,6 +96,7 @@ namespace AppPicking.Views
                                 }
                                 if (action == "Não")
                                 {
+                                    lvEncomendasArtigos.SelectedItem = null;
                                     return;
                                 }
                             }
@@ -156,6 +159,21 @@ namespace AppPicking.Views
                 catch (Exception ex)
                 { Console.WriteLine(ex.ToString()); }
             }
+        }
+
+        private async void refresh_Refreshing(object sender, EventArgs e)
+        {
+            await Task.Delay(1500);
+            OnAppearing();
+            refresh.IsRefreshing = false;
+        }
+
+        private async void tbItemAtualizar_Clicked(object sender, EventArgs e)
+        {
+            refresh.IsRefreshing = true;
+            await Task.Delay(1500);
+            OnAppearing();
+            refresh.IsRefreshing = false;
         }
     }
 }
