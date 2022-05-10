@@ -1,4 +1,4 @@
-/* Picking_logico: */
+/* Picking_logico.2: */
 
 CREATE TABLE Artigos (
     ID int PRIMARY KEY NOT NULL IDENTITY(1,1),
@@ -21,25 +21,25 @@ CREATE TABLE Encomendas (
     Data datetime
 );
 
-CREATE TABLE Permissoes_Gerais (
-    ID int  PRIMARY KEY NOT NULL IDENTITY(1,1),
+CREATE TABLE Permicoes_Gerais (
+    ID int PRIMARY KEY NOT NULL IDENTITY(1,1),
     ID_Grupo int ,
     ID_Permicoes int ,
     Estado nvarchar(254)
 );
 
 CREATE TABLE Grupos (
-    ID int  PRIMARY KEY NOT NULL IDENTITY(1,1),
+    ID int PRIMARY KEY NOT NULL IDENTITY(1,1),
     Nome nvarchar(254)
 );
 
-CREATE TABLE Permissoes_List (
-    ID int  PRIMARY KEY NOT NULL IDENTITY(1,1),
+CREATE TABLE Permicoes_List (
+    ID int PRIMARY KEY NOT NULL IDENTITY(1,1),
     Nome nvarchar(254)
 );
 
 CREATE TABLE Utilizador (
-    ID int  PRIMARY KEY NOT NULL IDENTITY(1,1),
+    ID int PRIMARY KEY NOT NULL IDENTITY(1,1),
     ID_Grupo int ,
     Nome nvarchar(254),
     Email nvarchar(254),
@@ -49,24 +49,24 @@ CREATE TABLE Utilizador (
 ALTER TABLE Encomendas_Artigos ADD CONSTRAINT FK_Encomendas_Artigos_2
     FOREIGN KEY (ID_Artigos)
     REFERENCES Artigos (ID)
-    ON DELETE CASCADE;
+    ON DELETE CASCADE
  
 ALTER TABLE Encomendas ADD CONSTRAINT FK_Encomendas_2
     FOREIGN KEY (ID_Utilizadores)
     REFERENCES Utilizador (ID)
-    ON DELETE CASCADE;
+    ON DELETE CASCADE
  
-ALTER TABLE Permissoes_Gerais ADD CONSTRAINT FK_Permissoes_Gerais_2
+ALTER TABLE Permicoes_Gerais ADD CONSTRAINT FK_Permicoes_Gerais_2
     FOREIGN KEY (ID_Grupo)
     REFERENCES Grupos (ID)
-    ON DELETE CASCADE;
+    ON DELETE CASCADE
  
-ALTER TABLE Permissoes_Gerais ADD CONSTRAINT FK_Permissoes_Gerais_3
+ALTER TABLE Permicoes_Gerais ADD CONSTRAINT FK_Permicoes_Gerais_3
     FOREIGN KEY (ID_Permicoes)
-    REFERENCES Permissoes_List (ID)
-    ON DELETE CASCADE;
+    REFERENCES Permicoes_List (ID)
+    ON DELETE CASCADE
  
 ALTER TABLE Utilizador ADD CONSTRAINT FK_Utilizador_2
     FOREIGN KEY (ID_Grupo)
     REFERENCES Grupos (ID)
-    ON DELETE CASCADE;
+    ON DELETE CASCADE
