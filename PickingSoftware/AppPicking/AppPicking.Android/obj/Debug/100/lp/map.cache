@@ -1,3 +1,4 @@
+FastAndroidCamera.dll
 FormsViewGroup.dll
 Plugin.InputKit.dll
 Syncfusion.Buttons.XForms.Android.dll
@@ -60,6 +61,8 @@ Xamarin.Forms.Platform.Android.dll
 Xamarin.Forms.Platform.dll
 Xamarin.Google.Android.Material.dll
 Xamarin.Google.Guava.ListenableFuture.dll
+ZXing.Net.Mobile.Forms.Android.dll
+ZXingNetMobile.dll
 androidx.versionedparcelable.versionedparcelable.aar
 androidx.arch.core.core-runtime.aar
 androidx.lifecycle.lifecycle-runtime.aar

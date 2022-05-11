@@ -19,7 +19,9 @@
           "Xamarin.Essentials": "1.7.1",
           "Xamarin.Forms": "5.0.0.2337",
           "Xamarin.Forms.DataGrid": "4.8.0",
-          "Xamarin.Forms.InputKit": "3.7.2"
+          "Xamarin.Forms.InputKit": "3.7.2",
+          "ZXing.Net.Mobile": "2.4.1",
+          "ZXing.Net.Mobile.Forms": "2.4.1"
         },
         "runtime": {
           "AppPicking.dll": {}
@@ -1033,6 +1035,34 @@
             "fileVersion": "3.7.2.0"
           }
         }
+      },
+      "ZXing.Net.Mobile/2.4.1": {
+        "runtime": {
+          "lib/netstandard1.0/ZXing.Net.Mobile.Core.dll": {
+            "assemblyVersion": "2.4.1.0",
+            "fileVersion": "2.4.1.0"
+          },
+          "lib/netstandard1.0/ZXingNetMobile.dll": {
+            "assemblyVersion": "2.4.1.0",
+            "fileVersion": "2.4.1.0"
+          },
+          "lib/netstandard1.0/zxing.portable.dll": {
+            "assemblyVersion": "0.16.2.0",
+            "fileVersion": "0.16.2.0"
+          }
+        }
+      },
+      "ZXing.Net.Mobile.Forms/2.4.1": {
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2337",
+          "ZXing.Net.Mobile": "2.4.1"
+        },
+        "runtime": {
+          "lib/netstandard1.0/ZXing.Net.Mobile.Forms.dll": {
+            "assemblyVersion": "2.4.1.0",
+            "fileVersion": "2.4.1.0"
+          }
+        }
       }
     }
   },
@@ -1685,6 +1715,20 @@
       "sha512": "sha512-RVjq8yqh/+MQ/pSLBHEfVqeqOtjJV9H3htHM0U3K0omD/RNeHJZLKDQAgDAgzQan6m5DBkrGoIqOtacTNRGueg==",
       "path": "xamarin.forms.inputkit/3.7.2",
       "hashPath": "xamarin.forms.inputkit.3.7.2.nupkg.sha512"
+    },
+    "ZXing.Net.Mobile/2.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iCL2WcqOyUnC1iFFdzXijk0EXfoLMDqW88MyhoTZigSyhJZM2C5hKgSZVyfx9E35tgkde/IZwHkk8cVDnbQlYg==",
+      "path": "zxing.net.mobile/2.4.1",
+      "hashPath": "zxing.net.mobile.2.4.1.nupkg.sha512"
+    },
+    "ZXing.Net.Mobile.Forms/2.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7z+MfL8TbfE36s1GGvrnlkhLUOV5dgdn1gYhUb3GU2W6YXzpfF39k6EqkmFsyNm1O07evTaKFgh7UTOqcWub3g==",
+      "path": "zxing.net.mobile.forms/2.4.1",
+      "hashPath": "zxing.net.mobile.forms.2.4.1.nupkg.sha512"
     }
   }
 }

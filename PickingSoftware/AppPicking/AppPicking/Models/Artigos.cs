@@ -104,5 +104,17 @@ namespace AppPicking.Models
                 return JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
             }
         }
+
+        public static async Task<List<Artigos>> GetCodBarras(string _CodBarras)
+        {
+            using (HttpClient _client = new HttpClient())
+            {
+                var content = await _client.GetStringAsync("http://192.168.51.5:150/api/artigos/CodBarras/" + _CodBarras);
+
+                Debug.WriteLine(content);
+
+                return JsonConvert.DeserializeObject<List<Artigos>>(content);
+            }
+        }
     }
 }

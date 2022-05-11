@@ -18,7 +18,14 @@ namespace AppPicking.Views
 
         protected override async void OnAppearing()
         {
+            Debug.Write("||||");
+            Debug.Write("||||");
+            Debug.WriteLine(Models.PassValor.scan);
+            Debug.Write("||||");
+            Debug.Write("||||");
+
             base.OnAppearing();
+
             if ((await Models.Utilizador.perfil()).ID_Grupo != 1)
             {
                 btnPopup.IsVisible = false;
@@ -28,9 +35,16 @@ namespace AppPicking.Views
                 btnPopup.IsVisible = true;
             }
 
-                try
+            try
             {
-                lvArtigos.ItemsSource = new ObservableCollection<Models.Artigos>(await Models.Artigos.GetArtigos());
+                if (Models.PassValor.scan != "")
+                {
+                    lvArtigos.ItemsSource = new ObservableCollection<Models.Artigos>(await Models.Artigos.GetCodBarras(Models.PassValor.scan));
+                }
+                else
+                {
+                    lvArtigos.ItemsSource = new ObservableCollection<Models.Artigos>(await Models.Artigos.GetArtigos());
+                }
             }
 
             catch (Exception ex)

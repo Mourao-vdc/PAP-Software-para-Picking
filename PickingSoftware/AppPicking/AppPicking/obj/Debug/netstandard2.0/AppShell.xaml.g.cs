@@ -23,10 +23,14 @@ namespace AppPicking {
         private global::Xamarin.Forms.FlyoutItem permissões;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.FlyoutItem codbarras;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AppShell));
             utilizadores = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.FlyoutItem>(this, "utilizadores");
             permissões = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.FlyoutItem>(this, "permissões");
+            codbarras = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.FlyoutItem>(this, "codbarras");
         }
     }
 }

@@ -127,5 +127,49 @@ namespace PickingSoftware.Models
                 return false;
             }
         }
+
+        public static List<Artigos> GetCodBarras(string _CodBarras)
+        {
+            SqlConnection con =
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+            con.Open();
+            string query = "SELECT * FROM Artigos WHERE Cod_Barras like '" + _CodBarras + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            List<Artigos> _tst = new List<Artigos>();
+            while (dr.Read())
+            {
+                _tst.Add(new Artigos
+                {
+                    ID = (int)dr["ID"],
+                    Nome = dr["Nome"].ToString(),
+                    Cod_Barras = dr["Cod_Barras"].ToString()
+                });
+            }
+
+            return _tst;
+        }
+
+        /*public static List<Artigos> GetCodBarras(string _codbarras)
+        {
+            SqlConnection con =
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+            con.Open();
+            string query = "SELECT * FROM Artigos WHERE Cod_Barras like '" + _codbarras + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            List<Artigos> _tst = new List<Artigos>();
+            while (dr.Read())
+            {
+                _tst.Add(new Artigos
+                {
+                    ID = (int)dr["ID"],
+                    Nome = dr["Nome"].ToString(),
+                    Cod_Barras = dr["Cod_Barras"].ToString()
+                });
+            }
+            return _tst;*/
     }
 }

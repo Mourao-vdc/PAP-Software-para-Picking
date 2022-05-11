@@ -14,7 +14,14 @@
             
             <!--<Picker x:Name="txtIDEncomenda" Title="ID do Pedido" FontSize="18" TitleColor="DarkGray" TextColor="Black" Margin="0,10,0,0"/>-->
 
-            <Picker x:Name="txtIDArtigo" Title="Nome do Artigo" FontSize="18" TitleColor="DarkGray" TextColor="Black" Margin="0,10,0,0"/>
+            <!--<Picker x:Name="txtIDArtigo" Title="Nome do Artigo" FontSize="18" TitleColor="DarkGray" TextColor="Black" Margin="0,10,0,0"/>-->
+
+            <SearchBar x:Name="SearchConteudo" 
+                   TextChanged="SearchConteudo_TextChanged" />
+            <Grid>
+                <ListView x:Name="listaArtigos" 
+                      ItemTapped="listaArtigos_ItemTapped" IsVisible="false" HeightRequest="80" />
+            </Grid>
 
             <Entry Keyboard="Numeric" TextColor="Black" x:Name="txtQuantArtigos"
                    PlaceholderColor="DarkGray" Placeholder="Quantidade de Artigos" Margin="0,10,0,0"/>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Mw9PfM68Ik0wUq0mMmVH/GqdM/bIbeSgjDaywlg7mJHieq0Dt0//AHLMaMw+86yomBHRtwN+1AdHdp/ARQsNWw==",
+  "dgSpecHash": "WTYxuOFlrO5C654oF/q7Cq2jYpE3ZW4XjrPsrD7loHOErO9m9ehovcbeVEVh6cdpGR0VKyqYn2be04L9Po2CJw==",
   "success": true,
   "projectFilePath": "C:\\Users\\estagio\\Documents\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking.iOS\\AppPicking.iOS.csproj",
   "expectedPackageFiles": [
@@ -75,7 +75,9 @@
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.essentials\\1.7.1\\xamarin.essentials.1.7.1.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.forms\\5.0.0.2337\\xamarin.forms.5.0.0.2337.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\xamarin.forms.datagrid\\4.8.0\\xamarin.forms.datagrid.4.8.0.nupkg.sha512",
-    "C:\\Users\\estagio\\.nuget\\packages\\xamarin.forms.inputkit\\3.7.2\\xamarin.forms.inputkit.3.7.2.nupkg.sha512"
+    "C:\\Users\\estagio\\.nuget\\packages\\xamarin.forms.inputkit\\3.7.2\\xamarin.forms.inputkit.3.7.2.nupkg.sha512",
+    "C:\\Users\\estagio\\.nuget\\packages\\zxing.net.mobile\\2.4.1\\zxing.net.mobile.2.4.1.nupkg.sha512",
+    "C:\\Users\\estagio\\.nuget\\packages\\zxing.net.mobile.forms\\2.4.1\\zxing.net.mobile.forms.2.4.1.nupkg.sha512"
   ],
   "logs": []
 }

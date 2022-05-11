@@ -18,6 +18,8 @@ namespace AppPicking.Views
         {
             base.OnAppearing();
 
+            Models.PassValor.scan = "";
+
             lvUtilizadores.ItemsSource = new ObservableCollection<Models.Utilizador>(await Models.Utilizador.GetUtilizadores());
         }
 

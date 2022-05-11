@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,6 +22,11 @@ namespace AppPicking.Views
         private List<Models.Encomendas> listaEncomenda = new List<Encomendas>();
         
         private List<Models.Artigos> listaArtigo = new List<Artigos>();
+
+        List<string> _artigos = new List<string>
+        {
+
+        };
 
         public PageAddEncomendasArtigos()
         {
@@ -48,13 +54,13 @@ namespace AppPicking.Views
 
             foreach (var _item in _listt)
             {
-                txtIDArtigo.Items.Add(_item.Nome.ToString());
+                _artigos.Add(_item.Nome.ToString());
             }
         }
 
         private async void AddButton_Clicked(object sender, EventArgs e)
         {
-            if ((txtIDArtigo.SelectedIndex == -1) /*|| (txtIDEncomenda.SelectedIndex == -1)*/)
+            if ((SearchConteudo.Text == "") || (txtCodBarras.Text == "") || (txtQuantArtigos.Text == ""))
             {
                 await DisplayAlert("Alerta", "Existem campos por preencher", "Ok");
                 return;
@@ -62,7 +68,7 @@ namespace AppPicking.Views
             else
             {
 
-                int _ID = await Models.Encomendas_Artigos.IDNM(txtIDArtigo.SelectedItem.ToString());
+                int _ID = await Models.Encomendas_Artigos.IDNM(SearchConteudo.Text);
 
                 Debug.Write("|||||");
                 Debug.Write("|||||");
@@ -86,12 +92,44 @@ namespace AppPicking.Views
 
                     //txtIDEncomenda.SelectedIndex = -1;
                     txtIDEncomenda.Text = "";
-                    txtIDArtigo.SelectedIndex = -1;
+                    SearchConteudo.Text = "";
+                    //txtIDArtigo.SelectedIndex = -1;
                     txtCodBarras.Text = "";
                     txtQuantArtigos.Text = "";
 
                     await Shell.Current.GoToAsync("..");
                 }
+            }
+        }
+
+        private void listaArtigos_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item as string == null)
+            {
+                return;
+            }
+            else
+            {
+                listaArtigos.ItemsSource = _artigos.Where(c => c.Equals(e.Item as string));
+                listaArtigos.IsVisible = true;
+                SearchConteudo.Text = e.Item as string;
+                listaArtigos.IsVisible = false;
+            }
+        }
+
+        private void SearchConteudo_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //listaArtigos.IsVisible = true;
+            var keyword = SearchConteudo.Text;
+            if (keyword.Length >= 1)
+            {
+                var sugestao = _artigos.Where(c => c.ToLower().Contains(keyword.ToLower()));
+                listaArtigos.ItemsSource = sugestao;
+                listaArtigos.IsVisible = true;
+            }
+            else
+            {
+                listaArtigos.IsVisible = false;
             }
         }
     }

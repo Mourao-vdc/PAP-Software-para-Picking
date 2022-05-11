@@ -30,6 +30,8 @@ namespace AppPicking.Views
         {
             base.OnAppearing();
 
+            Models.PassValor.scan = "";
+
             lvPermicoes.ItemsSource = new ObservableCollection<Models.Permissoes_Gerais>(await Models.Permissoes_Gerais.GetPermicoes_Gerais(txtprocurar.Text));
 
             /*var _list = await Models.Grupos.GetGrupos();

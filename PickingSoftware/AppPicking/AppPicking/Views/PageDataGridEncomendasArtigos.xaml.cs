@@ -20,6 +20,8 @@ namespace AppPicking.Views
         {
             base.OnAppearing();
 
+            Models.PassValor.scan = "";
+
             try
             {
                 Debug.Write("|||||");

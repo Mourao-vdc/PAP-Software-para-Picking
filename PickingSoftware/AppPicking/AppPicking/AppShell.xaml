@@ -113,14 +113,20 @@
     <FlyoutItem Title="Utilizadores" x:Name="utilizadores" Icon="icon_utilizadores.png">
         <ShellContent Route="PageDataGridUtilizadores" ContentTemplate="{DataTemplate local:PageDataGridUtilizadores}" />
     </FlyoutItem>
-    <FlyoutItem Title="Permições" x:Name="permissões" Icon="icon_permissoes.png">
+    <FlyoutItem Title="Permissões" x:Name="permissões" Icon="icon_permissoes.png">
         <ShellContent Route="PagePermicoes" ContentTemplate="{DataTemplate local:PagePermicoes}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Código de barras" x:Name="codbarras" Icon="icon_barcode.png">
+        <ShellContent Route="PagePermicoes" ContentTemplate="{DataTemplate local:PageReadBarcode}" />
     </FlyoutItem>
     <FlyoutItem Title="Sair" Icon="icon_logout.png">
         <ShellContent Route="PageLogin" ContentTemplate="{DataTemplate local:PageLogin}"/>
     </FlyoutItem>
     <FlyoutItem FlyoutItemIsVisible="False" Title="Sair" Icon="icon_logout.png">
         <ShellContent Route="PageSignup" ContentTemplate="{DataTemplate local:PageSignup}" />
+    </FlyoutItem>
+    <FlyoutItem IsVisible="False" Title="PageDataGridEncomendasArtigos" Icon="icon_encomendas.png">
+        <ShellContent Route="PageDataGridEncomendasArtigos" ContentTemplate="{DataTemplate local:PageDataGridEncomendasArtigos}"/>
     </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->

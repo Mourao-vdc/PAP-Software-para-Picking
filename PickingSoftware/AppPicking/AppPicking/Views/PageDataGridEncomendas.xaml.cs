@@ -20,6 +20,8 @@ namespace AppPicking.Views
         {
             base.OnAppearing();
 
+            Models.PassValor.scan = "";
+
             if ((await Models.Utilizador.perfil()).ID_Grupo != 1)
             {
                 lvEncomendas.ItemsSource = new ObservableCollection<Models.Encomendas>(await Models.Encomendas.GetEncomendas((await Models.Utilizador.perfil()).Nome));

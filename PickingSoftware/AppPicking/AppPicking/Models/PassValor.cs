@@ -50,5 +50,12 @@
             get { return _recup; }
             set { _recup = value; }
         }
+
+        private static string _scan = "";
+        public static string scan
+        {
+            get { return _scan; }
+            set { _scan = value; }
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -23,6 +24,11 @@ namespace AppPicking.Views
         private List<Models.Encomendas> lvEncomendas = new List<Encomendas>();
 
         private List<Models.Artigos> listaArtigo = new List<Artigos>();
+
+        List<string> _artigos = new List<string>
+        {
+
+        };
 
         public PageEditEncomendasArtigos()
         {
@@ -48,7 +54,7 @@ namespace AppPicking.Views
 
             foreach (var _item in _listt)
             {
-                txtIDArtigo.Items.Add(_item.Nome.ToString());
+                _artigos.Add(_item.Nome.ToString());
             }
 
             var _listtt = await Models.Encomendas.GetEncomendas((await Models.Utilizador.perfil()).Nome);
@@ -62,7 +68,7 @@ namespace AppPicking.Views
 
             txtID.Text = Models.PassValor.valor1;
             txtIDEncomenda.SelectedItem = Models.PassValor.valor2;
-            txtIDArtigo.SelectedItem = Models.PassValor.valor3;
+            SearchConteudo.Text = Models.PassValor.valor3;
             txtQuantArtigos.Text = Models.PassValor.valor4;
             txtCodBarras.Text = Models.PassValor.valor6;
 
@@ -92,7 +98,7 @@ namespace AppPicking.Views
 
         private async void EditButton_Clicked(object sender, EventArgs e)
         {
-            int _ID = await Models.Encomendas_Artigos.IDNM(txtIDArtigo.SelectedItem.ToString());
+            int _ID = await Models.Encomendas_Artigos.IDNM(SearchConteudo.Text.ToString());
 
             Debug.Write("|||||");
             Debug.Write("|||||");
@@ -116,13 +122,43 @@ namespace AppPicking.Views
                 //txtID.SelectedIndex = -1;
                 txtID.Text = "";
                 txtIDEncomenda.SelectedIndex = -1;
-                txtIDArtigo.SelectedIndex = -1;
+                SearchConteudo.Text = "";
                 txtCodBarras.Text = "";
                 txtQuantArtigos.Text = "";
 
                 await Shell.Current.GoToAsync("..");
                 //EditButton.IsVisible = false;
                 //searchButton.IsVisible = true;
+            }
+        }
+
+        private void SearchConteudo_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var keyword = SearchConteudo.Text;
+            if (keyword.Length >= 1)
+            {
+                var sugestao = _artigos.Where(c => c.ToLower().Contains(keyword.ToLower()));
+                listaArtigos.ItemsSource = sugestao;
+                listaArtigos.IsVisible = true;
+            }
+            else
+            {
+                listaArtigos.IsVisible = false;
+            }
+        }
+
+        private void listaArtigos_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item as string == null)
+            {
+                return;
+            }
+            else
+            {
+                listaArtigos.ItemsSource = _artigos.Where(c => c.Equals(e.Item as string));
+                listaArtigos.IsVisible = true;
+                SearchConteudo.Text = e.Item as string;
+                listaArtigos.IsVisible = false;
             }
         }
 

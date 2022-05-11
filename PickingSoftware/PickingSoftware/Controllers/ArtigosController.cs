@@ -72,5 +72,19 @@ namespace PickingSoftware.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
+
+        [Route("CodBarras/{_CodBarras}")]
+        [HttpGet]
+        public HttpResponseMessage GetCodBarras(string _CodBarras)
+        {
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Artigos.GetCodBarras(_CodBarras));
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
     }
 }

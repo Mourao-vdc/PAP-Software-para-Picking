@@ -37,3 +37,4 @@ C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Release\netstandard2.0\Views\PageEditSituacao.xaml.g.cs
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Release\netstandard2.0\Views\PageRecuperarConta.xaml.g.cs
 C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Release\netstandard2.0\Views\PagePermissoes.xaml.g.cs
+C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking\obj\Release\netstandard2.0\Views\PageReadBarcode.xaml.g.cs

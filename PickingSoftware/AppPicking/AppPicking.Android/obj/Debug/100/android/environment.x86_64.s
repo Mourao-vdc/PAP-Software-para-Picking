@@ -37,7 +37,7 @@ application_config:
 	/* system_property_count */
 	.long	0
 	/* number_of_assemblies_in_apk */
-	.long	161
+	.long	177
 	/* bundled_assembly_name_width */
 	.long	70
 	/* number_of_assembly_store_files */
@@ -84,7 +84,7 @@ mono_aot_mode_name:
 	.section	.rodata.env.str.8,"aMS",@progbits,1
 	.type	.L.env.str.8, @object
 .L.env.str.8:
-	.asciz	"149df1c6-ed72-4f63-988e-41d90b5307b0"
+	.asciz	"04e76a47-dff6-4902-a0ca-86b4109b01e1"
 	.size	.L.env.str.8, 37
 	.section	.rodata.env.str.9,"aMS",@progbits,1
 	.type	.L.env.str.9, @object
@@ -464,6 +464,38 @@ app_system_properties:
 .L.env.buf.160:
 	.zero	70
 .L.env.buf.161:
+	.zero	70
+.L.env.buf.162:
+	.zero	70
+.L.env.buf.163:
+	.zero	70
+.L.env.buf.164:
+	.zero	70
+.L.env.buf.165:
+	.zero	70
+.L.env.buf.166:
+	.zero	70
+.L.env.buf.167:
+	.zero	70
+.L.env.buf.168:
+	.zero	70
+.L.env.buf.169:
+	.zero	70
+.L.env.buf.170:
+	.zero	70
+.L.env.buf.171:
+	.zero	70
+.L.env.buf.172:
+	.zero	70
+.L.env.buf.173:
+	.zero	70
+.L.env.buf.174:
+	.zero	70
+.L.env.buf.175:
+	.zero	70
+.L.env.buf.176:
+	.zero	70
+.L.env.buf.177:
 	.zero	70
 
 	/* Bundled assemblies data */
@@ -2887,7 +2919,247 @@ bundled_assemblies:
 	.zero	4
 	.quad	.L.env.buf.161
 
-	.size	bundled_assemblies, 6440
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.162
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.163
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.164
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.165
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.166
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.167
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.168
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.169
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.170
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.171
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.172
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.173
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.174
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.175
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.176
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.zero	4
+	.quad	0
+	/* name_length */
+	.long	0
+	/* name */
+	.zero	4
+	.quad	.L.env.buf.177
+
+	.size	bundled_assemblies, 7080
 
 
 	/* Assembly store individual assembly data */

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPicking.Views.PageReadBarcode"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms">
+    <ContentPage.Content>
+        <StackLayout Margin="20,20,20,20">
+            <Label Text="Ler código de barras" 
+                   TextColor="Black"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Title"/>
+            <Picker x:Name="txtTable" Title="Selecione onde deseja procurar" TitleColor="DarkGray" TextColor="Black" FontSize="18">
+                <Picker.Items>
+                    <x:String>Artigos</x:String>
+                    <x:String>Pedidos</x:String>
+                </Picker.Items>
+            </Picker>
+                <Label x:Name="scanResultText" Text="A procurar..." TextColor="Red" FontSize="18" FontAttributes="Bold"/>
+            <zxing:ZXingScannerView x:Name="zxBarCodeReader" IsScanning="True" OnScanResult="ZXingScannerView_OnScanResult"/>
+        </StackLayout>
+        <!--<Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label x:Name="scanResultText" Text="A procurar..." TextColor="Red" FontSize="18" FontAttributes="Bold"/>
+            
+            <BoxView Grid.Row="0" BackgroundColor="Blue"/>
+            <zxing:ZXingScannerView Grid.Row="1" x:Name="zxBarCodeReader" IsScanning="True" OnScanResult="ZXingScannerView_OnScanResult" WidthRequest="200" HeightRequest="200"/>
+            <BoxView Grid.Row="2" BackgroundColor="Transparent" Opacity="0.5"/>
+        </Grid>-->
+    </ContentPage.Content>
+</ContentPage>

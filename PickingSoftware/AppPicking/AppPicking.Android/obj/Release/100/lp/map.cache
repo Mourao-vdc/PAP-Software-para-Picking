@@ -106,3 +106,6 @@ Plugin.InputKit.dll
 Xamarin.CommunityToolkit.dll
 Syncfusion.Buttons.XForms.Android.dll
 Syncfusion.Core.XForms.Android.dll
+FastAndroidCamera.dll
+ZXing.Net.Mobile.Forms.Android.dll
+ZXingNetMobile.dll

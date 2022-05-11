@@ -34,5 +34,7 @@
 	<string>AppPicking</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app wants to scan barcodes</string>
 </dict>
 </plist>
