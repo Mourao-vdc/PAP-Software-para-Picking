@@ -7,9 +7,19 @@ namespace AppPicking.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageReadBarcode : ContentPage
     {
-        public PageReadBarcode()
+        public enum BarcodeSearchType
+        {
+            Artigos,
+            Encomendas
+        }
+
+        private BarcodeSearchType searchType;
+
+        public PageReadBarcode(BarcodeSearchType _type)
         {
             InitializeComponent();
+
+            this.searchType = _type;
         }
 
         public string _Scan { get; set; }
@@ -20,78 +30,100 @@ namespace AppPicking.Views
             Debug.WriteLine("Result");
             Debug.WriteLine(result.Text);
             Debug.WriteLine("");
-            if (txtTable.SelectedItem.ToString() == "Artigos")
+            switch (this.searchType)
             {
-                if (result.Text == "")
-                {
-                    scanResultText.Text = "A procurar...";
-                }
-                else
-                {
-                    Device.BeginInvokeOnMainThread(async () =>
-                    {
-                        zxBarCodeReader.IsScanning = false;
-                        scanResultText.Text = result.Text + " (type: " + result.BarcodeFormat.ToString() + ")";
-                        await DisplayAlert("Sucesso", "Scan realizado com sucesso!", "Ok");
-                        Models.PassValor.scan = result.Text;
-                        zxBarCodeReader.IsScanning = true;
-                        await Shell.Current.GoToAsync($"//PageDataGridArtigos"); ;
-                    });
-                    /*bool bPercorrer = true;
+                case BarcodeSearchType.Artigos:
 
-                    while (bPercorrer)
+                    if (result.Text == "")
+                    {
+                        scanResultText.Text = "Scanning...";
+                    }
+                    else
                     {
                         Device.BeginInvokeOnMainThread(async () =>
                         {
                             zxBarCodeReader.IsScanning = false;
                             scanResultText.Text = result.Text + " (type: " + result.BarcodeFormat.ToString() + ")";
-                            string action = await DisplayActionSheet("Deseja visuzalizar o codigo na aplicação?", "Sim", "Não");
-                            Debug.WriteLine("Ações: " + action);
-                            if (action == "Sim")
-                            {
-                                bPercorrer = false;
-                            }
+                            await DisplayAlert("Sucesso", "Scan realizado com sucesso!", "Ok");
+                            Models.PassValor.scan = result.Text;
+                            zxBarCodeReader.IsScanning = true;
+                            await Navigation.PopAsync();
                         });
-                    }*/
-                }
-            }
-            if (txtTable.SelectedItem.ToString() == "Pedidos")
-            {
-                if (result.Text == "")
-                {
-                    scanResultText.Text = "A procurar...";
-                }
-                else
-                {
+                    }
+
+                    break;
+
+                case BarcodeSearchType.Encomendas:
+
+                    if (result.Text == "")
+                    {
+                        scanResultText.Text = "Scanning...";
+                    }
+                    else
+                    {
+                        Device.BeginInvokeOnMainThread(async () =>
+                        {
+                            zxBarCodeReader.IsScanning = false;
+                            scanResultText.Text = result.Text + " (type: " + result.BarcodeFormat.ToString() + ")";
+                            await DisplayAlert("Sucesso", "Scan realizado com sucesso!", "Ok");
+                            Models.PassValor.scan = result.Text;
+                            zxBarCodeReader.IsScanning = true;
+                            await Navigation.PopAsync();
+                        });
+                    }
+
+                    break;
+
+                default:
+
                     Device.BeginInvokeOnMainThread(async () =>
                     {
                         zxBarCodeReader.IsScanning = false;
-                        scanResultText.Text = result.Text + " (type: " + result.BarcodeFormat.ToString() + ")";
-                        await DisplayAlert("Sucesso", "Scan realizado com sucesso!", "Ok");
-                        Models.PassValor.scan = result.Text;
+                        scanResultText.Text = "Erro!";
+                        await DisplayAlert("Erro!", "Selecione o tabela onde deseja procurar", "Ok");
                         zxBarCodeReader.IsScanning = true;
-                        txtTable.SelectedIndex = -1;
-                        await Shell.Current.GoToAsync($"//PageDataGridEncomendasArtigos");
                     });
-                }
-            }
-            if(txtTable.SelectedItem.ToString() == "")
-            {
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    zxBarCodeReader.IsScanning = false;
-                    scanResultText.Text = "Erro";
-                    await DisplayAlert("Erro!", "Selecione onde quer procurar pelo códgio de barras", "Ok");
-                    zxBarCodeReader.IsScanning = true;
-                });
-            }
 
-            Debug.WriteLine("");
-            Debug.WriteLine("Status");
-            Debug.WriteLine(zxBarCodeReader.IsScanning.ToString());
-            Debug.WriteLine("");
+                    break;
 
-            //zxBarCodeReader.IsScanning = true;
+
+                    /*if (txtTable.SelectedItem.ToString() == "Artigos")
+                    {
+                        if (result.Text == "")
+                        {
+                            scanResultText.Text = "Scanning...";
+                        }
+                        else
+                        {
+                            Device.BeginInvokeOnMainThread(async () =>
+                            {
+                                zxBarCodeReader.IsScanning = false;
+                                scanResultText.Text = result.Text + " (type: " + result.BarcodeFormat.ToString() + ")";
+                                await DisplayAlert("Sucesso", "Scan realizado com sucesso!", "Ok");
+                                Models.PassValor.scan = result.Text;
+                                zxBarCodeReader.IsScanning = true;
+                                txtTable.SelectedIndex = -1;
+                                await Shell.Current.GoToAsync($"//PageDataGridArtigos");
+                            });
+                            bool bPercorrer = true;
+
+                            while (bPercorrer)
+                            {
+                                Device.BeginInvokeOnMainThread(async () =>
+                                {
+                                    zxBarCodeReader.IsScanning = false;
+                                    scanResultText.Text = result.Text + " (type: " + result.BarcodeFormat.ToString() + ")";
+                                    string action = await DisplayActionSheet("Deseja visuzalizar o codigo na aplicação?", "Sim", "Não");
+                                    Debug.WriteLine("Ações: " + action);
+                                    if (action == "Sim")
+                                    {
+                                        bPercorrer = false;
+                                    }
+                                });
+                            }
+                        }
+                    }*/
+            }
         }
     }
 }

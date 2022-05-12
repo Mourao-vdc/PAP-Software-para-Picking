@@ -89,7 +89,7 @@
             </summary>
             <param name="_permicoesgerais"></param>
         </member>
-        <member name="M:PickingSoftware.Models.Permissoes_Gerais.GetEditar(PickingSoftware.Models.Permissoes_Gerais)">
+        <member name="M:PickingSoftware.Models.Permissoes_Gerais.GetEditarEstado(PickingSoftware.Models.Permissoes_Gerais)">
             <summary>
             Editar
             </summary>

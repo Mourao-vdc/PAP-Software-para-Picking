@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Linq;
 
 namespace PickingSoftware.Models
 {
@@ -73,7 +76,7 @@ namespace PickingSoftware.Models
         /// Editar
         /// </summary>
         /// <param name="_permicoesgerais"></param>
-        public static bool GetEditar(Permissoes_Gerais _permicoesgerais)
+        public static bool GetEditarEstado(Permissoes_Gerais _estado)
         {
             try
             {
@@ -81,14 +84,12 @@ namespace PickingSoftware.Models
                     new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
                 con.Open();
                 string query = "UPDATE Permissoes_Gerais SET" +
-                    " ID_Grupo=@ID_Grupo,ID_Permissoes=@ID_Permicoes,Estado=@Estado" +
+                    " Estado=@Estado" +
                     " WHERE ID=@ID";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    cmd.Parameters.AddWithValue("@ID", _permicoesgerais.ID);
-                    cmd.Parameters.AddWithValue("@ID_Grupo", _permicoesgerais.ID_Grupo);
-                    cmd.Parameters.AddWithValue("@ID_Permicoes", _permicoesgerais.ID_Permicoes);
-                    cmd.Parameters.AddWithValue("@Estado", _permicoesgerais.Estado);
+                    cmd.Parameters.AddWithValue("@ID", _estado.ID);
+                    cmd.Parameters.AddWithValue("@Estado", _estado.Estado);
                     cmd.ExecuteScalar();
 
                     con.Close();
@@ -127,6 +128,58 @@ namespace PickingSoftware.Models
             }
             catch
             {
+                return false;
+            }
+        }
+
+        public static List<string> PermissionsVerify(int _grupo)
+        {
+            SqlConnection con =
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+            using (SqlCommand cmd = new SqlCommand("grupo_permissoes", con))
+            {
+                List<string> list = new List<string>();
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                cmd.Parameters.AddWithValue("@estado", "Autorizado");
+                cmd.Parameters.AddWithValue("@grupo", _grupo);
+                SqlDataReader rd = cmd.ExecuteReader();
+                if (rd.HasRows)
+                {
+                    while(rd.Read())
+                    {
+                        list.Add(rd[0].ToString());
+                    }
+
+                    return list;
+                }
+                else
+                {
+                    return new List<string>();
+                }
+            }
+        }
+
+        public static bool LoginView(List<string> _PermissionList, string _PermissionNome)
+        {
+            //Adicionar
+            //ADICIonar
+
+            if (_PermissionList.Where(variavel => variavel.ToUpper() == _PermissionNome.ToUpper()).Count() > 0)
+            {
+                Debug.WriteLine("");
+                Debug.WriteLine("TRUE");
+                Debug.WriteLine("");
+
+                return true;
+            }
+            else
+            {
+                Debug.WriteLine("");
+                Debug.WriteLine("FALSE");
+                Debug.WriteLine("");
+
                 return false;
             }
         }

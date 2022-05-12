@@ -215,7 +215,7 @@ namespace PickingSoftware.Models
         public static bool UserVerifyEmail(string email)
         {
             SqlConnection con =
-    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             using (SqlCommand cmd = new SqlCommand("verify_emails", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;

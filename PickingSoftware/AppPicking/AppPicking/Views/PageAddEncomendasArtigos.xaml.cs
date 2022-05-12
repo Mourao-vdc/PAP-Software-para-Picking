@@ -46,6 +46,8 @@ namespace AppPicking.Views
                 txtIDEncomenda.Items.Add(_item.ID.ToString());
             }*/
 
+            txtCodBarras.Text = Models.PassValor.scan;
+
             txtIDEncomenda.Text = Models.PassValor.valor1;
 
             var _listt = await Models.Artigos.GetArtigos();
@@ -131,6 +133,11 @@ namespace AppPicking.Views
             {
                 listaArtigos.IsVisible = false;
             }
+        }
+
+        private async void CodBarras_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PageReadBarcode(PageReadBarcode.BarcodeSearchType.Encomendas));
         }
     }
 }

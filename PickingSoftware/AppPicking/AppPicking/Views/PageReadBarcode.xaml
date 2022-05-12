@@ -9,13 +9,7 @@
                    TextColor="Black"
                    HorizontalTextAlignment="Center"
                    FontSize="Title"/>
-            <Picker x:Name="txtTable" Title="Selecione onde deseja procurar" TitleColor="DarkGray" TextColor="Black" FontSize="18">
-                <Picker.Items>
-                    <x:String>Artigos</x:String>
-                    <x:String>Pedidos</x:String>
-                </Picker.Items>
-            </Picker>
-                <Label x:Name="scanResultText" Text="A procurar..." TextColor="Red" FontSize="18" FontAttributes="Bold"/>
+            <Label x:Name="scanResultText" Text="Scanning..." TextColor="Red" FontSize="18" FontAttributes="Bold"/>
             <zxing:ZXingScannerView x:Name="zxBarCodeReader" IsScanning="True" OnScanResult="ZXingScannerView_OnScanResult"/>
         </StackLayout>
         <!--<Grid>

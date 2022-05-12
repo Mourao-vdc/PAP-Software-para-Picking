@@ -14,8 +14,8 @@
             <RefreshView x:Name="refresh" RefreshColor="Black" Refreshing="refresh_Refreshing">
                 <ScrollView>
                     <!-- Place new controls here -->
-                        <dg:DataGrid x:Name="lvEncomendas" HeaderTextColor="Black" SelectionEnabled="True" ItemSelected="lvEncomendas_ItemSelected" RowHeight="70" 
-                                 HeaderHeight="50" BorderColor="Black" HeaderBackground="LightGray"
+                        <dg:DataGrid x:Name="lvEncomendas" HeaderTextColor="Black" SelectionEnabled="True" ItemSelected="lvEncomendas_ItemSelected" RowHeight="90" 
+                                 HeaderHeight="60" BorderColor="Black" HeaderBackground="LightGray"
                                      >
                             <x:Arguments>
                                 <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>

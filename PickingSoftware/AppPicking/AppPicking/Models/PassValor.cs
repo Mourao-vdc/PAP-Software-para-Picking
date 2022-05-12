@@ -44,6 +44,20 @@
             set { _valor6 = value; }
         }
 
+        private static string _ecomenda = "";
+        public static string encomenda
+        {
+            get { return _ecomenda; }
+            set { _ecomenda = value; }
+        }
+
+        private static string _permgid = "";
+        public static string permgid
+        {
+            get { return _permgid; }
+            set { _permgid = value; }
+        }
+
         private static string _recup = "";
         public static string recup
         {

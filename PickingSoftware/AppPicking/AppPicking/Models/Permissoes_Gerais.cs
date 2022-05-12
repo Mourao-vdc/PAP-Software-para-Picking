@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace AppPicking.Models
@@ -33,6 +34,68 @@ namespace AppPicking.Models
 
                 else
                     return new List<Permissoes_Gerais>();
+            }
+        }
+
+        public static async Task<string> GetEditarEstado(Permissoes_Gerais _estado)
+        {
+            Debug.Write("||||||");
+            Debug.Write("Editar");
+            Debug.Write("||||||");
+            using (HttpClient _client = new HttpClient())
+            {
+                var json = JsonConvert.SerializeObject(_estado);
+                Debug.WriteLine("");
+                Debug.WriteLine(json);
+                Debug.WriteLine("");
+
+                var content =
+                    new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await _client.PutAsync("http://192.168.51.5:150/api/Permissoes_Gerais/editarestado", content);
+
+                Debug.WriteLine("");
+                Debug.WriteLine("StatusCode");
+                Debug.WriteLine(response.StatusCode.ToString());
+                Debug.WriteLine("");
+
+                return JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
+            }
+        }
+
+        public static async Task<List<string>> PermissionsVerify(string _grupo)
+        {
+            using (HttpClient _client = new HttpClient())
+            {
+                var response = await _client.GetAsync("http://192.168.51.5:150/api/Permissoes_Gerais/PermissionsVerify/" + _grupo);
+
+                Debug.WriteLine(response.StatusCode.ToString());
+
+                if (response.IsSuccessStatusCode)
+                    return JsonConvert.DeserializeObject<List<string>>(await response.Content.ReadAsStringAsync());
+
+                else
+                    return new List<string>();
+            }
+        }
+
+        public static async Task<bool> LoginView(string _PermissionNome)
+        {
+            using (HttpClient _client = new HttpClient())
+            {
+                _client.DefaultRequestHeaders.Add("Authorization", "Bearer " + Models.Utilizador.token);
+
+                var response = await _client.GetAsync("http://192.168.51.5:150/api/Permissoes_Gerais/LoginView/" + _PermissionNome);
+
+                Debug.WriteLine("");
+                Debug.WriteLine(await response.Content.ReadAsStringAsync());
+                Debug.WriteLine(response.StatusCode.ToString());
+                Debug.WriteLine("");
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+
+                else
+                    return false;
             }
         }
     }

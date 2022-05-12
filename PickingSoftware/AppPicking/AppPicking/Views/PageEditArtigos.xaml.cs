@@ -70,7 +70,6 @@ namespace AppPicking.Views
             }
             else
             {
-
                 Artigos artigos = new Artigos()
                 {
                     ID = int.Parse(txtID.Text),//int.Parse(txtID.SelectedItem.ToString()),

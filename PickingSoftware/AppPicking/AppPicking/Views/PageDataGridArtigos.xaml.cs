@@ -1,5 +1,6 @@
 ﻿using AppPicking.Models;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -26,25 +27,26 @@ namespace AppPicking.Views
 
             base.OnAppearing();
 
-            if ((await Models.Utilizador.perfil()).ID_Grupo != 1)
+            //var list = await Models.Permissoes_Gerais.PermissionsVerify((await Models.Utilizador.perfil()).ID_Grupo.ToString());
+
+            var _retorno = await Models.Permissoes_Gerais.LoginView("Adicionar artigos");
+
+            Debug.WriteLine("");
+            Debug.WriteLine(_retorno.ToString());
+            Debug.WriteLine("");
+
+            if (_retorno)
             {
-                btnPopup.IsVisible = false;
+                btnPopup.IsVisible = true;
             }
             else
             {
-                btnPopup.IsVisible = true;
+                btnPopup.IsVisible = false;
             }
 
             try
             {
-                if (Models.PassValor.scan != "")
-                {
-                    lvArtigos.ItemsSource = new ObservableCollection<Models.Artigos>(await Models.Artigos.GetCodBarras(Models.PassValor.scan));
-                }
-                else
-                {
                     lvArtigos.ItemsSource = new ObservableCollection<Models.Artigos>(await Models.Artigos.GetArtigos());
-                }
             }
 
             catch (Exception ex)
@@ -96,6 +98,8 @@ namespace AppPicking.Views
                                 };
 
                                 await DisplayAlert("Resposta", await Artigos.DellArtigos(int.Parse(Models.PassValor.valor1)), "Ok");
+
+                                OnAppearing();
                             }
                             else
                             {

@@ -46,8 +46,48 @@ namespace AppPicking.Views
 
         private async void lvPermicoes_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            string action = await DisplayActionSheet("Permissões: Permissão selecionada", "Cancelar", null, "Permitir acesso", "Remover acesso");
-            Debug.WriteLine("Ações: " + action);
+            var aux = e.SelectedItem as Models.Permissoes_Gerais;
+
+            if (aux != null)
+            {
+                Models.PassValor.permgid = aux.ID.ToString();
+
+                string action = await DisplayActionSheet("Permissões: Permissão selecionada", "Cancelar", null, "Permitir acesso", "Negar acesso");
+                Debug.WriteLine("Ações: " + action);
+                if (action == "Permitir acesso")
+                {
+                    Permissoes_Gerais _estado = new Permissoes_Gerais()
+                    {
+                        ID = int.Parse(Models.PassValor.permgid),
+                        Estado = "Autorizado",
+                    };
+
+                    await DisplayAlert("Resposta", await Permissoes_Gerais.GetEditarEstado(_estado), "Ok");
+
+                    OnAppearing();
+
+                    lvPermicoes.SelectedItem = null;
+                }
+                if (action == "Negar acesso")
+                {
+                    Permissoes_Gerais _estado = new Permissoes_Gerais()
+                    {
+                        ID = int.Parse(Models.PassValor.permgid),//int.Parse(txtID.SelectedItem.ToString()),
+                        Estado = "Negado",
+                    };
+
+                    await DisplayAlert("Resposta", await Permissoes_Gerais.GetEditarEstado(_estado), "Ok");
+
+                    OnAppearing();
+
+                    lvPermicoes.SelectedItem = null;
+                }
+                if (action == "Cancelar" || action == null)
+                {
+                    lvPermicoes.SelectedItem = null;
+                    return;
+                }
+            }
         }
 
         private async void refresh_Refreshing(object sender, EventArgs e)

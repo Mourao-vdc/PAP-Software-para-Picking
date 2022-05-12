@@ -20,6 +20,13 @@ namespace AppPicking.Views
 
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            txtCod_Barras.Text = Models.PassValor.scan;
+        }
+
         private async void AddButton_Clicked(object sender, EventArgs e)
         {
             if (//(string.IsNullOrEmpty(txtID.Text)) || (string.IsNullOrWhiteSpace(txtID.Text)
@@ -31,7 +38,6 @@ namespace AppPicking.Views
             }
             else
             {
-
                 Artigos artigos = new Artigos()
                 {
                     //ID = Convert.ToInt16(txtID.Text);
@@ -49,6 +55,11 @@ namespace AppPicking.Views
                 txtNome.Text = "";
                 txtCod_Barras.Text = "";
             }           
+        }
+
+        private async void CodBarras_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PageReadBarcode(PageReadBarcode.BarcodeSearchType.Artigos));
         }
     }
 }

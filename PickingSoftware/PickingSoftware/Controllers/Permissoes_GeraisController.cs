@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -8,7 +10,7 @@ namespace PickingSoftware.Controllers
     [RoutePrefix("api/Permissoes_Gerais")]
     public class PermissoesGeraisController : ApiController
     {
-        [Route("Todas")]
+        [Route("Todas/{_nome}")]
         [HttpGet]
         //[Authorize]
         public HttpResponseMessage GetPermicoes_Gerais(string _nome)
@@ -38,18 +40,20 @@ namespace PickingSoftware.Controllers
             }
         }
 
-        [Route("Editar")]
+        [Route("EditarEstado")]
         [HttpPut]
-        public HttpResponseMessage GetEditar(Models.Permissoes_Gerais _permicoesgerais)
+        public HttpResponseMessage GetEditarEstado(Models.Permissoes_Gerais _estado)
         {
             try
             {
-                Models.Permissoes_Gerais.GetEditar(_permicoesgerais);
-                return Request.CreateResponse(HttpStatusCode.OK);
+                if (Models.Permissoes_Gerais.GetEditarEstado(_estado))
+                    return Request.CreateResponse(HttpStatusCode.OK, "Acesso alterado com sucesso!");
+                else
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possivel alterar o acesso!");
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
 
@@ -61,6 +65,51 @@ namespace PickingSoftware.Controllers
             {
                 Models.Permissoes_Gerais.GetEliminar(id);
                 return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
+
+        [Route("PermissionsVerify/{_grupo}")]
+        [HttpGet]
+        public HttpResponseMessage PermissionsVerify(int _grupo)
+        {
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Permissoes_Gerais.PermissionsVerify(_grupo));
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
+
+        [Route("LoginView/{_PermissionNome}")]
+        [HttpGet]
+        [Authorize]
+        public HttpResponseMessage LoginView(string _PermissionNome)
+        {
+            try
+            {
+                var _list = Models.Permissoes_Gerais.PermissionsVerify(
+                    Models.Utilizador.GetUtilizadorNome(RequestContext.Principal.Identity.Name).ID_Grupo);
+
+                Debug.WriteLine("");
+                Debug.WriteLine("LISTA:");
+                Debug.WriteLine(_list.Count.ToString());
+                Debug.WriteLine("");
+                Debug.WriteLine("Permissão");
+                Debug.WriteLine(_PermissionNome);
+                Debug.WriteLine("");
+
+                if (Models.Permissoes_Gerais.LoginView(_list,
+                    _PermissionNome))
+                    return Request.CreateResponse(HttpStatusCode.OK);
+
+                else
+                    return Request.CreateResponse(HttpStatusCode.Unauthorized);
             }
             catch (Exception ex)
             {

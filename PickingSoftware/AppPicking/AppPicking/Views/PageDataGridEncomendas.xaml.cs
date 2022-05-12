@@ -76,7 +76,13 @@ namespace AppPicking.Views
 
         private async void lvEncomendas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if ((await Models.Utilizador.perfil()).ID_Grupo == 1)
+            var _retorno = await Models.Permissoes_Gerais.LoginView("Editar e eliminar encomendas");
+
+            Debug.WriteLine("");
+            Debug.WriteLine(_retorno.ToString());
+            Debug.WriteLine("");
+
+            if (_retorno)
             {
                 try
                 {

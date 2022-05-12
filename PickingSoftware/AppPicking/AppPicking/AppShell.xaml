@@ -116,7 +116,7 @@
     <FlyoutItem Title="Permissões" x:Name="permissões" Icon="icon_permissoes.png">
         <ShellContent Route="PagePermicoes" ContentTemplate="{DataTemplate local:PagePermicoes}" />
     </FlyoutItem>
-    <FlyoutItem Title="Código de barras" x:Name="codbarras" Icon="icon_barcode.png">
+    <FlyoutItem FlyoutItemIsVisible="False" Title="Código de barras" x:Name="codbarras" Icon="icon_barcode.png">
         <ShellContent Route="PagePermicoes" ContentTemplate="{DataTemplate local:PageReadBarcode}" />
     </FlyoutItem>
     <FlyoutItem Title="Sair" Icon="icon_logout.png">
