@@ -378,6 +378,7 @@
     <Compile Include="Controllers\Permissoes_GeraisController.cs" />
     <Compile Include="Controllers\Permicoes_ListController.cs" />
     <Compile Include="Controllers\UtilizadorController.cs" />
+    <Compile Include="Controllers\ValidarController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -388,6 +389,7 @@
     <Compile Include="Models\Permissoes_Gerais.cs" />
     <Compile Include="Models\Permissoes_List.cs" />
     <Compile Include="Models\Utilizador.cs" />
+    <Compile Include="Models\Validar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

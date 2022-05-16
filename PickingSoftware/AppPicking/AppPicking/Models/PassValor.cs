@@ -71,5 +71,12 @@
             get { return _scan; }
             set { _scan = value; }
         }
+
+        private static string _valor10 = "";
+        public static string valor10
+        {
+            get { return _valor10; }
+            set { _valor10 = value; }
+        }
     }
 }

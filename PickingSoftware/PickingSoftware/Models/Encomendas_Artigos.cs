@@ -12,6 +12,7 @@ namespace PickingSoftware.Models
         public string Cod_Barras { get; set; }
         public string Situacao { get; set; }
         public int Quant_artigos { get; set; }
+        public int Quant_artigos_cliente { get; set; }
 
         public static List<Encomendas_Artigos> GetEncomendas_Artigos(int _idencomenda)
         {
@@ -51,8 +52,8 @@ namespace PickingSoftware.Models
                     new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
                 con.Open();
                 string query = "INSERT INTO Encomendas_Artigos(" +
-                    "ID_Encomendas,ID_Artigos,Cod_Barras,Situacao,Quant_artigos)" +
-                    " VALUES (@ID_Encomendas,@ID_Artigos,@Cod_Barras,@Situacao,@Quant_artigos)";
+                    "ID_Encomendas,ID_Artigos,Cod_Barras,Situacao,Quant_artigos,Quant_artigos_cliente)" +
+                    " VALUES (@ID_Encomendas,@ID_Artigos,@Cod_Barras,@Situacao,@Quant_artigos,@Quant_artigos_cliente)";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     //cmd.Parameters.AddWithValue("@ID", _artigo.ID);
@@ -61,6 +62,7 @@ namespace PickingSoftware.Models
                     cmd.Parameters.AddWithValue("@Cod_Barras", _encomendasartigos.Cod_Barras);
                     cmd.Parameters.AddWithValue("@Situacao", _encomendasartigos.Situacao);
                     cmd.Parameters.AddWithValue("@Quant_artigos", _encomendasartigos.Quant_artigos);
+                    cmd.Parameters.AddWithValue("@Quant_artigos_cliente", _encomendasartigos.Quant_artigos_cliente);
                     cmd.ExecuteScalar();
 
                     con.Close();
@@ -87,7 +89,7 @@ namespace PickingSoftware.Models
                     new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
                 con.Open();
                 string query = "UPDATE Encomendas_Artigos SET" +
-                    " ID_Encomendas=@ID_Encomendas,ID_Artigos=@ID_Artigos,Cod_Barras=@Cod_Barras,Quant_artigos=@Quant_artigos" +
+                    " ID_Encomendas=@ID_Encomendas,ID_Artigos=@ID_Artigos,Cod_Barras=@Cod_Barras,Quant_artigos=@Quant_artigos,Quant_artigos_cliente=@Quant_artigos_cliente" +
                     " WHERE ID=@ID";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
@@ -96,6 +98,7 @@ namespace PickingSoftware.Models
                     cmd.Parameters.AddWithValue("@ID_Artigos", _encomendasartigos.ID_Artigos);
                     cmd.Parameters.AddWithValue("@Cod_Barras", _encomendasartigos.Cod_Barras);
                     cmd.Parameters.AddWithValue("@Quant_artigos", _encomendasartigos.Quant_artigos);
+                    cmd.Parameters.AddWithValue("@Quant_artigos_cliente", _encomendasartigos.Quant_artigos_cliente);
                     cmd.ExecuteScalar();
 
                     con.Close();
@@ -150,7 +153,7 @@ namespace PickingSoftware.Models
                     new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
                 con.Open();
                 string query = "UPDATE Encomendas_Artigos SET" +
-                    " " +
+                    " Situacao=@Situacao" +
                     " WHERE ID_Encomendas=@ID_Encomendas";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {

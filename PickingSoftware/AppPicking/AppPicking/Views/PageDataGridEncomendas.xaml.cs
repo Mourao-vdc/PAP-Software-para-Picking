@@ -52,6 +52,7 @@ namespace AppPicking.Views
                 {
                     ID_Utilizadores = (await Models.Utilizador.perfil()).ID,
                     Data = DateTime.Now.ToString("MM/dd/yyyy"),
+                    Estado = "Por verificar",
                 };
 
                 Debug.Write("||||||");
@@ -190,6 +191,7 @@ namespace AppPicking.Views
                     }
                     if (action == "Não")
                     {
+                        lvEncomendas.SelectedItem = null;
                         return;
                     }
                 }

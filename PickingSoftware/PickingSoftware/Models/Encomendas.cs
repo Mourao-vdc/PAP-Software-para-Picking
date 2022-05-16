@@ -9,6 +9,7 @@ namespace PickingSoftware.Models
         public int ID_Utilizadores { get; set; }
         public string Nome { get; set; }
         public string Data { get; set; }
+        public string Estado { get; set; }
 
         public static List<Encomendas> GetEncomendastodas()
         {
@@ -17,7 +18,9 @@ namespace PickingSoftware.Models
             con.Open();
             string query = "SELECT Encomendas.ID, Utilizador.Nome, FORMAT (Data, 'dd/MM/yyyy ') as Data FROM Encomendas" +
                 " JOIN Utilizador" +
-                " ON Utilizador.ID = Encomendas.ID_Utilizadores";
+                " ON Utilizador.ID = Encomendas.ID_Utilizadores" +
+                " WHERE Encomendas.ID IN (SELECT ID_Encomendas FROM Encomendas_Artigos WHERE Situacao LIKE 'A preparar')" +
+                " AND Encomendas.Estado = 'Por verificar'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
 
@@ -41,7 +44,9 @@ namespace PickingSoftware.Models
             con.Open();
             string query = "SELECT Encomendas.ID, Utilizador.Nome, FORMAT (Data, 'dd/MM/yyyy ') as Data FROM Encomendas" +
                 " JOIN Utilizador" +
-                " ON Utilizador.ID = Encomendas.ID_Utilizadores WHERE Utilizador.Nome = '" + _nome + "'";
+                " ON Utilizador.ID = Encomendas.ID_Utilizadores WHERE Utilizador.Nome = '" + _nome + "'" +
+                " AND  Encomendas.ID IN (SELECT ID_Encomendas FROM Encomendas_Artigos WHERE Situacao LIKE 'A preparar')" +
+                " AND Encomendas.Estado='Por verificar'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
 
@@ -70,14 +75,15 @@ namespace PickingSoftware.Models
                     new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
                 con.Open();
                 string query = "INSERT INTO Encomendas(" +
-                    "ID_Utilizadores,Data)" +
-                    " VALUES (@ID_Utilizadores,@Data)";
+                    "ID_Utilizadores,Data,Estado)" +
+                    " VALUES (@ID_Utilizadores,@Data,@Estado)";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
 
                     cmd.Parameters.AddWithValue("@ID", _encomendas.ID);
                     cmd.Parameters.AddWithValue("@ID_Utilizadores", _encomendas.ID_Utilizadores);
                     cmd.Parameters.AddWithValue("@Data", _encomendas.Data);
+                    cmd.Parameters.AddWithValue("@Estado", _encomendas.Estado);
                     cmd.ExecuteScalar();
 
                     con.Close();

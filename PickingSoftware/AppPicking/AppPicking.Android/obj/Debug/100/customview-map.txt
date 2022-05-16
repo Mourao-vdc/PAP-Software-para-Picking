@@ -31,6 +31,9 @@ com.google.android.material.tabs.TabLayout;C:\Users\estagio\Documents\PAP-Softwa
 com.google.android.material.tabs.TabLayout;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\59\jl\res\layout\rootlayout.xml
 com.google.android.material.tabs.TabLayout;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\59\jl\res\layout\tabbar.xml
 com.google.android.material.tabs.TabLayout;obj\Debug\100\res\layout\tabbar.xml
+crc642e1c7a98bdb5c44a.AutoFitTextureView;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\57\jl\res\layout\camerafragment.xml
+crc643f46942d9dd1fff9.ShellFlyoutLayout;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\59\jl\res\layout\flyoutcontent.xml
+crc64720bb2db43a66fe9.FormsViewPager;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\59\jl\res\layout\rootlayout.xml
 declare-styleable;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\3\jl\res\values\attrs.xml
 declare-styleable;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\59\jl\res\values\attrs.xml
 enum;C:\Users\estagio\Documents\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\lp\3\jl\res\values\attrs.xml

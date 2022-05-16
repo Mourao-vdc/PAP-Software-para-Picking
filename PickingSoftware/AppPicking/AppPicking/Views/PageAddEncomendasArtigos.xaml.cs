@@ -86,6 +86,7 @@ namespace AppPicking.Views
                         ID_Encomendas = int.Parse(txtIDEncomenda.Text),
                         ID_Artigos = _ID,
                         Quant_artigos = int.Parse(txtQuantArtigos.Text.ToString()),
+                        Quant_artigos_cliente = int.Parse(txtQuantArtigos.Text.ToString()),
                         Cod_Barras = txtCodBarras.Text,
                         Situacao = txtsituacao.Text,
                     };

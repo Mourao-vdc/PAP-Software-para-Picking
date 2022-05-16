@@ -223,4 +223,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_barcode.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_validar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_check.png" />
+  </ItemGroup>
 </Project>
