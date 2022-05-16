@@ -12,13 +12,15 @@ CREATE TABLE Encomendas_Artigos (
     ID_Artigos int,
     Cod_Barras nvarchar(254),
     Situacao nvarchar(254),
-    Quant_artigos int
+    Quant_artigos int,
+    Quant_artigos_cliente int
 );
 
 CREATE TABLE Encomendas (
     ID int PRIMARY KEY NOT NULL IDENTITY(1,1),
     ID_Utilizadores int ,
-    Data datetime
+    Data datetime,
+    Estado nvarchar(254)
 );
 
 CREATE TABLE Permissoes_Gerais (
