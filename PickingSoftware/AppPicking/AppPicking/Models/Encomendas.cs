@@ -160,5 +160,23 @@ namespace AppPicking.Models
                     return -1;
             }
         }
+
+        public static async Task<List<Encomendas>> GetEncomendasPerfil(string _nome)
+        {
+            using (HttpClient _client = new HttpClient())
+            {
+                var content = await _client.GetAsync("http://192.168.51.5:150/api/encomendas/perfil/" + _nome);
+
+                Debug.WriteLine("");
+                Debug.WriteLine(content.StatusCode.ToString());
+                Debug.WriteLine("");
+
+                if (content.IsSuccessStatusCode)
+                    return JsonConvert.DeserializeObject<List<Encomendas>>(await content.Content.ReadAsStringAsync());
+
+                else
+                    return new List<Encomendas>();
+            }
+        }
     }
 }

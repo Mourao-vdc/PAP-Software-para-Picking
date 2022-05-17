@@ -78,5 +78,19 @@
             get { return _valor10; }
             set { _valor10 = value; }
         }
+
+        private static string _valor20 = "";
+        public static string valor20
+        {
+            get { return _valor20; }
+            set { _valor20 = value; }
+        }
+
+        private static string _permnome = "";
+        public static string permnome
+        {
+            get { return _permnome; }
+            set { _permnome = value; }
+        }
     }
 }

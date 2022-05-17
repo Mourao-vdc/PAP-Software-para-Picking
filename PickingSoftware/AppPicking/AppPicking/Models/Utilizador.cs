@@ -85,6 +85,31 @@ namespace AppPicking.Models
             }
         }
 
+        public static async Task<string> GetEditarPass(Utilizador _utilizador)
+        {
+            Debug.Write("||||||");
+            Debug.Write("Editar");
+            Debug.Write("||||||");
+            using (HttpClient _client = new HttpClient())
+            {
+                var json = JsonConvert.SerializeObject(_utilizador);
+                Debug.WriteLine("");
+                Debug.WriteLine(json);
+                Debug.WriteLine("");
+
+                var content =
+                    new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await _client.PutAsync("http://192.168.51.5:150/api/utilizador/editar", content);
+
+                Debug.WriteLine("");
+                Debug.WriteLine("StatusCode");
+                Debug.WriteLine(response.StatusCode.ToString());
+                Debug.WriteLine("");
+
+                return JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
+            }
+        }
+
         public static async Task<bool> Userlogin(Utilizador utilizador)
         {
 

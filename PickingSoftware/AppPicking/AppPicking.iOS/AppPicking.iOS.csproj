@@ -191,7 +191,7 @@
     <BundleResource Include="Resources\icon_more.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\icon_utilizadores.png" />
+    <BundleResource Include="Resources\icon_perfil.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\icon_logo.png" />
@@ -228,5 +228,11 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\icon_check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_settings.png" />
   </ItemGroup>
 </Project>

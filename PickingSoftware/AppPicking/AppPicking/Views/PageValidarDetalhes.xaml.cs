@@ -24,7 +24,7 @@ namespace AppPicking.Views
             {
                 Debug.Write("|||||");
                 Debug.Write("|||||");
-                Debug.WriteLine(Models.PassValor.valor1);
+                Debug.WriteLine(Models.PassValor.valor10);
                 Debug.Write("|||||");
                 Debug.Write("|||||");
 

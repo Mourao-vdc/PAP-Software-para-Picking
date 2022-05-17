@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPicking.Views.PagePerfil"
+             Title="Perfil">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="icon_logo.png" Margin="0,30,0,10"/>
+            <Label x:Name="txtNome" TextColor="DarkGray" HorizontalOptions="Center" FontSize="25" Margin="0,0,0,10" Text="{Binding valor}"/>
+            <Label x:Name="txtEmail" TextColor="DarkGray" HorizontalOptions="Center" FontSize="25" Margin="0,0,0,20" Text="{Binding valor2}"/>
+            <Button x:Name="btnPass" Text="Mudar password" TextColor="White" HorizontalOptions="Center" WidthRequest="300" BackgroundColor="Black" Clicked="Button_Clicked"/>
+            <Entry x:Name="txtpassatual" IsVisible="false" ClearButtonVisibility="WhileEditing" IsTextPredictionEnabled="false" IsSpellCheckEnabled="false" IsPassword="True" Placeholder="Password atual:" PlaceholderColor="DarkGray" HorizontalOptions="Center" WidthRequest="300" TextColor="Black"/>
+            <Entry x:Name="txtpassnova" ClearButtonVisibility="WhileEditing" IsTextPredictionEnabled="false" IsSpellCheckEnabled="false" IsPassword="True" IsVisible="false" Placeholder="Nova password:" PlaceholderColor="DarkGray" HorizontalOptions="Center" WidthRequest="300" TextColor="Black"/>
+            <Entry x:Name="txtrepetirpass" ClearButtonVisibility="WhileEditing" IsTextPredictionEnabled="false" IsSpellCheckEnabled="false" IsPassword="True" IsVisible="false" Placeholder="Repetir nova password:" PlaceholderColor="DarkGray" HorizontalOptions="Center" WidthRequest="300" TextColor="Black"/>
+            <CheckBox x:Name="ShowPassword" HorizontalOptions="Center" IsVisible="false" Margin="0,0,270,5" Color="DarkGray" CheckedChanged="ShowPassword_CheckedChanged"/>
+            <Button x:Name="btnSave" IsVisible="false" Text="Confirmar" TextColor="White" HorizontalOptions="Center" WidthRequest="300" BackgroundColor="Black" Clicked="btnSave_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

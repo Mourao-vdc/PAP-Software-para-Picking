@@ -110,7 +110,7 @@
         <!--<FlyoutItem Title="Estado das encomendas" Icon="icon_estado.png">
         <ShellContent Route="PageEstadoEncomendas" ContentTemplate="{DataTemplate local:PageEstadoEncomendas}" />
     </FlyoutItem>-->
-    <FlyoutItem Title="Utilizadores" x:Name="utilizadores" Icon="icon_utilizadores.png">
+    <FlyoutItem Title="Utilizadores" x:Name="utilizadores" Icon="icon_users.png">
         <ShellContent Route="PageDataGridUtilizadores" ContentTemplate="{DataTemplate local:PageDataGridUtilizadores}" />
     </FlyoutItem>
     <FlyoutItem Title="Permissões" x:Name="permissoes" Icon="icon_permissoes.png">
@@ -125,8 +125,11 @@
     <FlyoutItem Title="Encomendas validadas" x:Name="encomendasvalidadas" Icon="icon_validar.png">
         <ShellContent Route="PageEncomendasValidadas" ContentTemplate="{DataTemplate local:PageEncomendasValidadas}" />
     </FlyoutItem>
-    <FlyoutItem Title="Sair" Icon="icon_logout.png">
+    <!--<FlyoutItem Title="Sair" Icon="icon_logout.png">
         <ShellContent Route="PageLogin" ContentTemplate="{DataTemplate local:PageLogin}"/>
+    </FlyoutItem>-->
+    <FlyoutItem Title="Definições" Icon="icon_settings.png">
+        <ShellContent Route="PageDefin" ContentTemplate="{DataTemplate local:PageDefin}"/>
     </FlyoutItem>
     <FlyoutItem FlyoutItemIsVisible="False" Title="Sair" Icon="icon_logout.png">
         <ShellContent Route="PageSignup" ContentTemplate="{DataTemplate local:PageSignup}" />

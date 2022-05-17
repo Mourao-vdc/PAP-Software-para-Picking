@@ -48,7 +48,7 @@ namespace PickingSoftware.Models
                 SqlConnection con =
                     new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
                 con.Open();
-                string query = "SELECT ID, ID_GRUPO, Nome, Email from Utilizador where nome like '" + _nome.TrimEnd().TrimStart() + "'";
+                string query = "SELECT ID, ID_GRUPO, Nome, Email, Password from Utilizador where nome like '" + _nome.TrimEnd().TrimStart() + "'";
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
 
@@ -67,6 +67,7 @@ namespace PickingSoftware.Models
                             ID_Grupo = (int)dr["ID_Grupo"],
                             Nome = dr["Nome"].ToString(),
                             Email = dr["Email"].ToString(),
+                            Password = dr["Password"].ToString(),
                         };
                     }
                 }
@@ -121,7 +122,7 @@ namespace PickingSoftware.Models
         /// </summary>
         /// <param name="_utilizador"></param>
 
-        public static bool GetEditar(Utilizador _utilizador)
+        public static bool GetEditarPass(Utilizador _utilizador)
         {
             try
             {
@@ -129,14 +130,11 @@ namespace PickingSoftware.Models
                     new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
                 con.Open();
                 string query = "UPDATE Utilizador SET" +
-                    " ID_Grupo=@ID_Grupo,Nome=@Nome,Email=@Email,Password=@Password" +
+                    " Password=@Password" +
                     " WHERE ID=@ID";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@ID", _utilizador.ID);
-                    cmd.Parameters.AddWithValue("@ID_Grupo", _utilizador.ID_Grupo);
-                    cmd.Parameters.AddWithValue("@Nome", _utilizador.Nome);
-                    cmd.Parameters.AddWithValue("@Email", _utilizador.Email);
                     cmd.Parameters.AddWithValue("@Password", _utilizador.Password);
                     cmd.ExecuteScalar();
 

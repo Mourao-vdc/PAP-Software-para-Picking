@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPicking.Views.PageDefin"
+             Title="Definições">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Image Source="icon_logo.png" HorizontalOptions="Start" Margin="0,30,0,20" HeightRequest="80" WidthRequest="80"/>
+                <Label x:Name="txtNome"
+                       TextColor="DarkGray" FontSize="22" Margin="100,50,0,10"
+                       Text="{Binding valor}"/>
+                <Label Text="Ver perfil" TextColor="DarkGray" FontSize="22" Margin="100,70,0,10">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+            <Label x:Name="encomendas" Text="As minhas encomendas" Padding="10,10,0,0" FontSize="22" TextColor="DarkGray">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label x:Name="logout" Text="Terminar sessão" Padding="10,30,0,0" FontSize="22" TextColor="DarkGray">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -38,7 +38,7 @@ namespace AppPicking.Views
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-                mail.From = new MailAddress("nsns9877@gmail.com");
+                mail.From = new MailAddress("");
                 mail.To.Add(Models.PassValor.recup);
                 mail.Subject = "Recuperar conta";
                 mail.Body ="Teste";
@@ -47,7 +47,7 @@ namespace AppPicking.Views
                 SmtpServer.Host = "smtp.gmail.com";
                 SmtpServer.EnableSsl = true;
                 SmtpServer.UseDefaultCredentials = false;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("nsns9877@gmail.com", "eunaosei");
+                SmtpServer.Credentials = new System.Net.NetworkCredential("", "");
 
                 SmtpServer.Send(mail);
             }

@@ -58,16 +58,18 @@ namespace PickingSoftware.Controllers
 
         [Route("Editar")]
         [HttpPut]
-        public HttpResponseMessage GetEditar(Models.Utilizador _utilizador)
+        public HttpResponseMessage GetEditarPass(Models.Utilizador _utilizador)
         {
             try
             {
-                Models.Utilizador.GetEditar(_utilizador);
-                return Request.CreateResponse(HttpStatusCode.OK);
+                if (Models.Utilizador.GetEditarPass(_utilizador))
+                    return Request.CreateResponse(HttpStatusCode.OK, "Password atualizada com sucesso!");
+                else
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possivel mudar a password");
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
 

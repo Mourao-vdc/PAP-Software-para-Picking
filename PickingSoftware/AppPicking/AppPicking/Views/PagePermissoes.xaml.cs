@@ -51,8 +51,9 @@ namespace AppPicking.Views
             if (aux != null)
             {
                 Models.PassValor.permgid = aux.ID.ToString();
+                Models.PassValor.permnome = aux.Nome.ToString();
 
-                string action = await DisplayActionSheet("Permissões: Permissão selecionada", "Cancelar", null, "Permitir acesso", "Negar acesso");
+                string action = await DisplayActionSheet("Permissão: " + Models.PassValor.permnome, "Cancelar", null, "Permitir acesso", "Negar acesso");
                 Debug.WriteLine("Ações: " + action);
                 if (action == "Permitir acesso")
                 {

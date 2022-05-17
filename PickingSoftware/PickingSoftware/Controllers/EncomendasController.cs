@@ -114,5 +114,19 @@ namespace PickingSoftware.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
             }
         }
+
+        [Route("Perfil/{_nome}")]
+        [HttpGet]
+        public HttpResponseMessage GetEncomendasPerfil(string _nome)
+        {
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Encomendas.GetEncomendasPerfil(_nome));
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
     }
 }
