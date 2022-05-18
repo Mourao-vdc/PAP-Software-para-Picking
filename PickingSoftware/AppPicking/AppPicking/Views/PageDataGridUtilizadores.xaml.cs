@@ -23,14 +23,27 @@ namespace AppPicking.Views
             lvUtilizadores.ItemsSource = new ObservableCollection<Models.Utilizador>(await Models.Utilizador.GetUtilizadores());
         }
 
-        private async void btnPopup_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new PageAddEncomendas());
-        }
-
         private async void lvUtilizadores_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            var aux = e.SelectedItem as Models.Encomendas;
 
+            if (aux != null)
+            {
+                Models.PassValor.grupo = aux.ID.ToString();;
+                string action = await DisplayActionSheet("Utilizador: Deseja alterar o grupo do utilizador selecionado?", "Sim", "Não");
+                Debug.WriteLine("Ações: " + action);
+
+                if (action == "Sim")
+                {
+                    string action2 = await DisplayActionSheet("Grupo: Selecione o grupo que pretende atribuir ao utilizador?", "Cancelar", null, "");
+                    Debug.WriteLine("Ações: " + action2);
+                }
+                if (action == "Não" || action == null)
+                {
+                    lvUtilizadores.SelectedItem = null;
+                    return;
+                }
+            }
         }
 
         private async void refresh_Refreshing(object sender, EventArgs e)

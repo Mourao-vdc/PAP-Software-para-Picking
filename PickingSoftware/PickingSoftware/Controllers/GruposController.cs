@@ -69,5 +69,19 @@ namespace PickingSoftware.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
             }
         }
+
+        [Route("getgrupo")]
+        [HttpGet]
+        public HttpResponseMessage GetGrupo()
+        {
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Grupos.GetGrupo());
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
     }
 }

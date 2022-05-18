@@ -92,5 +92,12 @@
             get { return _permnome; }
             set { _permnome = value; }
         }
+
+        private static string _grupo = "";
+        public static string grupo
+        {
+            get { return _grupo; }
+            set { _grupo = value; }
+        }
     }
 }

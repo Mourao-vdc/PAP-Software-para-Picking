@@ -27,10 +27,10 @@
                     </dg:DataGrid.HeaderFontSize>
                     <dg:DataGrid.Columns>
                         <dg:DataGridColumn Title="ID" PropertyName="ID" Width="1*"/>
-                        <dg:DataGridColumn Title="ID_Grupo" PropertyName="ID_Grupo" Width="2*"/>
                         <dg:DataGridColumn Title="Nome" PropertyName="Nome" Width="2*"/>
                         <dg:DataGridColumn Title="Email" PropertyName="Email" Width="2*"/>
-                        <!-- <dg:DataGridColumn Title="Password" PropertyName="Password" Width="2*"/> -->
+                        <dg:DataGridColumn Title="Grupo" PropertyName="Nome_Grupo" Width="2*"/>
+                            <!-- <dg:DataGridColumn Title="Password" PropertyName="Password" Width="2*"/> -->
                     </dg:DataGrid.Columns>
                     <dg:DataGrid.RowsBackgroundColorPalette>
                         <dg:PaletteCollection>
@@ -41,7 +41,7 @@
                 </dg:DataGrid>
                 </ScrollView>
             </RefreshView>
-            <ImageButton Source="icon_add.png"
+            <!--<ImageButton Source="icon_add.png"
                         x:Name="btnPopup"
                         BackgroundColor="Transparent"
                         WidthRequest="50"
@@ -50,7 +50,7 @@
                         HorizontalOptions="End"
                         VerticalOptions="End"
                         CornerRadius="20"
-                        Clicked="btnPopup_Clicked"/>
+                        Clicked="btnPopup_Clicked"/>-->
         </StackLayout>
     </ContentView>
 </ContentPage>

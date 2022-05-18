@@ -16,6 +16,7 @@ namespace AppPicking.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public static string token { get; set; }
+        public string Nome_Grupo { get; set; }
 
         public static async Task<Utilizador> perfil()
         {
@@ -100,6 +101,31 @@ namespace AppPicking.Models
                 var content =
                     new StringContent(json, Encoding.UTF8, "application/json");
                 var response = await _client.PutAsync("http://192.168.51.5:150/api/utilizador/editar", content);
+
+                Debug.WriteLine("");
+                Debug.WriteLine("StatusCode");
+                Debug.WriteLine(response.StatusCode.ToString());
+                Debug.WriteLine("");
+
+                return JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
+            }
+        }
+
+        public static async Task<string> GetEditarGrupo(Utilizador _utilizador)
+        {
+            Debug.Write("||||||");
+            Debug.Write("Editar");
+            Debug.Write("||||||");
+            using (HttpClient _client = new HttpClient())
+            {
+                var json = JsonConvert.SerializeObject(_utilizador);
+                Debug.WriteLine("");
+                Debug.WriteLine(json);
+                Debug.WriteLine("");
+
+                var content =
+                    new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await _client.PutAsync("http://192.168.51.5:150/api/utilizador/editgrupo", content);
 
                 Debug.WriteLine("");
                 Debug.WriteLine("StatusCode");
@@ -224,6 +250,24 @@ namespace AppPicking.Models
 
                 else
                     return false;
+            }
+        }
+
+        public static async Task<int> IDNM(string _Grupo)
+        {
+            using (HttpClient _client = new HttpClient())
+            {
+                var content = await _client.GetAsync("http://192.168.51.5:150/api/utilizador/idnm/" + _Grupo);
+
+                Debug.WriteLine("");
+                Debug.WriteLine(content.StatusCode.ToString());
+                Debug.WriteLine("");
+
+                if (content.IsSuccessStatusCode)
+                    return JsonConvert.DeserializeObject<int>(await content.Content.ReadAsStringAsync());
+
+                else
+                    return -1;
             }
         }
     }

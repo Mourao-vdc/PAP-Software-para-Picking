@@ -26,7 +26,6 @@ namespace PickingSoftware.Controllers
 
         [Route("Todas")]
         [HttpGet]
-        [Authorize]
         public HttpResponseMessage GetUtilizadores()
         {
             try
@@ -66,6 +65,23 @@ namespace PickingSoftware.Controllers
                     return Request.CreateResponse(HttpStatusCode.OK, "Password atualizada com sucesso!");
                 else
                     return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possivel mudar a password");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [Route("editgrupo")]
+        [HttpPut]
+        public HttpResponseMessage GetEditarGrupo(Models.Utilizador _utilizador)
+        {
+            try
+            {
+                if (Models.Utilizador.GetEditarGrupo(_utilizador))
+                    return Request.CreateResponse(HttpStatusCode.OK, "Grupo atualizada com sucesso!");
+                else
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possivel mudar o grupo");
             }
             catch (Exception ex)
             {
@@ -152,6 +168,20 @@ namespace PickingSoftware.Controllers
                     return Request.CreateResponse(HttpStatusCode.OK);
                 else
                     return Request.CreateResponse(HttpStatusCode.Unauthorized);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
+
+        [Route("idnm/{_Grupo}")]
+        [HttpGet]
+        public HttpResponseMessage IDNM(string _Grupo)
+        {
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Utilizador.IDNM(_Grupo));
             }
             catch (Exception ex)
             {

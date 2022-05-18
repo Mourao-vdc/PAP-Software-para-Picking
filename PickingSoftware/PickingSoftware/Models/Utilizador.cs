@@ -14,6 +14,7 @@ namespace PickingSoftware.Models
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string Nome_Grupo { get; set; }
 
         /// <summary>
         /// Show Utilizadores
@@ -23,7 +24,7 @@ namespace PickingSoftware.Models
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
-            string query = "SELECT ID, ID_GRUPO, Nome, Email from Utilizador";
+            string query = "SELECT Utilizador.ID, Utilizador.Nome, Email, Grupos.Nome as Grupo from Utilizador JOIN Grupos on Utilizador.ID_Grupo=Grupos.ID";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
 
@@ -33,7 +34,7 @@ namespace PickingSoftware.Models
                 _tst.Add(new Utilizador
                 {
                     ID = (int)dr["ID"],
-                    ID_Grupo = (int)dr["ID_Grupo"],
+                    Nome_Grupo = dr["Grupo"].ToString(),
                     Nome = dr["Nome"].ToString(),
                     Email = dr["Email"].ToString(),
                 });
@@ -135,7 +136,34 @@ namespace PickingSoftware.Models
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@ID", _utilizador.ID);
-                    cmd.Parameters.AddWithValue("@Password", _utilizador.Password);
+                    cmd.Parameters.AddWithValue("@Password", _utilizador.ID_Grupo);
+                    cmd.ExecuteScalar();
+
+                    con.Close();
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool GetEditarGrupo(Utilizador _utilizador)
+        {
+            try
+            {
+                SqlConnection con =
+                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                con.Open();
+                string query = "UPDATE Utilizador SET" +
+                    " ID_Grupo=@ID_Grupo" +
+                    " WHERE ID=@ID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ID", _utilizador.ID);
+                    cmd.Parameters.AddWithValue("@ID_Grupo", _utilizador.Password);
                     cmd.ExecuteScalar();
 
                     con.Close();
@@ -278,6 +306,24 @@ namespace PickingSoftware.Models
                     return false;
                 }
             }
+        }
+
+        public static int IDNM(string _Grupo)
+        {
+            SqlConnection con =
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+            con.Open();
+            string query = "SELECT ID_Grupo FROM Utilizador WHERE Nome like '" + _Grupo + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            List<Utilizador> _tst = new List<Utilizador>();
+            while (dr.Read())
+            {
+                return (int)dr["ID"];
+            }
+
+            return -1;
         }
     }
 }

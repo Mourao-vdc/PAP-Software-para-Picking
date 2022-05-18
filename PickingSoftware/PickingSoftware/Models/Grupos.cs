@@ -120,5 +120,23 @@ namespace PickingSoftware.Models
                 return false;
             }
         }
+
+        public static string GetGrupo()
+        {
+            SqlConnection con =
+                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+            con.Open();
+            string query = "SELECT Nome FROM Grupos";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            List<Utilizador> _tst = new List<Utilizador>();
+            while (dr.Read())
+            {
+                return dr["Nome"].ToString();
+            }
+
+            return dr.ToString();
+        }
     }
 }

@@ -130,7 +130,7 @@
             </summary>
             <param name="_utilizador"></param>
         </member>
-        <member name="M:PickingSoftware.Models.Utilizador.GetEditar(PickingSoftware.Models.Utilizador)">
+        <member name="M:PickingSoftware.Models.Utilizador.GetEditarPass(PickingSoftware.Models.Utilizador)">
             <summary>
             Editar
             </summary>
