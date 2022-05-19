@@ -71,7 +71,6 @@ namespace AppPicking.Views
             SearchConteudo.Text = Models.PassValor.valor3;
             txtQuantArtigos.Text = Models.PassValor.valor4;
             txtCodBarras.Text = Models.PassValor.valor6;
-
         }
 
         /*private async void searchButton_Clicked(object sender, EventArgs e)

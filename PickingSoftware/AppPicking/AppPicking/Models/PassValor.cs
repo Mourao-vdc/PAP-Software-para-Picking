@@ -99,5 +99,26 @@
             get { return _grupo; }
             set { _grupo = value; }
         }
+
+        private static string _grupo2 = "";
+        public static string grupo2
+        {
+            get { return _grupo2; }
+            set { _grupo2 = value; }
+        }
+
+        private static string _grupo3 = "";
+        public static string grupo3
+        {
+            get { return _grupo3; }
+            set { _grupo3 = value; }
+        }
+
+        private static string _grupo4 = "";
+        public static string grupo4
+        {
+            get { return _grupo4; }
+            set { _grupo4 = value; }
+        }
     }
 }

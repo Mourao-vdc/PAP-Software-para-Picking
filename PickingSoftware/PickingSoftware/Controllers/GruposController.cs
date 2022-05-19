@@ -70,13 +70,13 @@ namespace PickingSoftware.Controllers
             }
         }
 
-        [Route("getgrupo")]
+        [Route("getgrupo/{_Nome}")]
         [HttpGet]
-        public HttpResponseMessage GetGrupo()
+        public HttpResponseMessage GetGrupo(string _Nome)
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, Models.Grupos.GetGrupo());
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Grupos.GetGrupo(_Nome));
             }
             catch (Exception ex)
             {

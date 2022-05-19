@@ -121,22 +121,22 @@ namespace PickingSoftware.Models
             }
         }
 
-        public static string GetGrupo()
+        public static int GetGrupo(string _Nome)
         {
             SqlConnection con =
                 new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
             con.Open();
-            string query = "SELECT Nome FROM Grupos";
+            string query = "SELECT ID FROM Grupos WHERE Nome like '" + _Nome + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
 
             List<Utilizador> _tst = new List<Utilizador>();
             while (dr.Read())
             {
-                return dr["Nome"].ToString();
+                return (int)dr["ID"];
             }
 
-            return dr.ToString();
+            return -1;
         }
     }
 }

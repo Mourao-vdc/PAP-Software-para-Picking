@@ -25,18 +25,21 @@ namespace AppPicking.Views
 
         private async void lvUtilizadores_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var aux = e.SelectedItem as Models.Encomendas;
+            var aux = e.SelectedItem as Models.Utilizador;
 
             if (aux != null)
             {
-                Models.PassValor.grupo = aux.ID.ToString();;
+                Models.PassValor.grupo = aux.ID.ToString();
+                Models.PassValor.grupo2 = aux.Nome.ToString();
+                Models.PassValor.grupo3 = aux.Email.ToString();
+                Models.PassValor.grupo4 = aux.Nome_Grupo.ToString();
                 string action = await DisplayActionSheet("Utilizador: Deseja alterar o grupo do utilizador selecionado?", "Sim", "Não");
                 Debug.WriteLine("Ações: " + action);
 
                 if (action == "Sim")
                 {
-                    string action2 = await DisplayActionSheet("Grupo: Selecione o grupo que pretende atribuir ao utilizador?", "Cancelar", null, "");
-                    Debug.WriteLine("Ações: " + action2);
+                    await Navigation.PushAsync(new PageEditGrupoUtilizador());
+                    lvUtilizadores.SelectedItem = null;
                 }
                 if (action == "Não" || action == null)
                 {

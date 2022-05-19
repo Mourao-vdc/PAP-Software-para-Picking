@@ -163,7 +163,7 @@ namespace PickingSoftware.Models
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@ID", _utilizador.ID);
-                    cmd.Parameters.AddWithValue("@ID_Grupo", _utilizador.Password);
+                    cmd.Parameters.AddWithValue("@ID_Grupo", _utilizador.ID_Grupo);
                     cmd.ExecuteScalar();
 
                     con.Close();
