@@ -149,7 +149,7 @@ namespace AppPicking.Views
 
                                     OnAppearing();
                                 }
-                                if (result.ToString() == "")
+                                if (result.ToString() == null)
                                 {
                                     await DisplayAlert("Erro!", "A quantidade esta vazia", "Ok");
 
