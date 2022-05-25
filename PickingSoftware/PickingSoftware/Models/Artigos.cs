@@ -12,7 +12,7 @@ namespace PickingSoftware.Models
         public static List<Artigos> GetArtigos()
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "SELECT * FROM Artigos";
             SqlCommand cmd = new SqlCommand(query, con);
@@ -40,7 +40,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "INSERT INTO Artigos(" +
                     "Nome,Cod_Barras)" +
@@ -75,7 +75,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "UPDATE Artigos SET" +
                     " Nome=@Nome,Cod_Barras=@Cod_Barras" +
@@ -108,7 +108,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "DELETE Artigos" +
                     " WHERE ID=@ID";
@@ -131,7 +131,7 @@ namespace PickingSoftware.Models
         public static List<Artigos> GetCodBarras(string _CodBarras)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "SELECT * FROM Artigos WHERE Cod_Barras like '" + _CodBarras + "'";
             SqlCommand cmd = new SqlCommand(query, con);
@@ -154,7 +154,7 @@ namespace PickingSoftware.Models
         /*public static List<Artigos> GetCodBarras(string _codbarras)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "SELECT * FROM Artigos WHERE Cod_Barras like '" + _codbarras + "'";
             SqlCommand cmd = new SqlCommand(query, con);

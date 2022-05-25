@@ -25,7 +25,7 @@ namespace AppPicking.Models
             {
                 _client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
 
-                var content = await _client.GetAsync("http://192.168.51.5:150/api/utilizador/perfil");
+                var content = await _client.GetAsync(Utils.sEndereco + "/api/utilizador/perfil");
 
                 Debug.WriteLine("");
                 Debug.WriteLine(content.StatusCode.ToString());
@@ -46,7 +46,7 @@ namespace AppPicking.Models
             {
                 _client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
 
-                var content = await _client.GetAsync("http://192.168.51.5:150/api/utilizador/todas");
+                var content = await _client.GetAsync(Utils.sEndereco + "/api/utilizador/todas");
 
                 Debug.WriteLine("");
                 Debug.WriteLine(content.StatusCode.ToString());
@@ -74,7 +74,7 @@ namespace AppPicking.Models
 
                 var content =
                     new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await _client.PostAsync("http://192.168.51.5:150/api/utilizador/adicionar", content);
+                var response = await _client.PostAsync(Utils.sEndereco + "/api/utilizador/adicionar", content);
 
                 Debug.WriteLine("");
                 Debug.WriteLine("StatusCode");
@@ -100,7 +100,7 @@ namespace AppPicking.Models
 
                 var content =
                     new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await _client.PutAsync("http://192.168.51.5:150/api/utilizador/editar", content);
+                var response = await _client.PutAsync(Utils.sEndereco + "/api/utilizador/editar", content);
 
                 Debug.WriteLine("");
                 Debug.WriteLine("StatusCode");
@@ -125,7 +125,7 @@ namespace AppPicking.Models
 
                 var content =
                     new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await _client.PutAsync("http://192.168.51.5:150/api/utilizador/editgrupo", content);
+                var response = await _client.PutAsync(Utils.sEndereco + "/api/utilizador/editgrupo", content);
 
                 Debug.WriteLine("");
                 Debug.WriteLine("StatusCode");
@@ -153,7 +153,7 @@ namespace AppPicking.Models
                 new KeyValuePair<string, string>("grant_type", "password")
                 };
 
-                var request = new HttpRequestMessage(HttpMethod.Post, "http://192.168.51.5:150/" + "token");
+                var request = new HttpRequestMessage(HttpMethod.Post, Utils.sEndereco + "/" + "token");
 
                 request.Content = new FormUrlEncodedContent(keyvalues);
 
@@ -181,7 +181,7 @@ namespace AppPicking.Models
             Debug.Write("Login");
             Debug.Write("||||||");
 
-            var respomse = await _client.GetAsync("http://192.168.51.5:150/token");
+            var respomse = await _client.GetAsync(Utils.sEndereco + "/token");
 
             Debug.WriteLine("");
             Debug.WriteLine("StatusCode");
@@ -200,7 +200,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var response = await _client.GetAsync("http://192.168.51.5:150/api/utilizador/VerifyEmail/" + email);
+                var response = await _client.GetAsync(Utils.sEndereco + "/api/utilizador/VerifyEmail/" + email);
 
                 Debug.WriteLine(response.StatusCode.ToString());
 
@@ -216,7 +216,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var response = await _client.GetAsync("http://192.168.51.5:150/api/utilizador/VerifyNome/" + nome);
+                var response = await _client.GetAsync(Utils.sEndereco + "/api/utilizador/VerifyNome/" + nome);
 
                 if (response.IsSuccessStatusCode)
                     return true;
@@ -243,7 +243,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var response = await _client.GetAsync("http://192.168.51.5:150/api/utilizador/SendEmail/" + _email);
+                var response = await _client.GetAsync(Utils.sEndereco + "/api/utilizador/SendEmail/" + _email);
 
                 if (response.IsSuccessStatusCode)
                     return true;
@@ -257,7 +257,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var content = await _client.GetAsync("http://192.168.51.5:150/api/utilizador/idnm/" + _Grupo);
+                var content = await _client.GetAsync(Utils.sEndereco + "/api/utilizador/idnm/" + _Grupo);
 
                 Debug.WriteLine("");
                 Debug.WriteLine(content.StatusCode.ToString());

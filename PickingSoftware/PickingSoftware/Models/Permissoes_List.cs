@@ -11,7 +11,7 @@ namespace PickingSoftware.Models
         public static List<Permissoes_List> GetPermicoes_List()
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "SELECT * FROM Permissoes_List";
             SqlCommand cmd = new SqlCommand(query, con);
@@ -38,7 +38,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "INSERT INTO Permissoes_List(" +
                     "Nome)" +
@@ -68,7 +68,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "UPDATE Permissoes_List SET" +
                     " Nome=@Nome" +
@@ -100,7 +100,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "DELETE Permissoes_List" +
                     " WHERE ID=@ID";

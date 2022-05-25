@@ -14,7 +14,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var content = await _client.GetStringAsync("http://192.168.51.5:150/swagger/ui/index");
+                var content = await _client.GetStringAsync(Utils.sEndereco + "/swagger/ui/index");
 
                 return JsonConvert.DeserializeObject<List<Permicoes_List>>(content);
             }

@@ -22,7 +22,7 @@ namespace PickingSoftware.Models
         public static List<Utilizador> GetUtilizadores()
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "SELECT Utilizador.ID, Utilizador.Nome, Email, Grupos.Nome as Grupo from Utilizador JOIN Grupos on Utilizador.ID_Grupo=Grupos.ID";
             SqlCommand cmd = new SqlCommand(query, con);
@@ -47,7 +47,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "SELECT ID, ID_GRUPO, Nome, Email, Password from Utilizador where nome like '" + _nome.TrimEnd().TrimStart() + "'";
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -94,7 +94,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "INSERT INTO Utilizador(" +
                     "ID_Grupo,Nome,Email,Password)" +
@@ -128,7 +128,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "UPDATE Utilizador SET" +
                     " Password=@Password" +
@@ -155,7 +155,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "UPDATE Utilizador SET" +
                     " ID_Grupo=@ID_Grupo" +
@@ -187,7 +187,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "DELETE Utilizador" +
                     " WHERE ID=@ID";
@@ -214,7 +214,7 @@ namespace PickingSoftware.Models
         public static bool UserLogin(Utilizador _utilizador)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
 
             using (SqlCommand cmd = new SqlCommand("Utilizador_login",con))
             {
@@ -241,7 +241,7 @@ namespace PickingSoftware.Models
         public static bool UserVerifyEmail(string email)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             using (SqlCommand cmd = new SqlCommand("verify_emails", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -266,7 +266,7 @@ namespace PickingSoftware.Models
         public static bool UserVerifyNome(string nome)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             using (SqlCommand cmd = new SqlCommand("verify_nome", con))
             { 
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -290,7 +290,7 @@ namespace PickingSoftware.Models
         public static bool SendEmail(string email)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             string query = "SELECT Nome, Password FROM Utilizador WHERE Email=@Email";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
@@ -311,7 +311,7 @@ namespace PickingSoftware.Models
         public static int IDNM(string _Grupo)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "SELECT ID_Grupo FROM Utilizador WHERE Nome like '" + _Grupo + "'";
             SqlCommand cmd = new SqlCommand(query, con);

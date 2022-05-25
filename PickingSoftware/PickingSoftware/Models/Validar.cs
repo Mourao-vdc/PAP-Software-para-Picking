@@ -22,7 +22,7 @@ namespace PickingSoftware.Models
         public static List<Validar> GetValidar(string _nome)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "SELECT Encomendas.ID, Utilizador.Nome, FORMAT (Data, 'dd/MM/yyyy ') as Data FROM Encomendas" +
                 " JOIN Utilizador" +
@@ -49,7 +49,7 @@ namespace PickingSoftware.Models
         public static List<Validar> GetValidarDetalhes(int _idencomenda)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "Select Encomendas_Artigos.ID, Encomendas_Artigos.ID_Encomendas, Artigos.Nome, Encomendas_Artigos.Quant_artigos_cliente, Encomendas_Artigos.Cod_Barras" +
                 " from Encomendas_Artigos Inner join Artigos on Artigos.ID = Encomendas_Artigos.ID_Artigos WHERE ID_Encomendas='" + _idencomenda + "'";
@@ -76,7 +76,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "UPDATE Encomendas SET" +
                     " Estado=@Estado" +
@@ -101,7 +101,7 @@ namespace PickingSoftware.Models
         public static List<Validar> GetValidadas()
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "SELECT Encomendas.ID, Utilizador.Nome, FORMAT (Data, 'dd/MM/yyyy ') as Data FROM Encomendas" +
                 " JOIN Utilizador" +

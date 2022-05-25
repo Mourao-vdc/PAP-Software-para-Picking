@@ -22,7 +22,7 @@ namespace AppPicking.Models
             {
                 _client.DefaultRequestHeaders.Add("Authorization", "Bearer " + Models.Utilizador.token);
 
-                var content = await _client.GetAsync("http://192.168.51.5:150/api/Permissoes_Gerais/todas/" + _nome);
+                var content = await _client.GetAsync(Utils.sEndereco + "/api/Permissoes_Gerais/todas/" + _nome);
 
                 Debug.WriteLine("");
                 Debug.WriteLine(content.StatusCode.ToString());
@@ -51,7 +51,7 @@ namespace AppPicking.Models
 
                 var content =
                     new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await _client.PutAsync("http://192.168.51.5:150/api/Permissoes_Gerais/editarestado", content);
+                var response = await _client.PutAsync(Utils.sEndereco + "/api/Permissoes_Gerais/editarestado", content);
 
                 Debug.WriteLine("");
                 Debug.WriteLine("StatusCode");
@@ -66,7 +66,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var response = await _client.GetAsync("http://192.168.51.5:150/api/Permissoes_Gerais/PermissionsVerify/" + _grupo);
+                var response = await _client.GetAsync(Utils.sEndereco + "/api/Permissoes_Gerais/PermissionsVerify/" + _grupo);
 
                 Debug.WriteLine(response.StatusCode.ToString());
 
@@ -84,7 +84,7 @@ namespace AppPicking.Models
             {
                 _client.DefaultRequestHeaders.Add("Authorization", "Bearer " + Models.Utilizador.token);
 
-                var response = await _client.GetAsync("http://192.168.51.5:150/api/Permissoes_Gerais/LoginView/" + _PermissionNome);
+                var response = await _client.GetAsync(Utils.sEndereco + "/api/Permissoes_Gerais/LoginView/" + _PermissionNome);
 
                 Debug.WriteLine("");
                 Debug.WriteLine(await response.Content.ReadAsStringAsync());

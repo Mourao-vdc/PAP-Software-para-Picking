@@ -17,7 +17,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var content = await _client.GetStringAsync("http://192.168.51.5:150/api/artigos/todas");
+                var content = await _client.GetStringAsync(Utils.sEndereco + "/api/artigos/todas");
 
                 Debug.WriteLine(content);
 
@@ -39,7 +39,7 @@ namespace AppPicking.Models
 
                 var content =
                     new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await _client.PostAsync("http://192.168.51.5:150/api/artigos/adicionar", content);
+                var response = await _client.PostAsync(Utils.sEndereco + "/api/artigos/adicionar", content);
 
                 Debug.WriteLine("");
                 Debug.WriteLine("StatusCode");
@@ -71,7 +71,7 @@ namespace AppPicking.Models
 
                 var content =
                     new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await _client.PutAsync("http://192.168.51.5:150/api/artigos/editar", content);
+                var response = await _client.PutAsync(Utils.sEndereco + "/api/artigos/editar", content);
 
                 Debug.WriteLine("");
                 Debug.WriteLine("StatusCode");
@@ -93,7 +93,7 @@ namespace AppPicking.Models
 
                 var content =
                     new StringContent(json, Encoding.UTF8, "application/json");*/
-                var response = await _client.DeleteAsync("http://192.168.51.5:150/api/artigos/eliminar/" + id);
+                var response = await _client.DeleteAsync(Utils.sEndereco + "/api/artigos/eliminar/" + id);
 
                 Debug.WriteLine("");
                 Debug.WriteLine("StatusCode");
@@ -109,7 +109,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var content = await _client.GetStringAsync("http://192.168.51.5:150/api/artigos/CodBarras/" + _CodBarras);
+                var content = await _client.GetStringAsync(Utils.sEndereco + "/api/artigos/CodBarras/" + _CodBarras);
 
                 Debug.WriteLine(content);
 

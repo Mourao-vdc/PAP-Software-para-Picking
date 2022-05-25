@@ -14,7 +14,7 @@ namespace PickingSoftware.Models
         public static List<Encomendas> GetEncomendastodas()
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "SELECT Encomendas.ID, Utilizador.Nome, FORMAT (Data, 'dd/MM/yyyy ') as Data FROM Encomendas" +
                 " JOIN Utilizador" +
@@ -40,7 +40,7 @@ namespace PickingSoftware.Models
         public static List<Encomendas> GetEncomendas(string _nome)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "SELECT Encomendas.ID, Utilizador.Nome, FORMAT (Data, 'dd/MM/yyyy ') as Data FROM Encomendas" +
                 " JOIN Utilizador" +
@@ -72,7 +72,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "INSERT INTO Encomendas(" +
                     "ID_Utilizadores,Data,Estado)" +
@@ -107,7 +107,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "UPDATE Encomendas SET" +
                     " ID_Utilizadores=@ID_Utilizadores,Data=@Data" +
@@ -140,7 +140,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "DELETE Encomendas" +
                     " WHERE ID=@ID";
@@ -163,7 +163,7 @@ namespace PickingSoftware.Models
         public static int GetMAXID()
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "select max(ID) ID from Encomendas";
             SqlCommand cmd = new SqlCommand(query, con);
@@ -181,7 +181,7 @@ namespace PickingSoftware.Models
         public static int IDNM2(string _Nome)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "SELECT ID FROM Utilizador WHERE Nome like '" + _Nome + "'";
             SqlCommand cmd = new SqlCommand(query, con);
@@ -199,7 +199,7 @@ namespace PickingSoftware.Models
         public static List<Encomendas> GetEncomendasPerfil(string _nome)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "SELECT Encomendas.ID, Utilizador.Nome, FORMAT (Data, 'dd/MM/yyyy ') as Data FROM Encomendas" +
                 " JOIN Utilizador" +

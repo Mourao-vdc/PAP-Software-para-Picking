@@ -4652,23 +4652,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\estagio\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\diogosantiago\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\estagio\\Documents\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking\\AppPicking.csproj",
+      "projectUniqueName": "C:\\Users\\diogosantiago\\Documents\\GitHub\\PapAndre\\PapAndre\\PickingSoftware\\AppPicking\\AppPicking\\AppPicking.csproj",
       "projectName": "AppPicking",
-      "projectPath": "C:\\Users\\estagio\\Documents\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking\\AppPicking.csproj",
-      "packagesPath": "C:\\Users\\estagio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\estagio\\Documents\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking\\obj\\",
+      "projectPath": "C:\\Users\\diogosantiago\\Documents\\GitHub\\PapAndre\\PapAndre\\PickingSoftware\\AppPicking\\AppPicking\\AppPicking.csproj",
+      "packagesPath": "C:\\Users\\diogosantiago\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\diogosantiago\\Documents\\GitHub\\PapAndre\\PapAndre\\PickingSoftware\\AppPicking\\AppPicking\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\estagio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\diogosantiago\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4677,7 +4679,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.devexpress.com/ZAn4VVOxdKBDVkrGwZyHwNDSdQCmKgdAOIVbYYo23EqNrBUk5x/api": {}
       },
       "frameworks": {
         "netstandard2.0": {

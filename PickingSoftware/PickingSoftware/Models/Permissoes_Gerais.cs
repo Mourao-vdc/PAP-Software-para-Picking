@@ -18,7 +18,7 @@ namespace PickingSoftware.Models
         public static List<Permissoes_Gerais> GetPermicoes_Gerais(string _nome)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "SELECT Permissoes_Gerais.ID, Permissoes_List.Nome, Grupos.Nome NomeG, Permissoes_Gerais.Estado FROM Permissoes_Gerais " +
                 " JOIN Permissoes_List ON Permissoes_List.ID = Permissoes_Gerais.ID_Permicoes" +
@@ -49,7 +49,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "INSERT INTO Permissoes_Gerais(" +
                     "ID_Grupo,ID_Permicoes,Estado)" +
@@ -81,7 +81,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "UPDATE Permissoes_Gerais SET" +
                     " Estado=@Estado" +
@@ -112,7 +112,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "DELETE Permissoes_Gerais" +
                     " WHERE ID=@ID";
@@ -135,7 +135,7 @@ namespace PickingSoftware.Models
         public static List<string> PermissionsVerify(int _grupo)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             using (SqlCommand cmd = new SqlCommand("grupo_permissoes", con))
             {
                 List<string> list = new List<string>();

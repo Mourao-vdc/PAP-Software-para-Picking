@@ -16,7 +16,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var content = await _client.GetStringAsync("http://192.168.51.5:150/api/grupos/todas");
+                var content = await _client.GetStringAsync(Utils.sEndereco + "/api/grupos/todas");
 
                 return JsonConvert.DeserializeObject<List<Grupos>>(content);
             }
@@ -36,7 +36,7 @@ namespace AppPicking.Models
 
                 var content =
                     new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await _client.PutAsync("http://192.168.51.5:150/api/grupos/editar", content);
+                var response = await _client.PutAsync(Utils.sEndereco + "/api/grupos/editar", content);
 
                 Debug.WriteLine("");
                 Debug.WriteLine("StatusCode");
@@ -51,7 +51,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var content = await _client.GetAsync("http://192.168.51.5:150/api/grupos/getgrupo/" + _Nome);
+                var content = await _client.GetAsync(Utils.sEndereco + "/api/grupos/getgrupo/" + _Nome);
 
                 Debug.WriteLine("");
                 Debug.WriteLine(content.StatusCode.ToString());

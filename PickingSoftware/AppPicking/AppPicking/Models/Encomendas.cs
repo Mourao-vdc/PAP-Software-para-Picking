@@ -19,7 +19,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var content = await _client.GetAsync("http://192.168.51.5:150/api/encomendas/todas");
+                var content = await _client.GetAsync(Utils.sEndereco + "/api/encomendas/todas");
 
                 Debug.WriteLine("");
                 Debug.WriteLine(content.StatusCode.ToString());
@@ -37,7 +37,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var content = await _client.GetAsync("http://192.168.51.5:150/api/encomendas/todas/" + _nome);
+                var content = await _client.GetAsync(Utils.sEndereco + "/api/encomendas/todas/" + _nome);
 
                 Debug.WriteLine("");
                 Debug.WriteLine(content.StatusCode.ToString());
@@ -55,7 +55,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var content = await _client.GetAsync("http://192.168.51.5:150/api/encomendas/maxid");
+                var content = await _client.GetAsync(Utils.sEndereco + "/api/encomendas/maxid");
 
                 Debug.WriteLine("");
                 Debug.WriteLine(content.StatusCode.ToString());
@@ -83,7 +83,7 @@ namespace AppPicking.Models
 
                 var content =
                     new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await _client.PostAsync("http://192.168.51.5:150/api/encomendas/adicionar", content);
+                var response = await _client.PostAsync(Utils.sEndereco + "/api/encomendas/adicionar", content);
 
                 Debug.WriteLine("");
                 Debug.WriteLine("StatusCode");
@@ -109,7 +109,7 @@ namespace AppPicking.Models
 
                 var content =
                     new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await _client.PutAsync("http://192.168.51.5:150/api/encomendas/editar", content);
+                var response = await _client.PutAsync(Utils.sEndereco + "/api/encomendas/editar", content);
 
                 Debug.WriteLine("");
                 Debug.WriteLine("StatusCode");
@@ -131,7 +131,7 @@ namespace AppPicking.Models
 
                 var content =
                     new StringContent(json, Encoding.UTF8, "application/json");*/
-                var response = await _client.DeleteAsync("http://192.168.51.5:150/api/encomendas/eliminar/" + id);
+                var response = await _client.DeleteAsync(Utils.sEndereco + "/api/encomendas/eliminar/" + id);
 
                 Debug.WriteLine("");
                 Debug.WriteLine("StatusCode");
@@ -147,7 +147,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var content = await _client.GetAsync("http://192.168.51.5:150/api/Encomendas/idnm2/" + _Nome);
+                var content = await _client.GetAsync(Utils.sEndereco + "/api/Encomendas/idnm2/" + _Nome);
 
                 Debug.WriteLine("");
                 Debug.WriteLine(content.StatusCode.ToString());
@@ -165,7 +165,7 @@ namespace AppPicking.Models
         {
             using (HttpClient _client = new HttpClient())
             {
-                var content = await _client.GetAsync("http://192.168.51.5:150/api/encomendas/perfil/" + _nome);
+                var content = await _client.GetAsync(Utils.sEndereco + "/api/encomendas/perfil/" + _nome);
 
                 Debug.WriteLine("");
                 Debug.WriteLine(content.StatusCode.ToString());

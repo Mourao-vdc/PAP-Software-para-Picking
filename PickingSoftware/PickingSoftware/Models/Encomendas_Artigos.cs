@@ -17,7 +17,7 @@ namespace PickingSoftware.Models
         public static List<Encomendas_Artigos> GetEncomendas_Artigos(int _idencomenda)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "Select Encomendas_Artigos.ID, Encomendas_Artigos.ID_Encomendas, Artigos.Nome, Encomendas_Artigos.Quant_artigos, Encomendas_Artigos.Situacao, Encomendas_Artigos.Cod_Barras" +
                 " from Encomendas_Artigos Inner join Artigos on Artigos.ID = Encomendas_Artigos.ID_Artigos WHERE ID_Encomendas='" + _idencomenda + "' ORDER BY Situacao ASC";
@@ -49,7 +49,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "INSERT INTO Encomendas_Artigos(" +
                     "ID_Encomendas,ID_Artigos,Cod_Barras,Situacao,Quant_artigos,Quant_artigos_cliente)" +
@@ -86,7 +86,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "UPDATE Encomendas_Artigos SET" +
                     " ID_Encomendas=@ID_Encomendas,ID_Artigos=@ID_Artigos,Cod_Barras=@Cod_Barras,Quant_artigos=@Quant_artigos,Quant_artigos_cliente=@Quant_artigos_cliente" +
@@ -121,7 +121,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "DELETE Encomendas_Artigos" +
                     " WHERE ID=@ID";
@@ -150,7 +150,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "UPDATE Encomendas_Artigos SET" +
                     " Situacao=@Situacao" +
@@ -177,7 +177,7 @@ namespace PickingSoftware.Models
             try
             {
                 SqlConnection con =
-                    new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                    new SqlConnection(BD.Constring);
                 con.Open();
                 string query = "UPDATE Encomendas_Artigos SET" +
                     " Situacao=@Situacao,Quant_artigos=@Quant_artigos" +
@@ -203,7 +203,7 @@ namespace PickingSoftware.Models
         public static int IDNM(string _Nome)
         {
             SqlConnection con =
-                new SqlConnection(@"Data Source=serversofttests\sqlexpress;Initial Catalog=estagio_2022_12_ano;User ID=estagio;Password=Pass.123");
+                new SqlConnection(BD.Constring);
             con.Open();
             string query = "SELECT ID FROM Artigos WHERE Nome like '" + _Nome + "'";
             SqlCommand cmd = new SqlCommand(query, con);
