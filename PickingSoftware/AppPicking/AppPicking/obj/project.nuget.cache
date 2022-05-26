@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XnNGAqJ0X/efpQXJ+fgf+k76l+TAE1UV4n8qo9dHekVFGLBshQAMKwYfjkkZYQb1V0N+mfHzZY/Cjtv3FFNpTA==",
+  "dgSpecHash": "bcy9tp5o74ZRqr9BwAAwRFYFBK5HEdp6LYOTLric8F8hGxEcjIFDDPWXgCAK8XqrZ2MQCpAvZQgWJTmxdGd8iw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\estagio\\Desktop\\PapAndre\\PickingSoftware\\AppPicking\\AppPicking\\AppPicking.csproj",
+  "projectFilePath": "C:\\Users\\estagio\\Desktop\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking\\AppPicking.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\estagio\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.1.0\\microsoft.aspnetcore.authentication.abstractions.2.1.0.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.1.0\\microsoft.aspnetcore.authentication.core.2.1.0.nupkg.sha512",

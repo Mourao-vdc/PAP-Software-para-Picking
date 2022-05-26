@@ -6451,11 +6451,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\estagio\\Desktop\\PapAndre\\PickingSoftware\\AppPicking\\AppPicking.iOS\\AppPicking.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\estagio\\Desktop\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking.iOS\\AppPicking.iOS.csproj",
       "projectName": "AppPicking.iOS",
-      "projectPath": "C:\\Users\\estagio\\Desktop\\PapAndre\\PickingSoftware\\AppPicking\\AppPicking.iOS\\AppPicking.iOS.csproj",
+      "projectPath": "C:\\Users\\estagio\\Desktop\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking.iOS\\AppPicking.iOS.csproj",
       "packagesPath": "C:\\Users\\estagio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\estagio\\Desktop\\PapAndre\\PickingSoftware\\AppPicking\\AppPicking.iOS\\obj\\",
+      "outputPath": "C:\\Users\\estagio\\Desktop\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -6476,8 +6476,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\estagio\\Desktop\\PapAndre\\PickingSoftware\\AppPicking\\AppPicking\\AppPicking.csproj": {
-              "projectPath": "C:\\Users\\estagio\\Desktop\\PapAndre\\PickingSoftware\\AppPicking\\AppPicking\\AppPicking.csproj"
+            "C:\\Users\\estagio\\Desktop\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking\\AppPicking.csproj": {
+              "projectPath": "C:\\Users\\estagio\\Desktop\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking\\AppPicking.csproj"
             }
           }
         }

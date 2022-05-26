@@ -146,7 +146,7 @@
         TabBar lets you define content that won't show up in a flyout menu. When this content is active
         the flyout menu won't be available. This is useful for creating areas of the application where 
         you don't want users to be able to navigate away from. If you would like to navigate to this 
-        content you can do so by calling 
+        content andremouraoyou can do so by calling 
         await Shell.Current.GoToAsync("//LoginPage");
     -->
     <!--<TabBar>

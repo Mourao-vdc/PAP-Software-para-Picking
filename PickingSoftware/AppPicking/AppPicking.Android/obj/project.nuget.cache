@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R0mZvu4pMGmRzz6372/tW6Qo5bsuessmbvzasn9QPN512Hz5t5crWOd2Hqg9y5xk6dHBrnYjN2JvzQQ91GOHfA==",
+  "dgSpecHash": "5aoM3qB3jxYjjvBd95nQvyjQmP663hXLBuRx4dwnHAP+17jS5TaaiXLSRwJDRwo1CfpAlb6CSaZBgZe85tU64w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\estagio\\Desktop\\PapAndre\\PickingSoftware\\AppPicking\\AppPicking.Android\\AppPicking.Android.csproj",
+  "projectFilePath": "C:\\Users\\estagio\\Desktop\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking.Android\\AppPicking.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\estagio\\.nuget\\packages\\fastandroidcamera\\2.0.0\\fastandroidcamera.2.0.0.nupkg.sha512",
     "C:\\Users\\estagio\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.1.0\\microsoft.aspnetcore.authentication.abstractions.2.1.0.nupkg.sha512",

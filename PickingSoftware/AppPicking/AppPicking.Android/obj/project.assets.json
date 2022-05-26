@@ -6237,11 +6237,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\estagio\\Desktop\\PapAndre\\PickingSoftware\\AppPicking\\AppPicking.Android\\AppPicking.Android.csproj",
+      "projectUniqueName": "C:\\Users\\estagio\\Desktop\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking.Android\\AppPicking.Android.csproj",
       "projectName": "AppPicking.Android",
-      "projectPath": "C:\\Users\\estagio\\Desktop\\PapAndre\\PickingSoftware\\AppPicking\\AppPicking.Android\\AppPicking.Android.csproj",
+      "projectPath": "C:\\Users\\estagio\\Desktop\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking.Android\\AppPicking.Android.csproj",
       "packagesPath": "C:\\Users\\estagio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\estagio\\Desktop\\PapAndre\\PickingSoftware\\AppPicking\\AppPicking.Android\\obj\\",
+      "outputPath": "C:\\Users\\estagio\\Desktop\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -6262,8 +6262,8 @@
       "frameworks": {
         "monoandroid10.0": {
           "projectReferences": {
-            "C:\\Users\\estagio\\Desktop\\PapAndre\\PickingSoftware\\AppPicking\\AppPicking\\AppPicking.csproj": {
-              "projectPath": "C:\\Users\\estagio\\Desktop\\PapAndre\\PickingSoftware\\AppPicking\\AppPicking\\AppPicking.csproj"
+            "C:\\Users\\estagio\\Desktop\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking\\AppPicking.csproj": {
+              "projectPath": "C:\\Users\\estagio\\Desktop\\PAP-Software-para-Picking\\PickingSoftware\\AppPicking\\AppPicking\\AppPicking.csproj"
             }
           }
         }
