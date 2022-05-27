@@ -86,7 +86,7 @@ namespace AppPicking.Views
                         }
                         if (action == "Remover")
                         {
-                            string action2 = await DisplayActionSheet("Deseja remover a encomenda selecionada?", "Sim", "Não");
+                            string action2 = await DisplayActionSheet("Deseja remover o artigo selecionado?", "Sim", "Não");
                             Debug.WriteLine("Ações: " + action2);
 
                             if (action2 == "Sim")
