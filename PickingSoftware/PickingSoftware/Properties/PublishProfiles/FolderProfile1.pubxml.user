@@ -4,15 +4,15 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>C:\Users\diogosantiago\Documents\GitHub\PapAndre\PapAndre\PickingSoftware\PickingSoftware\bin\app.publish\</_PublishTargetUrl>
-    <History>True|2022-05-25T09:37:26.5964130Z;</History>
+    <_PublishTargetUrl>C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\PickingSoftware\bin\app.publish\</_PublishTargetUrl>
+    <History>True|2022-05-27T10:21:04.3499126Z;True|2022-05-25T10:37:26.5964130+01:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/AppPicking.dll">
-      <publishTime>05/25/2022 10:37:21</publishTime>
+      <publishTime>05/27/2022 11:21:02</publishTime>
     </File>
     <File Include="bin/AppPicking.pdb">
-      <publishTime>05/25/2022 10:37:21</publishTime>
+      <publishTime>05/27/2022 11:21:02</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNetCore.Authentication.Abstractions.dll">
       <publishTime>05/25/2022 10:26:23</publishTime>
@@ -174,10 +174,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/25/2022 10:26:25</publishTime>
     </File>
     <File Include="bin/PickingSoftware.dll">
-      <publishTime>05/25/2022 10:37:24</publishTime>
+      <publishTime>05/27/2022 11:21:02</publishTime>
     </File>
     <File Include="bin/PickingSoftware.pdb">
-      <publishTime>05/25/2022 10:37:24</publishTime>
+      <publishTime>05/27/2022 11:21:02</publishTime>
     </File>
     <File Include="bin/Plugin.InputKit.dll">
       <publishTime>05/25/2022 10:26:29</publishTime>
@@ -314,6 +314,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="bin/System.ComponentModel.Annotations.dll">
       <publishTime>05/25/2022 10:26:26</publishTime>
     </File>
+    <File Include="bin/System.Data.SqlServerCe.dll">
+      <publishTime>06/04/2012 13:29:58</publishTime>
+    </File>
     <File Include="bin/System.Diagnostics.DiagnosticSource.dll">
       <publishTime>05/25/2022 10:26:26</publishTime>
     </File>
@@ -396,7 +399,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/25/2022 10:26:21</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/25/2022 10:37:25</publishTime>
+      <publishTime>05/27/2022 11:21:03</publishTime>
     </File>
   </ItemGroup>
 </Project>

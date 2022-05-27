@@ -66,11 +66,23 @@ namespace AppPicking.Views
                 txtIDEncomenda.Items.Add(_item.ID.ToString());
             }
 
-            txtID.Text = Models.PassValor.valor1;
-            txtIDEncomenda.SelectedItem = Models.PassValor.valor2;
-            SearchConteudo.Text = Models.PassValor.valor3;
-            txtQuantArtigos.Text = Models.PassValor.valor4;
-            txtCodBarras.Text = Models.PassValor.valor6;
+            if (Models.PassValor.scan == "")
+            {
+                txtID.Text = Models.PassValor.valor1;
+                txtIDEncomenda.SelectedItem = Models.PassValor.valor2;
+                SearchConteudo.Text = Models.PassValor.valor3;
+                txtQuantArtigos.Text = Models.PassValor.valor4;
+                txtCodBarras.Text = Models.PassValor.valor6;
+            }
+            else
+            {
+                txtID.Text = Models.PassValor.valor1;
+                txtIDEncomenda.SelectedItem = Models.PassValor.valor2;
+                SearchConteudo.Text = Models.PassValor.valor3;
+                txtQuantArtigos.Text = Models.PassValor.valor4;
+                txtCodBarras.Text = Models.PassValor.scan;
+            }
+            Models.PassValor.scan = "";
         }
 
         /*private async void searchButton_Clicked(object sender, EventArgs e)
@@ -160,6 +172,12 @@ namespace AppPicking.Views
                 SearchConteudo.Text = e.Item as string;
                 listaArtigos.IsVisible = false;
             }
+        }
+
+        private async void CodBarras_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PageReadBarcode(PageReadBarcode.BarcodeSearchType.Encomendas));
+
         }
 
         /*private void txtID_SelectedIndexChanged(object sender, EventArgs e)

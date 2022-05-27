@@ -19,7 +19,11 @@
             
             <Entry TextColor="Black" x:Name="txtCod_Barras"
                    PlaceholderColor="DarkGray" Placeholder="Codigo de barras" Margin="0,10,0,10"/>
-            
+
+            <Button BackgroundColor="Black" Text="Cód. Barras"
+                    x:Name="CodBarras"
+                    Clicked="CodBarras_Clicked"/>
+
             <Button IsVisible="true" BackgroundColor="Black" Text="Editar"
                     x:Name="EditButton"
                     Clicked="EditButton_Clicked"/>

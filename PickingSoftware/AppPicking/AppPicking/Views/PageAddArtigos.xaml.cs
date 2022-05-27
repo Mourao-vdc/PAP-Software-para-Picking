@@ -25,6 +25,8 @@ namespace AppPicking.Views
             base.OnAppearing();
 
             txtCod_Barras.Text = Models.PassValor.scan;
+
+            Models.PassValor.scan = "";
         }
 
         private async void AddButton_Clicked(object sender, EventArgs e)

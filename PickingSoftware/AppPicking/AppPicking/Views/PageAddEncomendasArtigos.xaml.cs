@@ -50,6 +50,8 @@ namespace AppPicking.Views
 
             txtIDEncomenda.Text = Models.PassValor.valor1;
 
+            Models.PassValor.scan = "";
+
             var _listt = await Models.Artigos.GetArtigos();
 
             listaArtigo = _listt;

@@ -32,10 +32,19 @@ namespace AppPicking.Views
             {
                 txtID.Items.Add(_item.ID.ToString());
             }*/
-
-            txtID.Text = Models.PassValor.valor1;
-            txtNome.Text = Models.PassValor.valor2;
-            txtCod_Barras.Text = Models.PassValor.valor3;
+            if(Models.PassValor.scan == "")
+            {
+                txtID.Text = Models.PassValor.valor1;
+                txtNome.Text = Models.PassValor.valor2;
+                txtCod_Barras.Text = Models.PassValor.valor3;
+            }
+            else
+            {
+                txtID.Text = Models.PassValor.valor1;
+                txtNome.Text = Models.PassValor.valor2;
+                txtCod_Barras.Text = Models.PassValor.scan;
+            }
+            Models.PassValor.scan = "";
             //txtID.Items.Add();
             //txtID.ItemsSource = new ObservableCollection<Models.Artigos>(await Models.Artigos.GetIDArtigos());
         }
@@ -88,6 +97,11 @@ namespace AppPicking.Views
 
                 await Shell.Current.GoToAsync("..");
             }            
+        }
+
+        private async void CodBarras_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PageReadBarcode(PageReadBarcode.BarcodeSearchType.Artigos));
         }
 
         /*private void txtID_SelectedIndexChanged(object sender, EventArgs e)
