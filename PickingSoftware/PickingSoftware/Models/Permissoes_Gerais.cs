@@ -37,6 +37,8 @@ namespace PickingSoftware.Models
                     Estado = dr["Estado"].ToString()
                 });
             }
+            con.Close();
+
             return _tst;
         }
 
@@ -151,6 +153,8 @@ namespace PickingSoftware.Models
                     {
                         list.Add(rd[0].ToString());
                     }
+
+                    con.Close();
 
                     return list;
                 }

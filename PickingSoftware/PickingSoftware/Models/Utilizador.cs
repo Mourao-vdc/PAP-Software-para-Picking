@@ -39,6 +39,8 @@ namespace PickingSoftware.Models
                     Email = dr["Email"].ToString(),
                 });
             }
+            con.Close();
+
             return _tst;
         }
 
@@ -62,7 +64,7 @@ namespace PickingSoftware.Models
                         Debug.WriteLine(dr["nome"].ToString());
                         Debug.WriteLine("");
 
-                        return new Utilizador
+                        var _utilizador = new Utilizador
                         {
                             ID = (int)dr["ID"],
                             ID_Grupo = (int)dr["ID_Grupo"],
@@ -70,8 +72,14 @@ namespace PickingSoftware.Models
                             Email = dr["Email"].ToString(),
                             Password = dr["Password"].ToString(),
                         };
+
+                        con.Close();
+
+                        return _utilizador;
                     }
                 }
+
+                con.Close();
 
                 return new Utilizador();
             }
@@ -225,10 +233,14 @@ namespace PickingSoftware.Models
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.HasRows)
                 {
+                    con.Close();
+
                     return true;
                 }
                 else
                 {
+                    con.Close();
+
                     return false;
                 }
             }
@@ -250,10 +262,14 @@ namespace PickingSoftware.Models
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.HasRows)
                 {
+                    con.Close();
+
                     return true;
                 }
                 else
                 {
+                    con.Close();
+
                     return false;
                 }
             }
@@ -275,10 +291,14 @@ namespace PickingSoftware.Models
                 SqlDataReader rd = cmd.ExecuteReader();
                 if(rd.HasRows)
                 {
+                    con.Close();
+
                     return true;
                 }
                 else
                 {
+                    con.Close();
+
                     return false;
                 }
             }
@@ -299,10 +319,14 @@ namespace PickingSoftware.Models
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.HasRows)
                 {
+                    con.Close();
+
                     return true;
                 }
                 else
                 {
+                    con.Close();
+
                     return false;
                 }
             }
@@ -320,8 +344,14 @@ namespace PickingSoftware.Models
             List<Utilizador> _tst = new List<Utilizador>();
             while (dr.Read())
             {
-                return (int)dr["ID"];
+                var _ID = (int)dr["ID"];
+
+                con.Close();
+
+                return _ID;
             }
+
+            con.Close();
 
             return -1;
         }

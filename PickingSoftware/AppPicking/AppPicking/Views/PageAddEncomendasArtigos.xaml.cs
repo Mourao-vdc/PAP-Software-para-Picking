@@ -71,38 +71,44 @@ namespace AppPicking.Views
             }
             else
             {
-
-                int _ID = await Models.Encomendas_Artigos.IDNM(SearchConteudo.Text);
-
-                Debug.Write("|||||");
-                Debug.Write("|||||");
-                Debug.WriteLine(_ID);
-                Debug.Write("|||||");
-                Debug.Write("|||||");
-
-                if (_ID != -1)
+                if (int.Parse(txtQuantArtigos.Text) > 0)
                 {
-                    Encomendas_Artigos encomendas_artigos = new Encomendas_Artigos()
+                    int _ID = await Models.Encomendas_Artigos.IDNM(SearchConteudo.Text);
+
+                    Debug.Write("|||||");
+                    Debug.Write("|||||");
+                    Debug.WriteLine(_ID);
+                    Debug.Write("|||||");
+                    Debug.Write("|||||");
+
+                    if (_ID != -1)
                     {
-                        //ID_Encomendas = int.Parse(txtIDEncomenda.SelectedItem.ToString()),
-                        ID_Encomendas = int.Parse(txtIDEncomenda.Text),
-                        ID_Artigos = _ID,
-                        Quant_artigos = int.Parse(txtQuantArtigos.Text.ToString()),
-                        Quant_artigos_cliente = int.Parse(txtQuantArtigos.Text.ToString()),
-                        Cod_Barras = txtCodBarras.Text,
-                        Situacao = txtsituacao.Text,
-                    };
+                        Encomendas_Artigos encomendas_artigos = new Encomendas_Artigos()
+                        {
+                            //ID_Encomendas = int.Parse(txtIDEncomenda.SelectedItem.ToString()),
+                            ID_Encomendas = int.Parse(txtIDEncomenda.Text),
+                            ID_Artigos = _ID,
+                            Quant_artigos = int.Parse(txtQuantArtigos.Text.ToString()),
+                            Quant_artigos_cliente = int.Parse(txtQuantArtigos.Text.ToString()),
+                            Cod_Barras = txtCodBarras.Text,
+                            Situacao = txtsituacao.Text,
+                        };
 
-                    await DisplayAlert("Resposta", await Encomendas_Artigos.AddEncomendas_Artigos(encomendas_artigos), "Ok");
+                        await DisplayAlert("Resposta", await Encomendas_Artigos.AddEncomendas_Artigos(encomendas_artigos), "Ok");
 
-                    //txtIDEncomenda.SelectedIndex = -1;
-                    txtIDEncomenda.Text = "";
-                    SearchConteudo.Text = "";
-                    //txtIDArtigo.SelectedIndex = -1;
-                    txtCodBarras.Text = "";
-                    txtQuantArtigos.Text = "";
+                        //txtIDEncomenda.SelectedIndex = -1;
+                        txtIDEncomenda.Text = "";
+                        SearchConteudo.Text = "";
+                        //txtIDArtigo.SelectedIndex = -1;
+                        txtCodBarras.Text = "";
+                        txtQuantArtigos.Text = "";
 
-                    await Shell.Current.GoToAsync("..");
+                        await Shell.Current.GoToAsync("..");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Erro!", "A quantidade do artigo tem de ser maior que 0", "Ok");
+                    }
                 }
             }
         }

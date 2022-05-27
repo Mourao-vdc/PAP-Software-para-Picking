@@ -57,12 +57,10 @@ namespace AppPicking
 
             if ((await Models.Utilizador.perfil()).ID_Grupo == 1)
             {
-                validarencomendas.IsVisible = false;
                 encomendasvalidadas.IsVisible = true;
             }
             else
             {
-                validarencomendas.IsVisible = true;
                 encomendasvalidadas.IsVisible = false;
             }
         }

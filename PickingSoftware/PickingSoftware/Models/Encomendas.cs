@@ -34,6 +34,9 @@ namespace PickingSoftware.Models
                     Data = dr["Data"].ToString()
                 });
             }
+
+            con.Close();
+
             return _tst;
         }
 
@@ -60,6 +63,8 @@ namespace PickingSoftware.Models
                     Data = dr["Data"].ToString()
                 });
             }
+            con.Close();
+
             return _tst;
         }
 
@@ -175,6 +180,8 @@ namespace PickingSoftware.Models
                 return (int)dr["ID"];
             }
 
+            con.Close();
+
             return -1;
         }
 
@@ -192,6 +199,8 @@ namespace PickingSoftware.Models
             {
                 return (int)dr["ID"];
             }
+
+            con.Close();
 
             return -1;
         }
@@ -217,6 +226,8 @@ namespace PickingSoftware.Models
                     Data = dr["Data"].ToString()
                 });
             }
+            con.Close();
+
             return _tst;
         }
     }

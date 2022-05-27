@@ -43,6 +43,8 @@ namespace PickingSoftware.Models
                     Data = dr["Data"].ToString()
                 });
             }
+            con.Close();
+
             return _tst;
         }
 
@@ -68,6 +70,8 @@ namespace PickingSoftware.Models
                     Cod_Barras = dr["Cod_Barras"].ToString(),
                 });
             }
+            con.Close();
+
             return _tst;
         }
 
@@ -121,6 +125,8 @@ namespace PickingSoftware.Models
                     Data = dr["Data"].ToString()
                 });
             }
+            con.Close();
+
             return _tst;
         }
     }

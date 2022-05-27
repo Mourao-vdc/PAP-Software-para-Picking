@@ -26,6 +26,8 @@ namespace PickingSoftware.Models
                     Nome = dr["Nome"].ToString()
                 });
             }
+            con.Close();
+
             return _tst;
         }
 
@@ -135,6 +137,8 @@ namespace PickingSoftware.Models
             {
                 return (int)dr["ID"];
             }
+
+            con.Close();
 
             return -1;
         }

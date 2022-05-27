@@ -11,9 +11,13 @@ namespace AppPicking.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageDataGridEncomendasArtigos : ContentPage
     {
+        private int iID = -1;
+
         public PageDataGridEncomendasArtigos()
         {
             InitializeComponent();
+
+            iID = int.Parse(Models.PassValor.valor1);
         }
 
         protected override async void OnAppearing()
@@ -30,9 +34,9 @@ namespace AppPicking.Views
                 Debug.Write("|||||");
                 Debug.Write("|||||");
 
-                int idencomenda = int.Parse(Models.PassValor.valor1);
+                //int idencomenda = 
 
-                lvEncomendasArtigos.ItemsSource = new ObservableCollection<Models.Encomendas_Artigos>(await Models.Encomendas_Artigos.GetEncomendas_Artigos(idencomenda));
+                lvEncomendasArtigos.ItemsSource = new ObservableCollection<Models.Encomendas_Artigos>(await Models.Encomendas_Artigos.GetEncomendas_Artigos(iID));
 
             }
             catch (Exception ex)
@@ -66,6 +70,8 @@ namespace AppPicking.Views
 
                     if (aux != null)
                     {
+                        Debug.WriteLine(aux.ID.ToString());
+
                         Models.PassValor.valor1 = aux.ID.ToString();
                         Models.PassValor.valor2 = aux.ID_Encomendas.ToString();
                         Models.PassValor.valor3 = aux.Nome.ToString();
@@ -119,7 +125,7 @@ namespace AppPicking.Views
 
                             if (result != null)
                             {
-                                if (int.Parse(result.ToString()) != 0)
+                                if (int.Parse(result.ToString()) > 0)
                                 {
                                     Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
                                     {
@@ -130,10 +136,13 @@ namespace AppPicking.Views
 
                                     await DisplayAlert("Resposta", await Encomendas_Artigos.EditQuantSituacao(_encomendasartigos), "Ok");
 
+                                    lvEncomendasArtigos.SelectedItem = null;
+
                                     result = "";
 
                                     OnAppearing();
                                 }
+                                else
                                 if (int.Parse(result.ToString()) == 0)
                                 {
                                     Encomendas_Artigos _encomendasartigoss = new Encomendas_Artigos()
@@ -145,13 +154,16 @@ namespace AppPicking.Views
 
                                     await DisplayAlert("Resposta", await Encomendas_Artigos.EditQuantSituacao(_encomendasartigoss), "Ok");
 
+                                    lvEncomendasArtigos.SelectedItem = null;
+
                                     result = "";
 
                                     OnAppearing();
                                 }
-                                if (result.ToString() == null)
+                                else
+                                if (result.ToString() == null || int.Parse(result.ToString()) < 0)
                                 {
-                                    await DisplayAlert("Erro!", "A quantidade esta vazia", "Ok");
+                                    await DisplayAlert("Erro!", "Verifique a quantidade inserida", "Ok");
 
                                     lvEncomendasArtigos.SelectedItem = null;
                                 }

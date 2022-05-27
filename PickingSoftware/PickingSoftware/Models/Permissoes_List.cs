@@ -26,6 +26,8 @@ namespace PickingSoftware.Models
                     Nome = dr["Nome"].ToString()
                 });
             }
+            con.Close();
+
             return _tst;
         }
 
