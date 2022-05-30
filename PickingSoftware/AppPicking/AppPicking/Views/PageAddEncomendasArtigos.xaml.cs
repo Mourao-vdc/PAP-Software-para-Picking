@@ -60,17 +60,26 @@ namespace AppPicking.Views
             {
                 _artigos.Add(_item.Nome.ToString());
             }
+
+            txtQuantArtigos.Text = 1.ToString();
+
         }
 
         private async void AddButton_Clicked(object sender, EventArgs e)
         {
-            if ((SearchConteudo.Text == "") || (txtCodBarras.Text == "") || (txtQuantArtigos.Text == ""))
+            if ((string.IsNullOrEmpty(txtCodBarras.Text) || (string.IsNullOrWhiteSpace(txtCodBarras.Text))))
             {
                 await DisplayAlert("Alerta", "Existem campos por preencher", "Ok");
                 return;
             }
             else
             {
+                if (txtQuantArtigos.Text == "")
+                {
+                    int quant = 0;
+
+                    txtQuantArtigos.Text = quant.ToString();
+                }
                 if (int.Parse(txtQuantArtigos.Text) > 0)
                 {
                     int _ID = await Models.Encomendas_Artigos.IDNM(SearchConteudo.Text);
@@ -107,8 +116,13 @@ namespace AppPicking.Views
                     }
                     else
                     {
-                        await DisplayAlert("Erro!", "A quantidade do artigo tem de ser maior que 0", "Ok");
+                        await DisplayAlert("Alerta", "Artigo não encontrado", "Ok");
+                        return;
                     }
+                }
+                else
+                {
+                    await DisplayAlert("Erro!", "A quantidade do artigo tem de ser maior que 0", "Ok");
                 }
             }
         }

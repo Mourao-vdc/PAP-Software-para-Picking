@@ -57,7 +57,7 @@ namespace AppPicking.Views
                 _artigos.Add(_item.Nome.ToString());
             }
 
-            var _listtt = await Models.Encomendas.GetEncomendas((await Models.Utilizador.perfil()).Nome);
+            var _listtt = await Models.Encomendas.GetEncomendastodas();
 
             lvEncomendas = _listtt;
 
@@ -109,38 +109,66 @@ namespace AppPicking.Views
 
         private async void EditButton_Clicked(object sender, EventArgs e)
         {
-            int _ID = await Models.Encomendas_Artigos.IDNM(SearchConteudo.Text.ToString());
-
-            Debug.Write("|||||");
-            Debug.Write("|||||");
-            Debug.WriteLine(_ID);
-            Debug.Write("|||||");
-            Debug.Write("|||||");
-
-            if (_ID != -1)
+            if (txtQuantArtigos.Text == "")
             {
-                Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
+                int quant = 0;
+
+                txtQuantArtigos.Text = quant.ToString();
+            }
+            if (int.Parse(txtQuantArtigos.Text) > 0)
+            {
+                int _ID = await Models.Encomendas_Artigos.IDNM(SearchConteudo.Text.ToString());
+
+                Debug.Write("|||||");
+                Debug.Write("|||||");
+                Debug.WriteLine(_ID);
+                Debug.Write("|||||");
+                Debug.Write("|||||");
+
+                if (_ID != -1)
                 {
-                    ID = int.Parse(txtID.Text),
-                    ID_Encomendas = int.Parse(txtIDEncomenda.SelectedItem.ToString()),
-                    ID_Artigos = _ID,
-                    Quant_artigos = int.Parse(txtQuantArtigos.Text.ToString()),
-                    Quant_artigos_cliente = int.Parse(txtQuantArtigos.Text.ToString()),
-                    Cod_Barras = txtCodBarras.Text,
-                };
+                    if ((string.IsNullOrEmpty(Quant_artigos.ToString()) || (string.IsNullOrWhiteSpace(Quant_artigos.ToString())
+                    || (string.IsNullOrEmpty(txtCodBarras.Text) || (string.IsNullOrWhiteSpace(txtCodBarras.Text)
+                    || (string.IsNullOrEmpty(SearchConteudo.Text) || (string.IsNullOrWhiteSpace(SearchConteudo.Text))))))))
+                    {
+                        await DisplayAlert("Alerta", "Existem campos por preencher", "Ok");
+                        return;
+                    }
+                    else
+                    {
+                        Encomendas_Artigos _encomendasartigos = new Encomendas_Artigos()
+                        {
+                            ID = int.Parse(txtID.Text),
+                            ID_Encomendas = int.Parse(txtIDEncomenda.SelectedItem.ToString()),
+                            ID_Artigos = _ID,
+                            Quant_artigos = int.Parse(txtQuantArtigos.Text.ToString()),
+                            Quant_artigos_cliente = int.Parse(txtQuantArtigos.Text.ToString()),
+                            Cod_Barras = txtCodBarras.Text,
+                        };
 
-                await DisplayAlert("Resposta", await Encomendas_Artigos.EditEncomendas_Artigos(_encomendasartigos), "Ok");
+                        await DisplayAlert("Resposta", await Encomendas_Artigos.EditEncomendas_Artigos(_encomendasartigos), "Ok");
 
-                //txtID.SelectedIndex = -1;
-                txtID.Text = "";
-                txtIDEncomenda.SelectedIndex = -1;
-                SearchConteudo.Text = "";
-                txtCodBarras.Text = "";
-                txtQuantArtigos.Text = "";
+                        //txtID.SelectedIndex = -1;
+                        txtID.Text = "";
+                        txtIDEncomenda.SelectedIndex = -1;
+                        SearchConteudo.Text = "";
+                        txtCodBarras.Text = "";
+                        txtQuantArtigos.Text = "";
 
-                await Shell.Current.GoToAsync("..");
-                //EditButton.IsVisible = false;
-                //searchButton.IsVisible = true;
+                        await Shell.Current.GoToAsync("..");
+                        //EditButton.IsVisible = false;
+                        //searchButton.IsVisible = true;
+                    }
+                }
+                else
+                {
+                    await DisplayAlert("Alerta", "Artigo não encontrado", "Ok");
+                    return;
+                }
+            }
+            else
+            {
+                await DisplayAlert("Erro!", "A quantidade do artigo tem de ser maior que 0", "Ok");
             }
         }
 

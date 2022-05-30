@@ -73,7 +73,6 @@ namespace AppPicking.Views
         {
             int _ID = await Models.Encomendas.IDNM2(txtIDUtilizador.SelectedItem.ToString());
 
-
             if (_ID != -1)
             {
                 Encomendas encomendas = new Encomendas()
