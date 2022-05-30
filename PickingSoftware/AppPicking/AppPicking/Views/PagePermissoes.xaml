@@ -13,7 +13,12 @@
         <RefreshView x:Name="refresh" RefreshColor="Black" Refreshing="refresh_Refreshing">
             <StackLayout>
                 <!-- Place new controls here -->
-                <SearchBar x:Name="txtprocurar" Placeholder="Nome do grupo" PlaceholderColor="DarkGray" TextColor="Black" SearchButtonPressed="txtprocurar_SearchButtonPressed"/>
+                <SearchBar x:Name="SearchConteudo" 
+                   TextChanged="SearchConteudo_TextChanged" SearchButtonPressed="SearchConteudo_SearchButtonPressed"/>
+                <Grid>
+                    <ListView x:Name="listaGrupos" 
+                      ItemTapped="listaGrupos_ItemTapped"  IsVisible="false" HeightRequest="80" />
+                </Grid>
                 <dg:DataGrid x:Name="lvPermicoes" HeaderTextColor="Black" ItemsSource="{Binding ID}" SelectionEnabled="True" ItemSelected="lvPermicoes_ItemSelected"  SelectedItem="{Binding ID_Utilizadores}" RowHeight="90" HeaderHeight="60"  
                             BorderColor="Black" HeaderBackground="LightGray" PullToRefreshCommand="{Binding Data}">
                     <x:Arguments>

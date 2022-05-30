@@ -23,7 +23,10 @@ namespace AppPicking.Views {
         private global::Xamarin.Forms.RefreshView refresh;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.SearchBar txtprocurar;
+        private global::Xamarin.Forms.SearchBar SearchConteudo;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.ListView listaGrupos;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.DataGrid.DataGrid lvPermicoes;
@@ -33,7 +36,8 @@ namespace AppPicking.Views {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PagePermicoes));
             tbItemAtualizar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ToolbarItem>(this, "tbItemAtualizar");
             refresh = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.RefreshView>(this, "refresh");
-            txtprocurar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.SearchBar>(this, "txtprocurar");
+            SearchConteudo = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.SearchBar>(this, "SearchConteudo");
+            listaGrupos = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "listaGrupos");
             lvPermicoes = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.DataGrid.DataGrid>(this, "lvPermicoes");
         }
     }

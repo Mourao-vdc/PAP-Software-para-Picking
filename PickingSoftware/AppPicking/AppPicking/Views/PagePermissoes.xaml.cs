@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -21,6 +22,10 @@ namespace AppPicking.Views
 
         private List<Models.Grupos> lvGrupos = new List<Grupos>();
 
+        List<string> _grupos = new List<string>
+        {
+
+        };
         public PagePermicoes()
         {
             InitializeComponent();
@@ -32,8 +37,6 @@ namespace AppPicking.Views
 
             Models.PassValor.scan = "";
 
-            lvPermicoes.ItemsSource = new ObservableCollection<Models.Permissoes_Gerais>(await Models.Permissoes_Gerais.GetPermicoes_Gerais(txtprocurar.Text));
-
             /*var _list = await Models.Grupos.GetGrupos();
 
             lvGrupos = _list;
@@ -42,6 +45,20 @@ namespace AppPicking.Views
             {
                 btnPopup.Items.Add(_item.ID.ToString());
             }*/
+
+            var _listt = await Models.Grupos.GetGrupos();
+
+            lvGrupos = _listt;
+
+            foreach (var _item in _listt)
+            {
+                _grupos.Add(_item.Nome.ToString());
+            }
+        }
+
+        private async void table()
+        {
+            lvPermicoes.ItemsSource = new ObservableCollection<Models.Permissoes_Gerais>(await Models.Permissoes_Gerais.GetPermicoes_Gerais(SearchConteudo.Text));
         }
 
         private async void lvPermicoes_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -106,9 +123,40 @@ namespace AppPicking.Views
             refresh.IsRefreshing = false;
         }
 
-        private void txtprocurar_SearchButtonPressed(object sender, EventArgs e)
+        private void SearchConteudo_TextChanged(object sender, TextChangedEventArgs e)
         {
-            OnAppearing();
+            var keyword = SearchConteudo.Text;
+            if (keyword.Length >= 1)
+            {
+                var sugestao = _grupos.Where(c => c.ToLower().Contains(keyword.ToLower()));
+                listaGrupos.ItemsSource = sugestao;
+                listaGrupos.IsVisible = true;
+            }
+            else
+            {
+                listaGrupos.IsVisible = false;
+            }
+        }
+
+        private void listaGrupos_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item as string == null)
+            {
+                return;
+            }
+            else
+            {
+                listaGrupos.ItemsSource = _grupos.Where(c => c.Equals(e.Item as string));
+                listaGrupos.IsVisible = true;
+                SearchConteudo.Text = e.Item as string;
+                listaGrupos.IsVisible = false;
+                table();
+            }
+        }
+
+        private void SearchConteudo_SearchButtonPressed(object sender, EventArgs e)
+        {
+            table();
         }
     }
 }
