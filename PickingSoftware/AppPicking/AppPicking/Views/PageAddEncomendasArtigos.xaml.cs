@@ -113,7 +113,7 @@ namespace AppPicking.Views
             }
         }
 
-        private void listaArtigos_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void listaArtigos_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             if (e.Item as string == null)
             {
@@ -124,6 +124,7 @@ namespace AppPicking.Views
                 listaArtigos.ItemsSource = _artigos.Where(c => c.Equals(e.Item as string));
                 listaArtigos.IsVisible = true;
                 SearchConteudo.Text = e.Item as string;
+                txtCodBarras.Text = await Models.Artigos.CodBarras(SearchConteudo.Text);
                 listaArtigos.IsVisible = false;
             }
         }

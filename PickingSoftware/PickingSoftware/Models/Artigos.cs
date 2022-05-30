@@ -156,25 +156,24 @@ namespace PickingSoftware.Models
             return _tst;
         }
 
-        /*public static List<Artigos> GetCodBarras(string _codbarras)
+        public static string CodBarras(string _Nome)
         {
             SqlConnection con =
                 new SqlConnection(BD.Constring);
             con.Open();
-            string query = "SELECT * FROM Artigos WHERE Cod_Barras like '" + _codbarras + "'";
+            string query = "SELECT Cod_Barras FROM Artigos WHERE Nome='" + _Nome + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
 
-            List<Artigos> _tst = new List<Artigos>();
+            List<Utilizador> _tst = new List<Utilizador>();
             while (dr.Read())
             {
-                _tst.Add(new Artigos
-                {
-                    ID = (int)dr["ID"],
-                    Nome = dr["Nome"].ToString(),
-                    Cod_Barras = dr["Cod_Barras"].ToString()
-                });
+                return dr["Cod_Barras"].ToString();
             }
-            return _tst;*/
+
+            con.Close();
+
+            return _tst.ToString();
+        }
     }
 }

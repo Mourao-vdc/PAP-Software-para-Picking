@@ -116,5 +116,23 @@ namespace AppPicking.Models
                 return JsonConvert.DeserializeObject<List<Artigos>>(content);
             }
         }
+
+        public static async Task<string> CodBarras(string _Nome)
+        {
+            using (HttpClient _client = new HttpClient())
+            {
+                var content = await _client.GetAsync(Utils.sEndereco + "/api/artigos/GetNome/" + _Nome);
+
+                Debug.WriteLine("");
+                Debug.WriteLine(content.StatusCode.ToString());
+                Debug.WriteLine("");
+
+                if (content.IsSuccessStatusCode)
+                    return JsonConvert.DeserializeObject<string>(await content.Content.ReadAsStringAsync());
+
+                else
+                    return content.ToString();
+            }
+        }
     }
 }

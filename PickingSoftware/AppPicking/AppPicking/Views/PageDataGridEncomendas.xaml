@@ -28,7 +28,7 @@
                             </dg:DataGrid.HeaderFontSize>
                             <dg:DataGrid.Columns>
                                 <dg:DataGridColumn Title="ID" PropertyName="ID" Width="1*"/>
-                                <dg:DataGridColumn Title="Nome_Utilizadores" PropertyName="Nome" Width="2*"/>
+                                <dg:DataGridColumn Title="Utilizador" PropertyName="Nome" Width="2*"/>
                                 <dg:DataGridColumn Title="Data" PropertyName="Data" x:Name="txtdata" Width="2*"/>
                             </dg:DataGrid.Columns>
                             <dg:DataGrid.RowsBackgroundColorPalette>

@@ -86,5 +86,19 @@ namespace PickingSoftware.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
             }
         }
+
+        [Route("GetNome/{_Nome}")]
+        [HttpGet]
+        public HttpResponseMessage CodBarras(string _Nome)
+        {
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, Models.Artigos.CodBarras(_Nome));
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.ToString());
+            }
+        }
     }
 }
