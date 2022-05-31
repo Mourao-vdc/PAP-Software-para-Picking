@@ -48,7 +48,7 @@ namespace AppPicking.Views
         {
             int _id = (await Models.Utilizador.perfil()).ID;
 
-            if (txtpassatual.Text == "" || txtpassnova.Text == "" || txtrepetirpass.Text == "")
+            if (txtpassatual.Text == "" || txtpassatual.Text == null || txtpassnova.Text == "" || txtpassnova.Text == null || txtrepetirpass.Text == "" || txtrepetirpass.Text == null)
             {
                 await DisplayAlert("Erro!", "Existem campos por preencher", "Ok");
             }
