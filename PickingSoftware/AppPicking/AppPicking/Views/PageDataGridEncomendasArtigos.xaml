@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid" 
              x:Class="AppPicking.Views.PageDataGridEncomendasArtigos"
-             Title="Detalhes das encomendas">
+             Title="Artigos da encomenda">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Atualizar"
                      x:Name="tbItemAtualizar"

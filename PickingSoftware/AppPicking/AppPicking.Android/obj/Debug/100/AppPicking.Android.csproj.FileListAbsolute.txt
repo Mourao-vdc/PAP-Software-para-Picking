@@ -2036,10 +2036,7 @@ C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\Ap
 C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\android\assets\ZXing.Net.Mobile.Forms.dll
 C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\android\assets\zxing.portable.dll
 C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\android\assets\ZXingNetMobile.dll
-C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\androidx\jl\c528b3df-8f75-4cec-a1db-f2be2d063cdb.jar
 C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\stamp\_AndroidXJetifyJavaLibraryRules.stamp
-C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\androidx\proguard\3f6d2b51-801a-4426-a6cd-a85e3af4e58f.cfg
-C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\androidx\proguard\ff9330e1-4532-4262-94ba-54fda4c46e3b.txt
 C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\stamp\_AndroidXJetifyProguardRules.stamp
 C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\androidx\_AndroidXJetifyProguardRules.jetify
 C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\stamp\_AndroidXCecilfy.stamp
@@ -2512,3 +2509,6 @@ C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\Ap
 C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\stamp\_GenerateJavaStubs.stamp
 C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\androidx\jl\588209f5-e6a1-40e8-808a-c9a66f09875a.jar
+C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\androidx\proguard\2cc248c0-57d2-485e-8afc-f4f908249376.cfg
+C:\Users\estagio\Desktop\PAP-Software-para-Picking\PickingSoftware\AppPicking\AppPicking.Android\obj\Debug\100\androidx\proguard\aaa5e88f-2223-41fe-af35-5576370fc6ef.txt

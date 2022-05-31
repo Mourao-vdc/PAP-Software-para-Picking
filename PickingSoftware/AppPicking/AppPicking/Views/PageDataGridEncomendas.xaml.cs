@@ -94,7 +94,7 @@ namespace AppPicking.Views
                         Models.PassValor.valor1 = aux.ID.ToString();
                         Models.PassValor.valor2 = aux.Nome.ToString();
                         Models.PassValor.valor3 = aux.Data.ToString();
-                        string action = await DisplayActionSheet("Encomendas: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover", "Detalhes");
+                        string action = await DisplayActionSheet("Encomendas: Que ação pretende realizar?", "Cancelar", null, "Editar", "Remover", "Ver artigos da encomenda");
                         Debug.WriteLine("Ações: " + action);
 
                         if (action == "Editar")
@@ -126,7 +126,7 @@ namespace AppPicking.Views
                                 return;
                             }
                         }
-                        if (action == "Detalhes")
+                        if (action == "Ver artigos da encomenda")
                         {
                             lvEncomendas.SelectedItem = null;
                             await Navigation.PushAsync(new PageDataGridEncomendasArtigos());
