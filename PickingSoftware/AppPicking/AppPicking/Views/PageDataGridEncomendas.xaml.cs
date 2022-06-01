@@ -22,7 +22,11 @@ namespace AppPicking.Views
 
             Models.PassValor.scan = "";
 
-            if ((await Models.Utilizador.perfil()).ID_Grupo != 1)
+            if ((await Models.Utilizador.perfil()).ID_Grupo == 1 || (await Models.Utilizador.perfil()).ID_Grupo == 3)
+            {
+                lvEncomendas.ItemsSource = new ObservableCollection<Models.Encomendas>(await Models.Encomendas.GetEncomendastodas());
+            }
+            else
             {
                 lvEncomendas.ItemsSource = new ObservableCollection<Models.Encomendas>(await Models.Encomendas.GetEncomendas((await Models.Utilizador.perfil()).Nome));
 
@@ -34,10 +38,6 @@ namespace AppPicking.Views
                 Debug.WriteLine(await Models.Encomendas.GetMAXID());
                 Debug.Write("|||||");
                 Debug.Write("|||||");
-            }
-            else
-            {
-                lvEncomendas.ItemsSource = new ObservableCollection<Models.Encomendas>(await Models.Encomendas.GetEncomendastodas());
             }
         }
 

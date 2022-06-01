@@ -25,26 +25,35 @@ namespace AppPicking.Views
 
         private async void lvUtilizadores_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var aux = e.SelectedItem as Models.Utilizador;
+            var _retorno = await Models.Permissoes_Gerais.LoginView("Alterar Grupo");
 
-            if (aux != null)
+            Debug.WriteLine("");
+            Debug.WriteLine(_retorno.ToString());
+            Debug.WriteLine("");
+
+            if (_retorno)
             {
-                Models.PassValor.grupo = aux.ID.ToString();
-                Models.PassValor.grupo2 = aux.Nome.ToString();
-                Models.PassValor.grupo3 = aux.Email.ToString();
-                Models.PassValor.grupo4 = aux.Nome_Grupo.ToString();
-                string action = await DisplayActionSheet("Utilizador: Deseja alterar o grupo do utilizador selecionado?", "Sim", "Não");
-                Debug.WriteLine("Ações: " + action);
+                var aux = e.SelectedItem as Models.Utilizador;
 
-                if (action == "Sim")
+                if (aux != null)
                 {
-                    await Navigation.PushAsync(new PageEditGrupoUtilizador());
-                    lvUtilizadores.SelectedItem = null;
-                }
-                if (action == "Não" || action == null)
-                {
-                    lvUtilizadores.SelectedItem = null;
-                    return;
+                    Models.PassValor.grupo = aux.ID.ToString();
+                    Models.PassValor.grupo2 = aux.Nome.ToString();
+                    Models.PassValor.grupo3 = aux.Email.ToString();
+                    Models.PassValor.grupo4 = aux.Nome_Grupo.ToString();
+                    string action = await DisplayActionSheet("Utilizador: Deseja alterar o grupo do utilizador selecionado?", "Sim", "Não");
+                    Debug.WriteLine("Ações: " + action);
+
+                    if (action == "Sim")
+                    {
+                        await Navigation.PushAsync(new PageEditGrupoUtilizador());
+                        lvUtilizadores.SelectedItem = null;
+                    }
+                    if (action == "Não" || action == null)
+                    {
+                        lvUtilizadores.SelectedItem = null;
+                        return;
+                    }
                 }
             }
         }

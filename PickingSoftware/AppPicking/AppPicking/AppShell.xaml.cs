@@ -55,7 +55,7 @@ namespace AppPicking
                 permissoes.IsVisible = false;
             }
 
-            if ((await Models.Utilizador.perfil()).ID_Grupo == 1)
+            if ((await Models.Utilizador.perfil()).ID_Grupo == 1 || (await Models.Utilizador.perfil()).ID_Grupo == 3)
             {
                 encomendasvalidadas.IsVisible = true;
             }
