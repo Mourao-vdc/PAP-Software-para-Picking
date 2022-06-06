@@ -46,6 +46,7 @@ namespace AppPicking.Views
                 btnPopup.Items.Add(_item.ID.ToString());
             }*/
 
+            //Mostra todos os nomes dos grupos existentes
             var _listt = await Models.Grupos.GetGrupos();
 
             lvGrupos = _listt;
@@ -58,6 +59,7 @@ namespace AppPicking.Views
 
         private async void table()
         {
+            //Apresenta os grupos e os seus repetivos campos
             lvPermicoes.ItemsSource = new ObservableCollection<Models.Permissoes_Gerais>(await Models.Permissoes_Gerais.GetPermicoes_Gerais(SearchConteudo.Text));
         }
 
@@ -80,6 +82,7 @@ namespace AppPicking.Views
                         Estado = "Autorizado",
                     };
 
+                    //Muda o campo estado para Autorizado
                     await DisplayAlert("Resposta", await Permissoes_Gerais.GetEditarEstado(_estado), "Ok");
 
                     OnAppearing();
@@ -94,6 +97,7 @@ namespace AppPicking.Views
                         Estado = "Negado",
                     };
 
+                    //Muda o campo estado para Negado
                     await DisplayAlert("Resposta", await Permissoes_Gerais.GetEditarEstado(_estado), "Ok");
 
                     OnAppearing();
@@ -125,6 +129,7 @@ namespace AppPicking.Views
 
         private void SearchConteudo_TextChanged(object sender, TextChangedEventArgs e)
         {
+            //Filtra a lista consoante o texto escrito na SearchConteudo
             var keyword = SearchConteudo.Text;
             if (keyword.Length >= 1)
             {
@@ -140,6 +145,7 @@ namespace AppPicking.Views
 
         private void listaGrupos_ItemTapped(object sender, ItemTappedEventArgs e)
         {
+            //O item selecionado fica na SearchConteudo
             if (e.Item as string == null)
             {
                 return;

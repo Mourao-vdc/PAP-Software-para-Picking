@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,6 +18,7 @@ namespace AppPicking.Views
         {
             base.OnAppearing();
 
+            //Mostra as encomendas realizadas pelo utilizador que deu login
             lvEncomendas.ItemsSource = new ObservableCollection<Models.Encomendas>(await Models.Encomendas.GetEncomendasPerfil((await Models.Utilizador.perfil()).Nome));
         }
 
@@ -52,6 +49,7 @@ namespace AppPicking.Views
                 refresh.IsRefreshing = true;
                 await Task.Delay(1000);
                 refresh.IsRefreshing = false;
+                //Abre a página PageDataGridDetalhesPerfil
                 await Navigation.PushAsync(new PageDataGridDetalhesPerfil());
                 lvEncomendas.SelectedItem = null;
             }

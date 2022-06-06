@@ -31,8 +31,8 @@ namespace AppPicking.Views
 
         private async void AddButton_Clicked(object sender, EventArgs e)
         {
-            if (//(string.IsNullOrEmpty(txtID.Text)) || (string.IsNullOrWhiteSpace(txtID.Text)
-                 (string.IsNullOrEmpty(txtNome.Text) || (string.IsNullOrWhiteSpace(txtNome.Text)
+            //Verifica se os seguintes campos se encontram vazios
+            if ((string.IsNullOrEmpty(txtNome.Text) || (string.IsNullOrWhiteSpace(txtNome.Text)
                 || (string.IsNullOrEmpty(txtCod_Barras.Text) || (string.IsNullOrWhiteSpace(txtCod_Barras.Text)))))){
 
                 await DisplayAlert("Alerta", "Existem campos por preencher", "Ok");
@@ -52,6 +52,7 @@ namespace AppPicking.Views
                 Debug.WriteLine(artigos.Nome);
                 Debug.WriteLine("");
 
+                //Cria um novo artigo
                 await DisplayAlert("Resposta", await Artigos.AddArtigos(artigos), "Ok");
 
                 txtNome.Text = "";
@@ -61,6 +62,7 @@ namespace AppPicking.Views
 
         private async void CodBarras_Clicked(object sender, EventArgs e)
         {
+            //Abre a página PageReadBarcode
             await Navigation.PushAsync(new PageReadBarcode(PageReadBarcode.BarcodeSearchType.Artigos));
         }
     }

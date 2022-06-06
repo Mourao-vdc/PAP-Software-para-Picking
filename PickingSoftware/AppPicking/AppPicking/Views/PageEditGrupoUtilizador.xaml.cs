@@ -33,6 +33,7 @@ namespace AppPicking.Views
                 txtID.Items.Add(_item.ID.ToString());
             }*/
 
+            //Mostra todos os grupos existentes
             var _listtt = await Models.Grupos.GetGrupos();
 
             lvGrup = _listtt;
@@ -50,6 +51,7 @@ namespace AppPicking.Views
 
         private async void EditButton_Clicked(object sender, EventArgs e)
         {
+            //Busca o ID do utilizador correspondente ao nome do grupo selecionado
             int _ID = await Models.Grupos.IDNM2(txtGrupo.SelectedItem.ToString());
             Debug.Write("|||||");
             Debug.Write("|||||");
@@ -65,6 +67,7 @@ namespace AppPicking.Views
                     ID_Grupo = _ID,
                 };
 
+                //Edita o grupo do utilizador selecionado
                 await DisplayAlert("Resposta", await Utilizador.GetEditarGrupo(_utilizador), "Ok");
 
                 //txtID.SelectedIndex = -1;

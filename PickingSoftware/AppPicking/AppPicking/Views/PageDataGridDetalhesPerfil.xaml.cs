@@ -29,6 +29,7 @@ namespace AppPicking.Views
 
                 int idencomenda = int.Parse(Models.PassValor.valor20);
 
+                //Mostra os pedidos na datagrid
                 lvValidarPedido.ItemsSource = new ObservableCollection<Models.Validar>(await Models.Validar.GetValidarDetalhes(idencomenda));
 
             }

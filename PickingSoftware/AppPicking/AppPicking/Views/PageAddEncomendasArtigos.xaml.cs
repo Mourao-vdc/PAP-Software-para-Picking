@@ -52,6 +52,7 @@ namespace AppPicking.Views
 
             Models.PassValor.scan = "";
 
+            //Passa o nome dos artigos para a lista, linha 26
             var _listt = await Models.Artigos.GetArtigos();
 
             listaArtigo = _listt;
@@ -67,6 +68,7 @@ namespace AppPicking.Views
 
         private async void AddButton_Clicked(object sender, EventArgs e)
         {
+            //Verifica se os seguintes campos se encontram vazios
             if ((string.IsNullOrEmpty(txtCodBarras.Text) || (string.IsNullOrWhiteSpace(txtCodBarras.Text))))
             {
                 await DisplayAlert("Alerta", "Existem campos por preencher", "Ok");
@@ -74,6 +76,7 @@ namespace AppPicking.Views
             }
             else
             {
+                //Verifica se a txtQuantArtigos se encontra vazia
                 if (txtQuantArtigos.Text == "")
                 {
                     int quant = 0;
@@ -103,6 +106,7 @@ namespace AppPicking.Views
                             Situacao = txtsituacao.Text,
                         };
 
+                        //Adiciona o artigo à encomenda
                         await DisplayAlert("Resposta", await Encomendas_Artigos.AddEncomendas_Artigos(encomendas_artigos), "Ok");
 
                         //txtIDEncomenda.SelectedIndex = -1;
@@ -129,6 +133,7 @@ namespace AppPicking.Views
 
         private async void listaArtigos_ItemTapped(object sender, ItemTappedEventArgs e)
         {
+            //O item selecionado fica na SearchConteudo
             if (e.Item as string == null)
             {
                 return;
@@ -145,7 +150,7 @@ namespace AppPicking.Views
 
         private void SearchConteudo_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //listaArtigos.IsVisible = true;
+            //Filtra a lista consoante o texto escrito na SearchConteudo
             var keyword = SearchConteudo.Text;
             if (keyword.Length >= 1)
             {

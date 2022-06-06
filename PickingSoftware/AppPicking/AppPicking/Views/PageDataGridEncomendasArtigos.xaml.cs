@@ -36,6 +36,7 @@ namespace AppPicking.Views
 
                 //int idencomenda = 
 
+                //Mostra os artigos da encomenda selecionada
                 lvEncomendasArtigos.ItemsSource = new ObservableCollection<Models.Encomendas_Artigos>(await Models.Encomendas_Artigos.GetEncomendas_Artigos(iID));
 
             }
@@ -47,11 +48,13 @@ namespace AppPicking.Views
     
         private async void btnPopup_Clicked(object sender, EventArgs e)
         {
+            //Abre a página PageAddEncomendasArtigos
             await Navigation.PushAsync(new PageAddEncomendasArtigos());
         }
 
         private async void lvEncomendasArtigos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            //Verifica se o utlizador que deu login tem a seguinte permissão
             var _retorno = await Models.Permissoes_Gerais.LoginView("Editar e eliminar pedidos");
 
             Debug.WriteLine("");
@@ -86,6 +89,7 @@ namespace AppPicking.Views
                         if (action == "Editar")
                         {
                             lvEncomendasArtigos.SelectedItem = null;
+                            //Abre a página PageEditEncomendasArtigos
                             await Navigation.PushAsync(new PageEditEncomendasArtigos());
                         }
                         if (action == "Remover")
@@ -101,6 +105,7 @@ namespace AppPicking.Views
                                     ID = int.Parse(Models.PassValor.valor1),
                                 };
 
+                                //Elimina o artigo selecionado
                                 await DisplayAlert("Resposta", await Encomendas_Artigos.DellEncomendas_Artigos(int.Parse(Models.PassValor.valor1)), "Ok");
 
                                 OnAppearing();
@@ -134,6 +139,7 @@ namespace AppPicking.Views
                                         Situacao = "A preparar",
                                     };
 
+                                    //altera a quantidade do artigo
                                     await DisplayAlert("Resposta", await Encomendas_Artigos.EditQuantSituacao(_encomendasartigos), "Ok");
 
                                     lvEncomendasArtigos.SelectedItem = null;
@@ -152,6 +158,7 @@ namespace AppPicking.Views
                                         Situacao = "Pronto",
                                     };
 
+                                    //altera a quantidade e a situação do artigo
                                     await DisplayAlert("Resposta", await Encomendas_Artigos.EditQuantSituacao(_encomendasartigoss), "Ok");
 
                                     lvEncomendasArtigos.SelectedItem = null;

@@ -28,6 +28,7 @@ namespace AppPicking.Views
         {
             base.OnAppearing();
 
+            //Passa o nome de todos os utilizadores existentes para a txtIDUtilizador
             var _list = await Models.Utilizador.GetUtilizadores();
 
             listaUtilizadores = _list;
@@ -40,8 +41,8 @@ namespace AppPicking.Views
 
         private async void AddButton_Clicked(object sender, EventArgs e)
         {
+            //Verifica se existe um utilizador selecionado
             if (txtIDUtilizador.SelectedIndex == -1)
-
             {
                 await DisplayAlert("Alerta", "Existem campos por preencher", "Ok");
                 return;
@@ -54,11 +55,13 @@ namespace AppPicking.Views
                     Data = dpData.Date.ToString(),
                 };
 
+                //Cria uma nova encomenda
                 await DisplayAlert("Resposta", await Encomendas.AddEncomendas(encomendas), "Ok");
                 
                 txtIDUtilizador.SelectedIndex = -1;
                 Data = DateTime.Now.ToString();
 
+                //Volta para a página anterior
                 await Shell.Current.GoToAsync("..");
             }
         }

@@ -18,6 +18,7 @@ namespace AppPicking.Views
         {
             base.OnAppearing();
 
+            //Mostra todas as encomendas validadas na datagrid
             lvValidadas.ItemsSource = new ObservableCollection<Models.Validar>(await Models.Validar.GetValidada());
         }
 
@@ -48,6 +49,7 @@ namespace AppPicking.Views
                 refresh.IsRefreshing = true;
                 await Task.Delay(1000);
                 refresh.IsRefreshing = false;
+                //Abre a página PagePedidosValidados
                 await Navigation.PushAsync(new PagePedidosValidados());
                 lvValidadas.SelectedItem = null;
             }

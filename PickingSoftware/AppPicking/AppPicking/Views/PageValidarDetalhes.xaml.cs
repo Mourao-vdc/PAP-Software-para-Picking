@@ -30,6 +30,7 @@ namespace AppPicking.Views
 
                 int idencomenda = int.Parse(Models.PassValor.valor10);
 
+                //Mostra os artigos da encomenda selecionada
                 lvValidarPedido.ItemsSource = new ObservableCollection<Models.Validar>(await Models.Validar.GetValidarDetalhes(idencomenda));
 
             }
@@ -60,8 +61,10 @@ namespace AppPicking.Views
                     Estado = "Validada",
                 };
 
+                //Encomenda é validada
                 await DisplayAlert("Resposta", await Validar.GetValidarEstado(_validar), "Ok");
 
+                //Volta para a página anterior
                 await Shell.Current.GoToAsync("..");
             }
             if (action2 == "Não")

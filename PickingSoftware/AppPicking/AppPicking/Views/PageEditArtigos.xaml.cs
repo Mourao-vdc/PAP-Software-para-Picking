@@ -15,6 +15,11 @@ namespace AppPicking.Views
 
         private List<Models.Artigos> listaArtigos = new List<Artigos>();
 
+        List<string> _artigos = new List<string>
+        {
+
+        };
+
         public PageEditArtigos()
         {
             InitializeComponent();
@@ -71,6 +76,7 @@ namespace AppPicking.Views
 
         private async void EditButton_Clicked(object sender, EventArgs e)
         {
+            //Verifica se os seguintes campos se encontram vazios
             if ((string.IsNullOrEmpty(txtNome.Text) || (string.IsNullOrWhiteSpace(txtNome.Text)
                 || (string.IsNullOrEmpty(txtCod_Barras.Text) || (string.IsNullOrWhiteSpace(txtCod_Barras.Text))))))
             {
@@ -86,6 +92,7 @@ namespace AppPicking.Views
                     Cod_Barras = txtCod_Barras.Text,
                 };
 
+                //Edita a encomenda selecionada
                 await DisplayAlert("Resposta", await Artigos.EditArtigos(artigos), "Ok");
 
                 //txtID.SelectedIndex = -1;
@@ -101,6 +108,7 @@ namespace AppPicking.Views
 
         private async void CodBarras_Clicked(object sender, EventArgs e)
         {
+            //Abre a página PageReadBarcode
             await Navigation.PushAsync(new PageReadBarcode(PageReadBarcode.BarcodeSearchType.Artigos));
         }
 

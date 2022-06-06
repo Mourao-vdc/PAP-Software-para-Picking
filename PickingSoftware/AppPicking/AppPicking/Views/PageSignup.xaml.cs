@@ -38,6 +38,7 @@ namespace AppPicking.Views
             lblLogin.IsVisible = false;
             loading.IsRunning = true;
 
+            //Verifica se os seguintes campos se encontram vazios
             if (//(string.IsNullOrEmpty(txtID.Text)) || (string.IsNullOrWhiteSpace(txtID.Text)
                  (string.IsNullOrEmpty(txtNome.Text) || (string.IsNullOrWhiteSpace(txtNome.Text)
                 || (string.IsNullOrEmpty(txtPassword.Text) || (string.IsNullOrWhiteSpace(txtPassword.Text)
@@ -52,13 +53,26 @@ namespace AppPicking.Views
             }
             else
             {
+                //Verifica se o email inserido é válido
                 if(Models.Utilizador.IsValidEmail(txtEmail.Text))
                 {
                     //if((txtPassword.Text.Length >= 8) || (txtPassword2.Text.Length >= 8))
                     //{
-                        if (txtPassword.Text != txtPassword2.Text)
+                    //Verifica se as passwords são iguais
+                    if (txtPassword.Text != txtPassword2.Text)
+                    {
+                        await DisplayAlert("Alerta", "As passwords não coincidem", "Ok");
+                        btnAdd.IsVisible = true;
+                        lblLogin.IsVisible = true;
+                        loading.IsRunning = false;
+                        return;
+                    }
+                    else
+                    {
+                        //Verifica se o email inserido já se encontra registado
+                        if (await Models.Utilizador.VerifyEmail(txtEmail.Text))
                         {
-                            await DisplayAlert("Alerta", "As passwords não coincidem", "Ok");
+                            await DisplayAlert("Erro","O Email inserido ja se encontra registado","Ok");
                             btnAdd.IsVisible = true;
                             lblLogin.IsVisible = true;
                             loading.IsRunning = false;
@@ -66,10 +80,10 @@ namespace AppPicking.Views
                         }
                         else
                         {
-
-                            if (await Models.Utilizador.VerifyEmail(txtEmail.Text))
+                            //Verifica se o nome inserido já se encontra registado
+                            if (await Models.Utilizador.VerifyNome(txtNome.Text))
                             {
-                                await DisplayAlert("Erro","O Email inserido ja se encontra registado","Ok");
+                                await DisplayAlert("Erro", "O Nome inserido ja se encontra registado", "Ok");
                                 btnAdd.IsVisible = true;
                                 lblLogin.IsVisible = true;
                                 loading.IsRunning = false;
@@ -77,41 +91,33 @@ namespace AppPicking.Views
                             }
                             else
                             {
-                                if(await Models.Utilizador.VerifyNome(txtNome.Text))
+                                Utilizador utilizador = new Utilizador()
                                 {
-                                    await DisplayAlert("Erro", "O Nome inserido ja se encontra registado", "Ok");
-                                    btnAdd.IsVisible = true;
-                                    lblLogin.IsVisible = true;
-                                    loading.IsRunning = false;
-                                    return;
-                                }
-                                else
-                                {
-                                    Utilizador utilizador = new Utilizador()
-                                    {
-                                        ID_Grupo = 2,
-                                        Nome = txtNome.Text.TrimEnd().TrimStart(),
-                                        Email = txtEmail.Text,
-                                        Password = Cryptography.Encrypt(txtPassword.Text.ToString()),
-                                    };
+                                    ID_Grupo = 2,
+                                    Nome = txtNome.Text.TrimEnd().TrimStart(),
+                                    Email = txtEmail.Text,
+                                    Password = Cryptography.Encrypt(txtPassword.Text.ToString()),
+                                };
 
-                                    await DisplayAlert("Resposta", await Utilizador.AddUtilizadores(utilizador), "Ok");
+                                //Cria um novo utilizador
+                                await DisplayAlert("Resposta", await Utilizador.AddUtilizadores(utilizador), "Ok");
 
-                                    txtNome.Text = "";
-                                    txtEmail.Text = "";
-                                    txtPassword.Text = "";
-                                    txtPassword2.Text = "";
+                                txtNome.Text = "";
+                                txtEmail.Text = "";
+                                txtPassword.Text = "";
+                                txtPassword2.Text = "";
 
-                                    await teste.FadeTo(0, 500, Easing.Linear);
+                                await teste.FadeTo(0, 500, Easing.Linear);
 
-                                    await Navigation.PushModalAsync(new PageLogin());
+                                //Abre a página PageLogin
+                                await Navigation.PushModalAsync(new PageLogin());
 
-                                    btnAdd.IsVisible = true;
-                                    lblLogin.IsVisible = true;
-                                    loading.IsRunning = false;
-                                }
+                                btnAdd.IsVisible = true;
+                                lblLogin.IsVisible = true;
+                                loading.IsRunning = false;
                             }
                         }
+                    }
                     //}
                     //else
                     //{
@@ -136,6 +142,7 @@ namespace AppPicking.Views
 
             await teste.FadeTo(0, 500, Easing.Linear);
 
+            //Abre a página PageLogin
             await Navigation.PushModalAsync(new PageLogin());
         }
     }

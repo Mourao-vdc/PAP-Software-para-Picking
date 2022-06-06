@@ -13,6 +13,7 @@ namespace AppPicking.Views
             Encomendas
         }
 
+        //Identifica o tipo de cod_barras
         private BarcodeSearchType searchType;
 
         public PageReadBarcode(BarcodeSearchType _type)
@@ -42,6 +43,7 @@ namespace AppPicking.Views
                     {
                         Device.BeginInvokeOnMainThread(async () =>
                         {
+                            //Lê o código de barras, passa para a a variável result e regressa à página anterior
                             zxBarCodeReader.IsScanning = false;
                             scanResultText.Text = result.Text + " (type: " + result.BarcodeFormat.ToString() + ")";
                             await DisplayAlert("Sucesso", "Scan realizado com sucesso!", "Ok");
@@ -63,6 +65,7 @@ namespace AppPicking.Views
                     {
                         Device.BeginInvokeOnMainThread(async () =>
                         {
+                            //Lê o código de barras, passa para a a variável result e regressa à página anterior
                             zxBarCodeReader.IsScanning = false;
                             scanResultText.Text = result.Text + " (type: " + result.BarcodeFormat.ToString() + ")";
                             await DisplayAlert("Sucesso", "Scan realizado com sucesso!", "Ok");

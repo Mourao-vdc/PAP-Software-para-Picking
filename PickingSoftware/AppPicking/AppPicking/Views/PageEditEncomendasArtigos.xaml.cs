@@ -48,6 +48,7 @@ namespace AppPicking.Views
                 txtID.Items.Add(_item.ID.ToString());
             }*/
 
+            //Mostra todos os nomes dos artigos existentes
             var _listt = await Models.Artigos.GetArtigos();
 
             listaArtigo = _listt;
@@ -57,6 +58,7 @@ namespace AppPicking.Views
                 _artigos.Add(_item.Nome.ToString());
             }
 
+            //Mostra todos os ids das encomendas existentes
             var _listtt = await Models.Encomendas.GetEncomendastodas();
 
             lvEncomendas = _listtt;
@@ -109,12 +111,14 @@ namespace AppPicking.Views
 
         private async void EditButton_Clicked(object sender, EventArgs e)
         {
+            //Verifica se a quantidade esta vazia
             if (txtQuantArtigos.Text == "")
             {
                 int quant = 0;
 
                 txtQuantArtigos.Text = quant.ToString();
             }
+            //Verifica se a quantidade esta vazia ou se é diferente de 0
             if (int.Parse(txtQuantArtigos.Text) > 0)
             {
                 int _ID = await Models.Encomendas_Artigos.IDNM(SearchConteudo.Text.ToString());
@@ -127,6 +131,7 @@ namespace AppPicking.Views
 
                 if (_ID != -1)
                 {
+                    //Verifica se os seguintes campos se encontram vazios
                     if ((string.IsNullOrEmpty(Quant_artigos.ToString()) || (string.IsNullOrWhiteSpace(Quant_artigos.ToString())
                     || (string.IsNullOrEmpty(txtCodBarras.Text) || (string.IsNullOrWhiteSpace(txtCodBarras.Text)
                     || (string.IsNullOrEmpty(SearchConteudo.Text) || (string.IsNullOrWhiteSpace(SearchConteudo.Text))))))))
@@ -146,6 +151,7 @@ namespace AppPicking.Views
                             Cod_Barras = txtCodBarras.Text,
                         };
 
+                        //Edita o artigo da encomenda selecionada
                         await DisplayAlert("Resposta", await Encomendas_Artigos.EditEncomendas_Artigos(_encomendasartigos), "Ok");
 
                         //txtID.SelectedIndex = -1;
@@ -174,6 +180,7 @@ namespace AppPicking.Views
 
         private void SearchConteudo_TextChanged(object sender, TextChangedEventArgs e)
         {
+            //Filtra a lista consoante o texto escrito na SearchConteudo
             var keyword = SearchConteudo.Text;
             if (keyword.Length >= 1)
             {
@@ -189,6 +196,7 @@ namespace AppPicking.Views
 
         private async void listaArtigos_ItemTapped(object sender, ItemTappedEventArgs e)
         {
+            //O item selecionado fica na SearchConteudo
             if (e.Item as string == null)
             {
                 return;

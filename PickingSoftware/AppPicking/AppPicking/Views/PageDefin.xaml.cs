@@ -11,7 +11,7 @@ namespace AppPicking.Views
         public PageDefin()
         {
             InitializeComponent();
-
+            //Mostra O nome do utilizador que deu login
             Models.Username _username = new Models.Username
             {
                 valor = Models.Username.Nome,
@@ -33,6 +33,7 @@ namespace AppPicking.Views
 
             if (action == "Sim")
             {
+                //Abre a página PageLogin
                 await Navigation.PushAsync(new PageLogin());
             }
             else
@@ -43,11 +44,13 @@ namespace AppPicking.Views
 
         private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
         {
+            //Abre a página PageDataGridEncomendasPerfil
             await Navigation.PushAsync(new PageDataGridEncomendasPerfil());
         }
 
         private async void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)
         {
+            //Abre a página PagePerfil
             await Navigation.PushAsync(new PagePerfil());
         }
     }

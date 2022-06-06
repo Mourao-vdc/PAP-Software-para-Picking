@@ -29,6 +29,7 @@ namespace AppPicking.Views
 
             //var list = await Models.Permissoes_Gerais.PermissionsVerify((await Models.Utilizador.perfil()).ID_Grupo.ToString());
 
+            //Verifica se o utilizador que deu login tem permissões para realizar a operação
             var _retorno = await Models.Permissoes_Gerais.LoginView("Adicionar artigos");
 
             Debug.WriteLine("");
@@ -46,7 +47,8 @@ namespace AppPicking.Views
 
             try
             {
-                    lvArtigos.ItemsSource = new ObservableCollection<Models.Artigos>(await Models.Artigos.GetArtigos());
+                //Mostra os artigos na datagrid
+                lvArtigos.ItemsSource = new ObservableCollection<Models.Artigos>(await Models.Artigos.GetArtigos());
             }
 
             catch (Exception ex)
@@ -59,12 +61,16 @@ namespace AppPicking.Views
 
         private async void btnPopup_Clicked(object sender, EventArgs e)
         {
+            //Abre a página PageAddArtigos
             await Navigation.PushAsync(new PageAddArtigos());
         }
 
         private async void lvArtigos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if ((await Models.Utilizador.perfil()).ID_Grupo == 1)
+            //Verifica se o utlizador que deu login tem a seguinte permissão
+            var _retorno = await Models.Permissoes_Gerais.LoginView("Editar e eliminar artigos");
+
+            if (_retorno)
             {
                 try
                 {
@@ -82,6 +88,7 @@ namespace AppPicking.Views
                         if (action == "Editar")
                         {
                             lvArtigos.SelectedItem = null;
+                            //Abre a página PageEditArtigos
                             await Navigation.PushAsync(new PageEditArtigos());
                         }
                         if (action == "Remover")
@@ -97,6 +104,7 @@ namespace AppPicking.Views
                                     ID = int.Parse(Models.PassValor.valor1),
                                 };
 
+                                //Elimina o artigo selecionado
                                 await DisplayAlert("Resposta", await Artigos.DellArtigos(int.Parse(Models.PassValor.valor1)), "Ok");
 
                                 OnAppearing();

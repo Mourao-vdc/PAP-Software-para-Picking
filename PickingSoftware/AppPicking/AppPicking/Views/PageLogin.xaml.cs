@@ -16,6 +16,7 @@ namespace AppPicking.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            //Verifica se os seguintes campos se encontram vazios
             if (txtNome.Text == ""|| txtNome.Text == null || txtPassword.Text == "" || txtPassword.Text == null)
             {
                 await DisplayAlert("Erro!","Existem campos por preencher","Ok");
@@ -37,6 +38,7 @@ namespace AppPicking.Views
                     Password = txtPassword.Text
                 };
 
+                //Verifica se os dados inseridos estão associados a uma conta
                 if (await Models.Utilizador.Userlogin(_user))
                 {
                     //Models.Username.Nome = txtNome.Text;
@@ -57,6 +59,7 @@ namespace AppPicking.Views
                     lblNA.IsVisible = true;
                     loading.IsRunning = false;
 
+                    //Abre a página PageDataGridEncomendas
                     App.Current.MainPage = new AppShell();
 
                     Debug.Write("|||||||||");
@@ -94,6 +97,7 @@ namespace AppPicking.Views
             //await Shell.Current.GoToAsync($"//{nameof(PageSignup)}");
             await teste.FadeTo(0, 500, Easing.Linear);
 
+            //Abre a página PageSignup
             await Navigation.PushModalAsync(new PageSignup());
         }
 

@@ -21,6 +21,7 @@ namespace AppPicking.Views
 
             Models.PassValor.scan = "";
 
+            //Mostra as encomendas que estão por validar
             lvValidar.ItemsSource = new ObservableCollection<Models.Validar>(await Models.Validar.GetValidar((await Models.Utilizador.perfil()).Nome));
 
             Debug.Write("|||||");
@@ -45,6 +46,7 @@ namespace AppPicking.Views
                 refresh.IsRefreshing = true;
                 await Task.Delay(1000);
                 refresh.IsRefreshing = false;
+                //Abre a página PageValidarDetalhes
                 await Navigation.PushAsync(new PageValidarDetalhes());
                 lvValidar.SelectedItem = null;
             }

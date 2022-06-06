@@ -22,12 +22,14 @@ namespace AppPicking.Views
 
             Models.PassValor.scan = "";
 
+            //Apenas Grupo 1 e 3 têm acesso a todas as encomendas
             if ((await Models.Utilizador.perfil()).ID_Grupo == 1 || (await Models.Utilizador.perfil()).ID_Grupo == 3)
             {
                 lvEncomendas.ItemsSource = new ObservableCollection<Models.Encomendas>(await Models.Encomendas.GetEncomendastodas());
             }
             else
             {
+                //Mostra as encomendas realizadas pelo utilizador que deu login
                 lvEncomendas.ItemsSource = new ObservableCollection<Models.Encomendas>(await Models.Encomendas.GetEncomendas((await Models.Utilizador.perfil()).Nome));
 
                 Debug.Write("|||||");
@@ -77,6 +79,7 @@ namespace AppPicking.Views
 
         private async void lvEncomendas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            //Verifica se o utlizador que deu login tem a seguinte permissão
             var _retorno = await Models.Permissoes_Gerais.LoginView("Editar e eliminar encomendas");
 
             Debug.WriteLine("");
@@ -100,6 +103,7 @@ namespace AppPicking.Views
                         if (action == "Editar")
                         {
                             lvEncomendas.SelectedItem = null;
+                            //Abre a página PageEditEncomendas
                             await Navigation.PushAsync(new PageEditEncomendas());
                         }
                         if (action == "Remover")
@@ -116,6 +120,7 @@ namespace AppPicking.Views
                                     ID = int.Parse(Models.PassValor.valor1),
                                 };
 
+                                //Elimina a encomenda selecionada
                                 await DisplayAlert("Resposta", await Encomendas.DellEncomenda(int.Parse(Models.PassValor.valor1)), "Ok");
 
                                 OnAppearing();
@@ -129,6 +134,7 @@ namespace AppPicking.Views
                         if (action == "Ver artigos da encomenda")
                         {
                             lvEncomendas.SelectedItem = null;
+                            //Abre a página PageDataGridEncomendasArtigos
                             await Navigation.PushAsync(new PageDataGridEncomendasArtigos());
                         }
                         if (action == null || action == "Cancelar")
@@ -180,13 +186,14 @@ namespace AppPicking.Views
                     Models.PassValor.valor2 = aux.Nome.ToString();
                     Models.PassValor.valor3 = aux.Data.ToString();
 
-                    string action = await DisplayActionSheet("Deseja visualizar os detalhes da encomenda selecionada?", "Sim", "Não");
+                    string action = await DisplayActionSheet("Deseja visualizar os artigos da encomenda selecionada?", "Sim", "Não");
                     Debug.WriteLine("Ações: " + action);
 
                     if (action == "Sim")
                     {
                         lvEncomendas.SelectedItem = null;
                         OnAppearing();
+                        //Abre a página PageDataGridEncomendasArtigos
                         await Navigation.PushAsync(new PageDataGridEncomendasArtigos());
                     }
                     if (action == "Não")

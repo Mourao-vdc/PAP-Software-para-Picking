@@ -29,6 +29,7 @@ namespace AppPicking.Views
 
                 int idencomenda = int.Parse(Models.PassValor.valor10);
 
+                //Mostra os artigos da encomenda selecionada
                 lvValidarPedido.ItemsSource = new ObservableCollection<Models.Validar>(await Models.Validar.GetValidarDetalhes(idencomenda));
 
             }

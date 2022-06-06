@@ -36,6 +36,7 @@ namespace AppPicking.Views
                 txtID.Items.Add(_item.ID.ToString());
             }*/
 
+            //Mostra todos os nomes dos utilizadores no campo txtIDUtilizador
             var _lista = await Models.Utilizador.GetUtilizadores();
 
             listaUtilizadores = _lista;
@@ -71,6 +72,7 @@ namespace AppPicking.Views
 
         private async void EditButton_Clicked(object sender, EventArgs e)
         {
+            //Busca o id do nome do utilizador selecionado
             int _ID = await Models.Encomendas.IDNM2(txtIDUtilizador.SelectedItem.ToString());
 
             if (_ID != -1)
@@ -82,6 +84,7 @@ namespace AppPicking.Views
                     Data = dpData.Date.ToString("MM/dd/yyyy"),
                 };
 
+                //Edita a encomenda selecionada
                 await DisplayAlert("Resposta", await Encomendas.EditEncomendas(encomendas), "Ok");
 
                 //txtID.SelectedIndex = -1;

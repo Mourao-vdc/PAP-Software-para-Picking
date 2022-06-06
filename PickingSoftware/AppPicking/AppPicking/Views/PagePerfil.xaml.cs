@@ -18,7 +18,8 @@ namespace AppPicking.Views
             base.OnAppearing();
 
             string _email = (await Models.Utilizador.perfil()).Email;
-
+            
+            //Mostra as informações pessoais do utilizador
             Models.Username _username = new Models.Username
             {
                 valor = Models.Username.Nome,
@@ -48,14 +49,17 @@ namespace AppPicking.Views
         {
             int _id = (await Models.Utilizador.perfil()).ID;
 
+            //Verifica se os seguintes campos se encontram vazios
             if (txtpassatual.Text == "" || txtpassatual.Text == null || txtpassnova.Text == "" || txtpassnova.Text == null || txtrepetirpass.Text == "" || txtrepetirpass.Text == null)
             {
                 await DisplayAlert("Erro!", "Existem campos por preencher", "Ok");
             }
             else
             {
+                //Verifica se a password corresponde à que foi inserida no campo txtpassatual
                 if (Models.Cryptography.Decrypt((await Models.Utilizador.perfil()).Password.ToString()) == txtpassatual.Text)
                 {
+                    //Verifica se se a nova password é diferente da atual e se a nova corresponde ao campo txtrepetirpass
                     if (txtpassnova.Text != txtpassatual.Text && txtrepetirpass.Text == txtpassnova.Text)
                     {
                         Debug.Write("|||");
@@ -68,6 +72,7 @@ namespace AppPicking.Views
                         Debug.Write("|||");
                         Debug.Write("|||");
 
+                        //Edita a password do utilizador
                         await DisplayAlert("Resposta", await Models.Utilizador.GetEditarPass(utilizador), "Ok");
 
                         await Navigation.PushAsync(new PageLogin());

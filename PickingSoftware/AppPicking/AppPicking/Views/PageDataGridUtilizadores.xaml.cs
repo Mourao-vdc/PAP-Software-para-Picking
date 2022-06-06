@@ -20,11 +20,13 @@ namespace AppPicking.Views
 
             Models.PassValor.scan = "";
 
+            //Mostra os utilizadores na datagrid
             lvUtilizadores.ItemsSource = new ObservableCollection<Models.Utilizador>(await Models.Utilizador.GetUtilizadores());
         }
 
         private async void lvUtilizadores_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            //Verifica se o utlizador que deu login tem a seguinte permissão
             var _retorno = await Models.Permissoes_Gerais.LoginView("Alterar Grupo");
 
             Debug.WriteLine("");
@@ -46,6 +48,7 @@ namespace AppPicking.Views
 
                     if (action == "Sim")
                     {
+                        //Abre a página PageEditGrupoUtilizador
                         await Navigation.PushAsync(new PageEditGrupoUtilizador());
                         lvUtilizadores.SelectedItem = null;
                     }
